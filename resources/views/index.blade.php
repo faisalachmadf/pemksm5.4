@@ -714,7 +714,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- 0000000000000000000000000000000000000000000000000 -->
 
 
-
  <!--/start-footer-section-->
 	
 	@include('frame_depan.footer')		

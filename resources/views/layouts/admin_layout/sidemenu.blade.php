@@ -202,9 +202,6 @@
         </li>
          
         
-        
-        
-        
         <li><a href="https://adminlte.io/docs"><i class="fa fa-user"></i> <span>LIST USER</span></a></li>
         
     </section>
