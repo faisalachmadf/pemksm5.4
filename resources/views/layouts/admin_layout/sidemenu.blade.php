@@ -20,6 +20,7 @@
             <li class="active"><a href="/adminpanel"><i class="fa fa-circle-o"></i> Sambutan Kepala</a></li>
             <li><a href="index2.html"><i class="fa fa-circle-o"></i> Aplikasi Online</a></li>
             <li><a href="index2.html"><i class="fa fa-circle-o"></i> Link terkait</a></li>
+            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Header</a></li>
           </ul>
         </li>
         <li class="treeview">
