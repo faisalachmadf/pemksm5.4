@@ -142,24 +142,41 @@ Route::get('/TKKSD', function () {
 
 /* ADMIN */
 
-Route::prefix('adminpanel')->group(function () {
-    //return view('layouts.admin_layout.content');
+Route::group(['prefix' => 'adminpanel'], function() {
+    Route::get('/login', function() {
+        return view('auth.login');
+    })->name('login');
 
-    Route::get('/', 'AdminController@index');
-    Route::get('/create', 'AdminController@create');
-});
-Auth::routes();
+    Route::get('/register', function() {
+        return view('auth.register');
+    })->name('register');
 
+    Route::get('/reset', function() {
+        return view('auth.password.reset');
+    })->name('reset');
 
-Route::get('/home', 'HomeController@index')->name('home');
+    // Authenticate
+    Route::group(['namespace' => 'Admin\Auth', 'prefix' => 'auth'], function() {
+        Route::post('/login', 'LoginController@authenticate')->name('auth.login');
+        Route::get('/login', function() {
+            return redirect()->route('login');
+        });
+        Route::get('/logout', 'LoginController@logout')->name('auth.logout');
+    });
 
-Route::group(['middleware' => 'web'], function() {
-    Route::get('khususadmin', function() {
-        echo 'Halaman Hanya untuk Admin';
-    }) ->middleware('cekAdmin');
-});
+    Route::group(['namespace' => 'Admin', 'middleware' => 'admin'], function() {
+        Route::get('/', 'DashboardController@index');
 
-Route::prefix('adminpanel/agenda')->group(function(){
-    Route::get('/','AgendaController@index');
-    Route::get('/create','AgendaController@create');
+        // User
+        Route::group(['prefix' => 'user'], function() {
+            Route::get('/','UserController@index');
+            Route::get('/create','UserController@create');
+        });
+
+        // Agenda
+        Route::group(['prefix' => 'agenda'], function() {
+            Route::get('/','AgendaController@index');
+            Route::get('/create','AgendaController@create');
+        });
+    });
 });

@@ -8,7 +8,7 @@
                 <div class="panel-heading"><h2><center>Biro Pemerintahan dan Kerja Sama <br/>Provinsi Jawa Barat</center></h2></div>
 
                 <div class="panel-body">
-                  <center>  <img src="adminkelola/dist/img/jabar.png"></center>
+                  <center>  <img src="{{ asset('adminkelola/dist/img/jabar.png') }}"></center>
                 </div>
             </div>
         </div>
@@ -21,18 +21,18 @@
               
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('auth.login') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                        <div class="form-group{{ $errors->has('credential') ? ' has-error' : '' }}">
+                            <label for="credential" class="col-md-4 control-label">Username/E-Mail Address</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                                <input id="credential" type="credential" class="form-control" name="credential" value="{{ old('credential') }}" required autofocus>
 
-                                @if ($errors->has('email'))
+                                @if ($errors->has('credential'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('credential') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -68,7 +68,7 @@
                                     Login
                                 </button>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                <a class="btn btn-link" href="{{ route('reset') }}">
                                     Forgot Your Password?
                                 </a>
                             </div>
