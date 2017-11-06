@@ -152,7 +152,7 @@ Route::group(['prefix' => 'adminpanel'], function() {
     })->name('register');
 
     Route::get('/reset', function() {
-        return view('auth.password.reset');
+        return view('auth.passwords.reset');
     })->name('reset');
 
     // Authenticate
@@ -173,10 +173,22 @@ Route::group(['prefix' => 'adminpanel'], function() {
             Route::get('/create','UserController@create');
         });
 
-        // Agenda
-        Route::group(['prefix' => 'agenda'], function() {
-            Route::get('/','AgendaController@index');
-            Route::get('/create','AgendaController@create');
-        });
+     // Agenda
+       // Route::group(['prefix' => 'agenda'], function() {
+           // Route::get('/','AgendaController@index');
+           // Route::get('/create','AgendaController@create');
+       // });
     });
+
+    Route::resource('sambutan','SambutanController');
+    
+    Route::resource('link','LinkController');
+    
+    Route::resource('header','HeaderController');
+    
+    Route::resource('aplikasi','AplikasiController');
 });
+
+
+
+

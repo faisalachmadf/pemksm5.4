@@ -17,10 +17,10 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="/adminpanel"><i class="fa fa-circle-o"></i> Sambutan Kepala</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Aplikasi Online</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Link terkait</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Header</a></li>
+            <li class="active"><a href="/adminpanel/sambutan"><i class="fa fa-circle-o"></i> Sambutan Kepala</a></li>
+            <li><a href="/adminpanel/aplikasi"><i class="fa fa-circle-o"></i> Aplikasi Online</a></li>
+            <li><a href="/adminpanel/link"><i class="fa fa-circle-o"></i> Link terkait</a></li>
+            <li><a href="/adminpanel/header"><i class="fa fa-circle-o"></i> Header</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -38,38 +38,44 @@
             <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i>Prestasi</a></li>
           </ul>
         </li>
+
+
+        <!-- Ini Masuk di User -->
         <li class="treeview">
           <a href="#">
             <i class="fa fa-user"></i>
             <span>Kelembagaan</span>
-            
           </a>
-          
         </li>
+
+
+         <!-- Ini Masuk di User -->
         <li class="header">MENU UNTUK PRODUK HUKUM </li>
         <li>
           <a href="pages/widgets.html">
             <i class="fa fa-th"></i> <span>Produk Hukum</span>
             <span class="pull-right-container">
-           
             </span>
           </a>
         </li>
+
+
+        <!-- Ini Masuk di User -->
         <li class="header">MENU UNTUK BERITA DAN ARTIKEL </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-newspaper-o"></i>
             <span>Berita</span>
-            
           </a>
-          
         </li>
+
+
+        <!-- Ini Masuk di User -->
         <li class="header">MENU UNTUK FILE DAN AGENDA</li>
        <li>
           <a href="pages/widgets.html">
             <i class="fa fa-file-code-o"></i> <span>FILE PUBLIKASI</span>
             <span class="pull-right-container">
-              
             </span>
           </a>
         </li>
@@ -81,6 +87,9 @@
             </span>
           </a>
         </li>
+
+
+        <!-- Ini Masuk di User -->
          <li class="header">MENU UNTUK LPPD</li>
         <li class="treeview">
           <a href="#">
@@ -93,9 +102,11 @@
           <ul class="treeview-menu">
             <li><a href="pages/UI/general.html"><i class="fa fa-file"></i> File LPPD</a></li>
             <li><a href="pages/UI/icons.html"><i class="fa fa-book"></i> Galeri LPPD</a></li>
-            
           </ul>
         </li>
+
+
+        <!-- Ini Masuk di User -->
         <li class="header">MENU UNTUK KERJASAMA</li>
         <li class="treeview">
           <a href="#">
@@ -111,6 +122,7 @@
             
           </ul>
         </li>
+
         <li class="treeview">
           <a href="#">
             <i class="fa fa-globe"></i> <span>Mitra Kerjasama</span>
@@ -137,21 +149,23 @@
             <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data Kerjasama Luar Negeri</a></li>
           </ul>
         </li>
+
+
+        <!-- Ini Masuk di User -->
          <li class="header">MENU UNTUK LAPORAN BIRO</li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-file-archive-o"></i> <span>Laporan Biro</span>
-            
           </a>
-          
         </li>
+
+
+        <!-- Ini Masuk di User -->
         <li class="header">KONSULTASI</li>
         <li>
           <a href="pages/calendar.html">
             <i class="fa fa-calendar"></i> <span>Buku Tamu</span>
             <span class="pull-right-container">
-              
-              
             </span>
           </a>
         </li>
@@ -165,6 +179,8 @@
           </a>
         </li>
         
+
+        <!-- Ini Masuk di User -->
         <li class="header">EMAIL</li>
         <li>
           <a href="pages/mailbox/mailbox.html">
@@ -175,6 +191,8 @@
           </a>
         </li>
         
+
+
         <li class="header">MASTER ADMIN</li>
         <li class="treeview">
           <a href="#">
@@ -184,26 +202,26 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> Kategori untuk Berita</a></li>
-            <li><a href="pages/examples/profile.html"><i class="fa fa-circle-o"></i> Kategori Untuk File</a></li>
-            <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Kategori Laporan</a></li>
+            <li><a href="#><i class="fa fa-circle-o"></i> Kategori untuk Berita</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Untuk File</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Laporan</a></li>
            
-            <li><a href="pages/examples/404.html"><i class="fa fa-circle-o"></i> Kategori Produk Hukum</a></li>
-            <li><a href="pages/examples/500.html"><i class="fa fa-circle-o"></i> Kategori Bagian</a></li>
-            <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Kategori Jabatan</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Produk Hukum</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Bagian</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Jabatan</a></li>
            
-            <li><a href="pages/examples/404.html"><i class="fa fa-circle-o"></i> Kategori User</a></li>
-            <li><a href="pages/examples/500.html"><i class="fa fa-circle-o"></i> Kategori OPD</a></li>
-            <li><a href="pages/examples/blank.html"><i class="fa fa-circle-o"></i> Kategori Kerjasama</a></li>
-            <li><a href="pages/examples/pace.html"><i class="fa fa-circle-o"></i> Kategori Kerjasama Dalam Negeri</a></li>
-             <li><a href="pages/examples/500.html"><i class="fa fa-circle-o"></i> Kategori Kerjasama Luar Negeri</a></li>
-            <li><a href="pages/examples/blank.html"><i class="fa fa-circle-o"></i> Kategori Jenis Kerjasama Dalam Negeri</a></li>
-            <li><a href="pages/examples/pace.html"><i class="fa fa-circle-o"></i> Kategori Jenis Kerjasama Luar Negeri</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Kategori User</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Kategori OPD</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Kerjasama</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Kerjasama Dalam Negeri</a></li>
+             <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Kerjasama Luar Negeri</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Jenis Kerjasama Dalam Negeri</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Jenis Kerjasama Luar Negeri</a></li>
           </ul>
         </li>
          
         
-        <li><a href="https://adminlte.io/docs"><i class="fa fa-user"></i> <span>LIST USER</span></a></li>
+        <li><a href="#"><i class="fa fa-user"></i> <span>LIST USER</span></a></li>
         
     </section>
     <!-- /.sidebar -->
