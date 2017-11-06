@@ -1442,8 +1442,8 @@ p.comments a {
     background: #282828;
 }
 p.text {
-    font-size: 0.9em;
-    color: #737171;
+    font-size: 1em;
+    color: #000000;
     line-height: 1.8em;
     margin: 0.6em 0;
 }

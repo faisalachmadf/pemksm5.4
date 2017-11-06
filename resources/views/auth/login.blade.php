@@ -8,7 +8,7 @@
                 <div class="panel-heading"><h2><center>Biro Pemerintahan dan Kerja Sama <br/>Provinsi Jawa Barat</center></h2></div>
 
                 <div class="panel-body">
-                  <center>  <img src="{{ asset('adminkelola/dist/img/jabar.png') }}"></center>
+                  <center> </center>
                 </div>
             </div>
         </div>
