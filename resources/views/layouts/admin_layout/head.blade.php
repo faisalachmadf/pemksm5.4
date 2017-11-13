@@ -35,5 +35,7 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-
+  <script src="{{ asset('/adminkelola/bower_components/jquery/dist/jquery.min.js') }}"></script>
+  <script src="{{ asset('/adminkelola/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+  <script src="{{ asset('/adminkelola/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
   @yield('customCss')

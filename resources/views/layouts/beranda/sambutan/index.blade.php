@@ -29,6 +29,13 @@ rounded pullright"> Tambah baru </a>
 
             <!-- /.box-header -->
             <div class="box-body">
+              
+            <div   class="alert alert-success alert-dismissible ">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                
+                {{ Session::get('message')}}
+              </div>
+
               <table id="example1" class="table table-bordered table-striped">
                 <br/>
                 <thead>
@@ -38,7 +45,7 @@ rounded pullright"> Tambah baru </a>
                   <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 177px;">Jabatan</th>
                   
                  
-                  <th>Isi</th>
+                  <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 220px;">Isi</th>
                   <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 177px;">Aksi</th>
                 </tr>
                 </thead>
@@ -52,8 +59,16 @@ rounded pullright"> Tambah baru </a>
                   <td> {{ $sambutan->jabatan }}</td>
                   <td> {{ $sambutan->isi }}</td>
                   <td> 
-                    <button type="button"  class="btn  btn-warning">Edit</button>
-                    <button type="button" class="btn  btn-danger">Delete</button></td>
+                   <a href="/adminpanel/sambutan/{{$sambutan->id}}"> <button  type="button"  class="btn- btn-info">Preview</button></a>
+                   <a href="/adminpanel/sambutan/{{$sambutan->id}}/edit"> <button  type="button"  class="btn  btn-warning">Edit</button></a>
+
+                   <form  action="/adminpanel/sambutan/{{$sambutan->id}}" method="post">
+                    <input type="hidden" name="_method" value="Delete">
+                     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                    <input type="submit" class="btn  btn-danger" value="Delete">
+                  </form>
+                     
+                  </td>
                 </tr>
                @endforeach
                 </tbody>

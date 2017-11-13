@@ -19,10 +19,10 @@
     <!-- Main content -->
     <section class="content">
  
-<form action="/adminpanel/sambutan" method="POST">
+<form action="/adminpanel/sambutan/{{$sambutans->id}}" method="POST">
   <div class="box box-warning">
             <div class="box-header with-border">
-              <h3 class="box-title">Masukan Sambutan</h3>
+              <h3 class="box-title">Edit Sambutan</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -30,32 +30,33 @@
                 <!-- text input -->
                 <div class="form-group">
                   <label>Nama</label>
-                  <input type="text" name="nama" class="form-control" placeholder="Masukan Nama Kepala OPD...">{{ ($errors->has('nama')) ? $errors->first('nama') : ''}}
+                  <input type="text" name="nama" value="{{$sambutans->nama}}" class="form-control" placeholder="Masukan Nama Kepala OPD...">{{ ($errors->has('nama')) ? $errors->first('nama') : ''}}
                 </div>
                                 
               
 
                 <div class="form-group">
                   <label>Jabatan</label>
-                  <input type="text" name="jabatan" class="form-control" placeholder="Masukan jabatan Kepala OPD ...">
+                  <input type="text" name="jabatan" class="form-control" value="{{$sambutans->jabatan}}" placeholder="Masukan jabatan Kepala OPD ...">
                   {{ ($errors->has('jabatan')) ? $errors->first('jabatan') : ''}}
                 </div>
 
                 <div class="form-group">
                   <label>gambar</label>
-                  <input type="text" name="gambar" class="form-control" placeholder="Masukan jabatan Kepala OPD ...">
+                  <input type="text" name="gambar" class="form-control" value="{{$sambutans->gambar}}" placeholder="Masukan jabatan Kepala OPD ...">
                   {{ ($errors->has('gambar')) ? $errors->first('gambar') : ''}}
                 </div>
                 
                 <!-- Isi -->
                 <div class="form-group">
                   <label>Isi Sambutan</label>
-                  <textarea class="form-control" name="isi" rows="3" placeholder="Masukan Isi Sambutant ...">
-                  </textarea>
+                  <input class="form-control" name="isi"   value="{{$sambutans->isi}}"placeholder="Masukan Isi Sambutan ...">
+                 
                   {{ ($errors->has('isi')) ? $errors->first('isi') :''}}
                 </div>
-
-              <input type="hidden">  {{ csrf_field() }} 
+ <input type="hidden" name="_method" value="put"> 
+             
+               <input type="hidden"> {{ csrf_field() }} 
                 </div>
 
             
@@ -63,7 +64,7 @@
             
             <!-- /.box-body -->
 
-<input type="submit" class="btn btn-primary" value="Posting">
+<input type="submit" class="btn btn-primary" value="Edit">
  <a href="{{ route('sambutan.index') }}" class="btn  btn-danger"> Cancel </a>
 </form>
 

@@ -1,4 +1,4 @@
-<script src="{{ asset('/adminkelola/bower_components/jquery/dist/jquery.min.js') }}"></script>
+
 <!-- jQuery UI 1.11.4 -->
 <script src="{{ asset('/adminkelola/bower_components/jquery-ui/jquery-ui.min.js') }}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -36,11 +36,16 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('/adminkelola/dist/js/demo.js') }}"></script>
 <!-- DataTables -->
-<script src="{{ asset('/adminkelola/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('/adminkelola/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
+
 <script>
   $(function () {
-    $('#example1').DataTable()
+    $('#example1').DataTable({
+      'processing'  :true,
+      'serverside'  :true,
+      'paging'      :true,
+       'paging'      : true,
+    })
+
     $('#example2').DataTable({
       'paging'      : true,
       'lengthChange': false,
@@ -49,6 +54,7 @@
       'info'        : true,
       'autoWidth'   : false
     })
+
     //Date picker
     $('#datepicker').datepicker({
       autoclose: true
@@ -56,6 +62,11 @@
 
   })
 </script>
+
+ 
+ <script type="text/javascript">
+                
+                  </script>
 
 
 <script>
