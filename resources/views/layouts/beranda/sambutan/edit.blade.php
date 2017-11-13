@@ -48,12 +48,14 @@
                 </div>
                 
                 <!-- Isi -->
-                <div class="form-group">
-                  <label>Isi Sambutan</label>
-                  <input class="form-control" name="isi"   value="{{$sambutans->isi}}"placeholder="Masukan Isi Sambutan ...">
-                 
-                  {{ ($errors->has('isi')) ? $errors->first('isi') :''}}
-                </div>
+                <div class="box-body pad">
+                    <label>Isi Sambutan</label>
+                    <textarea class="ckeditor" name="isi" rows="10" cols="80">
+                    {{$sambutans->isi}}
+                    </textarea>{{ ($errors->has('isi')) ? $errors->first('isi') :''}}
+             
+            </div>
+                
  <input type="hidden" name="_method" value="put"> 
              
                <input type="hidden"> {{ csrf_field() }} 
