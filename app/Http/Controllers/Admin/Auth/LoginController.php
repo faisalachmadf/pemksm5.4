@@ -32,11 +32,16 @@ class LoginController extends Controller
         $user = $this->user->findWithCredentials($credentials);
 
         if ($user && Sentinel::validateCredentials($user, $credentials)) {
-            Sentinel::login($user);
+            if ($request->has('remember')) {
+                Sentinel::loginAndRemember($user);
+            } else {
+                Sentinel::login($user);
+            }
+
             return redirect('adminpanel');
         }
 
-        return redirect()->route('login')->withErrors(['credential' => 'Username/Email salah.', 'password' => 'Password salah.']);
+        return redirect()->route('login')->withInput()->withErrors(['credential' => 'Username/E-Mail/Password salah.']);
     }
 
     /**

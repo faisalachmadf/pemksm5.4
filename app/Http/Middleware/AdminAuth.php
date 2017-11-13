@@ -21,6 +21,6 @@ class AdminAuth
             return $next($request);
         }
 
-        return redirect('adminpanel/auth/login');
+        return redirect()->route('login');
     }
 }

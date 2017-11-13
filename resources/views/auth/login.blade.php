@@ -21,34 +21,28 @@
               
 
                 <div class="panel-body">
+                    @if ($errors->has('credential'))
+                        <div class="alert alert-danger" role="alert">
+                            <strong>{{ $errors->first('credential') }}</strong>
+                        </div>
+                    @endif
+
                     <form class="form-horizontal" method="POST" action="{{ route('auth.login') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('credential') ? ' has-error' : '' }}">
-                            <label for="credential" class="col-md-4 control-label">Username/E-Mail Address</label>
+                        <div class="form-group">
+                            <label for="credential" class="col-md-4 control-label">Username/E-Mail</label>
 
                             <div class="col-md-6">
                                 <input id="credential" type="credential" class="form-control" name="credential" value="{{ old('credential') }}" required autofocus>
-
-                                @if ($errors->has('credential'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('credential') }}</strong>
-                                    </span>
-                                @endif
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                        <div class="form-group">
                             <label for="password" class="col-md-4 control-label">Password</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
                             </div>
                         </div>
 

@@ -26,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('layouts_user.admin_layoutuser.content');
+        return view('layouts.admin_layout.content');
     }
 
     /**
