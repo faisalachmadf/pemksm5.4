@@ -15,6 +15,7 @@ class SambutanController extends Controller
      */
     public function index()
     {
+
       $sambutans=sambutan::all();
         return view('layouts.beranda.sambutan.index',compact('sambutans'));
     }
@@ -26,7 +27,7 @@ class SambutanController extends Controller
      */
     public function create()
     {
-        //
+        return view('layouts.beranda.sambutan.create');
     }
 
     /**
@@ -35,9 +36,31 @@ class SambutanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+        'nama' => 'required',
+        'jabatan' => 'required',
+        'isi' => 'required',
+        'gambar' => 'required|image',
+    ]);
+    $sambutan = new sambutan;
+    $sambutan->nama= $request->nama;
+    $sambutan->jabatan= $request->jabatan;
+    $sambutan->isi= $request->isi;
+    $sambutan->gambar= $request->gambar;
+    $request->file('gambar')->getClientOriginalName();
+    $request->gambar->store('public/umum');
+    $sambutan->save();
+    // sambutan::create($request->all());
+  
+    return  redirect()->to('adminpanel/sambutan')->with('message', 'Berhasil ditambahkan!');
+
+
+   
+
     }
 
     /**
@@ -48,7 +71,8 @@ class SambutanController extends Controller
      */
     public function show($id)
     {
-        //
+        $sambutans=sambutan::find($id);
+        return view('layouts.beranda.sambutan.detil')->with('sambutans', $sambutans);
     }
 
     /**
@@ -59,7 +83,8 @@ class SambutanController extends Controller
      */
     public function edit($id)
     {
-        //
+          $sambutans=sambutan::find($id);
+        return view('layouts.beranda.sambutan.edit')->with('sambutans', $sambutans);
     }
 
     /**
@@ -70,8 +95,24 @@ class SambutanController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+   {
+        $this->validate($request, [
+        'nama' => 'required',
+        'jabatan' => 'required',
+        'isi' => 'required',
+        'gambar' => 'required',
+    ]);
+    $sambutan=sambutan::find($id);
+    $sambutan->nama= $request->nama;
+    $sambutan->jabatan= $request->jabatan;
+    $sambutan->isi= $request->isi;
+    $sambutan->gambar= $request->gambar;
+    $sambutan->save();
+    // sambutan::create($request->all());
+  
+    return redirect()->to('adminpanel/sambutan')->with('message', 'Berhasil dirubah!');
+
+
     }
 
     /**
@@ -82,6 +123,8 @@ class SambutanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $sambutan=sambutan::find($id);
+        $sambutan->delete();
+        return redirect()->to('adminpanel/sambutan')->with('message', 'Data Berhasil dihapus!');
     }
 }
