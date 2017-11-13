@@ -5,8 +5,20 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\Models\User;
+use Yajra\Datatables\Datatables;
+
 class UserController extends Controller
 {
+    protected $page;
+
+    public function __construct()
+    {
+        $this->page = [
+            'title' => 'List User'
+        ];
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,9 +26,26 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        $value = "Hai apa kabar? Katanya";
+        return view('layouts.user.index')->withPage($this->page);
+    }
 
-        return view('layouts.admin_layout.content', ['hello' => $value]); 
+    /**
+     * Process datatables ajax request.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function datatables()
+    {
+        $param = [
+            'url' => 'user',
+            'action' => ['show', 'edit', 'destroy']
+        ];
+
+        return Datatables::of(User::query())
+            ->addColumn('action', function($data) use ($param) {
+                return generateAction($param, $data->id);
+            })
+            ->make(true);
     }
 
     /**
@@ -48,7 +77,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        return 'Ini Show';
     }
 
     /**
@@ -82,6 +111,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return 'Ini Destroy';
     }
 }

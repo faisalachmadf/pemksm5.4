@@ -165,19 +165,9 @@ Route::group(['prefix' => 'adminpanel'], function() {
     });
 
     Route::group(['namespace' => 'Admin', 'middleware' => 'admin'], function() {
-        Route::get('/', 'DashboardController@index');
-
-        // User
-        Route::group(['prefix' => 'user'], function() {
-            Route::get('/','UserController@index');
-            Route::get('/create','UserController@create');
-        });
-
-     // Agenda
-       // Route::group(['prefix' => 'agenda'], function() {
-           // Route::get('/','AgendaController@index');
-           // Route::get('/create','AgendaController@create');
-       // });
+        Route::get('/', 'DashboardController@index')->name('admin.dashboard');
+        Route::get('user/datatables','UserController@datatables')->name('user.datatables');
+        Route::resource('user','UserController');
     });
 
     Route::resource('sambutan','SambutanController');
@@ -187,6 +177,7 @@ Route::group(['prefix' => 'adminpanel'], function() {
     Route::resource('header','HeaderController');
     
     Route::resource('aplikasi','AplikasiController');
+
 });
 
 

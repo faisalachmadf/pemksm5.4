@@ -202,7 +202,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#><i class="fa fa-circle-o"></i> Kategori untuk Berita</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Kategori untuk Berita</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Untuk File</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Laporan</a></li>
            
@@ -214,14 +214,14 @@
             <li><a href="#"><i class="fa fa-circle-o"></i> Kategori OPD</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Kerjasama</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Kerjasama Dalam Negeri</a></li>
-             <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Kerjasama Luar Negeri</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Kerjasama Luar Negeri</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Jenis Kerjasama Dalam Negeri</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Jenis Kerjasama Luar Negeri</a></li>
           </ul>
         </li>
          
         
-        <li><a href="#"><i class="fa fa-user"></i> <span>LIST USER</span></a></li>
+        <li><a href="{{ url('adminpanel/user') }}"><i class="fa fa-user"></i> <span>LIST USER</span></a></li>
         
     </section>
     <!-- /.sidebar -->

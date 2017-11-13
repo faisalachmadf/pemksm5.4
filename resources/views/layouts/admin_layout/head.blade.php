@@ -1,8 +1,10 @@
- <meta charset="utf-8">
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>@yield('title','ADMIN BIRO PEMERINTAHAN DAN KERJASAMA | Dashboard')</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Datatables -->
+  <link href="{{ asset('/adminkelola/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}" rel="stylesheet" type="text/css">
   <!-- Bootstrap 3.3.7 -->
   <link href="{{ asset('/adminkelola/bower_components/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
   <!-- Font Awesome -->
@@ -35,7 +37,6 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-  <script src="{{ asset('/adminkelola/bower_components/jquery/dist/jquery.min.js') }}"></script>
-  <script src="{{ asset('/adminkelola/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-  <script src="{{ asset('/adminkelola/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
+
+  <!-- Custom CSS -->
   @yield('customCss')
