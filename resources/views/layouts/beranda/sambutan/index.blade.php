@@ -56,7 +56,7 @@ rounded pullright"> Tambah baru </a>
                 <tr>
                 
 
-                   <td> {{ $sambutan->gambar }} </td>
+                   <td> <img src="{{ url('public/umum') }} / {{ $sambutan->gambar }}" class="img-responsive"> </td>
                   <td> {{ $sambutan->nama }} </td>
                   <td> {{ $sambutan->jabatan }}</td>
                   <td> {!!$sambutan->isi!!} </td>

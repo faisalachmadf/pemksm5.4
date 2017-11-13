@@ -19,7 +19,7 @@
     <!-- Main content -->
     <section class="content">
  
-<form action="/adminpanel/sambutan" method="POST">
+<form action="/adminpanel/sambutan" method="POST" enctype="multipart/form-data">
   <div class="box box-warning">
             <div class="box-header with-border">
               <h3 class="box-title">Masukan Sambutan</h3>
@@ -43,7 +43,7 @@
 
                 <div class="form-group">
                   <label>gambar</label>
-                  <input type="text" name="gambar" class="form-control" placeholder="Masukan jabatan Kepala OPD ...">
+                  <input type="file" name="gambar" class="form-control">
                   {{ ($errors->has('gambar')) ? $errors->first('gambar') : ''}}
                 </div>
                 
