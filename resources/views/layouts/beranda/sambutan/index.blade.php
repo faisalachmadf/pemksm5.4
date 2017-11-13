@@ -54,8 +54,8 @@ rounded pullright"> Tambah baru </a>
 
                 @foreach($sambutans as $sambutan)               
                 <tr>
-                  <td style="width:100px"><img src="{{ URL::to('image/umum/'.$sambutan->gambar) }}" alt="" style="width:100%"></td>
-                  
+                
+
                    <td> {{ $sambutan->gambar }} </td>
                   <td> {{ $sambutan->nama }} </td>
                   <td> {{ $sambutan->jabatan }}</td>
