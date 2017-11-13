@@ -20,6 +20,7 @@
             <div class="box-header">
               <h3 class="box-title">Sambutan</h3>
             </div>
+            
             <div>
 
             <a href="{{ route('sambutan.create') }}" class="btn btn-primary btn-sm
@@ -42,10 +43,10 @@ rounded pullright"> Tambah baru </a>
                 <tr role="row">
                   <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 177px;">gambar</th>
                  <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 177px;">nama</th>
-                  <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 177px;">Jabatan</th>
+                  <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 150px;">Jabatan</th>
                   
                  
-                  <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 220px;">Isi</th>
+                  <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 200px;">Isi</th>
                   <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 177px;">Aksi</th>
                 </tr>
                 </thead>
@@ -53,13 +54,22 @@ rounded pullright"> Tambah baru </a>
 
                 @foreach($sambutans as $sambutan)               
                 <tr>
+                  <td style="width:100px"><img src="{{ URL::to('image/umum/'.$sambutan->gambar) }}" alt="" style="width:100%"></td>
                   
                    <td> {{ $sambutan->gambar }} </td>
                   <td> {{ $sambutan->nama }} </td>
                   <td> {{ $sambutan->jabatan }}</td>
-                  <td> {{ $sambutan->isi }}</td>
+                  <td> {!!$sambutan->isi!!} </td>
                   <td> 
-                   <a href="/adminpanel/sambutan/{{$sambutan->id}}"> <button  type="button"  class="btn- btn-info">Preview</button></a>
+                   
+                    <!-- untuk preview -->
+          
+                  <a href="/adminpanel/sambutan/{{$sambutan->id}}"> <button type="button" class="btn btn-info">
+                 Preview
+              </button></a>
+              
+                  
+
                    <a href="/adminpanel/sambutan/{{$sambutan->id}}/edit"> <button  type="button"  class="btn  btn-warning">Edit</button></a>
 
                    <form  action="/adminpanel/sambutan/{{$sambutan->id}}" method="post">

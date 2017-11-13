@@ -48,12 +48,7 @@
                 </div>
                 
                 <!-- Isi -->
-                <div class="form-group">
-                  <label>Isi Sambutan</label>
-                  <textarea class="form-control" name="isi" rows="3" placeholder="Masukan Isi Sambutant ...">
-                  </textarea>
-                  {{ ($errors->has('isi')) ? $errors->first('isi') :''}}
-                </div>
+               
 
               <input type="hidden">  {{ csrf_field() }} 
                 </div>
@@ -61,6 +56,27 @@
             
             </div>
             
+            <div class="box">
+            <div class="box-header">
+               <label>Isi Sambutan</label>
+             
+            </div>
+            
+
+
+
+            <div class="box-body pad">
+             
+                    <textarea class="ckeditor" name="isi" rows="10" cols="80">
+                    
+                    </textarea>{{ ($errors->has('isi')) ? $errors->first('isi') :''}}
+             
+            </div>
+         
+            
+       
+            
+          </div>
             <!-- /.box-body -->
 
 <input type="submit" class="btn btn-primary" value="Posting">
