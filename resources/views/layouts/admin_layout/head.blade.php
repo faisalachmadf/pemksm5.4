@@ -38,5 +38,8 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
+  <!-- Global CSS -->
+  <link href="{{ asset('/css/global.css') }}" rel="stylesheet" type="text/css">
+
   <!-- Custom CSS -->
   @yield('customCss')

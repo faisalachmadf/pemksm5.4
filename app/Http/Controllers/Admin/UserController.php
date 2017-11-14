@@ -4,29 +4,25 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UserRequest;
 
 use App\Models\User;
 use Yajra\Datatables\Datatables;
 
 class UserController extends Controller
 {
-    protected $page;
-
-    public function __construct()
-    {
-        $this->page = [
-            'title' => 'List User'
-        ];
-    }
-
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        return view('layouts.user.index')->withPage($this->page);
+        $page = [
+            'title' => 'List User'
+        ];
+
+        return view('layouts.user.index')->withPage($page);
     }
 
     /**
@@ -43,7 +39,15 @@ class UserController extends Controller
 
         return Datatables::of(User::query())
             ->addColumn('action', function($data) use ($param) {
-                return generateAction($param, $data->id);
+                if ($data->role == 'superadmin') {
+                    unset($param['action'][array_search('edit', $param['action'])]);
+                    unset($param['action'][array_search('destroy', $param['action'])]);
+                }
+
+                return generateAction($param, $data->username);
+            })
+            ->editColumn('role', function($data) {
+                return ucwords($data->role);
             })
             ->make(true);
     }
@@ -55,7 +59,11 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('layouts.admin_layout.content');
+        $page = [
+            'title' => 'Tambah User'
+        ];
+
+        return view('layouts.user.create')->withPage($page);
     }
 
     /**
@@ -64,9 +72,12 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
-        // 
+        $user = new User;
+        $user->register($request->except('konfirmasi_password'));
+
+        return redirect()->route('user.index')->with('success', 'Data telah tersimpan');
     }
 
     /**
@@ -75,9 +86,15 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($username)
     {
-        return 'Ini Show';
+        $page = [
+            'title' => 'Detail User'
+        ];
+        $model = new User;
+        $user = $model->getUserByUsername($username);
+
+        return view('layouts.user.show', compact('user'))->withPage($page);
     }
 
     /**
@@ -86,9 +103,15 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($username)
     {
-        //
+        $page = [
+            'title' => 'Edit User'
+        ];
+        $model = new User;
+        $user = $model->getUserByUsername($username);
+
+        return view('layouts.user.edit', compact('user'))->withPage($page);
     }
 
     /**
@@ -98,9 +121,15 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserRequest $request, $username)
     {
-        //
+        $model = new User;
+        
+        if (! $model->updateUser($request->except('id', 'konfirmasi_password'), $request->input('id'))) {
+            return redirect()->back()->withInput()->withErrors(['password_lama' => 'Password salah']);
+        }
+
+        return redirect()->route('user.index')->with('success', 'Data telah diubah');
     }
 
     /**
@@ -109,8 +138,18 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($username)
     {
-        return 'Ini Destroy';
+        $model = new User;
+        $user = $model->getUserByUsername($username);
+
+        if ($user) {
+            $user->delete();
+            $message = 'Data telah dihapus';
+        } else {
+            $message = 'Data tidak ditemukan';
+        }
+
+        return redirect()->route('user.index')->with('success', $message);
     }
 }

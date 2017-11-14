@@ -22,7 +22,10 @@
 
                 <div class="panel-body">
                     @if ($errors->has('credential'))
-                        <div class="alert alert-danger" role="alert">
+                        <div class="alert alert-danger alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                             <strong>{{ $errors->first('credential') }}</strong>
                         </div>
                     @endif
@@ -34,7 +37,7 @@
                             <label for="credential" class="col-md-4 control-label">Username/E-Mail</label>
 
                             <div class="col-md-6">
-                                <input id="credential" type="credential" class="form-control" name="credential" value="{{ old('credential') }}" required autofocus>
+                                <input id="credential" type="text" class="form-control" name="credential" value="{{ old('credential') }}" required autofocus>
                             </div>
                         </div>
 
