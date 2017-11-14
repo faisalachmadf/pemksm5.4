@@ -14,7 +14,7 @@ class CreateLinksTable extends Migration
     public function up()
     {
         Schema::create('links', function (Blueprint $table) {
-            $table->increments('id_link');
+            $table->increments('id');
             $table->string('judul');
             $table->string('gambar');
             $table->timestamps();

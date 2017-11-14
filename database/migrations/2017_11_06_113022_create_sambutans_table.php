@@ -14,7 +14,7 @@ class CreateSambutansTable extends Migration
     public function up()
     {
         Schema::create('sambutans', function (Blueprint $table) {
-            $table->increments('id_sambutan');
+            $table->increments('id');
             $table->string('nama');
             $table->string('jabatan');
             $table->text('isi');

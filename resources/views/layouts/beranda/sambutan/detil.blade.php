@@ -26,11 +26,15 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
+
+
+
              <center>
                 <!-- text input -->
                 <div class="form-group">
                 	gambar :<br/>
-                  <label>{{ $sambutans->gambar }}</label>
+
+                  <label><img src="{{ asset('image/umum/'. $sambutans->gambar) }}" class="img-responsive"  width="600px"> </label>
                 </div>
                                 
               <hr/>

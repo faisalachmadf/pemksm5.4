@@ -2,6 +2,8 @@
 
 @section('title', 'Admin Dashboard')
 
+
+
 @section('content')
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -24,7 +26,7 @@
             <div>
 
             <a href="{{ route('sambutan.create') }}" class="btn btn-primary btn-sm
-rounded pullright"> Tambah baru </a>
+rounded pullright"> <i class="fa fa-plus-circle"></i><span>Tambah baru </span></a>
           </div>
 
 
@@ -41,6 +43,7 @@ rounded pullright"> Tambah baru </a>
                 <br/>
                 <thead>
                 <tr role="row">
+                  <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 10px;">No</th>
                   <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 177px;">gambar</th>
                  <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 177px;">nama</th>
                   <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 150px;">Jabatan</th>
@@ -51,15 +54,19 @@ rounded pullright"> Tambah baru </a>
                 </tr>
                 </thead>
                 <tbody>
-
-                @foreach($sambutans as $sambutan)               
+                <?php $no = 0;?>
+                @foreach($sambutans as $sambutan)
+                <?php $no++ ;?>               
                 <tr>
                 
-
-                   <td> <img src="{{ url('public/umum') }} / {{ $sambutan->gambar }}" class="img-responsive"> </td>
+                  <td>{{ $no }}
+                  </td>
+                   <td>  
+                  
+             <img src="{{ asset('image/umum/'. $sambutan->gambar) }}" class="img-responsive"  width="200px"> </td>
                   <td> {{ $sambutan->nama }} </td>
                   <td> {{ $sambutan->jabatan }}</td>
-                  <td> {!!$sambutan->isi!!} </td>
+                  <td> {!!substr($sambutan->isi,0,100)!!} ... </td>
                   <td> 
                    
                     <!-- untuk preview -->
@@ -82,9 +89,10 @@ rounded pullright"> Tambah baru </a>
                 </tr>
                @endforeach
                 </tbody>
-                
+               
               </table>
             </div>
+
             <!-- /.box-body -->
           </div>
   
@@ -99,3 +107,4 @@ rounded pullright"> Tambah baru </a>
   </div>
   
 @endsection
+

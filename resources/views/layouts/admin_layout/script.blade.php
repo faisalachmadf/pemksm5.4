@@ -53,7 +53,7 @@
       'processing'  :true,
       'serverside'  :true,
       'paging'      :true,
-       'paging'      : true,
+      
     })
 
     $('#example2').DataTable({

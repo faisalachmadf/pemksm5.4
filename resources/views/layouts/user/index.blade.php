@@ -2,8 +2,7 @@
 
 @section('title', $page['title'])
 
-@section('customCss')
-@endsection
+
 
 @section('content')
 

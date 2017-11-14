@@ -2,8 +2,8 @@
 
 @section('title', 'Admin Dashboard')
 
-@section('customCss')
-@endsection
+
+
 
 
 @section('content')
@@ -40,10 +40,14 @@
                   <input type="text" name="jabatan" class="form-control" placeholder="Masukan jabatan Kepala OPD ...">
                   {{ ($errors->has('jabatan')) ? $errors->first('jabatan') : ''}}
                 </div>
+                <label>gambar</label>
+                <br/>
 
+
+                
                 <div class="form-group">
-                  <label>gambar</label>
-                  <input type="file" name="gambar" class="form-control">
+                  
+                  <input type="file"  name="gambar" class="form-control">
                   {{ ($errors->has('gambar')) ? $errors->first('gambar') : ''}}
                 </div>
                 

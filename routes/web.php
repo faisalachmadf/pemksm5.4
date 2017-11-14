@@ -169,7 +169,7 @@ Route::group(['prefix' => 'adminpanel'], function() {
         Route::get('user/datatables','UserController@datatables')->name('user.datatables');
         Route::resource('user','UserController');
     });
-
+    
     Route::resource('sambutan','SambutanController');
     
     Route::resource('link','LinkController');
