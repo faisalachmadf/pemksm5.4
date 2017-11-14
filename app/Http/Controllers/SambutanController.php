@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\sambutan;
 
-
 class SambutanController extends Controller
 {
     /**
@@ -44,7 +43,7 @@ class SambutanController extends Controller
         'nama' => 'required',
         'jabatan' => 'required',
         'isi' => 'required',
-        'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5000',
+        'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
     ]);
     $sambutan = new sambutan;
     $sambutan->nama= $request->nama;
@@ -109,7 +108,12 @@ class SambutanController extends Controller
     $sambutan->nama= $request->nama;
     $sambutan->jabatan= $request->jabatan;
     $sambutan->isi= $request->isi;
-    $sambutan->gambar= $request->gambar;
+    
+    // upload gambar
+    $file= $request->file('gambar');
+    $fileName=$file->getClientOriginalName();
+    $request->file('gambar')->move('image/umum',$fileName);
+    $sambutan->gambar=$fileName;
     $sambutan->save();
     // sambutan::create($request->all());
   

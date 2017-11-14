@@ -2,16 +2,7 @@
 
 @section('title', 'Admin Dashboard')
 
-<script type="text/javascript">
-  (function($){
-    $(function(){
-      $.sideNav();
-    });
-  })(JQuery);
-</script>
 
-@section('js')
-@show
 
 @section('content')
   <div class="content-wrapper">
@@ -52,6 +43,7 @@ rounded pullright"> <i class="fa fa-plus-circle"></i><span>Tambah baru </span></
                 <br/>
                 <thead>
                 <tr role="row">
+                  <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 10px;">No</th>
                   <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 177px;">gambar</th>
                  <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 177px;">nama</th>
                   <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 150px;">Jabatan</th>
@@ -62,14 +54,16 @@ rounded pullright"> <i class="fa fa-plus-circle"></i><span>Tambah baru </span></
                 </tr>
                 </thead>
                 <tbody>
-
-                @foreach($sambutans as $sambutan)               
+                <?php $no = 0;?>
+                @foreach($sambutans as $sambutan)
+                <?php $no++ ;?>               
                 <tr>
                 
-
+                  <td>{{ $no }}
+                  </td>
                    <td>  
                   
-             <img src="/image/umum/{{$sambutan->gambar}})" class="img-responsive"> </td>
+             <img src="{{ asset('image/umum/'. $sambutan->gambar) }}" class="img-responsive"  width="200px"> </td>
                   <td> {{ $sambutan->nama }} </td>
                   <td> {{ $sambutan->jabatan }}</td>
                   <td> {!!substr($sambutan->isi,0,100)!!} ... </td>

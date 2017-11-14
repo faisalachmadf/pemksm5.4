@@ -14,7 +14,8 @@ class AplikasiController extends Controller
      */
     public function index()
     {
-         $aplikasis=aplikasi::all();
+
+      $aplikasis=aplikasi::all();
         return view('layouts.beranda.aplikasi.index',compact('aplikasis'));
     }
 
@@ -25,7 +26,7 @@ class AplikasiController extends Controller
      */
     public function create()
     {
-        //
+        return view('layouts.beranda.aplikasi.create');
     }
 
     /**
@@ -34,9 +35,30 @@ class AplikasiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+        'judul' => 'required',
+        'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5000',
+    ]);
+    $aplikasi = new aplikasi;
+    $aplikasi->judul= $request->judul;
+
+    // upload gambar
+    $file= $request->file('gambar');
+    $fileName=$file->getClientOriginalName();
+    $request->file('gambar')->move('image/beranda',$fileName);
+    $aplikasi->gambar=$fileName;
+    $aplikasi->save();
+    // sambutan::create($request->all());
+  
+    return  redirect()->to('adminpanel/aplikasi')->with('message', 'Berhasil ditambahkan!');
+
+
+   
+
     }
 
     /**
@@ -47,7 +69,8 @@ class AplikasiController extends Controller
      */
     public function show($id)
     {
-        //
+        $aplikasis=aplikasi::find($id);
+        return view('layouts.beranda.aplikasi.detil')->with('aplikasis', $aplikasis);
     }
 
     /**
@@ -58,7 +81,8 @@ class AplikasiController extends Controller
      */
     public function edit($id)
     {
-        //
+          $aplikasis=aplikasi::find($id);
+        return view('layouts.beranda.aplikasi.edit')->with('aplikasis', $aplikasis);
     }
 
     /**
@@ -69,8 +93,27 @@ class AplikasiController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+   {
+        $this->validate($request, [
+        'judul' => 'required',
+        'gambar' => 'required',
+    ]);
+    $aplikasi=aplikasi::find($id);
+    $aplikasi->nama= $request->nama;
+    $aplikasi->jabatan= $request->jabatan;
+    $aplikasi->isi= $request->isi;
+    
+    // upload gambar
+    $file= $request->file('gambar');
+    $fileName=$file->getClientOriginalName();
+    $request->file('gambar')->move('image/umum',$fileName);
+    $aplikasi->gambar=$fileName;
+    $aplikasi->save();
+    // sambutan::create($request->all());
+  
+    return redirect()->to('adminpanel/aplikasi')->with('message', 'Berhasil dirubah!');
+
+
     }
 
     /**
@@ -81,6 +124,9 @@ class AplikasiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $aplikasi=aplikasi::find($id);
+        $aplikasi->delete();
+        return redirect()->to('adminpanel/aplikasi')->with('message', 'Data Berhasil dihapus!');
     }
 }
+

@@ -19,7 +19,7 @@
     <!-- Main content -->
     <section class="content">
  
-<form action="/adminpanel/sambutan/{{$sambutans->id}}" method="POST">
+<form action="/adminpanel/sambutan/{{$sambutans->id}}" method="POST" enctype="multipart/form-data">
   <div class="box box-warning">
             <div class="box-header with-border">
               <h3 class="box-title">Edit Sambutan</h3>
@@ -27,6 +27,11 @@
             <!-- /.box-header -->
             <div class="box-body">
              
+             <table>
+<th></th>
+<th></th>
+</table>
+
                 <!-- text input -->
                 <div class="form-group">
                   <label>Nama</label>
@@ -42,8 +47,9 @@
                 </div>
 
                 <div class="form-group">
-                  <label>gambar</label>
-                  <input type="text" name="gambar" class="form-control" value="{{$sambutans->gambar}}" placeholder="Masukan jabatan Kepala OPD ...">
+                  <label>gambar</label><br/>
+                  <img src="{{ asset('image/umum/'. $sambutans->gambar) }}" class="img-responsive"  width="200px"> 
+                  <input type="file"  name="gambar" class="form-control">
                   {{ ($errors->has('gambar')) ? $errors->first('gambar') : ''}}
                 </div>
                 

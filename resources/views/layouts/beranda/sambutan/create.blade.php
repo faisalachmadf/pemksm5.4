@@ -2,29 +2,7 @@
 
 @section('title', 'Admin Dashboard')
 
-@section('js')
 
-<script type="text/javascript">
-
-      function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('#showgambar').attr('src', e.target.result);
-            }
-
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-
-    $("#inputgambar").change(function () {
-        readURL(this);
-    });
-
-</script>
-
-@stop
 
 
 
@@ -66,10 +44,10 @@
                 <br/>
 
 
-                <img src="http://placehold.it/100x100" id="showgambar" style="max-width:200px;max-height:200px;float:left;" />
+                
                 <div class="form-group">
                   
-                  <input type="file" id="inputgambar" name="gambar" class="form-control">
+                  <input type="file"  name="gambar" class="form-control">
                   {{ ($errors->has('gambar')) ? $errors->first('gambar') : ''}}
                 </div>
                 

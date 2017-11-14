@@ -2,8 +2,7 @@
 
 @section('title', 'Admin Dashboard')
 
-@section('customCss')
-@endsection
+
 
 
 @section('content')
@@ -19,38 +18,30 @@
     <!-- Main content -->
     <section class="content">
  
-<form action="/adminpanel/agenda" method="POST">
+<form action="/adminpanel/aplikasi" method="POST" enctype="multipart/form-data">
   <div class="box box-warning">
             <div class="box-header with-border">
-              <h3 class="box-title">Masukan Sambutan</h3>
+              <h3 class="box-title">Masukan Aplikasi Online</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
              
                 <!-- text input -->
-                <div class="form-group">
-                  <label>Nama</label>
-                  <input type="text" name="jam" class="form-control" placeholder="Masukan Nama Kepala OPD...">{{ ($errors->has('jam')) ? $errors->first('jam') : ''}}
-                </div>
-                                
-              
 
                 <div class="form-group">
-                  <label>Jabatan</label>
-                  <input type="text" name="judul" class="form-control" placeholder="Masukan jabatan Kepala OPD ...">
+                  <label>Nama Aplikasi</label>
+                  <input type="text" name="judul" class="form-control" placeholder="Masukan Nama Aplikasi ...">
                   {{ ($errors->has('judul')) ? $errors->first('judul') : ''}}
                 </div>
-                
-                <!-- Isi -->
+                   <input type="hidden">  {{ csrf_field() }} 
+                <!-- Gambar -->
                 <div class="form-group">
-                  <label>Isi Sambutan</label>
-                  <textarea class="form-control" name="isi" rows="3" placeholder="Masukan Isi Sambutant ...">
-                  </textarea>
-                  {{ ($errors->has('isi')) ? $errors->first('isi') :''}}
+                  <input type="file"  name="gambar" class="form-control">
+                  {{ ($errors->has('gambar')) ? $errors->first('gambar') : ''}}
                 </div>
 
-                
-                </div>
+               
+            </div>
 
             
             </div>
@@ -58,6 +49,7 @@
             <!-- /.box-body -->
 
 <input type="submit" class="btn btn-primary" value="Posting">
+ <a href="{{ route('sambutan.index') }}" class="btn  btn-danger"> Cancel </a>
 
 </form>
 
