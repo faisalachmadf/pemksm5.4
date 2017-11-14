@@ -30,6 +30,7 @@
                 <!-- text input -->
                 <div class="form-group">
                 	gambar :<br/>
+                	<img src="/image/umum/sumbar.png" class="img-responsive">
                   <label>{{ $sambutans->gambar }}</label>
                 </div>
                                 

@@ -2,6 +2,17 @@
 
 @section('title', 'Admin Dashboard')
 
+<script type="text/javascript">
+  (function($){
+    $(function(){
+      $.sideNav();
+    });
+  })(JQuery);
+</script>
+
+@section('js')
+@show
+
 @section('content')
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -24,7 +35,7 @@
             <div>
 
             <a href="{{ route('sambutan.create') }}" class="btn btn-primary btn-sm
-rounded pullright"> Tambah baru </a>
+rounded pullright"> <i class="fa fa-plus-circle"></i><span>Tambah baru </span></a>
           </div>
 
 
@@ -56,10 +67,12 @@ rounded pullright"> Tambah baru </a>
                 <tr>
                 
 
-                   <td> <img src="{{ url('public/umum') }} / {{ $sambutan->gambar }}" class="img-responsive"> </td>
+                   <td>  
+                  
+             <img src="/image/umum/{{$sambutan->gambar}})" class="img-responsive"> </td>
                   <td> {{ $sambutan->nama }} </td>
                   <td> {{ $sambutan->jabatan }}</td>
-                  <td> {!!$sambutan->isi!!} </td>
+                  <td> {!!substr($sambutan->isi,0,100)!!} ... </td>
                   <td> 
                    
                     <!-- untuk preview -->
@@ -82,9 +95,10 @@ rounded pullright"> Tambah baru </a>
                 </tr>
                @endforeach
                 </tbody>
-                
+               
               </table>
             </div>
+
             <!-- /.box-body -->
           </div>
   
@@ -99,3 +113,4 @@ rounded pullright"> Tambah baru </a>
   </div>
   
 @endsection
+

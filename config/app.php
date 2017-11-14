@@ -230,7 +230,7 @@ return [
         'Activation' => Cartalyst\Sentinel\Laravel\Facades\Activation::class,
         'Reminder'   => Cartalyst\Sentinel\Laravel\Facades\Reminder::class,
         'Sentinel'   => Cartalyst\Sentinel\Laravel\Facades\Sentinel::class,
-
+        'Datatables' => Yajra\Datatables\Facades\Datatables::class,
     ],
 
 ];
