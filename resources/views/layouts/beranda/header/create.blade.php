@@ -2,8 +2,7 @@
 
 @section('title', 'Admin Dashboard')
 
-@section('customCss')
-@endsection
+
 
 
 @section('content')
@@ -11,53 +10,48 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
  
-        <small>Control panel</small>
-  
+         <a href="{{ route('header.index') }}" class="btn btn-danger">
+            <i class="fa fa-arrow-left"></i>
+            <span>Kembali</span>
+          </a>
       
     </section>
-
+  
+      
     <!-- Main content -->
     <section class="content">
  
-<form action="/adminpanel/agenda" method="POST">
-  <div class="box box-warning">
-            <div class="box-header with-border">
-              <h3 class="box-title">Masukan Sambutan</h3>
-            </div>
+    <form action="/adminpanel/header" method="POST" enctype="multipart/form-data">
+        <div class="box box-warning">
+                  <div class="box-header with-border">
+                     <h3 class="box-title">Masukan header yang terkait</h3>
+                  </div>
             <!-- /.box-header -->
-            <div class="box-body">
-             
-                <!-- text input -->
-                <div class="form-group">
-                  <label>Nama</label>
-                  <input type="text" name="jam" class="form-control" placeholder="Masukan Nama Kepala OPD...">{{ ($errors->has('jam')) ? $errors->first('jam') : ''}}
-                </div>
-                                
-              
+                <div class="box-body">
+                 
+                    <!-- text input -->
 
-                <div class="form-group">
-                  <label>Jabatan</label>
-                  <input type="text" name="judul" class="form-control" placeholder="Masukan jabatan Kepala OPD ...">
-                  {{ ($errors->has('judul')) ? $errors->first('judul') : ''}}
-                </div>
-                
-                <!-- Isi -->
-                <div class="form-group">
-                  <label>Isi Sambutan</label>
-                  <textarea class="form-control" name="isi" rows="3" placeholder="Masukan Isi Sambutant ...">
-                  </textarea>
-                  {{ ($errors->has('isi')) ? $errors->first('isi') :''}}
-                </div>
+                    <div class="form-group">
+                      <label>Nama header terkait Biro</label>
+                      <input type="text" name="judul" class="form-control" placeholder="Masukan Nama header ...">
+                      {{ ($errors->has('judul')) ? $errors->first('judul') : ''}}
+                    </div>
+                      
+                       <input type="hidden">  {{ csrf_field() }} 
+                    <!-- Gambar -->
+                    <div class="form-group">
+                      <input type="file"  name="gambar" class="form-control">
+                      {{ ($errors->has('gambar')) ? $errors->first('gambar') : ''}}
+                    </div>
 
-                
-                </div>
-
-            
-            </div>
+                   
+                  </div>
+          </div>
             
             <!-- /.box-body -->
 
-<input type="submit" class="btn btn-primary" value="Posting">
+ <input type="submit" onclick="return confirm('Sudah Benar Pengisiannya?')" class="btn btn-primary" value="Posting">
+  <button type="reset" class="btn btn-default">Reset</button>
 
 </form>
 

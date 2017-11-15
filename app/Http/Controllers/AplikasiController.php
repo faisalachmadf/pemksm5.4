@@ -41,10 +41,12 @@ class AplikasiController extends Controller
     {
         $this->validate($request, [
         'judul' => 'required',
+        'link' => 'required',
         'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5000',
     ]);
     $aplikasi = new aplikasi;
     $aplikasi->judul= $request->judul;
+    $aplikasi->link= $request->link;
 
     // upload gambar
     $file= $request->file('gambar');
@@ -96,19 +98,28 @@ class AplikasiController extends Controller
    {
         $this->validate($request, [
         'judul' => 'required',
-        'gambar' => 'required',
+        'link' => 'required',
+        
     ]);
-    $aplikasi=aplikasi::find($id);
-    $aplikasi->nama= $request->nama;
-    $aplikasi->jabatan= $request->jabatan;
-    $aplikasi->isi= $request->isi;
+    $aplikasi=aplikasi::where('id',$id)->first();
+    $aplikasi->judul= $request['judul'];
+    $aplikasi->link= $request['link'];
     
     // upload gambar
-    $file= $request->file('gambar');
-    $fileName=$file->getClientOriginalName();
-    $request->file('gambar')->move('image/umum',$fileName);
-    $aplikasi->gambar=$fileName;
-    $aplikasi->save();
+      if($request->file('gambar') == "")
+        {
+            $aplikasi->gambar = $aplikasi->gambar;
+        } 
+        else
+        {
+            $file    = $request->file('gambar');
+            $fileName=$file->getClientOriginalName();
+            $request->file('gambar')->move('image/beranda/',$fileName);
+            $aplikasi->gambar=$fileName;
+        }
+    $aplikasi->update();
+
+    
     // sambutan::create($request->all());
   
     return redirect()->to('adminpanel/aplikasi')->with('message', 'Berhasil dirubah!');

@@ -22,7 +22,7 @@
 
       <div class="box">
         <div class="box-header">
-          <a href="{{ route('sambutan.index') }}" class="btn btn-danger">
+          <a href="{{ route('link.index') }}" class="btn btn-danger">
             <i class="fa fa-arrow-left"></i>
             <span>Kembali</span>
           </a>
@@ -34,30 +34,25 @@
               <label for="username" class="col-sm-4 control-label">Gambar :</label>
 
               <div class="col-sm-4">
-                <p class="form-control-static"><img src="{{ asset('image/umum/'. $sambutans->gambar) }}" class="img-responsive"  width="600px"></p>
+                <p class="form-control-static"><img src="{{ asset('image/beranda/'. $links->gambar) }}" class="img-responsive"  width="600px"></p>
               </div>
             </div>
+           
             <div class="form-group">
-              <label for="email" class="col-sm-4 control-label">Nama :</label>
+              <label for="first_name" class="col-sm-4 control-label">Nama Link:</label>
 
               <div class="col-sm-4">
-                <p class="form-control-static">{{ $sambutans->nama }}</p>
+                <p class="form-control-static">{{ $links->judul }}</p>
               </div>
             </div>
-            <div class="form-group">
-              <label for="first_name" class="col-sm-4 control-label">Jabatan :</label>
+             <div class="form-group">
+              <label for="first_name" class="col-sm-4 control-label">Link Aplikasi:</label>
 
               <div class="col-sm-4">
-                <p class="form-control-static">{{ $sambutans->jabatan }}</p>
+                <p class="form-control-static">{{ $links->link }}</p>
               </div>
             </div>
-            <div class="form-group">
-              <label for="last_name" class="col-sm-4 control-label">isi sambutan:</label>
-              
-              <div class="col-sm-4">
-                <p class="form-control-static">{!! $sambutans->isi !!}</p>
-              </div>
-            </div>
+          
            
           </div>
           <!-- /.box-body -->

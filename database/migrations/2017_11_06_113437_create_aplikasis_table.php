@@ -17,6 +17,7 @@ class CreateAplikasisTable extends Migration
             $table->increments('id');
             $table->string('judul');
             $table->string('gambar');
+            $table->string('link');
             $table->timestamps();
         });
     }
