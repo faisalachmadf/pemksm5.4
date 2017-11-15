@@ -9,26 +9,24 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
  
-        <small>Sambutan</small>
+      <h1>Sambutan</h1>
   
      
     </section>
 
     <!-- Main content -->
     <section class="content">
- 
-
-<div class="box">
+          <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Sambutan</h3>
+             
+               <a href="{{ route('sambutan.create') }}" class="btn btn-primary">
+            <i class="fa fa-plus-circle"></i>
+            <span>Tambah Sambutan</span>
+          </a>
             </div>
             
-            <div>
 
-            <a href="{{ route('sambutan.create') }}" class="btn btn-primary btn-sm
-rounded pullright"> <i class="fa fa-plus-circle"></i><span>Tambah baru </span></a>
-          </div>
-
+ 
 
             <!-- /.box-header -->
             <div class="box-body">
@@ -42,8 +40,8 @@ rounded pullright"> <i class="fa fa-plus-circle"></i><span>Tambah baru </span></
               <table id="example1" class="table table-bordered table-striped">
                 <br/>
                 <thead>
-                <tr role="row">
-                  <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 10px;">No</th>
+                <tr>
+                  <th  class="sorting_DESC" tabindex="0"  " colspan="1" aria-sort="descending" aria-label="Rendering engine: activate to sort column ascending" style="width: 10px;" >No</th>
                   <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 177px;">gambar</th>
                  <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 177px;">nama</th>
                   <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 150px;">Jabatan</th>
@@ -59,7 +57,7 @@ rounded pullright"> <i class="fa fa-plus-circle"></i><span>Tambah baru </span></
                 <?php $no++ ;?>               
                 <tr>
                 
-                  <td>{{ $no }}
+                  <td>{{ $no }} 
                   </td>
                    <td>  
                   
@@ -71,18 +69,19 @@ rounded pullright"> <i class="fa fa-plus-circle"></i><span>Tambah baru </span></
                    
                     <!-- untuk preview -->
           
-                  <a href="/adminpanel/sambutan/{{$sambutan->id}}"> <button type="button" class="btn btn-info">
-                 Preview
-              </button></a>
-              
-                  
-
-                   <a href="/adminpanel/sambutan/{{$sambutan->id}}/edit"> <button  type="button"  class="btn  btn-warning">Edit</button></a>
+                   <a href="/adminpanel/sambutan/{{$sambutan->id}}" class="btn btn-info">
+                          <i class="fa fa-book"></i>
+                        <span>Detil</span></a>
+                        
+                      
+                        <a href="/adminpanel/sambutan/{{$sambutan->id}}/edit" class="btn btn-warning">
+                            <i class="fa fa-edit"></i>
+                        <span>Edit</span></a>
 
                    <form  action="/adminpanel/sambutan/{{$sambutan->id}}" method="post">
                     <input type="hidden" name="_method" value="Delete">
                      <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                    <input type="submit" class="btn  btn-danger" value="Delete">
+                    <input type="submit" onclick="return confirm('Yakin akan di hapus?')" class="btn  btn-danger" value="Delete">
                   </form>
                      
                   </td>

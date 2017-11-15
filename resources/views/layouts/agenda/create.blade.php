@@ -9,10 +9,12 @@
 @section('content')
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
+     <section class="content-header">
  
-        <small>Control panel</small>
-  
+         <a href="{{ route('aplikasi.index') }}" class="btn btn-danger">
+            <i class="fa fa-arrow-left"></i>
+            <span>Kembali</span>
+          </a>
       
     </section>
 

@@ -76,6 +76,7 @@ class UserController extends Controller
     {
         $user = new User;
         $user->register($request->except('konfirmasi_password'));
+        
 
         return redirect()->route('user.index')->with('success', 'Data telah tersimpan');
     }

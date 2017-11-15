@@ -14,7 +14,8 @@ class HeaderController extends Controller
      */
     public function index()
     {
-         $headers=header::all();
+
+      $headers=header::all();
         return view('layouts.beranda.header.index',compact('headers'));
     }
 
@@ -25,7 +26,7 @@ class HeaderController extends Controller
      */
     public function create()
     {
-        //
+        return view('layouts.beranda.header.create');
     }
 
     /**
@@ -34,9 +35,31 @@ class HeaderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+        'judul' => 'required',
+        'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5000',
+    ]);
+    $header = new header;
+    $header->judul= $request->judul;
+    
+
+    // upload gambar
+    $file= $request->file('gambar');
+    $fileName=$file->getClientOriginalName();
+    $request->file('gambar')->move('image/beranda',$fileName);
+    $header->gambar=$fileName;
+    $header->save();
+    // sambutan::create($request->all());
+  
+    return  redirect()->to('adminpanel/header')->with('message', 'Berhasil ditambahkan!');
+
+
+   
+
     }
 
     /**
@@ -47,7 +70,8 @@ class HeaderController extends Controller
      */
     public function show($id)
     {
-        //
+        $headers=header::find($id);
+        return view('layouts.beranda.header.detil')->with('headers', $headers);
     }
 
     /**
@@ -58,7 +82,8 @@ class HeaderController extends Controller
      */
     public function edit($id)
     {
-        //
+          $headers=header::find($id);
+        return view('layouts.beranda.header.edit')->with('headers', $headers);
     }
 
     /**
@@ -69,8 +94,36 @@ class HeaderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+   {
+        $this->validate($request, [
+        'judul' => 'required',
+        
+        
+    ]);
+    $header=header::where('id',$id)->first();
+    $header->judul= $request['judul'];
+    
+    
+    // upload gambar
+      if($request->file('gambar') == "")
+        {
+            $header->gambar = $header->gambar;
+        } 
+        else
+        {
+            $file    = $request->file('gambar');
+            $fileName=$file->getClientOriginalName();
+            $request->file('gambar')->move('image/beranda/',$fileName);
+            $header->gambar=$fileName;
+        }
+    $header->update();
+
+    
+    // sambutan::create($request->all());
+  
+    return redirect()->to('adminpanel/header')->with('message', 'Berhasil dirubah!');
+
+
     }
 
     /**
@@ -81,6 +134,8 @@ class HeaderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $header=header::find($id);
+        $header->delete();
+        return redirect()->to('adminpanel/header')->with('message', 'Data Berhasil dihapus!');
     }
 }

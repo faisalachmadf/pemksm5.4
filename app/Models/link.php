@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class link extends Model
 {
-    protected $fillable =['judul', 'gambar'];
+    protected $fillable =['judul', 'gambar', 'link'];
 }

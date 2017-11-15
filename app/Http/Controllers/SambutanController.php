@@ -53,7 +53,7 @@ class SambutanController extends Controller
     // upload gambar
     $file= $request->file('gambar');
     $fileName=$file->getClientOriginalName();
-    $request->file('gambar')->move('image/umum',$fileName);
+    $request->file('gambar')->move('image/umum/',$fileName);
     $sambutan->gambar=$fileName;
     $sambutan->save();
     // sambutan::create($request->all());
@@ -102,19 +102,29 @@ class SambutanController extends Controller
         'nama' => 'required',
         'jabatan' => 'required',
         'isi' => 'required',
-        'gambar' => 'required',
+        
     ]);
-    $sambutan=sambutan::find($id);
-    $sambutan->nama= $request->nama;
-    $sambutan->jabatan= $request->jabatan;
-    $sambutan->isi= $request->isi;
+
+    $sambutan=sambutan::where('id',$id)->first();
+    $sambutan->nama= $request['nama'];
+    $sambutan->jabatan= $request['jabatan'];
+    $sambutan->isi= $request['isi'];
     
     // upload gambar
-    $file= $request->file('gambar');
-    $fileName=$file->getClientOriginalName();
-    $request->file('gambar')->move('image/umum',$fileName);
-    $sambutan->gambar=$fileName;
-    $sambutan->save();
+      if($request->file('gambar') == "")
+        {
+            $sambutan->gambar = $sambutan->gambar;
+        } 
+        else
+        {
+            $file    = $request->file('gambar');
+            $fileName=$file->getClientOriginalName();
+            $request->file('gambar')->move('image/umum/',$fileName);
+            $sambutan->gambar=$fileName;
+        }
+    $sambutan->update();
+
+
     // sambutan::create($request->all());
   
     return redirect()->to('adminpanel/sambutan')->with('message', 'Berhasil dirubah!');
@@ -132,6 +142,8 @@ class SambutanController extends Controller
     {
         $sambutan=sambutan::find($id);
         $sambutan->delete();
+        
+
         return redirect()->to('adminpanel/sambutan')->with('message', 'Data Berhasil dihapus!');
     }
 }

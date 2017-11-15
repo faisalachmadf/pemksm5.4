@@ -10,10 +10,10 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
- 
-        <small>Control panel</small>
-  
-      
+        <a href="{{ route('sambutan.index') }}" class="btn btn-danger">
+        <i class="fa fa-arrow-left"></i>
+        <span>Cancel</span>
+        </a>
     </section>
 
     <!-- Main content -->
@@ -22,35 +22,32 @@
 <form action="/adminpanel/sambutan/{{$sambutans->id}}" method="POST" enctype="multipart/form-data">
   <div class="box box-warning">
             <div class="box-header with-border">
-              <h3 class="box-title">Edit Sambutan</h3>
+              <h3 class="box-title">Ubah Sambutan</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-             
-             <table>
-<th></th>
-<th></th>
-</table>
-
+          
                 <!-- text input -->
                 <div class="form-group">
-                  <label>Nama</label>
-                  <input type="text" name="nama" value="{{$sambutans->nama}}" class="form-control" placeholder="Masukan Nama Kepala OPD...">{{ ($errors->has('nama')) ? $errors->first('nama') : ''}}
+                  <label>Nama<span class="required">*</span></label>
+                  <input type="text" name="nama" value="{{$sambutans->nama}}" class="form-control" placeholder="Masukan Nama Kepala OPD..."> <span class="required">{{ ($errors->has('nama')) ? $errors->first('nama') : ''}}</span>
                 </div>
                                 
               
 
                 <div class="form-group">
-                  <label>Jabatan</label>
+                  <label>Jabatan<span class="required">*</span></label>
                   <input type="text" name="jabatan" class="form-control" value="{{$sambutans->jabatan}}" placeholder="Masukan jabatan Kepala OPD ...">
-                  {{ ($errors->has('jabatan')) ? $errors->first('jabatan') : ''}}
+                  <span class="required">{{ ($errors->has('jabatan')) ? $errors->first('jabatan') : ''}}</span>
                 </div>
 
                 <div class="form-group">
-                  <label>gambar</label><br/>
-                  <img src="{{ asset('image/umum/'. $sambutans->gambar) }}" class="img-responsive"  width="200px"> 
-                  <input type="file"  name="gambar" class="form-control">
-                  {{ ($errors->has('gambar')) ? $errors->first('gambar') : ''}}
+                  <label>gambar awal </label>
+                  <img src="{{ asset('image/umum/'. $sambutans->gambar) }}" class="img-responsive"  width="200px">
+                  <label>gambar<span class="required">*</span></label><br/>
+                  <input type="file"  name="gambar" class="form-control"><span class="required">jika tidak ada perubahan gambar, abaikan saja</span>
+                
+                  <br/> <b><span class="required">{{ ($errors->has('gambar')) ? $errors->first('gambar') : ''}}</span></b>
                 </div>
                 
                 <!-- Isi -->
@@ -58,7 +55,7 @@
                     <label>Isi Sambutan</label>
                     <textarea class="ckeditor" name="isi" rows="10" cols="80">
                     {{$sambutans->isi}}
-                    </textarea>{{ ($errors->has('isi')) ? $errors->first('isi') :''}}
+                    </textarea><span class="required">{{ ($errors->has('isi')) ? $errors->first('isi') :''}}</span>
              
             </div>
                 
@@ -73,7 +70,6 @@
             <!-- /.box-body -->
 
 <input type="submit" class="btn btn-primary" value="Edit">
- <a href="{{ route('sambutan.index') }}" class="btn  btn-danger"> Cancel </a>
 </form>
 
 
