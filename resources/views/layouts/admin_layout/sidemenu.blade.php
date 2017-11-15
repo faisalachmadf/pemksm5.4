@@ -9,6 +9,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MENU UNTUK PROFIL </li>
+        @if($userLogin['role'] != 'user')
         <li class="treeview">
           <a href="#">
             <i class="fa fa-home"></i> <span>Beranda</span>
@@ -38,7 +39,7 @@
             <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i>Prestasi</a></li>
           </ul>
         </li>
-
+        @endif
 
         <!-- Ini Masuk di User -->
         <li class="treeview">
@@ -151,14 +152,14 @@
         </li>
 
 
-        <!-- Ini Masuk di User -->
-         <li class="header">MENU UNTUK LAPORAN BIRO</li>
+        @if($userLogin['role'] != 'user')
+        <li class="header">MENU UNTUK LAPORAN BIRO</li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-file-archive-o"></i> <span>Laporan Biro</span>
           </a>
         </li>
-
+        @endif
 
         <!-- Ini Masuk di User -->
         <li class="header">KONSULTASI</li>
@@ -192,7 +193,7 @@
         </li>
         
 
-
+        @if($userLogin['role'] != 'user')
         <li class="header">MASTER ADMIN</li>
         <li class="treeview">
           <a href="#">
@@ -219,9 +220,9 @@
             <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Jenis Kerjasama Luar Negeri</a></li>
           </ul>
         </li>
-         
         
         <li><a href="{{ url('adminpanel/user') }}"><i class="fa fa-user"></i> <span>LIST USER</span></a></li>
+        @endif
         
     </section>
     <!-- /.sidebar -->

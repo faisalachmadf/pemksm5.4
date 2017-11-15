@@ -13,7 +13,7 @@
       
       <h1>
         Dashboard
-        <small>Control panel</small>
+        <small>Admin panel</small>
       </h1>
      
       <ol class="breadcrumb">
@@ -26,22 +26,22 @@
     <section class="content">
       <!-- Small boxes (Stat box) -->
       <div class="col-md-11">
-         <h2>Selamat Datang </h2>
-          <!-- Widget: user widget style 1 -->
-          <div class="box box-widget widget-user">
-           
-            <!-- Add the bg color to the header using any of the bg-* classes -->
-		    <div class="widget-user-header bg-aqua-active"> <b><u>Profile</u></b>
-              <h3 class="widget-user-username">Alexander Pierce</h3>
-              <h5 class="widget-user-desc">Founder &amp; CEO</h5>
-            </div>
-            <div class="widget-user-image">
-              
-            </div>
-           
+        <h2>Selamat Datang {{ $userLogin['first_name'] }}</h2>
+        <!-- Widget: user widget style 1 -->
+        <div class="box box-widget widget-user">
+         
+          <!-- Add the bg color to the header using any of the bg-* classes -->
+	        <div class="widget-user-header bg-aqua-active"> <b><u>Profile</u></b>
+            <h3 class="widget-user-username">Alexander Pierce</h3>
+            <h5 class="widget-user-desc">Founder &amp; CEO</h5>
           </div>
-          <!-- /.widget-user -->
+          <div class="widget-user-image">
+            
+          </div>
+           
         </div>
+        <!-- /.widget-user -->
+      </div>
       <div class="row">
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
