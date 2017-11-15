@@ -165,9 +165,19 @@ Route::group(['prefix' => 'adminpanel'], function() {
     });
 
     Route::group(['namespace' => 'Admin', 'middleware' => 'admin'], function() {
+        // Admin Dashboard
         Route::get('/', 'DashboardController@index')->name('admin.dashboard');
+
+        // List User
         Route::get('user/datatables','UserController@datatables')->name('user.datatables');
         Route::resource('user','UserController');
+
+        // Profil
+        Route::group(['namespace' => 'Profil', 'prefix' => 'profil', 'middleware' => 'admin'], function() {
+            // Selayang Pandang
+            Route::get('selayang-pandang/datatables','SelayangController@datatables')->name('selayang-pandang.datatables');
+            Route::resource('selayang-pandang','SelayangController');
+        });
     });
     
     Route::resource('sambutan','SambutanController');
