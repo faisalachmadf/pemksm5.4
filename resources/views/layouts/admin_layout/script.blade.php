@@ -36,6 +36,8 @@
 <script src="{{ asset('/adminkelola/bower_components/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>
 <!-- FastClick -->
 <script src="{{ asset('/adminkelola/bower_components/fastclick/lib/fastclick.js') }}"></script>
+<!-- iCheck 1.0.1 -->
+<script src="{{ asset('/adminkelola/plugins/iCheck/icheck.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('/adminkelola/dist/js/adminlte.min.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->

@@ -15,6 +15,7 @@
   
       <ol class="breadcrumb">
         <li><a href="{{ route('admin.dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><i class="fa fa-user"></i> Profil</li>
         <li class="active">{{ $page['title'] }}</li>
       </ol>
     </section>
@@ -24,7 +25,7 @@
  
       <div class="box">
         <div class="box-header">
-          <a href="{{ route('user.create') }}" class="btn btn-primary">
+          <a href="{{ route('selayang-pandang.create') }}" class="btn btn-primary">
             <i class="fa fa-plus-circle"></i>
             <span>Tambah {{ $page['title'] }}</span>
           </a>
@@ -43,15 +44,13 @@
               <strong>{{ session()->get('success') }}</strong>
             </div>
           @endif
-          <table id="users-table" class="table table-bordered table-striped" width="100%">
+          <table id="selayangs-table" class="table table-bordered table-striped" width="100%">
             <thead>
               <tr>
                 <th>No</th>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Nama Depan</th>
-                <th>Nama Belakang</th>
-                <th>Role</th>
+                <th>Judul</th>
+                <th>Isi</th>
+                <th>Aktif</th>
                 <th>Aksi</th>
               </tr>
             </thead>
@@ -71,15 +70,13 @@
     $(function() {
       var columns = [
         { data: 'DT_Row_Index', name: 'DT_Row_Index', orderable: false, searchable: false, width: '5%' },
-        { data: 'username', name: 'username' },
-        { data: 'email', name: 'email' },
-        { data: 'first_name', name: 'first_name' },
-        { data: 'last_name', name: 'last_name' },
-        { data: 'role', name: 'role' },
+        { data: 'judul', name: 'judul' },
+        { data: 'isi', name: 'isi' },
+        { data: 'aktif', name: 'aktif' },
         { data: 'action', name: 'action', orderable: false, searchable: false }
       ];
 
-      createDatatables('#users-table', '{!! route('user.datatables') !!}', columns);
+      createDatatables('#selayangs-table', '{!! route('selayang-pandang.datatables') !!}', columns);
     });
   </script>
 @endsection

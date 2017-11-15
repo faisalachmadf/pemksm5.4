@@ -1,13 +1,12 @@
 var table = '';
 
-function dataTablesIndex() {
-    table.on('order.dt search.dt', function() {
-        var pageIndex = table.page() * table.page.len();
-        table.column(0, {search:'applied', order:'applied'}).nodes().each(function (cell, i) {
-            cell.innerHTML = pageIndex + i + 1;
-        });
-    }).draw();
-}
+$(function() {
+    //Flat red color scheme for iCheck
+    $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+      checkboxClass: 'icheckbox_flat-green',
+      radioClass   : 'iradio_flat-green'
+    });
+});
 
 function dataTablesResponsive() {
     $('.dataTables_filter').addClass('pull-right');
@@ -22,18 +21,12 @@ function createDatatables(selector, url, columns) {
         order: [1, 'asc'],
         columns: columns,
         initComplete: function() {
-            dataTablesIndex();
             dataTablesResponsive();
-            laravel.initialize();
         }
     });
 
-    $('.dataTables_length select').on('change', function() {
-        dataTablesIndex();
-    });
-
-    $('.dataTables_filter input').on('keyup',function(){
-        dataTablesIndex();
+    table.on('draw', function() {
+        laravel.initialize();
     });
 }
 

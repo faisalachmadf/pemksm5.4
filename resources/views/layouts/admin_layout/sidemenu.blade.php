@@ -32,7 +32,7 @@
              
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Selayang Pandang</a></li>
+            <li><a href="{{ route('selayang-pandang.index') }}"><i class="fa fa-circle-o"></i> Selayang Pandang</a></li>
             <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Tugas, Pokok dan Fungsi</a></li>
             <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Visi dan Misi</a></li>
             <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i>Struktur Organisasi</a></li>
@@ -221,7 +221,7 @@
           </ul>
         </li>
         
-        <li><a href="{{ url('adminpanel/user') }}"><i class="fa fa-user"></i> <span>LIST USER</span></a></li>
+        <li><a href="{{ route('user.index') }}"><i class="fa fa-user"></i> <span>LIST USER</span></a></li>
         @endif
         
     </section>

@@ -32,8 +32,8 @@
         </div>
         <!-- /.box-header -->
         <form class="form-horizontal" method="POST" action="{{ route('user.update', $user->username) }}">
-          {{ method_field('PUT') }}
           {{ csrf_field() }}
+          {{ method_field('PUT') }}
           <input type="hidden" name="id" value="{{ $user->id }}">
           <div class="box-body">
             <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
