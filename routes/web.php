@@ -179,15 +179,22 @@ Route::group(['prefix' => 'adminpanel'], function() {
             Route::resource('selayang-pandang','SelayangController');
         });
     });
-    
-    Route::resource('sambutan','SambutanController');
-    
-    Route::resource('link','LinkController');
-    
-    Route::resource('header','HeaderController');
-    
-    Route::resource('aplikasi','AplikasiController');
 
+    Route::group(['sambutan' => 'Admin', 'middleware' => 'admin'], function() {
+        Route::resource('sambutan','SambutanController');
+    });
+
+    Route::group(['link' => 'Admin', 'middleware' => 'admin'], function() {
+    Route::resource('link','LinkController');
+    });
+
+    Route::group(['header' => 'Admin', 'middleware' => 'admin'], function() {
+    Route::resource('header','HeaderController');
+    });
+
+    Route::group(['aplikasi' => 'Admin', 'middleware' => 'admin'], function() {
+    Route::resource('aplikasi','AplikasiController');
+    });
 });
 
 
