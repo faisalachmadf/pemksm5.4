@@ -180,20 +180,20 @@ Route::group(['prefix' => 'adminpanel'], function() {
         });
     });
 
-    Route::group(['sambutan' => 'Admin', 'middleware' => 'admin'], function() {
+    Route::group(['middleware' => 'admin'], function() {
         Route::resource('sambutan','SambutanController');
     });
 
-    Route::group(['link' => 'Admin', 'middleware' => 'admin'], function() {
-    Route::resource('link','LinkController');
+    Route::group(['middleware' => 'admin'], function() {
+        Route::resource('link','LinkController');
     });
 
-    Route::group(['header' => 'Admin', 'middleware' => 'admin'], function() {
-    Route::resource('header','HeaderController');
+    Route::group(['middleware' => 'admin'], function() {
+        Route::resource('header','HeaderController');
     });
 
-    Route::group(['aplikasi' => 'Admin', 'middleware' => 'admin'], function() {
-    Route::resource('aplikasi','AplikasiController');
+    Route::group(['middleware' => 'admin'], function() {
+        Route::resource('aplikasi','AplikasiController');
     });
 });
 
