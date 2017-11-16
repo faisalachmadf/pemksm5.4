@@ -25,7 +25,7 @@
  
       <div class="box">
         <div class="box-header">
-          <a href="{{ route('selayang-pandang.create') }}" class="btn btn-primary">
+          <a href="{{ route('tugas-pokok-fungsi.create') }}" class="btn btn-primary">
             <i class="fa fa-plus-circle"></i>
             <span>Tambah {{ $page['title'] }}</span>
           </a>
@@ -44,7 +44,7 @@
               <strong>{{ session()->get('success') }}</strong>
             </div>
           @endif
-          <table id="selayangs-table" class="table table-bordered table-striped" width="100%">
+          <table id="tupoksis-table" class="table table-bordered table-striped" width="100%">
             <thead>
               <tr>
                 <th>No</th>
@@ -76,7 +76,7 @@
         { data: 'action', name: 'action', orderable: false, searchable: false }
       ];
 
-      createDatatables('#selayangs-table', '{!! route('selayang-pandang.datatables') !!}', columns);
+      createDatatables('#tupoksis-table', '{!! route('tugas-pokok-fungsi.datatables') !!}', columns);
     });
   </script>
 @endsection

@@ -177,6 +177,10 @@ Route::group(['prefix' => 'adminpanel'], function() {
             // Selayang Pandang
             Route::get('selayang-pandang/datatables','SelayangController@datatables')->name('selayang-pandang.datatables');
             Route::resource('selayang-pandang','SelayangController');
+            
+            // Tugas, Pokok & Fungsi
+            Route::get('tugas-pokok-fungsi/datatables','TupoksiController@datatables')->name('tugas-pokok-fungsi.datatables');
+            Route::resource('tugas-pokok-fungsi','TupoksiController');
         });
     });
 

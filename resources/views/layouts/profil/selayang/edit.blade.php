@@ -17,7 +17,7 @@
         <li><a href="{{ route('admin.dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><i class="fa fa-user"></i> Profil</li>
         <li><a href="{{ route('selayang-pandang.index') }}">Selayang Pandang</a></li>
-        <li class="active">{{ $page['title'] }}</li>
+        <li class="active">{{ $page['breadcrumb'] }}</li>
       </ol>
     </section>
 

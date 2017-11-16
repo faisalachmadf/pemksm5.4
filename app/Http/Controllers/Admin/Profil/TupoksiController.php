@@ -4,12 +4,12 @@ namespace App\Http\Controllers\Admin\Profil;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Profil\SelayangRequest;
+use App\Http\Requests\Profil\TupoksiRequest;
 
-use App\Models\Profil\Selayang;
+use App\Models\Profil\Tupoksi;
 use Yajra\Datatables\Datatables;
 
-class SelayangController extends Controller
+class TupoksiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,11 +19,11 @@ class SelayangController extends Controller
     public function index()
     {
         $page = [
-            'title' => 'Selayang Pandang',
-            'breadcrumb' => 'Selayang Pandang'
+            'title' => 'Tugas, Pokok dan Fungsi',
+            'breadcrumb' => 'Tupoksi'
         ];
 
-        return view('layouts.profil.selayang.index')->withPage($page);
+        return view('layouts.profil.tupoksi.index')->withPage($page);
     }
 
     /**
@@ -34,11 +34,11 @@ class SelayangController extends Controller
     public function datatables()
     {
         $param = [
-            'url' => 'selayang-pandang',
+            'url' => 'tugas-pokok-fungsi',
             'action' => ['show', 'edit', 'destroy']
         ];
 
-        return Datatables::of(Selayang::query())
+        return Datatables::of(Tupoksi::query())
             ->addColumn('action', function($data) use ($param) {
                 if ($data->aktif) {
                     unset($param['action'][array_search('destroy', $param['action'])]);
@@ -65,11 +65,11 @@ class SelayangController extends Controller
     public function create()
     {
         $page = [
-            'title' => 'Tambah Selayang Pandang',
+            'title' => 'Tambah Tugas, Pokok dan Fungsi',
             'breadcrumb' => 'Tambah'
         ];
 
-        return view('layouts.profil.selayang.create')->withPage($page);
+        return view('layouts.profil.tupoksi.create')->withPage($page);
     }
 
     /**
@@ -78,21 +78,21 @@ class SelayangController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(SelayangRequest $request)
+    public function store(TupoksiRequest $request)
     {
-        $selayang = new Selayang;
-        $selayang->judul = $request->input('judul');
-        $selayang->isi = $request->input('isi');
-        $selayang->slug = str_slug($selayang->judul);
+        $tupoksi = new Tupoksi;
+        $tupoksi->judul = $request->input('judul');
+        $tupoksi->isi = $request->input('isi');
+        $tupoksi->slug = str_slug($tupoksi->judul);
 
         if ($request->has('aktif')) {
-            Selayang::setNotActive();
-            $selayang->aktif = true;
+            Tupoksi::setNotActive();
+            $tupoksi->aktif = true;
         }
 
-        $selayang->save();
+        $tupoksi->save();
 
-        return redirect()->route('selayang-pandang.index')->with('success', 'Data telah tersimpan');
+        return redirect()->route('tugas-pokok-fungsi.index')->with('success', 'Data telah tersimpan');
     }
 
     /**
@@ -104,13 +104,13 @@ class SelayangController extends Controller
     public function show($slug)
     {
         $page = [
-            'title' => 'Detail Selayang Pandang',
+            'title' => 'Detail Tugas, Pokok & Fungsi',
             'breadcrumb' => 'Detail'
         ];
-        $model = new Selayang;
-        $selayang = $model->getDataBySlug($slug);
+        $model = new Tupoksi;
+        $tupoksi = $model->getDataBySlug($slug);
 
-        return view('layouts.profil.selayang.show', compact('selayang'))->withPage($page);
+        return view('layouts.profil.tupoksi.show', compact('tupoksi'))->withPage($page);
     }
 
     /**
@@ -122,13 +122,13 @@ class SelayangController extends Controller
     public function edit($slug)
     {
         $page = [
-            'title' => 'Edit Selayang Pandang',
+            'title' => 'Edit Tugas, Pokok & Fungsi',
             'breadcrumb' => 'Edit'
         ];
-        $model = new Selayang;
-        $selayang = $model->getDataBySlug($slug);
+        $model = new Tupoksi;
+        $tupoksi = $model->getDataBySlug($slug);
 
-        return view('layouts.profil.selayang.edit', compact('selayang'))->withPage($page);
+        return view('layouts.profil.tupoksi.edit', compact('tupoksi'))->withPage($page);
     }
 
     /**
@@ -138,20 +138,20 @@ class SelayangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(SelayangRequest $request, $slug)
+    public function update(TupoksiRequest $request, $slug)
     {
-        $model = new Selayang;
+        $model = new Tupoksi;
         $data = $request->except('id');
-        $selayang = $model->getDataBySlug($slug);
+        $tupoksi = $model->getDataBySlug($slug);
 
         if ($request->has('aktif')) {
-            Selayang::setNotActive($selayang->id);
+            Tupoksi::setNotActive($tupoksi->id);
             $data['aktif'] = true;
         }
 
-        $selayang->update($data);
+        $tupoksi->update($data);
 
-        return redirect()->route('selayang-pandang.index')->with('success', 'Data telah diubah');
+        return redirect()->route('tugas-pokok-fungsi.index')->with('success', 'Data telah diubah');
     }
 
     /**
@@ -162,16 +162,16 @@ class SelayangController extends Controller
      */
     public function destroy($slug)
     {
-        $model = new Selayang;
-        $selayang = $model->getDataBySlug($slug);
+        $model = new Tupoksi;
+        $tupoksi = $model->getDataBySlug($slug);
 
-        if ($selayang) {
-            $selayang->delete();
+        if ($tupoksi) {
+            $tupoksi->delete();
             $message = 'Data telah dihapus';
         } else {
             $message = 'Data tidak ditemukan';
         }
 
-        return redirect()->route('selayang-pandang.index')->with('success', $message);
+        return redirect()->route('tugas-pokok-fungsi.index')->with('success', $message);
     }
 }

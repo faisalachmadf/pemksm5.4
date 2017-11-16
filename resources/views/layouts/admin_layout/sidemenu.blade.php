@@ -18,13 +18,13 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="/adminpanel/sambutan"><i class="fa fa-circle-o"></i> Sambutan Kepala</a></li>
+            <li><a href="/adminpanel/sambutan"><i class="fa fa-circle-o"></i> Sambutan Kepala</a></li>
             <li><a href="/adminpanel/aplikasi"><i class="fa fa-circle-o"></i> Aplikasi Online</a></li>
             <li><a href="/adminpanel/link"><i class="fa fa-circle-o"></i> Link terkait</a></li>
             <li><a href="/adminpanel/header"><i class="fa fa-circle-o"></i> Header</a></li>
           </ul>
         </li>
-        <li class="treeview">
+        <li class="treeview {{ request()->segment(2) == 'profil' ? 'active' : '' }}">
           <a href="#">
             <i class="fa fa-user"></i>
             <span>Profil</span>
@@ -32,10 +32,10 @@
              
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('selayang-pandang.index') }}"><i class="fa fa-circle-o"></i> Selayang Pandang</a></li>
-            <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Tugas, Pokok dan Fungsi</a></li>
-            <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Visi dan Misi</a></li>
-            <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i>Struktur Organisasi</a></li>
+            <li class="{{ request()->segment(3) == 'selayang-pandang' ? 'active' : '' }}"><a href="{{ route('selayang-pandang.index') }}"><i class="fa fa-circle-o"></i> Selayang Pandang</a></li>
+            <li class="{{ request()->segment(3) == 'tugas-pokok-fungsi' ? 'active' : '' }}"><a href="{{ route('tugas-pokok-fungsi.index') }}"><i class="fa fa-circle-o"></i> Tugas, Pokok dan Fungsi</a></li>
+            <li class="{{ request()->segment(3) == 'visi-misi' ? 'active' : '' }}"><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Visi dan Misi</a></li>
+            <li class="{{ request()->segment(3) == 'struktur-organisasi' ? 'active' : '' }}"><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i>Struktur Organisasi</a></li>
             <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i>Prestasi</a></li>
           </ul>
         </li>
