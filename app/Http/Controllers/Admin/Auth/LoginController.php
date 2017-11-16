@@ -41,7 +41,7 @@ class LoginController extends Controller
             return redirect('adminpanel');
         }
 
-        return redirect()->route('login')->withInput()->withErrors(['credential' => 'Username/E-Mail/Password salah.']);
+        return redirect()->route('login')->withInput()->withErrors(['credential' => 'Username/E-Mail/Password salah']);
     }
 
     /**

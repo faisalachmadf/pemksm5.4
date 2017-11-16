@@ -5,8 +5,8 @@
 @section('customCss')
 @endsection
 
-
 @section('content')
+
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -256,4 +256,7 @@
     <!-- /.content -->
   </div>
   
+@endsection
+
+@section('customJs')
 @endsection

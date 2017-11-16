@@ -62,9 +62,9 @@
               <label class="col-sm-4 control-label">Aktif :</label>
 
               <div class="col-sm-4">
-                <div class="checkbox">
-                  <label class="no-padding">
-                    <input type="checkbox" class="flat-red" id="aktif" name="aktif" {{ old('aktif') ? 'checked' : '' }}> <small>(Jika diceklis maka data yang lain akan otomatis tidak aktif)</small>
+                <div class="checkbox icheck">
+                  <label>
+                    <input type="checkbox" name="aktif" {{ old('aktif') ? 'checked' : '' }}> <small>(Jika diceklis maka data yang lain akan otomatis tidak aktif)</small>
                   </label>
                 </div>
 

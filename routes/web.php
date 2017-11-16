@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
 
 /* Profile */
 
@@ -144,7 +144,7 @@ Route::get('/TKKSD', function () {
 
 Route::group(['prefix' => 'adminpanel'], function() {
     Route::get('/login', function() {
-        return view('auth.login');
+        return view('layouts.login');
     })->name('login');
 
     Route::get('/register', function() {
@@ -181,6 +181,10 @@ Route::group(['prefix' => 'adminpanel'], function() {
             // Tugas, Pokok & Fungsi
             Route::get('tugas-pokok-fungsi/datatables','TupoksiController@datatables')->name('tugas-pokok-fungsi.datatables');
             Route::resource('tugas-pokok-fungsi','TupoksiController');
+
+            // Visi & Misi
+            Route::get('visi-misi/datatables','VisiMisiController@datatables')->name('visi-misi.datatables');
+            Route::resource('visi-misi','VisiMisiController');
         });
     });
 

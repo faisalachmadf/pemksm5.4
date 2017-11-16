@@ -4,12 +4,12 @@ namespace App\Http\Controllers\Admin\Profil;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Profil\TupoksiRequest;
+use App\Http\Requests\Profil\VisiMisiRequest;
 
-use App\Models\Profil\Tupoksi;
+use App\Models\Profil\VisiMisi;
 use Yajra\Datatables\Datatables;
 
-class TupoksiController extends Controller
+class VisiMisiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,11 +19,11 @@ class TupoksiController extends Controller
     public function index()
     {
         $page = [
-            'title' => 'Tugas, Pokok dan Fungsi',
-            'breadcrumb' => 'Tupoksi'
+            'title' => 'Visi dan Misi',
+            'breadcrumb' => 'Visi & Misi'
         ];
 
-        return view('layouts.profil.tupoksi.index')->withPage($page);
+        return view('layouts.profil.visi-misi.index')->withPage($page);
     }
 
     /**
@@ -34,11 +34,11 @@ class TupoksiController extends Controller
     public function datatables()
     {
         $param = [
-            'url' => 'tugas-pokok-fungsi',
+            'url' => 'visi-misi',
             'action' => ['show', 'edit', 'destroy']
         ];
 
-        return Datatables::of(Tupoksi::query())
+        return Datatables::of(VisiMisi::query())
             ->addColumn('action', function($data) use ($param) {
                 if ($data->aktif) {
                     unset($param['action'][array_search('destroy', $param['action'])]);
@@ -65,11 +65,11 @@ class TupoksiController extends Controller
     public function create()
     {
         $page = [
-            'title' => 'Tambah Tugas, Pokok dan Fungsi',
+            'title' => 'Tambah Visi dan Misi',
             'breadcrumb' => 'Tambah'
         ];
 
-        return view('layouts.profil.tupoksi.create')->withPage($page);
+        return view('layouts.profil.visi-misi.create')->withPage($page);
     }
 
     /**
@@ -78,21 +78,21 @@ class TupoksiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(TupoksiRequest $request)
+    public function store(VisiMisiRequest $request)
     {
-        $tupoksi = new Tupoksi;
-        $tupoksi->judul = $request->input('judul');
-        $tupoksi->isi = $request->input('isi');
-        $tupoksi->slug = str_slug($tupoksi->judul);
+        $visimisi = new VisiMisi;
+        $visimisi->judul = $request->input('judul');
+        $visimisi->isi = $request->input('isi');
+        $visimisi->slug = str_slug($visimisi->judul);
 
         if ($request->has('aktif')) {
-            Tupoksi::setNotActive();
-            $tupoksi->aktif = true;
+            VisiMisi::setNotActive();
+            $visimisi->aktif = true;
         }
 
-        $tupoksi->save();
+        $visimisi->save();
 
-        return redirect()->route('tugas-pokok-fungsi.index')->with('success', 'Data telah tersimpan');
+        return redirect()->route('visi-misi.index')->with('success', 'Data telah tersimpan');
     }
 
     /**
@@ -104,13 +104,13 @@ class TupoksiController extends Controller
     public function show($slug)
     {
         $page = [
-            'title' => 'Detail Tugas, Pokok dan Fungsi',
+            'title' => 'Detail Visi dan Misi',
             'breadcrumb' => 'Detail'
         ];
-        $model = new Tupoksi;
-        $tupoksi = $model->getDataBySlug($slug);
+        $model = new VisiMisi;
+        $visimisi = $model->getDataBySlug($slug);
 
-        return view('layouts.profil.tupoksi.show', compact('tupoksi'))->withPage($page);
+        return view('layouts.profil.visi-misi.show', compact('visimisi'))->withPage($page);
     }
 
     /**
@@ -122,13 +122,13 @@ class TupoksiController extends Controller
     public function edit($slug)
     {
         $page = [
-            'title' => 'Edit Tugas, Pokok dan Fungsi',
+            'title' => 'Visi dan Misi',
             'breadcrumb' => 'Edit'
         ];
-        $model = new Tupoksi;
-        $tupoksi = $model->getDataBySlug($slug);
+        $model = new VisiMisi;
+        $visimisi = $model->getDataBySlug($slug);
 
-        return view('layouts.profil.tupoksi.edit', compact('tupoksi'))->withPage($page);
+        return view('layouts.profil.visi-misi.edit', compact('visimisi'))->withPage($page);
     }
 
     /**
@@ -138,20 +138,20 @@ class TupoksiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(TupoksiRequest $request, $slug)
+    public function update(VisiMisiRequest $request, $slug)
     {
-        $model = new Tupoksi;
+        $model = new VisiMisi;
         $data = $request->except('id');
-        $tupoksi = $model->getDataBySlug($slug);
+        $visimisi = $model->getDataBySlug($slug);
 
         if ($request->has('aktif')) {
-            Tupoksi::setNotActive($tupoksi->id);
+            VisiMisi::setNotActive($visimisi->id);
             $data['aktif'] = true;
         }
 
-        $tupoksi->update($data);
+        $visimisi->update($data);
 
-        return redirect()->route('tugas-pokok-fungsi.index')->with('success', 'Data telah diubah');
+        return redirect()->route('visi-misi.index')->with('success', 'Data telah diubah');
     }
 
     /**
@@ -162,16 +162,16 @@ class TupoksiController extends Controller
      */
     public function destroy($slug)
     {
-        $model = new Tupoksi;
-        $tupoksi = $model->getDataBySlug($slug);
+        $model = new VisiMisi;
+        $visimisi = $model->getDataBySlug($slug);
 
-        if ($tupoksi) {
-            $tupoksi->delete();
+        if ($visimisi) {
+            $visimisi->delete();
             $message = 'Data telah dihapus';
         } else {
             $message = 'Data tidak ditemukan';
         }
 
-        return redirect()->route('tugas-pokok-fungsi.index')->with('success', $message);
+        return redirect()->route('visi-misi.index')->with('success', $message);
     }
 }

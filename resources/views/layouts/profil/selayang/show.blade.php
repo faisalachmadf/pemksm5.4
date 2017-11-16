@@ -52,9 +52,9 @@
               <label class="col-sm-4 control-label">Aktif :</label>
 
               <div class="col-sm-4">
-                <div class="checkbox">
-                  <label class="no-padding">
-                    <input type="checkbox" class="flat-red" id="aktif" name="aktif" disabled {{ $selayang->aktif ? 'checked' : '' }}>
+                <div class="checkbox icheck">
+                  <label>
+                    <input type="checkbox" name="aktif" disabled {{ $selayang->aktif ? 'checked' : '' }}>
                   </label>
                 </div>
               </div>
