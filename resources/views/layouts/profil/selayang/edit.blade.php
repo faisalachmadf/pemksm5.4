@@ -31,6 +31,7 @@
             <span>Kembali</span>
           </a>
         </div>
+		
         <!-- /.box-header -->
         <form class="form-horizontal" method="POST" action="{{ route('selayang-pandang.update', $selayang->slug) }}">
           {{ csrf_field() }}
@@ -76,6 +77,7 @@
               </div>
             </div>
           </div>
+		  
           <!-- /.box-body -->
           <div class="box-footer">
             <div class="col-sm-offset-4 col-sm-4">
