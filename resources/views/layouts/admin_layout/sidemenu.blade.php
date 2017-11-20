@@ -203,16 +203,14 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Kategori untuk Berita</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Untuk File</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Laporan</a></li>
-           
-            <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Produk Hukum</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Bagian</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Jabatan</a></li>
-           
-            <li><a href="#"><i class="fa fa-circle-o"></i> Kategori User</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Kategori OPD</a></li>
+            <li><a href="{{ route('kategori-berita.index') }}"><i class="fa fa-circle-o"></i> Kategori untuk Berita</a></li>
+            <li><a href="{{ route('kategori-file.index') }}"><i class="fa fa-circle-o"></i> Kategori Untuk File</a></li>
+            <li><a href="{{ route('kategori-laporan.index') }}"><i class="fa fa-circle-o"></i> Kategori Laporan</a></li>
+            <li><a href="{{ route('kategori-hukum.index') }}"><i class="fa fa-circle-o"></i> Kategori Produk Hukum</a></li>
+            <li><a href="{{ route('kategori-bagian.index') }}"><i class="fa fa-circle-o"></i> Kategori Bagian</a></li>
+            <li><a href="{{ route('kategori-jabatan.index') }}"><i class="fa fa-circle-o"></i> Kategori Jabatan</a></li>
+            <li><a href="{{ route('kategori-golongan.index') }}"><i class="fa fa-circle-o"></i> Kategori Golongan</a></li>
+            <li><a href="{{ route('kategori-opd.index') }}"><i class="fa fa-circle-o"></i> Kategori OPD</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Kerjasama</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Kerjasama Dalam Negeri</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Kerjasama Luar Negeri</a></li>

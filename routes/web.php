@@ -190,8 +190,45 @@ Route::group(['prefix' => 'adminpanel'], function() {
             Route::get('prestasi/datatables','PrestasiController@datatables')->name('prestasi.datatables');
             Route::resource('prestasi','PrestasiController');
         });
+
+         // Kategori
+        Route::group(['namespace' => 'Kategori', 'prefix' => 'kategori', 'middleware' => 'admin'], function() {
+            // Kategori Bagian
+            Route::get('kategori-bagian/datatables','KatBagianController@datatables')->name('kategori-bagian.datatables');
+            Route::resource('kategori-bagian','KatBagianController');
+
+             // Kategori Berita 
+             Route::get('kategori-berita/datatables','KatBeritaController@datatables')->name('kategori-berita.datatables');
+            Route::resource('kategori-berita','KatBeritaController');
+
+              // Kategori File
+             Route::get('kategori-file/datatables','KatFileController@datatables')->name('kategori-file.datatables');
+            Route::resource('kategori-file','KatFileController');
+
+
+              // Kategori Laporan
+             Route::get('kategori-laporan/datatables','KatLaporanController@datatables')->name('kategori-laporan.datatables');
+            Route::resource('kategori-laporan','KatLaporanController');
+
+            // Kategori Laporan
+             Route::get('kategori-hukum/datatables','KatHukumController@datatables')->name('kategori-hukum.datatables');
+            Route::resource('kategori-hukum','KatHukumController');
+            
+             // Kategori Jabatan
+             Route::get('kategori-jabatan/datatables','KatJabatanController@datatables')->name('kategori-jabatan.datatables');
+            Route::resource('kategori-jabatan','KatJabatanController');
+
+             // Kategori Golongan
+             Route::get('kategori-golongan/datatables','KatGolonganController@datatables')->name('kategori-golongan.datatables');
+            Route::resource('kategori-golongan','KatGolonganController');
+
+             // Kategori OPD
+             Route::get('kategori-opd/datatables','KatOpdController@datatables')->name('kategori-opd.datatables');
+            Route::resource('kategori-opd','KatOpdController');
+        });
     });
 
+    // BERANDA
     Route::group(['middleware' => 'admin'], function() {
         Route::resource('sambutan','SambutanController');
     });
@@ -206,6 +243,11 @@ Route::group(['prefix' => 'adminpanel'], function() {
 
     Route::group(['middleware' => 'admin'], function() {
         Route::resource('aplikasi','AplikasiController');
+    });
+
+    //Kategori
+    Route::group(['middleware' => 'admin'], function() {
+        Route::resource('kategori/katbagian','KatbagianController');
     });
 });
 
