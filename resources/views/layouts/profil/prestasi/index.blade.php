@@ -25,7 +25,7 @@
  
       <div class="box">
         <div class="box-header">
-          <a href="{{ route('visi-misi.create') }}" class="btn btn-primary">
+          <a href="{{ route('prestasi.create') }}" class="btn btn-primary">
             <i class="fa fa-plus-circle"></i>
             <span>Tambah {{ $page['title'] }}</span>
           </a>
@@ -44,13 +44,13 @@
               <strong>{{ session()->get('success') }}</strong>
             </div>
           @endif
-          <table id="visimisis-table" class="table table-bordered table-striped" width="100%">
+          <table id="prestasis-table" class="table table-bordered table-striped" width="100%">
             <thead>
               <tr>
                 <th>No</th>
                 <th>Judul</th>
                 <th>Isi</th>
-                <th>Aktif</th>
+                <th>Gambar</th>
                 <th>Aksi</th>
               </tr>
             </thead>
@@ -72,11 +72,11 @@
         { data: 'DT_Row_Index', name: 'DT_Row_Index', orderable: false, searchable: false, width: '5%' },
         { data: 'judul', name: 'judul' },
         { data: 'isi', name: 'isi' },
-        { data: 'aktif', name: 'aktif' },
+        { data: 'gambar', name: 'gambar', orderable: false, searchable: false, width: '20%' },
         { data: 'action', name: 'action', orderable: false, searchable: false, width: '15%' }
       ];
 
-      createDatatables('#visimisis-table', '{!! route('visi-misi.datatables') !!}', columns);
+      createDatatables('#prestasis-table', '{!! route('prestasi.datatables') !!}', columns);
     });
   </script>
 @endsection

@@ -30,7 +30,7 @@ class TupoksiRequest extends FormRequest
         }
 
         return [
-            'judul' => 'required|unique:selayangs,judul,'.$id,
+            'judul' => 'required|unique:tupoksis,judul,'.$id,
             'isi' => 'required'
         ];
     }

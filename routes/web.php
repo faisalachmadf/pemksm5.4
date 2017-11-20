@@ -185,6 +185,10 @@ Route::group(['prefix' => 'adminpanel'], function() {
             // Visi & Misi
             Route::get('visi-misi/datatables','VisiMisiController@datatables')->name('visi-misi.datatables');
             Route::resource('visi-misi','VisiMisiController');
+
+            // Prestasi
+            Route::get('prestasi/datatables','PrestasiController@datatables')->name('prestasi.datatables');
+            Route::resource('prestasi','PrestasiController');
         });
     });
 

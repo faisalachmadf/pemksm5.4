@@ -73,7 +73,7 @@
         { data: 'judul', name: 'judul' },
         { data: 'isi', name: 'isi' },
         { data: 'aktif', name: 'aktif' },
-        { data: 'action', name: 'action', orderable: false, searchable: false }
+        { data: 'action', name: 'action', orderable: false, searchable: false, width: '15%' }
       ];
 
       createDatatables('#selayangs-table', '{!! route('selayang-pandang.datatables') !!}', columns);

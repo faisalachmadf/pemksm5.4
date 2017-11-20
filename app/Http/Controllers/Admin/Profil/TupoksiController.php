@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Profil\TupoksiRequest;
 
 use App\Models\Profil\Tupoksi;
-use Yajra\Datatables\Datatables;
+use Datatables;
 
 class TupoksiController extends Controller
 {
@@ -46,6 +46,9 @@ class TupoksiController extends Controller
 
                 return generateAction($param, $data->slug);
             })
+            ->editColumn('isi', function($data) {
+                return str_limit($data->isi, 100);
+            })
             ->editColumn('aktif', function($data) {
                 if ($data->aktif) {
                     return 'Ya';
@@ -53,6 +56,7 @@ class TupoksiController extends Controller
 
                 return 'Tidak Aktif';
             })
+            ->rawColumns(['isi', 'action'])
             ->addIndexColumn()
             ->make(true);
     }
@@ -143,6 +147,7 @@ class TupoksiController extends Controller
         $model = new Tupoksi;
         $data = $request->except('id');
         $tupoksi = $model->getDataBySlug($slug);
+        $data['slug'] = str_slug($data['judul']);
 
         if ($request->has('aktif')) {
             Tupoksi::setNotActive($tupoksi->id);

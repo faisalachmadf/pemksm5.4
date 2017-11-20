@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Profil\VisiMisiRequest;
 
 use App\Models\Profil\VisiMisi;
-use Yajra\Datatables\Datatables;
+use Datatables;
 
 class VisiMisiController extends Controller
 {
@@ -46,6 +46,9 @@ class VisiMisiController extends Controller
 
                 return generateAction($param, $data->slug);
             })
+            ->editColumn('isi', function($data) {
+                return str_limit($data->isi, 100);
+            })
             ->editColumn('aktif', function($data) {
                 if ($data->aktif) {
                     return 'Ya';
@@ -53,6 +56,7 @@ class VisiMisiController extends Controller
 
                 return 'Tidak Aktif';
             })
+            ->rawColumns(['isi', 'action'])
             ->addIndexColumn()
             ->make(true);
     }
@@ -122,7 +126,7 @@ class VisiMisiController extends Controller
     public function edit($slug)
     {
         $page = [
-            'title' => 'Visi dan Misi',
+            'title' => 'Edit Visi dan Misi',
             'breadcrumb' => 'Edit'
         ];
         $model = new VisiMisi;
@@ -143,6 +147,7 @@ class VisiMisiController extends Controller
         $model = new VisiMisi;
         $data = $request->except('id');
         $visimisi = $model->getDataBySlug($slug);
+        $data['slug'] = str_slug($data['judul']);
 
         if ($request->has('aktif')) {
             VisiMisi::setNotActive($visimisi->id);
