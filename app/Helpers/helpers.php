@@ -38,11 +38,7 @@ if (! function_exists('generateImagePath')) {
 if (! function_exists('generateThumbnail')) {
    function generateThumbnail($path, $filename)
    {
-        $img = \Image::make(asset($path.'/'.$filename));
-        $img->widen(300, function ($constraint) {
-            $constraint->upsize();
-        });
-        $img->stream();
+        $img = \Image::make(asset($path.'/'.$filename))->widen(300)->stream();
         \Storage::put($path.'/thumbnail/'.$filename, $img);
    }
 }
