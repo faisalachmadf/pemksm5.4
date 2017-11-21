@@ -4,7 +4,7 @@ namespace App\Http\Requests\Kategori;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class KatopdRequest extends FormRequest
+class KatbagianRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,16 +25,13 @@ class KatopdRequest extends FormRequest
    {
         if ($this->has('id')) {
             $id = $this->input('id');
-            $gambar = '';
         } else {
             $id = 0;
-            $gambar = '|required';
         }
 
         return [
-            'name' => 'required|unique:katopds,name,'.$id,
-            'gambar' => 'image|mimes:jpeg,png,bmp,gif,svg'.$gambar
+            'name' => 'required|unique:katbagians,name,'.$id,
+            
         ];
     }
 }
-

@@ -93,8 +93,8 @@ class PrestasiController extends Controller
         $prestasi->save();
         $gambar->move($path, $prestasi->gambar);
 
-        // create thumbnail
-        generateThumbnail($path, $prestasi->gambar);
+        //create thumbnail
+        //generateThumbnail($path, $prestasi->gambar);
 
         return redirect()->route('prestasi.index')->with('success', 'Data telah tersimpan');
     }

@@ -12,15 +12,8 @@ class Katopd extends Model
      * @var array
      */
     protected $fillable = [
-        'name'
+        'name','slug','gambar'
     ];
-
-    protected static function boot()
-    {
-        parent::boot();
-
-       
-    }
 
    
     public function getDataBySlug($slug)

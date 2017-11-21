@@ -15,8 +15,8 @@
   
       <ol class="breadcrumb">
         <li><a href="{{ route('admin.dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><i class="fa fa-user"></i> Kategori</li>
-        <li><a href="{{ route('kategori-opd.index') }}">Kategori Perangkat Daerah</a></li>
+        <li><i class="fa fa-user"></i> Profil</li>
+        <li><a href="{{ route('kategori-opd.index') }}">Prestasi</a></li>
         <li class="active">{{ $page['breadcrumb'] }}</li>
       </ol>
     </section>
@@ -31,39 +31,39 @@
             <span>Kembali</span>
           </a>
         </div>
-
         <!-- /.box-header -->
-        <form class="form-horizontal" method="POST" action="{{ route('kategori-opd.update', $katopd->slug) }}">
+        <form class="form-horizontal" method="POST" action="{{ route('kategori-opd.update', $katopd->slug) }}" enctype="multipart/form-data">
           {{ csrf_field() }}
           {{ method_field('PUT') }}
           <input type="hidden" name="id" value="{{ $katopd->id }}">
           <div class="box-body">
             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-              <label for="name" class="col-sm-4 control-label">Nama Perangkat Daerah<span class="required">*</span> :</label>
+              <label for="name" class="col-sm-4 control-label">name<span class="required">*</span> :</label>
 
               <div class="col-sm-4">
                 <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $katopd->name) }}" placeholder="name" required>
-                <small>Nama Perangkat Daerah tidak boleh sama</small>
+                <small>Nama Perangkat Daerahtidak boleh sama</small>
 
                 @if ($errors->has('name'))
                   <span class="help-block">{{ $errors->first('name') }}</span>
                 @endif
               </div>
             </div>
+           
+            <div class="form-group{{ $errors->has('gambar') ? ' has-error' : '' }}">
+              <label class="col-sm-4 control-label">Gambar :</label>
 
-              <label for="name" class="col-sm-4 control-label">gambar/simbol perangkat daerah :</label>
-             <div class="col-sm-4">
-                  
-                  <label>gambar awal </label>
-                  <img src="{{ asset('image/opd/'. $katopd->gambar) }}" class="img-responsive"  width="200px">
-                  <br/>
-                  <label>gambar<span class="required">*</span></label><br/>
-                  <input type="file"  name="gambar" class="form-control">
-                  <span class="required">jika tidak ada perubahan gambar, abaikan saja</span>
-                  <span class="required">{{ ($errors->has('gambar')) ? $errors->first('gambar') : ''}}</span>
-                </div>
+              <div class="col-sm-4">
+                {!! generateImagePath('katopd', $katopd->gambar, $katopd->name) !!}
+                <input type="file" class="form-control-static" id="gambar" name="gambar">
+                <small>(jpeg, png, bmp, gif, or svg)</small>
+
+                @if ($errors->has('gambar'))
+                  <span class="help-block">{{ $errors->first('gambar') }}</span>
+                @endif
+              </div>
+            </div>
           </div>
-
           <!-- /.box-body -->
           <div class="box-footer">
             <div class="col-sm-offset-4 col-sm-4">

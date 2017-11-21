@@ -6,15 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Katbagian extends Model
 {
-    protected $fillable =['name'];
+    protected $fillable =['name','slug'];
     
-     protected static function boot()
-    {
-        parent::boot();
-
-       
-    }
-
+    
    
     public function getDataBySlug($slug)
     {

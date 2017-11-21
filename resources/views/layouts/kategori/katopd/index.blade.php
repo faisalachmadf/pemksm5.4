@@ -70,7 +70,7 @@
       var columns = [
         { data: 'DT_Row_Index', name: 'DT_Row_Index', orderable: false, searchable: false, width: '5%' },
         { data: 'name', name: 'name' },
-        { data: 'gambar', name: 'gambar', orderable: false, searchable: false},
+       { data: 'gambar', name: 'gambar', orderable: false, searchable: false, width: '20%' },
         { data: 'action', name: 'action', orderable: false, searchable: false }
       ];
 

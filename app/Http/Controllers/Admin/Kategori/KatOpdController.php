@@ -7,7 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Kategori\KatopdRequest;
 
 use App\Models\Kategori\Katopd;
-use Yajra\Datatables\Datatables;
+use Datatables;
+use Storage;
 
 class KatOpdController extends Controller
 {
@@ -27,49 +28,46 @@ class KatOpdController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Process datatables ajax request.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
-
     public function datatables()
     {
         $param = [
             'url' => 'kategori-opd',
-            'action' => ['show', 'edit', 'destroy']
+            'action' => ['show', 'edit', 'destroy'],
+            'gambar' => 'kategori-opd'
         ];
 
         return Datatables::of(Katopd::query())
-        ->addColumn('action', function($data) use ($param) {
-                if ($data->aktif) {
-                    unset($param['action'][array_search('destroy', $param['action'])]);
-                }
-
+            ->addColumn('action', function($data) use ($param) {
                 return generateAction($param, $data->slug);
             })
-            ->editColumn('aktif', function($data) {
-                if ($data->aktif) {
-                    return 'Ya';
-                }
-
-                return 'Tidak Aktif';
+            ->editColumn('gambar', function($data) use ($param) {
+                return generateImagePath($param['gambar'], $data->gambar, $data->name);
             })
-        ->addIndexColumn()
-        ->make(true);
-         
-            
+           
+            ->rawColumns([ 'gambar', 'action'])
+            ->addIndexColumn()
+            ->make(true);
     }
 
-
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
         $page = [
-            'title' => 'Tambah Kategori opd',
+            'title' => 'Tambah Perangkat Daerah',
             'breadcrumb' => 'Tambah'
         ];
 
         return view('layouts.kategori.katopd.create')->withPage($page);
     }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -77,18 +75,24 @@ class KatOpdController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(KatopdRequest $request)
-   {
+    {
         $katopd = new Katopd;
         $katopd->name = $request->input('name');
-
-        // upload gambar
-	    $file= $request->file('gambar');
-	    $fileName=$file->getClientOriginalName();
-	    $request->file('gambar')->move('image/opd',$fileName);
-	    $katopd->gambar=$fileName;
-       
         $katopd->slug = str_slug($katopd->name);
+        $gambar = $request->file('gambar');
+        $path = 'image/opd';
+
+
+        if (!$gambar->isValid()) {
+            return redirect()->back()->withInput()->withErrors('gambar', 'Gambar tidak valid');
+        }
+
+        $katopd->gambar = time().'-'.$katopd->slug.'.'.$gambar->getClientOriginalExtension();
         $katopd->save();
+        $gambar->move($path, $katopd->gambar);
+        
+        // create thumbnail
+        //generateThumbnail($path, $katopd->gambar);
 
         return redirect()->route('kategori-opd.index')->with('success', 'Data telah tersimpan');
     }
@@ -100,9 +104,9 @@ class KatOpdController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($slug)
-     {
+    {
         $page = [
-            'title' => 'Detail Kategori opd',
+            'title' => 'Detail Perangkat Daerah',
             'breadcrumb' => 'Detail'
         ];
         $model = new Katopd;
@@ -120,7 +124,7 @@ class KatOpdController extends Controller
     public function edit($slug)
     {
         $page = [
-            'title' => 'Edit Kategori opd',
+            'title' => 'Edit Perangkat Daerah',
             'breadcrumb' => 'Edit'
         ];
         $model = new Katopd;
@@ -139,23 +143,28 @@ class KatOpdController extends Controller
     public function update(KatopdRequest $request, $slug)
     {
         $model = new Katopd;
-        $data = $request->except('id');
-
-         
-
+        $data = $request->except('id', 'gambar');
         $katopd = $model->getDataBySlug($slug);
-        // upload gambar
-      if($request->file('gambar') == "")
-        {
-            $katopd->gambar = $katopd->gambar;
-        } 
-        else
-        {
-            $file    = $request->file('gambar');
-            $fileName=$file->getClientOriginalName();
-            $request->file('gambar')->move('image/opd/',$fileName);
-            $katopd->gambar=$fileName;
+        $data['slug'] = str_slug($data['name']);
+
+        if ($request->hasFile('gambar')) {
+            $gambar = $request->file('gambar');
+            $path = 'image/opd';
+
+            if (!$gambar->isValid()) {
+                return redirect()->back()->withInput()->withErrors('gambar', 'Gambar tidak valid');
+            }
+
+            $data['gambar'] = time().'-'.$data['slug'].'.'.$gambar->getClientOriginalExtension();
+            $gambar->move($path, $data['gambar']);
+
+            // delete image & thumbnail
+            deleteImageThumbnail($path, $katopd->gambar);
+
+            // create thumbnail
+            generateThumbnail($path, $data['gambar']);
         }
+        
         $katopd->update($data);
 
         return redirect()->route('kategori-opd.index')->with('success', 'Data telah diubah');
@@ -173,6 +182,12 @@ class KatOpdController extends Controller
         $katopd = $model->getDataBySlug($slug);
 
         if ($katopd) {
+            $image = 'image/opd/'.$katopd->gambar;
+            $thumbnail = 'image/opd/thumbnail/'.$katopd->gambar;
+
+            // delete image & thumbnail
+            deleteImageThumbnail('image/opd', $katopd->gambar);
+
             $katopd->delete();
             $message = 'Data telah dihapus';
         } else {

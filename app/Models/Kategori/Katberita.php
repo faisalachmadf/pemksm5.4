@@ -12,15 +12,10 @@ class Katberita extends Model
      * @var array
      */
     protected $fillable = [
-        'name'
+        'name','slug'
     ];
 
-    protected static function boot()
-    {
-        parent::boot();
-
-       
-    }
+  
 
    
     public function getDataBySlug($slug)
