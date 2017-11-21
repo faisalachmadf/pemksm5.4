@@ -60,4 +60,18 @@ if (! function_exists('deleteImageThumbnail')) {
    }
 }
 
+if (! function_exists('dateFormatGeneral')) {
+   function dateFormatGeneral($date, $separator = '/')
+   {
+        return implode('-', array_reverse(explode($separator, $date)));
+   }
+}
+
+if (! function_exists('dateFormatIndo')) {
+   function dateFormatIndo($date, $separator = '/')
+   {
+        return implode($separator, array_reverse(explode('-', $date)));
+   }
+}
+
 ?>

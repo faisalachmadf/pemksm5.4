@@ -61,7 +61,7 @@
             <div class="form-group{{ $errors->has('gambar') ? ' has-error' : '' }}">
               <label for="gambar" class="col-sm-4 control-label">Gambar<span class="required">*</span> :</label>
 
-              <div class="col-sm-7">
+              <div class="col-sm-4">
                 <input type="file" class="form-control-static" id="gambar" name="gambar">
                 <small>(jpeg, png, bmp, gif, or svg)</small>
 

@@ -35,7 +35,7 @@
             <li class="{{ request()->segment(3) == 'selayang-pandang' ? 'active' : '' }}"><a href="{{ route('selayang-pandang.index') }}"><i class="fa fa-circle-o"></i> Selayang Pandang</a></li>
             <li class="{{ request()->segment(3) == 'tugas-pokok-fungsi' ? 'active' : '' }}"><a href="{{ route('tugas-pokok-fungsi.index') }}"><i class="fa fa-circle-o"></i> Tugas, Pokok dan Fungsi</a></li>
             <li class="{{ request()->segment(3) == 'visi-misi' ? 'active' : '' }}"><a href="{{ route('visi-misi.index') }}"><i class="fa fa-circle-o"></i> Visi dan Misi</a></li>
-            <li class="{{ request()->segment(3) == 'struktur-organisasi' ? 'active' : '' }}"><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i>Struktur Organisasi</a></li>
+            <li class="{{ request()->segment(3) == 'struktur-organisasi' ? 'active' : '' }}"><a href="{{ route('struktur-organisasi.index') }}"><i class="fa fa-circle-o"></i>Struktur Organisasi</a></li>
             <li class="{{ request()->segment(3) == 'prestasi' ? 'active' : '' }}"><a href="{{ route('prestasi.index') }}"><i class="fa fa-circle-o"></i>Prestasi</a></li>
           </ul>
         </li>

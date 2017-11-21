@@ -32,11 +32,12 @@
           </a>
         </div>
         <!-- /.box-header -->
-        <form class="form-horizontal" method="POST" action="{{ route('prestasi.update', $prestasi->slug) }}" enctype="multipart/form-data">
+        <form class="form-horizontal" method="POST" action="{{ route('prestasi.update', @$prestasi->slug) }}" enctype="multipart/form-data">
           {{ csrf_field() }}
           {{ method_field('PUT') }}
-          <input type="hidden" name="id" value="{{ $prestasi->id }}">
+          <input type="hidden" name="id" value="{{ @$prestasi->id }}">
           <div class="box-body">
+          @if($prestasi)
             <div class="form-group{{ $errors->has('judul') ? ' has-error' : '' }}">
               <label for="judul" class="col-sm-4 control-label">Judul<span class="required">*</span> :</label>
 
@@ -73,8 +74,12 @@
                 @endif
               </div>
             </div>
+          @else
+            <h1 class="text-center">Data Tidak Ditemukan</h1>
+          @endif
           </div>
           <!-- /.box-body -->
+          @if($prestasi)
           <div class="box-footer">
             <div class="col-sm-offset-4 col-sm-4">
               <button type="submit" class="btn btn-success pull-right">Submit</button>
@@ -82,6 +87,7 @@
             </div>
           </div>
           <!-- /.box-footer -->
+          @endif
         </form>
       </div>
   

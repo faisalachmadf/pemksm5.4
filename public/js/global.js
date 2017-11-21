@@ -3,9 +3,16 @@ var table = '';
 $(function() {
     //Flat red color scheme for iCheck
     $('input[type="checkbox"], input[type="radio"]').iCheck({
-      checkboxClass: 'icheckbox_flat-blue',
-      radioClass   : 'iradio_flat-blue'
+        checkboxClass: 'icheckbox_flat-blue',
+        radioClass   : 'iradio_flat-blue'
     });
+
+    //Date picker
+    $('.datepicker').datepicker({
+        autoclose: true,
+        format: 'dd/mm/yyyy',
+        endDate: '0'
+    })
 
     $(document).on('click', '.thumbnail', function() {
         var src = $(this).data('src');

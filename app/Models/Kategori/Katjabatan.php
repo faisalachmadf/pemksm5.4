@@ -21,4 +21,9 @@ class Katjabatan extends Model
     {
         return $this->where('slug', $slug)->first();
     }
+
+    public function pegawais()
+    {
+        return $this->hasMany('App\Models\Profil\Pegawai', 'id_katjabatan');
+    }
 }

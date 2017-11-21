@@ -35,6 +35,7 @@
         <!-- /.box-header -->
         <form class="form-horizontal">
           <div class="box-body">
+          @if($selayang)
             <div class="form-group">
               <label for="judul" class="col-sm-4 control-label">Judul :</label>
 
@@ -60,6 +61,9 @@
                 </div>
               </div>
             </div>
+          @else
+            <h1 class="text-center">Data Tidak Ditemukan</h1>
+          @endif
           </div>
           <!-- /.box-body -->
         </form>
@@ -72,9 +76,4 @@
 @endsection
 
 @section('customJs')
-  <script type="text/javascript">
-    $(function () {
-      CKEDITOR.replace('isi');
-    })
-  </script>
 @endsection

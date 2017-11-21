@@ -189,6 +189,10 @@ Route::group(['prefix' => 'adminpanel'], function() {
             // Prestasi
             Route::get('prestasi/datatables','PrestasiController@datatables')->name('prestasi.datatables');
             Route::resource('prestasi','PrestasiController');
+
+            // Struktur Organisasi
+            Route::get('struktur-organisasi/datatables','StrukturOrganisasiController@datatables')->name('struktur-organisasi.datatables');
+            Route::resource('struktur-organisasi','StrukturOrganisasiController');
         });
 
          // Kategori
