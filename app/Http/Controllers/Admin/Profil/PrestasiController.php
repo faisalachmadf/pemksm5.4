@@ -8,7 +8,6 @@ use App\Http\Requests\Profil\PrestasiRequest;
 
 use App\Models\Profil\Prestasi;
 use Datatables;
-use Storage;
 
 class PrestasiController extends Controller
 {
@@ -94,7 +93,7 @@ class PrestasiController extends Controller
         $gambar->move($path, $prestasi->gambar);
 
         //create thumbnail
-        //generateThumbnail($path, $prestasi->gambar);
+        generateThumbnail($path, $prestasi->gambar);
 
         return redirect()->route('prestasi.index')->with('success', 'Data telah tersimpan');
     }
