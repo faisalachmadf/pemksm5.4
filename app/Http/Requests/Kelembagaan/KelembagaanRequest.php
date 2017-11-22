@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Profil;
+namespace App\Http\Requests\Kelembagaan;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StrukturOrganisasiRequest extends FormRequest
+class KelembagaanRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -33,14 +33,9 @@ class StrukturOrganisasiRequest extends FormRequest
 
         return [
             'id_katbagian' => 'required',
-            'id_katjabatan' => 'required',
-            'id_katgolongan' => 'required',
-            'nip' => 'required|numeric|unique:pegawais,nip,'.$id,
-            'nama' => 'required',
-            'jabatan' => 'required',
-            'mulaijabat' => 'required|date_format:d/m/Y',
-            'pendidikan' => 'required',
-            'riwayatkerja' => 'required',
+            'judul' => 'required|unique:kelembagaans,judul,'.$id,
+            'tanggal' => 'required|date_format:d/m/Y',
+            'isi' => 'required',
             'gambar' => 'image|mimes:jpeg,png,bmp,gif,svg'.$gambar
         ];
     }

@@ -231,6 +231,12 @@ Route::group(['prefix' => 'adminpanel'], function() {
             Route::resource('kategori-opd','KatOpdController');
         });
 
+        // Kelembagaan
+        Route::group(['namespace' => 'Kelembagaan', 'middleware' => 'admin'], function() {
+            Route::get('kelembagaan/datatables','KelembagaanController@datatables')->name('kelembagaan.datatables');
+            Route::resource('kelembagaan','KelembagaanController');
+        });
+
         // Produk Hukum
         Route::group(['middleware' => 'admin'], function() {
             Route::get('produk-hukum/datatables','ProdukHukumController@datatables')->name('produk-hukum.datatables');
@@ -238,6 +244,9 @@ Route::group(['prefix' => 'adminpanel'], function() {
             Route::resource('produk-hukum','ProdukHukumController');
         });
     });
+
+   
+
 
     // BERANDA
     Route::group(['middleware' => 'admin'], function() {

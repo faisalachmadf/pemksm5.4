@@ -19,4 +19,8 @@ class Katbagian extends Model
     {
         return $this->hasMany('App\Models\Profil\Pegawai', 'id_katbagian');
     }
+    public function kelembagaans()
+    {
+        return $this->hasMany('App\Models\Kelembagaan\Kelembagaan', 'id_katbagian');
+    }
 }

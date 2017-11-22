@@ -35,6 +35,13 @@
         <form class="form-horizontal">
           <div class="box-body">
           @if($pegawai)
+
+           <div class="form-group">
+                <label class="col-sm-4 control-label">Foto :</label>
+              <div class="col-sm-8">
+                  <p class="form-control-static"><img src="{{ asset('image/pegawai/'. $pegawai->gambar) }}" class="img-responsive"  width="300px"></p>
+              </div>
+            </div>
             <div class="col-sm-5">
               <div class="form-group">
                 <label for="nip" class="col-sm-4 control-label">NIP :</label>
@@ -48,6 +55,13 @@
 
                 <div class="col-sm-8">
                   <p class="form-control-static">{{ $pegawai->nama }}</p>
+                </div>
+              </div>
+               <div class="form-group">
+                <label for="jabatan" class="col-sm-4 control-label">jabatan Pegawai :</label>
+
+                <div class="col-sm-8">
+                  <p class="form-control-static">{{ $pegawai->jabatan }}</p>
                 </div>
               </div>
               <div class="form-group">
@@ -76,13 +90,6 @@
 
                 <div class="col-sm-8">
                   <p class="form-control-static">{{ dateFormatIndo($pegawai->mulaijabat) }}</p>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-sm-4 control-label">Gambar :</label>
-
-                <div class="col-sm-8">
-                  {!! generateImagePath('pegawai', $pegawai->gambar, $pegawai->nama) !!}
                 </div>
               </div>
             </div>

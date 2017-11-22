@@ -42,10 +42,12 @@
         @endif
 
         <!-- Ini Masuk di User -->
-        <li class="treeview">
-          <a href="#">
+        <li>
+          <a href="{{ route('kelembagaan.index') }}">
             <i class="fa fa-user"></i>
             <span>Kelembagaan</span>
+            <span class="pull-right-container">
+            </span>
           </a>
         </li>
 
@@ -67,6 +69,8 @@
           <a href="#">
             <i class="fa fa-newspaper-o"></i>
             <span>Berita</span>
+            <span class="pull-right-container">
+            </span>
           </a>
         </li>
 

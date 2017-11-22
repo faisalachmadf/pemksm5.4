@@ -20,6 +20,7 @@ class CreatePegawaisTable extends Migration
             $table->integer('id_katjabatan')->unsigned();
             $table->string('nip');
             $table->string('nama');
+            $table->string('jabatan');
             $table->date('mulaijabat');
             $table->text('pendidikan');
             $table->text('riwayatkerja');

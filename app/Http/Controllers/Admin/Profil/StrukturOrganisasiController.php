@@ -88,6 +88,7 @@ class StrukturOrganisasiController extends Controller
         $pegawai->id_katgolongan = $request->input('id_katgolongan');
         $pegawai->nip = $request->input('nip');
         $pegawai->nama = $request->input('nama');
+        $pegawai->jabatan = $request->input('jabatan');
         $pegawai->mulaijabat = dateFormatGeneral($request->input('mulaijabat'));
         $pegawai->pendidikan = $request->input('pendidikan');
         $pegawai->riwayatkerja = $request->input('riwayatkerja');
@@ -103,7 +104,7 @@ class StrukturOrganisasiController extends Controller
         $gambar->move($path, $pegawai->gambar);
 
         //create thumbnail
-        generateThumbnail($path, $pegawai->gambar);
+        //generateThumbnail($path, $pegawai->gambar);
 
         return redirect()->route('struktur-organisasi.index')->with('success', 'Data telah tersimpan');
     }
@@ -178,7 +179,7 @@ class StrukturOrganisasiController extends Controller
             deleteImageThumbnail($path, $pegawai->gambar);
 
             // create thumbnail
-            generateThumbnail($path, $data['gambar']);
+            //generateThumbnail($path, $data['gambar']);
         }
         
         $pegawai->update($data);
