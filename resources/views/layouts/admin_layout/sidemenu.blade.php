@@ -199,7 +199,7 @@
 
         @if($userLogin['role'] != 'user')
         <li class="header">MASTER ADMIN</li>
-        <li class="treeview">
+        <li class="treeview {{ request()->segment(2) == 'kategori' ? 'active' : '' }}">
           <a href="#">
             <i class="fa fa-lock"></i> <span>KATEGORI</span>
             <span class="pull-right-container">
@@ -207,14 +207,14 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('kategori-berita.index') }}"><i class="fa fa-circle-o"></i> Kategori untuk Berita</a></li>
-            <li><a href="{{ route('kategori-file.index') }}"><i class="fa fa-circle-o"></i> Kategori Untuk File</a></li>
-            <li><a href="{{ route('kategori-laporan.index') }}"><i class="fa fa-circle-o"></i> Kategori Laporan</a></li>
-            <li><a href="{{ route('kategori-hukum.index') }}"><i class="fa fa-circle-o"></i> Kategori Produk Hukum</a></li>
-            <li><a href="{{ route('kategori-bagian.index') }}"><i class="fa fa-circle-o"></i> Kategori Bagian</a></li>
-            <li><a href="{{ route('kategori-jabatan.index') }}"><i class="fa fa-circle-o"></i> Kategori Jabatan</a></li>
-            <li><a href="{{ route('kategori-golongan.index') }}"><i class="fa fa-circle-o"></i> Kategori Golongan</a></li>
-            <li><a href="{{ route('kategori-opd.index') }}"><i class="fa fa-circle-o"></i> Kategori OPD</a></li>
+            <li class="{{ request()->segment(3) == 'kategori-berita' ? 'active' : '' }}"><a href="{{ route('kategori-berita.index') }}"><i class="fa fa-circle-o"></i> Kategori untuk Berita</a></li>
+            <li class="{{ request()->segment(3) == 'kategori-file' ? 'active' : '' }}"><a href="{{ route('kategori-file.index') }}"><i class="fa fa-circle-o"></i> Kategori Untuk File</a></li>
+            <li class="{{ request()->segment(3) == 'kategori-laporan' ? 'active' : '' }}"><a href="{{ route('kategori-laporan.index') }}"><i class="fa fa-circle-o"></i> Kategori Laporan</a></li>
+            <li class="{{ request()->segment(3) == 'kategori-hukum' ? 'active' : '' }}"><a href="{{ route('kategori-hukum.index') }}"><i class="fa fa-circle-o"></i> Kategori Produk Hukum</a></li>
+            <li class="{{ request()->segment(3) == 'kategori-bagian' ? 'active' : '' }}"><a href="{{ route('kategori-bagian.index') }}"><i class="fa fa-circle-o"></i> Kategori Bagian</a></li>
+            <li class="{{ request()->segment(3) == 'kategori-jabatan' ? 'active' : '' }}"><a href="{{ route('kategori-jabatan.index') }}"><i class="fa fa-circle-o"></i> Kategori Jabatan</a></li>
+            <li class="{{ request()->segment(3) == 'kategori-golongan' ? 'active' : '' }}"><a href="{{ route('kategori-golongan.index') }}"><i class="fa fa-circle-o"></i> Kategori Golongan</a></li>
+            <li class="{{ request()->segment(3) == 'kategori-opd' ? 'active' : '' }}"><a href="{{ route('kategori-opd.index') }}"><i class="fa fa-circle-o"></i> Kategori OPD</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Kerjasama</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Kerjasama Dalam Negeri</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Kategori Kerjasama Luar Negeri</a></li>
@@ -223,7 +223,7 @@
           </ul>
         </li>
         
-        <li><a href="{{ route('user.index') }}"><i class="fa fa-user"></i> <span>LIST USER</span></a></li>
+        <li class="{{ request()->segment(2) == 'user' ? 'active' : '' }}"><a href="{{ route('user.index') }}"><i class="fa fa-user"></i> <span>LIST USER</span></a></li>
         @endif
         
     </section>

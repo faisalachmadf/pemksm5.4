@@ -23,6 +23,11 @@ class User extends SentinelUser
         'password'
     ];
 
+    public function produkHukums()
+    {
+        return $this->hasMany('App\Models\ProdukHukum', 'id_user');
+    }
+
     public function scopeExclude($query)
     {
         $select = array_merge(['id'], array_diff($this->fillable, $this->hidden));

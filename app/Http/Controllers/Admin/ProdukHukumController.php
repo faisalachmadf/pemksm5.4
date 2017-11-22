@@ -40,12 +40,19 @@ class ProdukHukumController extends Controller
             'file' => 'produk-hukum.download'
         ];
 
-        return Datatables::of(ProdukHukum::with('kathukum'))
+        return Datatables::of(ProdukHukum::with(['kathukum', 'user']))
             ->addColumn('action', function($data) use ($param) {
                 return generateAction($param, $data->slug);
             })
             ->editColumn('file', function($data) use ($param) {
                 return generateFileDownload(route($param['file'], $data->slug), $data->file, $data->nama);
+            })
+            ->addColumn('user', function($data) {
+                if ($data->user) {
+                    return $data->user->username;
+                }
+
+                return '-';
             })
             ->rawColumns(['file', 'action'])
             ->addIndexColumn()

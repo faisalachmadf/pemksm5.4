@@ -50,7 +50,7 @@
                 <th>Nama</th>
                 <th>Hukum</th>
                 <th>File</th>
-                <th>Diunduh</th>
+                <th>User</th>
                 <th>Aksi</th>
               </tr>
             </thead>
@@ -73,7 +73,7 @@
         { data: 'nama', name: 'nama' },
         { data: 'kathukum.name', name: 'kathukum.name' },
         { data: 'file', name: 'file' },
-        { data: 'diunduh', name: 'diunduh' },
+        { data: 'user', name: 'user.username' },
         { data: 'action', name: 'action', orderable: false, searchable: false, width: '15%' }
       ];
 
