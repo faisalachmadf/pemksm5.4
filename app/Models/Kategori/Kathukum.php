@@ -22,4 +22,9 @@ class Kathukum extends Model
     {
         return $this->where('slug', $slug)->first();
     }
+
+    public function produkHukums()
+    {
+        return $this->hasMany('App\Models\ProdukHukum', 'id_kathukum');
+    }
 }

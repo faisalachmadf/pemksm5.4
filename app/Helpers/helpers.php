@@ -74,4 +74,11 @@ if (! function_exists('dateFormatIndo')) {
    }
 }
 
+if (! function_exists('generateFileDownload')) {
+   function generateFileDownload($url, $file, $title = '')
+   {
+        return '<a href="'.$url.'" title="'.$title.'">'.$file.'</a>';
+   }
+}
+
 ?>

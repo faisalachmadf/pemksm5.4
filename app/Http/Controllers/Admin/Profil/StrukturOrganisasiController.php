@@ -198,9 +198,6 @@ class StrukturOrganisasiController extends Controller
         $pegawai = $model->getDataByNip($nip);
 
         if ($pegawai) {
-            $image = 'image/pegawai/'.$pegawai->gambar;
-            $thumbnail = 'image/pegawai/thumbnail/'.$pegawai->gambar;
-
             // delete image & thumbnail
             deleteImageThumbnail('image/pegawai', $pegawai->gambar);
 

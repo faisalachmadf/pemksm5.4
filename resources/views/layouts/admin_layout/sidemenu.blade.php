@@ -52,8 +52,8 @@
 
          <!-- Ini Masuk di User -->
         <li class="header">MENU UNTUK PRODUK HUKUM </li>
-        <li>
-          <a href="pages/widgets.html">
+        <li class="{{ request()->segment(2) == 'produk-hukum' ? 'active' : '' }}">
+          <a href="{{ route('produk-hukum.index') }}">
             <i class="fa fa-th"></i> <span>Produk Hukum</span>
             <span class="pull-right-container">
             </span>

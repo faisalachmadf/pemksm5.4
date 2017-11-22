@@ -230,6 +230,13 @@ Route::group(['prefix' => 'adminpanel'], function() {
              Route::get('kategori-opd/datatables','KatOpdController@datatables')->name('kategori-opd.datatables');
             Route::resource('kategori-opd','KatOpdController');
         });
+
+        // Produk Hukum
+        Route::group(['middleware' => 'admin'], function() {
+            Route::get('produk-hukum/datatables','ProdukHukumController@datatables')->name('produk-hukum.datatables');
+            Route::get('produk-hukum/{slug}/download','ProdukHukumController@download')->name('produk-hukum.download');
+            Route::resource('produk-hukum','ProdukHukumController');
+        });
     });
 
     // BERANDA
