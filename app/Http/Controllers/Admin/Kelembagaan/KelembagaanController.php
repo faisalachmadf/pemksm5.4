@@ -40,7 +40,7 @@ class KelembagaanController extends Controller
             'gambar' => 'kelembagaan'
         ];
 
-        return Datatables::of(Kelembagaan::with(['katbagian']))
+        return Datatables::of(Kelembagaan::with(['katbagian', 'user']))
             ->addColumn('action', function($data) use ($param) {
                 return generateAction($param, $data->judul);
             })
@@ -49,6 +49,13 @@ class KelembagaanController extends Controller
              })   
             ->editColumn('gambar', function($data) use ($param) {
                 return generateImagePath($param['gambar'], $data->gambar, $data->judul);
+            })
+            ->addColumn('user', function($data) {
+                if ($data->user) {
+                    return $data->user->username;
+                }
+
+                return '-';
             })
             ->rawColumns(['isi','gambar','action'])
             ->addIndexColumn()

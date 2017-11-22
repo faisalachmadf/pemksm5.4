@@ -27,6 +27,11 @@ class User extends SentinelUser
     {
         return $this->hasMany('App\Models\ProdukHukum', 'id_user');
     }
+    
+    public function kelembagaans()
+    {
+        return $this->hasMany('App\Models\Kelembagaan\Kelembagaan', 'id_user');
+    }
 
     public function scopeExclude($query)
     {

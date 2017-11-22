@@ -49,8 +49,9 @@
               <tr>
                 <th>No</th>
                 <th>Bagian</th>
-                <th>isi</th>
-                <th>gambar</th>
+                <th>Isi</th>
+                <th>Gambar</th>
+                <th>User</th>
                 <th>Aksi</th>
               </tr>
             </thead>
@@ -73,6 +74,7 @@
         { data: 'judul', name: 'judul' },
         { data: 'isi', name: 'isi' },
         { data: 'gambar', name: 'gambar', orderable: false, searchable: false, width: '15%' },
+        { data: 'user', name: 'user.username' },
         { data: 'action', name: 'action', orderable: false, searchable: false, width: '15%' }
       ];
 

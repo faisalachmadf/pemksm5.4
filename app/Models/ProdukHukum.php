@@ -13,7 +13,7 @@ class ProdukHukum extends Model
      * @var array
      */
     protected $fillable = [
-        'id_kathukum', 'nama', 'file', 'diunduh', 'slug'
+        'id_kathukum', 'nama', 'file', 'diunduh', 'slug', 'id_user'
     ];
 
     /**
