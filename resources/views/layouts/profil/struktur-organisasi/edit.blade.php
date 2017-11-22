@@ -62,6 +62,17 @@
                   @endif
                 </div>
               </div>
+              <div class="form-group{{ $errors->has('jabatan') ? ' has-error' : '' }}">
+                <label for="jabatan" class="col-sm-4 control-label">jabatan Pegawai<span class="required">*</span> :</label>
+
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="jabatan" name="jabatan" value="{{ old('jabatan',$pegawai->jabatan) }}" placeholder="jabatan Pegawai" required>
+
+                  @if ($errors->has('jabatan'))
+                    <span class="help-block">{{ $errors->first('jabatan') }}</span>
+                  @endif
+                </div>
+              </div>
               <div class="form-group{{ $errors->has('id_katbagian') ? ' has-error' : '' }}">
                 <label for="id_katbagian" class="col-sm-4 control-label">Bagian<span class="required">*</span> :</label>
 

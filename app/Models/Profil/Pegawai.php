@@ -12,7 +12,7 @@ class Pegawai extends Model
      * @var array
      */
     protected $fillable = [
-        'id_katbagian', 'id_katgolongan', 'id_katjabatan', 'nip', 'nama', 'mulaijabat', 'pendidikan', 'riwayatkerja', 'gambar'
+        'id_katbagian', 'id_katgolongan', 'id_katjabatan', 'nip', 'nama', 'jabatan','mulaijabat', 'pendidikan', 'riwayatkerja', 'gambar'
     ];
 
     public function getDataByNip($nip)

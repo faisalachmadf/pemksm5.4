@@ -37,7 +37,7 @@ class KatOpdController extends Controller
         $param = [
             'url' => 'kategori-opd',
             'action' => ['show', 'edit', 'destroy'],
-            'gambar' => 'kategori-opd'
+            'gambar' => 'opd'
         ];
 
         return Datatables::of(Katopd::query())

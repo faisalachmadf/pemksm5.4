@@ -230,7 +230,15 @@ Route::group(['prefix' => 'adminpanel'], function() {
              Route::get('kategori-opd/datatables','KatOpdController@datatables')->name('kategori-opd.datatables');
             Route::resource('kategori-opd','KatOpdController');
         });
+         // Kelembagaan
+        Route::group(['namespace' => 'Kelembagaan', ], function() {
+            Route::get('kelembagaan/datatables','KelembagaanController@datatables')->name('kelembagaan.datatables');
+                    Route::resource('kelembagaan','KelembagaanController');
+         });
     });
+
+   
+
 
     // BERANDA
     Route::group(['middleware' => 'admin'], function() {
