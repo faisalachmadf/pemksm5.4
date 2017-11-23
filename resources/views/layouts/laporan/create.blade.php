@@ -15,7 +15,7 @@
   
       <ol class="breadcrumb">
         <li><a href="{{ route('admin.dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="{{ route('berita.index') }}">Berita</a></li>
+        <li><a href="{{ route('laporan.index') }}">Laporan Biro</a></li>
         <li class="active">{{ $page['breadcrumb'] }}</li>
       </ol>
     </section>
@@ -25,13 +25,13 @@
 
       <div class="box">
         <div class="box-header">
-          <a href="{{ route('berita.index') }}" class="btn btn-default">
+          <a href="{{ route('laporan.index') }}" class="btn btn-default">
             <i class="fa fa-arrow-left"></i>
             <span>Kembali</span>
           </a>
         </div>
         <!-- /.box-header -->
-        <form class="form-horizontal" method="POST" action="{{ route('berita.store') }}" enctype="multipart/form-data">
+        <form class="form-horizontal" method="POST" action="{{ route('laporan.store') }}" enctype="multipart/form-data">
           {{ csrf_field() }}
           <div class="box-body">
             <div class="form-group{{ $errors->has('judul') ? ' has-error' : '' }}">
@@ -46,19 +46,19 @@
                 @endif
               </div>
             </div>
-            <div class="form-group{{ $errors->has('id_katberita') ? ' has-error' : '' }}">
-              <label for="id_katberita" class="col-sm-4 control-label">Kategori Berita<span class="required">*</span> :</label>
+            <div class="form-group{{ $errors->has('id_katlaporan') ? ' has-error' : '' }}">
+              <label for="id_katlaporan" class="col-sm-4 control-label">Kategori Laporan<span class="required">*</span> :</label>
 
               <div class="col-sm-4">
-                <select class="form-control" id="id_katberita" name="id_katberita" required>
-                  <option value="">Pilih Kategori Berita</option>
-                  @foreach($katberita as $berita)
-                    <option value="{{ $berita->id }}" {{ old('id_katberita') == $berita->id ? 'selected' : '' }}>{{ $berita->name }}</option>
+                <select class="form-control" id="id_katlaporan" name="id_katlaporan" required>
+                  <option value="">Pilih Kategori Laporan</option>
+                  @foreach($katlaporan as $laporan)
+                    <option value="{{ $laporan->id }}" {{ old('id_katlaporan') == $laporan->id ? 'selected' : '' }}>{{ $laporan->name }}</option>
                   @endforeach
                 </select>
 
-                @if ($errors->has('id_katberita'))
-                  <span class="help-block">{{ $errors->first('id_katberita') }}</span>
+                @if ($errors->has('id_katlaporan'))
+                  <span class="help-block">{{ $errors->first('id_katlaporan') }}</span>
                 @endif
               </div>
             </div>
@@ -78,15 +78,15 @@
                 @endif
               </div>
             </div>
-            <div class="form-group{{ $errors->has('gambar') ? ' has-error' : '' }}">
-              <label for="gambar" class="col-sm-4 control-label">Gambar<span class="required">*</span> :</label>
+            <div class="form-group{{ $errors->has('file') ? ' has-error' : '' }}">
+              <label for="file" class="col-sm-4 control-label">File<span class="required">*</span> :</label>
 
               <div class="col-sm-4">
-                <input type="file" class="form-control-static" id="gambar" name="gambar">
-                <small>(jpeg, png, bmp, gif, or svg)</small>
+                <input type="file" class="form-control-static" id="file" name="file">
+                <small>(pdf, doc, docx, xls, xlsx, ppt, pptx, jpeg, png, bmp, gif, or svg)</small>
 
-                @if ($errors->has('gambar'))
-                  <span class="help-block">{{ $errors->first('gambar') }}</span>
+                @if ($errors->has('file'))
+                  <span class="help-block">{{ $errors->first('file') }}</span>
                 @endif
               </div>
             </div>

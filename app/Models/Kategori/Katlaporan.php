@@ -22,4 +22,9 @@ class Katlaporan extends Model
     {
         return $this->where('slug', $slug)->first();
     }
+    
+    public function laporans()
+    {
+        return $this->hasMany('App\Models\Laporan', 'id_katlaporan');
+    }
 }

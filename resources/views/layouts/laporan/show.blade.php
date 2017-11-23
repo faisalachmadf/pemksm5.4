@@ -15,7 +15,7 @@
   
       <ol class="breadcrumb">
         <li><a href="{{ route('admin.dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="{{ route('produk-hukum.index') }}">Produk Hukum</a></li>
+        <li><a href="{{ route('laporan.index') }}">Laporan Biro</a></li>
         <li class="active">{{ $page['breadcrumb'] }}</li>
       </ol>
     </section>
@@ -25,7 +25,7 @@
 
       <div class="box">
         <div class="box-header">
-          <a href="{{ route('produk-hukum.index') }}" class="btn btn-default">
+          <a href="{{ route('laporan.index') }}" class="btn btn-default">
             <i class="fa fa-arrow-left"></i>
             <span>Kembali</span>
           </a>
@@ -33,40 +33,54 @@
         <!-- /.box-header -->
         <form class="form-horizontal">
           <div class="box-body">
-          @if($produk)
+          @if($laporan)
             <div class="form-group">
-              <label for="nama" class="col-sm-4 control-label">Nama :</label>
+              <label for="judul" class="col-sm-4 control-label">Judul :</label>
 
               <div class="col-sm-4">
-                <p class="form-control-static">{{ $produk->nama }}</p>
+                <p class="form-control-static">{{ $laporan->judul }}</p>
               </div>
             </div>
             <div class="form-group">
-              <label for="kathukum" class="col-sm-4 control-label">Hukum :</label>
+              <label for="katlaporan" class="col-sm-4 control-label">Kategori :</label>
 
               <div class="col-sm-4">
-                <p class="form-control-static">{{ $produk->kathukum->name }}</p>
+                <p class="form-control-static">{{ $laporan->katlaporan->name }}</p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="tanggal" class="col-sm-4 control-label">Tanggal :</label>
+
+              <div class="col-sm-8">
+                <p class="form-control-static">{{ dateFormatIndo($laporan->tanggal) }}</p>
               </div>
             </div>
             <div class="form-group">
               <label for="user" class="col-sm-4 control-label">User :</label>
 
               <div class="col-sm-4">
-                <p class="form-control-static">{{ $produk->user->username }}</p>
+                <p class="form-control-static">{{ $laporan->user->username }}</p>
               </div>
             </div>
             <div class="form-group">
               <label for="file" class="col-sm-4 control-label">File :</label>
 
               <div class="col-sm-4 form-control-static">
-                {!! generateFileDownload(route('produk-hukum.download', $produk->slug), $produk->file, $produk->nama) !!}
+                {!! generateFileDownload(route('laporan.download', $laporan->slug), $laporan->file, $laporan->nama) !!}
               </div>
             </div>
             <div class="form-group">
               <label for="diunduh" class="col-sm-4 control-label">Diunduh :</label>
 
               <div class="col-sm-4">
-                <p class="form-control-static">{{ $produk->diunduh }} kali</p>
+                <p class="form-control-static">{{ $laporan->diunduh }} kali</p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="isi" class="col-sm-12">Isi</label>
+
+              <div class="col-sm-12">
+                {!! $laporan->isi !!}
               </div>
             </div>
           @else

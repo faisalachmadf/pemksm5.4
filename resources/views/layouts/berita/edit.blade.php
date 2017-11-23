@@ -95,7 +95,7 @@
               </div>
             </div>
             <div class="form-group{{ $errors->has('isi') ? ' has-error' : '' }}">
-              <label for="isi" class="col-sm-12">Isi<span class="required">*</span> :</label>
+              <label for="isi" class="col-sm-12">Isi<span class="required">*</span></label>
 
               <div class="col-sm-12">
                 <textarea class="form-control" id="isi" name="isi" placeholder="Isi" required>{{ old('isi', $berita->isi) }}</textarea>

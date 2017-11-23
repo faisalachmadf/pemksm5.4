@@ -158,8 +158,8 @@
 
         @if($userLogin['role'] != 'user')
         <li class="header">MENU UNTUK LAPORAN BIRO</li>
-        <li class="treeview">
-          <a href="#">
+        <li class="{{ request()->segment(2) == 'laporan' ? 'active' : '' }}">
+          <a href="{{ route('laporan.index') }}">
             <i class="fa fa-file-archive-o"></i> <span>Laporan Biro</span>
           </a>
         </li>

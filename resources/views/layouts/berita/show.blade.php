@@ -70,7 +70,7 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="isi" class="col-sm-12">Isi :</label>
+              <label for="isi" class="col-sm-12">Isi</label>
 
               <div class="col-sm-12">
                 {!! $berita->isi !!}

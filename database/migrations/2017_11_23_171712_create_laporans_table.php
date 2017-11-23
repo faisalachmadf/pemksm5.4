@@ -1,0 +1,55 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateLaporansTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('laporans', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('id_katlaporan')->unsigned();
+            $table->string('judul');
+            $table->text('isi');
+            $table->date('tanggal');
+            $table->string('file');
+            $table->string('slug');
+            $table->integer('id_user')->unsigned();
+            $table->integer('diunduh')->default(0);
+            $table->timestamps();
+        });
+
+        Schema::table('laporans', function (Blueprint $table) {
+            $table->foreign('id_katlaporan')
+                ->references('id')->on('katlaporans')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->foreign('id_user')
+                ->references('id')->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('laporans', function (Blueprint $table) {
+            $table->dropForeign(['id_katlaporan']);
+            $table->dropForeign(['id_user']);
+        });
+
+        Schema::dropIfExists('laporans');
+    }
+}

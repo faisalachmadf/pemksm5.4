@@ -245,6 +245,11 @@ Route::group(['prefix' => 'adminpanel'], function() {
         // Berita
         Route::get('berita/datatables','BeritaController@datatables')->name('berita.datatables');
         Route::resource('berita','BeritaController');
+
+        // Laporan
+        Route::get('laporan/datatables','LaporanController@datatables')->name('laporan.datatables');
+        Route::get('laporan/{slug}/download','LaporanController@download')->name('laporan.download');
+        Route::resource('laporan','LaporanController');
     });
 
    

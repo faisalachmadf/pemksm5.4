@@ -37,6 +37,11 @@ class User extends SentinelUser
     {
         return $this->hasMany('App\Models\Berita', 'id_user');
     }
+    
+    public function laporans()
+    {
+        return $this->hasMany('App\Models\Laporan', 'id_user');
+    }
 
     public function scopeExclude($query)
     {
