@@ -229,6 +229,26 @@ Route::group(['prefix' => 'adminpanel'], function() {
              // Kategori OPD
              Route::get('kategori-opd/datatables','KatOpdController@datatables')->name('kategori-opd.datatables');
             Route::resource('kategori-opd','KatOpdController');
+
+            // Kategori Mitra Kerja Sama
+             Route::get('katmitra/datatables','KatMitraController@datatables')->name('katmitra.datatables');
+            Route::resource('katmitra','KatMitraController');
+
+            // Kategori Kerja Sama Dalam Negeri
+             Route::get('kategori-dn/datatables','KatdnController@datatables')->name('kategori-dn.datatables');
+            Route::resource('kategori-dn','KatdnController');
+
+            // Kategori Kerja Sama Dalam Negeri
+             Route::get('kategori-ln/datatables','KatLnController@datatables')->name('kategori-ln.datatables');
+            Route::resource('kategori-ln','KatLnController');
+
+             // Kategori Kerja Sama Dalam Negeri
+             Route::get('kategori-jenisdn/datatables','KatJenisDnController@datatables')->name('kategori-jenisdn.datatables');
+            Route::resource('kategori-jenisdn','KatJenisDnController');
+
+             // Kategori Kerja Sama Dalam Negeri
+             Route::get('kategori-jenisln/datatables','KatJenislnController@datatables')->name('kategori-jenisln.datatables');
+            Route::resource('kategori-jenisln','KatJenislnController');
         });
 
         // Kelembagaan

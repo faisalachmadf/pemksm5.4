@@ -106,7 +106,7 @@ class BeritaController extends Controller
         $gambar->move($path, $berita->gambar);
 
         //create thumbnail
-        generateThumbnail($path, $berita->gambar);
+        // generateThumbnail($path, $berita->gambar);
 
         return redirect()->route('berita.index')->with('success', 'Data telah tersimpan');
     }
