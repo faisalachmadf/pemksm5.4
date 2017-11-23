@@ -22,4 +22,9 @@ class Katberita extends Model
     {
         return $this->where('slug', $slug)->first();
     }
+    
+    public function beritas()
+    {
+        return $this->hasMany('App\Models\Berita', 'id_katberita');
+    }
 }

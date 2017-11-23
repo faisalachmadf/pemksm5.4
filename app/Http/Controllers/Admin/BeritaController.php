@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Profil;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Profil\PrestasiRequest;
+use App\Http\Requests\BeritaRequest;
 
-use App\Models\Profil\Prestasi;
+use App\Models\Berita;
+use App\Models\Kategori\Katberita;
 use Datatables;
 
-class PrestasiController extends Controller
+class BeritaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,11 +20,11 @@ class PrestasiController extends Controller
     public function index()
     {
         $page = [
-            'title' => 'Prestasi',
-            'breadcrumb' => 'Prestasi'
+            'title' => 'Berita',
+            'breadcrumb' => 'Berita'
         ];
 
-        return view('layouts.profil.prestasi.index')->withPage($page);
+        return view('layouts.berita.index')->withPage($page);
     }
 
     /**
@@ -34,12 +35,12 @@ class PrestasiController extends Controller
     public function datatables()
     {
         $param = [
-            'url' => 'prestasi',
+            'url' => 'berita',
             'action' => ['show', 'edit', 'destroy'],
-            'gambar' => 'prestasi'
+            'gambar' => 'berita'
         ];
 
-        return Datatables::of(Prestasi::query())
+        return Datatables::of(Berita::with(['katberita', 'user']))
             ->addColumn('action', function($data) use ($param) {
                 return generateAction($param, $data->slug);
             })
@@ -48,6 +49,13 @@ class PrestasiController extends Controller
             })
             ->editColumn('isi', function($data) {
                 return str_limit($data->isi, 100);
+            })
+            ->addColumn('user', function($data) {
+                if ($data->user) {
+                    return $data->user->username;
+                }
+
+                return '-';
             })
             ->rawColumns(['isi', 'gambar', 'action'])
             ->addIndexColumn()
@@ -62,11 +70,14 @@ class PrestasiController extends Controller
     public function create()
     {
         $page = [
-            'title' => 'Tambah Prestasi',
+            'title' => 'Tambah Berita',
             'breadcrumb' => 'Tambah'
         ];
+        $view = [
+            'katberita' => Katberita::all()
+        ];
 
-        return view('layouts.profil.prestasi.create')->withPage($page);
+        return view('layouts.berita.create', $view)->withPage($page);
     }
 
     /**
@@ -75,27 +86,29 @@ class PrestasiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PrestasiRequest $request)
+    public function store(BeritaRequest $request)
     {
-        $prestasi = new Prestasi;
-        $prestasi->judul = $request->input('judul');
-        $prestasi->isi = $request->input('isi');
-        $prestasi->slug = str_slug($prestasi->judul);
+        $berita = new Berita;
+        $berita->id_katberita = $request->input('id_katberita');
+        $berita->judul = $request->input('judul');
+        $berita->isi = $request->input('isi');
+        $berita->tanggal = dateFormatGeneral($request->input('tanggal'));
+        $berita->slug = str_slug($berita->judul);
         $gambar = $request->file('gambar');
-        $path = 'image/prestasi';
+        $path = 'image/berita';
 
         if (!$gambar->isValid()) {
             return redirect()->back()->withInput()->withErrors('gambar', 'Gambar tidak valid');
         }
 
-        $prestasi->gambar = time().'-'.$prestasi->slug.'.'.$gambar->getClientOriginalExtension();
-        $prestasi->save();
-        $gambar->move($path, $prestasi->gambar);
+        $berita->gambar = time().'-'.$berita->slug.'.'.$gambar->getClientOriginalExtension();
+        $berita->save();
+        $gambar->move($path, $berita->gambar);
 
         //create thumbnail
-        generateThumbnail($path, $prestasi->gambar);
+        generateThumbnail($path, $berita->gambar);
 
-        return redirect()->route('prestasi.index')->with('success', 'Data telah tersimpan');
+        return redirect()->route('berita.index')->with('success', 'Data telah tersimpan');
     }
 
     /**
@@ -107,13 +120,13 @@ class PrestasiController extends Controller
     public function show($slug)
     {
         $page = [
-            'title' => 'Detail Prestasi',
+            'title' => 'Detail Berita',
             'breadcrumb' => 'Detail'
         ];
-        $model = new Prestasi;
-        $prestasi = $model->getDataBySlug($slug);
+        $model = new Berita;
+        $berita = $model->getDataBySlug($slug);
 
-        return view('layouts.profil.prestasi.show', compact('prestasi'))->withPage($page);
+        return view('layouts.berita.show', compact('berita'))->withPage($page);
     }
 
     /**
@@ -125,13 +138,16 @@ class PrestasiController extends Controller
     public function edit($slug)
     {
         $page = [
-            'title' => 'Edit Prestasi',
+            'title' => 'Edit Berita',
             'breadcrumb' => 'Edit'
         ];
-        $model = new Prestasi;
-        $prestasi = $model->getDataBySlug($slug);
+        $model = new Berita;
+        $view = [
+            'berita' => $model->getDataBySlug($slug),
+            'katberita' => Katberita::all()
+        ];
 
-        return view('layouts.profil.prestasi.edit', compact('prestasi'))->withPage($page);
+        return view('layouts.berita.edit', $view)->withPage($page);
     }
 
     /**
@@ -141,16 +157,17 @@ class PrestasiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(PrestasiRequest $request, $slug)
+    public function update(BeritaRequest $request, $slug)
     {
-        $model = new Prestasi;
+        $model = new Berita;
         $data = $request->except('id', 'gambar');
-        $prestasi = $model->getDataBySlug($slug);
+        $berita = $model->getDataBySlug($slug);
         $data['slug'] = str_slug($data['judul']);
+        $data['tanggal'] = dateFormatGeneral($data['tanggal']);
 
         if ($request->hasFile('gambar')) {
             $gambar = $request->file('gambar');
-            $path = 'image/prestasi';
+            $path = 'image/berita';
 
             if (!$gambar->isValid()) {
                 return redirect()->back()->withInput()->withErrors('gambar', 'Gambar tidak valid');
@@ -160,15 +177,15 @@ class PrestasiController extends Controller
             $gambar->move($path, $data['gambar']);
 
             // delete image & thumbnail
-            deleteImageThumbnail($path, $prestasi->gambar);
+            deleteImageThumbnail($path, $berita->gambar);
 
             // create thumbnail
             generateThumbnail($path, $data['gambar']);
         }
         
-        $prestasi->update($data);
+        $berita->update($data);
 
-        return redirect()->route('prestasi.index')->with('success', 'Data telah diubah');
+        return redirect()->route('berita.index')->with('success', 'Data telah diubah');
     }
 
     /**
@@ -179,19 +196,19 @@ class PrestasiController extends Controller
      */
     public function destroy($slug)
     {
-        $model = new Prestasi;
-        $prestasi = $model->getDataBySlug($slug);
+        $model = new Berita;
+        $berita = $model->getDataBySlug($slug);
 
-        if ($prestasi) {
+        if ($berita) {
             // delete image & thumbnail
-            deleteImageThumbnail('image/prestasi', $prestasi->gambar);
+            deleteImageThumbnail('image/berita', $berita->gambar);
 
-            $prestasi->delete();
+            $berita->delete();
             $message = 'Data telah dihapus';
         } else {
             $message = 'Data tidak ditemukan';
         }
 
-        return redirect()->route('prestasi.index')->with('success', $message);
+        return redirect()->route('berita.index')->with('success', $message);
     }
 }

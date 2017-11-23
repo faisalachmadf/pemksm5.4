@@ -104,7 +104,7 @@ class StrukturOrganisasiController extends Controller
         $gambar->move($path, $pegawai->gambar);
 
         //create thumbnail
-        //generateThumbnail($path, $pegawai->gambar);
+        generateThumbnail($path, $pegawai->gambar);
 
         return redirect()->route('struktur-organisasi.index')->with('success', 'Data telah tersimpan');
     }

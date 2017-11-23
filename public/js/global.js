@@ -10,8 +10,7 @@ $(function() {
     //Date picker
     $('.datepicker').datepicker({
         autoclose: true,
-        format: 'dd/mm/yyyy',
-        endDate: '0'
+        format: 'dd/mm/yyyy'
     })
 
     $(document).on('click', '.thumbnail', function() {

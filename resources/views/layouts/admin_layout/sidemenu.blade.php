@@ -65,8 +65,8 @@
 
         <!-- Ini Masuk di User -->
         <li class="header">MENU UNTUK BERITA DAN ARTIKEL </li>
-        <li class="treeview">
-          <a href="#">
+        <li class="{{ request()->segment(2) == 'berita' ? 'active' : '' }}">
+          <a href="{{ route('berita.index') }}">
             <i class="fa fa-newspaper-o"></i>
             <span>Berita</span>
             <span class="pull-right-container">

@@ -173,7 +173,7 @@ Route::group(['prefix' => 'adminpanel'], function() {
         Route::resource('user','UserController');
 
         // Profil
-        Route::group(['namespace' => 'Profil', 'prefix' => 'profil', 'middleware' => 'admin'], function() {
+        Route::group(['namespace' => 'Profil', 'prefix' => 'profil'], function() {
             // Selayang Pandang
             Route::get('selayang-pandang/datatables','SelayangController@datatables')->name('selayang-pandang.datatables');
             Route::resource('selayang-pandang','SelayangController');
@@ -196,7 +196,7 @@ Route::group(['prefix' => 'adminpanel'], function() {
         });
 
          // Kategori
-        Route::group(['namespace' => 'Kategori', 'prefix' => 'kategori', 'middleware' => 'admin'], function() {
+        Route::group(['namespace' => 'Kategori', 'prefix' => 'kategori'], function() {
             // Kategori Bagian
             Route::get('kategori-bagian/datatables','KatBagianController@datatables')->name('kategori-bagian.datatables');
             Route::resource('kategori-bagian','KatBagianController');
@@ -232,17 +232,19 @@ Route::group(['prefix' => 'adminpanel'], function() {
         });
 
         // Kelembagaan
-        Route::group(['namespace' => 'Kelembagaan', 'middleware' => 'admin'], function() {
+        Route::group(['namespace' => 'Kelembagaan'], function() {
             Route::get('kelembagaan/datatables','KelembagaanController@datatables')->name('kelembagaan.datatables');
             Route::resource('kelembagaan','KelembagaanController');
         });
 
         // Produk Hukum
-        Route::group(['middleware' => 'admin'], function() {
-            Route::get('produk-hukum/datatables','ProdukHukumController@datatables')->name('produk-hukum.datatables');
-            Route::get('produk-hukum/{slug}/download','ProdukHukumController@download')->name('produk-hukum.download');
-            Route::resource('produk-hukum','ProdukHukumController');
-        });
+        Route::get('produk-hukum/datatables','ProdukHukumController@datatables')->name('produk-hukum.datatables');
+        Route::get('produk-hukum/{slug}/download','ProdukHukumController@download')->name('produk-hukum.download');
+        Route::resource('produk-hukum','ProdukHukumController');
+
+        // Berita
+        Route::get('berita/datatables','BeritaController@datatables')->name('berita.datatables');
+        Route::resource('berita','BeritaController');
     });
 
    

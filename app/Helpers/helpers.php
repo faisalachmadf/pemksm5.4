@@ -38,7 +38,6 @@ if (! function_exists('generateImagePath')) {
 if (! function_exists('generateThumbnail')) {
    function generateThumbnail($path, $filename)
    {
-        ini_set('memory_limit', '256M');
         $img = \Image::make(asset($path.'/'.$filename))->widen(300)->stream();
         \Storage::put($path.'/thumbnail/'.$filename, $img);
    }
