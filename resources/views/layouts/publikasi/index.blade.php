@@ -24,7 +24,7 @@
  
       <div class="box">
         <div class="box-header">
-          <a href="{{ route('agenda.create') }}" class="btn btn-primary">
+          <a href="{{ route('publikasi.create') }}" class="btn btn-primary">
             <i class="fa fa-plus-circle"></i>
             <span>Tambah {{ $page['title'] }}</span>
           </a>
@@ -43,14 +43,14 @@
               <strong>{{ session()->get('success') }}</strong>
             </div>
           @endif
-          <table id="agendas-table" class="table table-bordered table-striped" width="100%">
+          <table id="publikasis-table" class="table table-bordered table-striped" width="100%">
             <thead>
               <tr>
                 <th>No</th>
-                <th>Tanggal Acara</th>
-                <th>Bagian</th>
-                <th>Judul Acara</th>
-                <th>lokasi</th>
+                <th>Nama File</th>
+                <th>Kategori</th>
+                <th>File</th>
+                <th>User</th>
                 <th>Aksi</th>
               </tr>
             </thead>
@@ -70,14 +70,14 @@
     $(function() {
       var columns = [
         { data: 'DT_Row_Index', name: 'DT_Row_Index', orderable: false, searchable: false, width: '5%' },
-        { data: 'tanggal', name: 'tanggal' },
-        { data: 'katbagian.name', name: 'katbagian.name' },
         { data: 'judul', name: 'judul' },
-        { data: 'lokasi', name: 'lokasi' },
+        { data: 'katfile.name', name: 'katfile.name' },
+        { data: 'file', name: 'file' },
+        { data: 'user', name: 'user.username' },
         { data: 'action', name: 'action', orderable: false, searchable: false, width: '15%' }
       ];
 
-      createDatatables('#agendas-table', '{!! route('agenda.datatables') !!}', columns);
+      createDatatables('#publikasis-table', '{!! route('publikasi.datatables') !!}', columns);
     });
   </script>
 @endsection

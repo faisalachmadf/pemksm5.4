@@ -77,15 +77,16 @@
 
         <!-- Ini Masuk di User -->
         <li class="header">MENU UNTUK FILE DAN AGENDA</li>
-       <li>
-          <a href="pages/widgets.html">
+      <li class="{{ request()->segment(2) == 'publikasi' ? 'active' : '' }}">
+          <a href="{{ route('publikasi.index') }}">
             <i class="fa fa-file-code-o"></i> <span>FILE PUBLIKASI</span>
             <span class="pull-right-container">
             </span>
           </a>
         </li>
-        <li>
-          <a href="/adminpanel/agenda">
+
+         <li class="{{ request()->segment(2) == 'agenda' ? 'active' : '' }}">
+          <a href="{{ route('agenda.index') }}">
             <i class="fa fa-calendar"></i> <span>AGENDA</span>
             <span class="pull-right-container">
              

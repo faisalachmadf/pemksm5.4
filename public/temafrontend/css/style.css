@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 html, body{
   font-family: 'OpenSans-Regular';
   font-size: 100%;
-  background:#f5f6ff;
+  background:#ffffff;
 }
 body a {
 	transition:0.5s all;
@@ -18,7 +18,7 @@ body a {
 	font-family: 'OpenSans-Regular';
 }
 body a:hover,h5.top a:hover,.b-text h5 a:hover,.b-bottom-text h5 a:hover,.b-text h6 a:hover,.b-bottom-text h6 a:hover{
-    color: #ee5656;
+    color: #0023ff;
 	
 }
 @font-face {
@@ -259,8 +259,8 @@ label{
 }
 .mag-innert-left {
     background-color: #fff;
-    padding: 1em 1em;
-	    border: 1px solid rgba(231,231,231,1.00);
+    padding: 0em 0em;
+	    border: 0px solid rgba(231,231,231,1.00);
 }
 /*--banner-inner--*/
 #slider2,
@@ -997,7 +997,7 @@ a.wd {
     font-weight: bold;
 }
 a.wd:hover{
-    color: #ee5656;
+    color: #0023ff;
 }
 .world-news-grid {
     width: 32.5%;
@@ -1223,6 +1223,9 @@ figure.effect-layla:hover img {
 }
 .mag-bottom {
     margin-top: 4em;
+}
+.sebelummag-bottom {
+    margin-top: 1em;
 }
 h3.tittle.bottom {
     width: 98.5%;
@@ -1453,10 +1456,27 @@ p.text {
   padding:1em 0;
   background:#282828;
 }
+
+.sebelumfooter-section {
+  padding:1em 0;
+  background:#13c2c3;
+  background: url(../images/sosmed.jpg);
+}
+
 .editor-pics {
        margin-bottom: 0.7em;
 }
 .footer-grid h4 {
+    font-size: 1.1em;
+    text-transform: uppercase;
+    color: #fff;
+    border-left: 4px solid #ee5656;
+    padding: 0;
+    padding-left: 0.5em;
+    margin-bottom: 1.5em;
+    font-weight: bold;
+}
+.sebelumfooter-grid h4 {
     font-size: 1.1em;
     text-transform: uppercase;
     color: #fff;
@@ -1475,7 +1495,14 @@ p.text {
    padding: 2em 0 1em 0;
    text-align: left;
 }
+.sebelumfooter-grids{
+   padding: 0em 0 0em 0;
+   text-align: left;
+}
 .footer-grid {
+    padding-left: 0;
+}
+.sebelumfooter-grid {
     padding-left: 0;
 }
 .item-pic {
@@ -1818,8 +1845,7 @@ border: 1px solid #EAE5E5;
 }
 @media (max-width:1366px){
 	.banner {
-		background: url(../images/banner.jpg)no-repeat 0px 0px;
-		background-size: cover;
+		
 		-webkit-background-size: cover;
 		-o-background-size: cover;
 		-moz-background-size: cover;
@@ -2173,6 +2199,9 @@ border: 1px solid #EAE5E5;
 	.mag-bottom {
 		margin-top: 2em;
 	}
+  .sebelummag-bottom {
+    margin-top: 0em;
+  }
 }
 @media (max-width:736px){
 
@@ -2269,6 +2298,9 @@ border: 1px solid #EAE5E5;
 	.footer-section {
     padding: 1em 0 0 0;
 	}
+  .sebelumfooter-section {
+    padding: 0em 0 0 0;
+  }
 	.contact-in h5 {
 		font-size: 1.3em;
 		margin: 0;

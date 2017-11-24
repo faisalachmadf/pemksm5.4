@@ -271,6 +271,15 @@ Route::group(['prefix' => 'adminpanel'], function() {
         Route::get('laporan/{slug}/download','LaporanController@download')->name('laporan.download');
         Route::resource('laporan','LaporanController');
 
+        // Publikasi
+        Route::get('publikasi/datatables','PublikasiController@datatables')->name('publikasi.datatables');
+        Route::get('publikasi/{slug}/download','PublikasiController@download')->name('publikasi.download');
+        Route::resource('publikasi','PublikasiController');
+
+        // Agenda
+        Route::get('agenda/datatables','AgendaController@datatables')->name('agenda.datatables');
+        Route::resource('agenda','AgendaController');
+
         // LPPD
         Route::group(['namespace' => 'Lppd', 'prefix' => 'lppd'], function() {
             // Galeri LPPD
