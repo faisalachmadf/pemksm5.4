@@ -51,11 +51,7 @@ class KelembagaanController extends Controller
                 return generateImagePath($param['gambar'], $data->gambar, $data->judul);
             })
             ->addColumn('user', function($data) {
-                if ($data->user) {
-                    return $data->user->username;
-                }
-
-                return '-';
+                return generateUser($data->user);
             })
             ->rawColumns(['isi','gambar','action'])
             ->addIndexColumn()

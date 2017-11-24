@@ -48,11 +48,7 @@ class ProdukHukumController extends Controller
                 return generateFileDownload(route($param['file'], $data->slug), $data->file, $data->nama);
             })
             ->addColumn('user', function($data) {
-                if ($data->user) {
-                    return $data->user->username;
-                }
-
-                return '-';
+                return generateUser($data->user);
             })
             ->rawColumns(['file', 'action'])
             ->addIndexColumn()

@@ -52,7 +52,7 @@
               <label for="user" class="col-sm-4 control-label">User :</label>
 
               <div class="col-sm-4">
-                <p class="form-control-static">{{ $produk->user->username }}</p>
+                <p class="form-control-static">{{ generateUser($produk->user) }}</p>
               </div>
             </div>
             <div class="form-group">

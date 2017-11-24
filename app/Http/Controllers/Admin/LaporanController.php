@@ -51,11 +51,7 @@ class LaporanController extends Controller
                 return str_limit($data->isi, 100);
             })
             ->addColumn('user', function($data) {
-                if ($data->user) {
-                    return $data->user->username;
-                }
-
-                return '-';
+                return generateUser($data->user);
             })
             ->rawColumns(['isi', 'file', 'action'])
             ->addIndexColumn()

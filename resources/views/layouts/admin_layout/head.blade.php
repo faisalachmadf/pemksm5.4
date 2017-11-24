@@ -22,9 +22,10 @@
   <link href="{{ asset('/adminkelola/bower_components/jvectormap/jquery-jvectormap.css') }}" rel="stylesheet" type="text/css">
   <!-- Date Picker -->
   <link href="{{ asset('/adminkelola/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
-  
   <!-- Daterange picker -->
   <link href="{{ asset('/adminkelola/bower_components/bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet" type="text/css">
+  <!-- Select2 -->
+  <link href="{{ asset('/adminkelola/bower_components/select2/dist/css/select2.min.css') }}" rel="stylesheet" type="text/css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link href="{{ asset('/adminkelola/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}" rel="stylesheet" type="text/css">
   <!-- iCheck for checkboxes and radio inputs -->

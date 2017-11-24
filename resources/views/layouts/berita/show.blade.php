@@ -59,7 +59,7 @@
               <label for="user" class="col-sm-4 control-label">User :</label>
 
               <div class="col-sm-4">
-                <p class="form-control-static">{{ $berita->user->username }}</p>
+                <p class="form-control-static">{{ generateUser($berita->user) }}</p>
               </div>
             </div>
             <div class="form-group">

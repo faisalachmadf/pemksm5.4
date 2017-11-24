@@ -15,7 +15,8 @@
   
       <ol class="breadcrumb">
         <li><a href="{{ route('admin.dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="{{ route('laporan.index') }}">Laporan Biro</a></li>
+        <li><i class="fa fa-file-archive-o"></i> LPPD</li>
+        <li><a href="{{ route('galeri-lppd.index') }}">Galeri</a></li>
         <li class="active">{{ $page['breadcrumb'] }}</li>
       </ol>
     </section>
@@ -25,7 +26,7 @@
 
       <div class="box">
         <div class="box-header">
-          <a href="{{ route('laporan.index') }}" class="btn btn-default">
+          <a href="{{ route('galeri-lppd.index') }}" class="btn btn-default">
             <i class="fa fa-arrow-left"></i>
             <span>Kembali</span>
           </a>
@@ -33,55 +34,43 @@
         <!-- /.box-header -->
         <form class="form-horizontal">
           <div class="box-body">
-          @if($laporan)
+          @if($galeri)
             <div class="form-group">
               <label for="judul" class="col-sm-4 control-label">Judul :</label>
 
               <div class="col-sm-4">
-                <p class="form-control-static">{{ $laporan->judul }}</p>
+                <p class="form-control-static">{{ $galeri->judul }}</p>
               </div>
             </div>
             <div class="form-group">
-              <label for="katlaporan" class="col-sm-4 control-label">Kategori :</label>
+              <label for="tag" class="col-sm-4 control-label">Tag :</label>
 
               <div class="col-sm-4">
-                <p class="form-control-static">{{ $laporan->katlaporan->name }}</p>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="tanggal" class="col-sm-4 control-label">Tanggal :</label>
-
-              <div class="col-sm-8">
-                <p class="form-control-static">{{ dateFormatIndo($laporan->tanggal) }}</p>
+                <p class="form-control-static">{{ generateTag($galeri->tags) }}</p>
               </div>
             </div>
             <div class="form-group">
               <label for="user" class="col-sm-4 control-label">User :</label>
 
               <div class="col-sm-4">
-                <p class="form-control-static">{{ generateUser($laporan->user) }}</p>
+                <p class="form-control-static">{{ generateUser($galeri->user) }}</p>
               </div>
             </div>
             <div class="form-group">
-              <label for="file" class="col-sm-4 control-label">File :</label>
-
-              <div class="col-sm-4 form-control-static">
-                {!! generateFileDownload(route('laporan.download', $laporan->slug), $laporan->file, $laporan->nama) !!}
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="diunduh" class="col-sm-4 control-label">Diunduh :</label>
+              <label class="col-sm-4 control-label">Gambar :</label>
 
               <div class="col-sm-4">
-                <p class="form-control-static">{{ $laporan->diunduh }} kali</p>
+                {!! generateImagePath('galeri-lppd', $galeri->gambar, $galeri->judul) !!}
               </div>
             </div>
             <div class="form-group">
-              <label for="isi" class="col-sm-12">Isi</label>
+              <label class="col-sm-12">Multi Gambar</label>
 
-              <div class="col-sm-12">
-                {!! $laporan->isi !!}
+              @foreach($galeri->gambars as $multi)
+              <div class="col-sm-3">
+                {!! generateImagePath('galeri-lppd', $multi->gambar, $galeri->judul) !!}
               </div>
+              @endforeach
             </div>
           @else
             <h1 class="text-center">Data Tidak Ditemukan</h1>

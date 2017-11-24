@@ -21,6 +21,13 @@ $(function() {
         $('#modal-global .modal-body').html('<img src="'+src+'" class="img-responsive" alt="'+title+'" style="margin:auto;">');
         $('#modal-global').modal('show');
     });
+
+    //Initialize Select2 Elements
+    $(".select2").select2({
+        tags: true,
+        placeholder: 'Masukan Tag',
+        tokenSeparators: [',', ' ']
+    })
 });
 
 function dataTablesResponsive() {

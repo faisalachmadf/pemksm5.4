@@ -51,11 +51,7 @@ class BeritaController extends Controller
                 return str_limit($data->isi, 100);
             })
             ->addColumn('user', function($data) {
-                if ($data->user) {
-                    return $data->user->username;
-                }
-
-                return '-';
+                return generateUser($data->user);
             })
             ->rawColumns(['isi', 'gambar', 'action'])
             ->addIndexColumn()
@@ -106,7 +102,7 @@ class BeritaController extends Controller
         $gambar->move($path, $berita->gambar);
 
         //create thumbnail
-        // generateThumbnail($path, $berita->gambar);
+        generateThumbnail($path, $berita->gambar);
 
         return redirect()->route('berita.index')->with('success', 'Data telah tersimpan');
     }

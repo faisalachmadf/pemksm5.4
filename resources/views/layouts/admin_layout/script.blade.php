@@ -26,8 +26,9 @@
 <script src="{{ asset('/adminkelola/bower_components/moment/min/moment.min.js') }}"></script>
 <script src="{{ asset('/adminkelola/bower_components/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
 <!-- datepicker -->
-<script src="{{ asset('/adminkelola/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}">
-</script>
+<script src="{{ asset('/adminkelola/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+<!-- Select2 -->
+<script src="{{ asset('/adminkelola/bower_components/select2/dist/js/select2.full.min.js') }}"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="{{ asset('/adminkelola/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}"></script>
 <!-- CK Editor -->

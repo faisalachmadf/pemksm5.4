@@ -270,6 +270,13 @@ Route::group(['prefix' => 'adminpanel'], function() {
         Route::get('laporan/datatables','LaporanController@datatables')->name('laporan.datatables');
         Route::get('laporan/{slug}/download','LaporanController@download')->name('laporan.download');
         Route::resource('laporan','LaporanController');
+
+        // LPPD
+        Route::group(['namespace' => 'Lppd', 'prefix' => 'lppd'], function() {
+            // Galeri LPPD
+            Route::get('galeri-lppd/datatables','GaleriLppdController@datatables')->name('galeri-lppd.datatables');
+            Route::resource('galeri-lppd','GaleriLppdController');
+        });
     });
 
    

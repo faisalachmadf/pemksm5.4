@@ -36,19 +36,24 @@
           <div class="box-body">
           @if($kelembagaan)
 
-           <div class="form-group">
-                <label class="col-sm-4 control-label">Gambar Bagian :</label>
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Gambar Bagian :</label>
               <div class="col-sm-8">
                   <p class="form-control-static"><img src="{{ asset('image/kelembagaan/'. $kelembagaan->gambar) }}" class="img-responsive"  width="300px"></p>
               </div>
             </div>
-            <div class="form-group>
-              <div class="form-group">
-                <label for="judul" class="col-sm-4 control-label">Nama Bagian :</label>
+            <div class="form-group">
+              <label for="judul" class="col-sm-4 control-label">Nama Bagian :</label>
 
-                <div class="col-sm-4">
-                  <p class="form-control-static">{{ $kelembagaan->judul }}</p>
-                </div>
+              <div class="col-sm-4">
+                <p class="form-control-static">{{ $kelembagaan->judul }}</p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="user" class="col-sm-4 control-label">User :</label>
+
+              <div class="col-sm-4">
+                <p class="form-control-static">{{ generateUser($kelembagaan->user) }}</p>
               </div>
             </div>
             <div class="form-group">

@@ -80,4 +80,39 @@ if (! function_exists('generateFileDownload')) {
    }
 }
 
+if (! function_exists('generateUser')) {
+   function generateUser($user)
+   {
+        if ($user) {
+            return $user->username;
+        }
+
+        return '-';
+   }
+}
+
+if (! function_exists('generateTag')) {
+   function generateTag($tags)
+   {
+        $tag = '';
+
+        foreach ($tags as $key => $value) {
+            if ($key > 0) {
+                $tag .= ', ';
+            }
+
+            $tag .= $value->name;
+        }
+
+        return $tag;
+   }
+}
+
+if (! function_exists('generateTagToArray')) {
+   function generateTagToArray($model)
+   {
+        return $model->tags()->pluck('name')->toArray();
+   }
+}
+
 ?>
