@@ -79,6 +79,7 @@
 							</div>
 						</ul>
 					</li> 
+										  <!--
 										  <li class="dropdown">
 						<a href="business.html" class="dropdown-toggle" data-toggle="dropdown">LAYANAN PUBLIK<b class="caret"></b></a>
 						<ul class="dropdown-menu multi-column columns-2">
@@ -113,7 +114,7 @@
 								</div>
 							</div>
 						</ul>
-					</li> 
+					</li> -->
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">PUBLIKASI<b class="caret"></b></a>
 						<ul class="dropdown-menu">
