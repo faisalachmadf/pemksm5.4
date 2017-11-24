@@ -77,8 +77,8 @@
 
         <!-- Ini Masuk di User -->
         <li class="header">MENU UNTUK FILE DAN AGENDA</li>
-       <li>
-          <a href="pages/widgets.html">
+      <li class="{{ request()->segment(2) == 'publikasi' ? 'active' : '' }}">
+          <a href="{{ route('publikasi.index') }}">
             <i class="fa fa-file-code-o"></i> <span>FILE PUBLIKASI</span>
             <span class="pull-right-container">
             </span>
