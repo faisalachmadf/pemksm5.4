@@ -84,8 +84,9 @@
             </span>
           </a>
         </li>
-        <li>
-          <a href="/adminpanel/agenda">
+
+         <li class="{{ request()->segment(2) == 'agenda' ? 'active' : '' }}">
+          <a href="{{ route('agenda.index') }}">
             <i class="fa fa-calendar"></i> <span>AGENDA</span>
             <span class="pull-right-container">
              

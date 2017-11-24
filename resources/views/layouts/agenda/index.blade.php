@@ -1,80 +1,83 @@
 @extends('layouts.adminlte')
 
-@section('title', 'Admin Dashboard')
+@section('title', $page['title'])
 
 @section('customCss')
 @endsection
 
-
 @section('content')
+
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
  
-        <small>Control panel</small>
+      <h1>{{ $page['title'] }}</h1>
   
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
+        <li><a href="{{ route('admin.dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">{{ $page['breadcrumb'] }}</li>
       </ol>
     </section>
 
     <!-- Main content -->
     <section class="content">
  
-
-<div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Agenda</h3>
+      <div class="box">
+        <div class="box-header">
+          <a href="{{ route('agenda.create') }}" class="btn btn-primary">
+            <i class="fa fa-plus-circle"></i>
+            <span>Tambah {{ $page['title'] }}</span>
+          </a>
+          <a href="javascript:void(0)" onclick="reloadDatatables()" class="btn btn-default">
+            <i class="fa fa-refresh"></i>
+            <span>Refresh</span>
+          </a>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          @if (session()->has('success'))
+            <div class="alert alert-success alert-dismissible" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <strong>{{ session()->get('success') }}</strong>
             </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
-                <br/>
-                <thead>
-                <tr role="row">
-                 <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 177px;">Tanggal</th>
-                  <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 177px;">Jam</th>
-                  <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 177px;">Bagian</th>
-                  <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 177px;">Acara</th>
-                  <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 177px;">Isi</th>
-
-                  <th>Aksi</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($agendas as $agenda)               
-                <tr>
-                  
-
-                  <td class="sorting_1">{{ date('d-F-Y', strtotime($agenda->tanggal)) }}</td>
-                  <td>{{ $agenda->jam }}
-                  </td>
-                  <td>{{ $agenda->katbagian->name }}</td>
-                  <td> {{ $agenda->judul }}</td>
-                  <td> {{ $agenda->isi }}</td>
-                  <td> 
-                    <button type="button"  class="btn  btn-warning">Edit</button>
-                    <button type="button" class="btn  btn-danger">Delete</button></td>
-                </tr>
-               @endforeach
-                </tbody>
-                <tfoot>
-                
-                </tfoot>
-              </table>
-            </div>
-            <!-- /.box-body -->
-          </div>
+          @endif
+          <table id="agendas-table" class="table table-bordered table-striped" width="100%">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Tanggal Acara</th>
+                <th>Bagian</th>
+                <th>Judul Acara</th>
+                <th>lokasi</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <!-- /.box-body -->
+      </div>
   
-  
-  
-  
- 
-
-
     </section>
     <!-- /.content -->
   </div>
   
+@endsection
+
+@section('customJs')
+  <script type="text/javascript">
+    $(function() {
+      var columns = [
+        { data: 'DT_Row_Index', name: 'DT_Row_Index', orderable: false, searchable: false, width: '5%' },
+        { data: 'tanggal', name: 'tanggal' },
+        { data: 'katbagian.name', name: 'katbagian.name' },
+        { data: 'judul', name: 'judul' },
+        { data: 'lokasi', name: 'lokasi' },
+        { data: 'action', name: 'action', orderable: false, searchable: false, width: '15%' }
+      ];
+
+      createDatatables('#agendas-table', '{!! route('agenda.datatables') !!}', columns);
+    });
+  </script>
 @endsection
