@@ -52,6 +52,9 @@ class KerjasamaLnController extends Controller
             ->addColumn('user', function($data) {
                 return generateUser($data->user);
             })
+            ->addColumn('sisa', function($data) {
+                return generateRemainingDays($data->tanggal_akhir);
+            })
             ->setRowClass(function ($data) {
                 return generateExpiredClass($data->tanggal_akhir, 60);
             })

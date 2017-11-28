@@ -53,6 +53,7 @@
                 <th>Kategori Jenis Kerjasama</th>
                 <th>Nomor</th>
                 <th>Judul</th>
+                <th>Sisa Waktu</th>
                 <th>User</th>
                 <th>Aksi</th>
               </tr>
@@ -78,6 +79,7 @@
         { data: 'katjenisln.name', name: 'katjenisln.name' },
         { data: 'nomor', name: 'nomor' },
         { data: 'judul', name: 'judul' },
+        { data: 'sisa', name: 'tanggal_akhir', searchable: false },
         { data: 'user', name: 'user.username' },
         { data: 'action', name: 'action', orderable: false, searchable: false }
       ];

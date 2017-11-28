@@ -134,11 +134,25 @@ if (! function_exists('generateExpiredClass')) {
             $class = 'danger';
         }
 
-        if ($date->between($now, $then)) {
+        if ($date->between($now->endOfDay(), $then)) {
             $class = 'warning';
         }
 
         return $class;
+   }
+}
+
+if (! function_exists('generateRemainingDays')) {
+   function generateRemainingDays($date)
+   {
+        $date = \Carbon\Carbon::parse($date)->endOfDay();
+        $remain = \Carbon\Carbon::now()->endOfDay()->diffInDays($date, false);
+
+        if ($remain <= 0) {
+            return 'Waktu Habis';
+        }
+
+        return $remain.' hari';
    }
 }
 
