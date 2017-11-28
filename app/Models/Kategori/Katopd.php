@@ -20,4 +20,14 @@ class Katopd extends Model
     {
         return $this->where('slug', $slug)->first();
     }
+
+    public function kerjasamaDns()
+    {
+        return $this->hasMany('App\Models\DataKerjasama\KerjasamaDn', 'id_katopd');
+    }
+
+    public function kerjasamaLns()
+    {
+        return $this->hasMany('App\Models\DataKerjasama\KerjasamaLn', 'id_katopd');
+    }
 }

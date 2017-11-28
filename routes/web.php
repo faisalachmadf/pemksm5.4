@@ -286,6 +286,17 @@ Route::group(['prefix' => 'adminpanel'], function() {
             Route::get('galeri-lppd/datatables','GaleriLppdController@datatables')->name('galeri-lppd.datatables');
             Route::resource('galeri-lppd','GaleriLppdController');
         });
+
+        // Data Kerjasama
+        Route::group(['namespace' => 'DataKerjasama', 'prefix' => 'data-kerjasama'], function() {
+            // Kerjasama Dalam Negeri
+            Route::get('kerjasama-dalam-negeri/datatables','KerjasamaDnController@datatables')->name('kerjasama-dalam-negeri.datatables');
+            Route::resource('kerjasama-dalam-negeri','KerjasamaDnController');
+
+            // Kerjasama Luar Negeri
+            Route::get('kerjasama-luar-negeri/datatables','KerjasamaLnController@datatables')->name('kerjasama-luar-negeri.datatables');
+            Route::resource('kerjasama-luar-negeri','KerjasamaLnController');
+        });
     });
 
    

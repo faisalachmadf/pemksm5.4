@@ -142,7 +142,7 @@
           </ul>
         </li>
       
-        <li class="treeview">
+        <li class="treeview {{ request()->segment(2) == 'data-kerjasama' ? 'active' : '' }}">
           <a href="#">
             <i class="fa fa-folder"></i> <span>Data Kerjasama</span>
             <span class="pull-right-container">
@@ -150,9 +150,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            
-            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data Kerjasama Dalam Negeri</a></li>
-            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data Kerjasama Luar Negeri</a></li>
+            <li class="{{ request()->segment(3) == 'kerjasama-dalam-negeri' ? 'active' : '' }}"><a href="{{ route('kerjasama-dalam-negeri.index') }}"><i class="fa fa-circle-o"></i> Data Kerjasama Dalam Negeri</a></li>
+            <li class="{{ request()->segment(3) == 'kerjasama-luar-negeri' ? 'active' : '' }}"><a href="{{ route('kerjasama-luar-negeri.index') }}"><i class="fa fa-circle-o"></i> Data Kerjasama Luar Negeri</a></li>
           </ul>
         </li>
 

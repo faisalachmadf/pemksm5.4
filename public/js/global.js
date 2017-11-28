@@ -11,7 +11,7 @@ $(function() {
     $('.datepicker').datepicker({
         autoclose: true,
         format: 'dd/mm/yyyy'
-    })
+    });
 
     $(document).on('click', '.thumbnail', function() {
         var src = $(this).data('src');
@@ -27,7 +27,14 @@ $(function() {
         tags: true,
         placeholder: 'Masukan Tag',
         tokenSeparators: [',', ' ']
-    })
+    });
+
+    //Date range picker
+    $('.daterange').daterangepicker({
+        locale: {
+            format: 'DD/MM/YYYY'
+        }
+    });
 });
 
 function dataTablesResponsive() {

@@ -21,8 +21,8 @@ class Katjenisdn extends Model
         return $this->where('slug', $slug)->first();
     }
 
-    public function kerjasamadns()
+    public function kerjasamaDns()
     {
-        return $this->hasMany('App\Models\Kerjasama\Kerjasamadns', 'id_katdn');
+        return $this->hasMany('App\Models\DataKerjasama\KerjasamaDn', 'id_katjenisdn');
     }
 }

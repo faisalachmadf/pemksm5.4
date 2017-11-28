@@ -48,14 +48,24 @@ class User extends SentinelUser
         return $this->hasMany('App\Models\Lppd\GaleriLppd', 'id_user');
     }
 
-     public function publikasis()
+    public function publikasis()
     {
         return $this->hasMany('App\Models\Publikasi', 'id_user');
     }
 
-     public function agendas()
+    public function agendas()
     {
         return $this->hasMany('App\Models\Agenda', 'id_user');
+    }
+
+    public function kerjasamaDns()
+    {
+        return $this->hasMany('App\Models\DataKerjasama\KerjasamaDn', 'id_user');
+    }
+
+    public function kerjasamaLns()
+    {
+        return $this->hasMany('App\Models\DataKerjasama\KerjasamaLn', 'id_user');
     }
 
     public function scopeExclude($query)

@@ -115,4 +115,31 @@ if (! function_exists('generateTagToArray')) {
    }
 }
 
+if (! function_exists('getDateFormatGeneral')) {
+   function getDateFormatGeneral($dateRange, $index, $separator = '/', $delimiter = ' - ')
+   {
+        return dateFormatGeneral(explode($delimiter, $dateRange)[$index], $separator);
+   }
+}
+
+if (! function_exists('generateExpiredClass')) {
+   function generateExpiredClass($date, $warning = 0)
+   {
+        $class = '';
+        $now = \Carbon\Carbon::now();
+        $then = $now->copy()->addDays($warning)->endOfDay();
+        $date = \Carbon\Carbon::parse($date)->endOfDay();
+
+        if ($date->lt($now)) {
+            $class = 'danger';
+        }
+
+        if ($date->between($now, $then)) {
+            $class = 'warning';
+        }
+
+        return $class;
+   }
+}
+
 ?>

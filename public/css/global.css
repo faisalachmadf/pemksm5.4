@@ -1,3 +1,7 @@
 .required {
     color: red;
 }
+
+.treeview-menu>li {
+    white-space: normal;
+}
