@@ -230,9 +230,14 @@ Route::group(['prefix' => 'adminpanel'], function() {
              Route::get('kategori-opd/datatables','KatOpdController@datatables')->name('kategori-opd.datatables');
             Route::resource('kategori-opd','KatOpdController');
 
-            // Kategori Mitra Kerja Sama
+            // Kategori Mitra Kerja Sama Dalam Negeri
              Route::get('katmitra/datatables','KatMitraController@datatables')->name('katmitra.datatables');
             Route::resource('katmitra','KatMitraController');
+
+             // Kategori Mitra Kerja Sama Luar Negeri
+             Route::get('katmitraln/datatables','KatMitraLnController@datatables')->name('katmitraln.datatables');
+            Route::resource('katmitraln','KatMitraLnController');
+
 
             // Kategori Kerja Sama Dalam Negeri
              Route::get('kategori-dn/datatables','KatdnController@datatables')->name('kategori-dn.datatables');
@@ -285,6 +290,8 @@ Route::group(['prefix' => 'adminpanel'], function() {
             // Galeri LPPD
             Route::get('galeri-lppd/datatables','GaleriLppdController@datatables')->name('galeri-lppd.datatables');
             Route::resource('galeri-lppd','GaleriLppdController');
+
+
         });
 
         // Data Kerjasama
@@ -296,6 +303,17 @@ Route::group(['prefix' => 'adminpanel'], function() {
             // Kerjasama Luar Negeri
             Route::get('kerjasama-luar-negeri/datatables','KerjasamaLnController@datatables')->name('kerjasama-luar-negeri.datatables');
             Route::resource('kerjasama-luar-negeri','KerjasamaLnController');
+        });
+
+         // Mitra 
+        Route::group(['namespace' => 'Mitra', 'prefix' => 'mitra'], function() {
+            // Mitra Dalam Negeri
+            Route::get('mitra-dalam-negeri/datatables','MitradnController@datatables')->name('mitra-dalam-negeri.datatables');
+            Route::resource('mitra-dalam-negeri','MitradnController');
+
+            // Mitra Luar Negeri
+            Route::get('mitra-luar-negeri/datatables','MitralnController@datatables')->name('mitra-luar-negeri.datatables');
+            Route::resource('mitra-luar-negeri','MitralnController');
         });
     });
 

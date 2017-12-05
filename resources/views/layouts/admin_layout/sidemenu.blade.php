@@ -129,7 +129,7 @@
           </ul>
         </li>
 
-        <li class="treeview">
+       <li class="treeview {{ request()->segment(2) == 'mitra' ? 'active' : '' }}">
           <a href="#">
             <i class="fa fa-globe"></i> <span>Mitra Kerjasama</span>
             <span class="pull-right-container">
@@ -137,8 +137,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Mitra Kerjasama Dalam Negeri</a></li>
-            <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Mitra Kerjasama Luar Negeri</a></li>
+            <li class="{{ request()->segment(3) == 'mitra-dalam-negeri' ? 'active' : '' }}"><a href="{{ route('mitra-dalam-negeri.index') }}"><i class="fa fa-circle-o"></i> Mitra Kerjasama Dalam Negeri</a></li>
+            <li class="{{ request()->segment(3) == 'mitra-luar-negeri' ? 'active' : '' }}"><a href="{{ route('mitra-luar-negeri.index') }}"><i class="fa fa-circle-o"></i> Mitra Kerjasama Luar Negeri</a></li>
           </ul>
         </li>
       
@@ -215,7 +215,10 @@
             <li class="{{ request()->segment(3) == 'kategori-jabatan' ? 'active' : '' }}"><a href="{{ route('kategori-jabatan.index') }}"><i class="fa fa-circle-o"></i> Kategori Jabatan</a></li>
             <li class="{{ request()->segment(3) == 'kategori-golongan' ? 'active' : '' }}"><a href="{{ route('kategori-golongan.index') }}"><i class="fa fa-circle-o"></i> Kategori Golongan</a></li>
             <li class="{{ request()->segment(3) == 'kategori-opd' ? 'active' : '' }}"><a href="{{ route('kategori-opd.index') }}"><i class="fa fa-circle-o"></i> Kategori OPD</a></li>
-            <li class="{{ request()->segment(3) == 'katmitra' ? 'active' : '' }}"><a href="{{ route('katmitra.index') }}"><i class="fa fa-circle-o"></i> Kategori Mitra Kerjasama</a></li>
+            
+            <li class="{{ request()->segment(3) == 'katmitra' ? 'active' : '' }}"><a href="{{ route('katmitra.index') }}"><i class="fa fa-circle-o"></i> Kategori Mitra Dalam Negeri</a></li>
+
+            <li class="{{ request()->segment(3) == 'katmitraln' ? 'active' : '' }}"><a href="{{ route('katmitraln.index') }}"><i class="fa fa-circle-o"></i> Kategori Mitra Luar Negeri</a></li>
            
            <li class="{{ request()->segment(3) == 'kategori-dn' ? 'active' : '' }}"><a href="{{ route('kategori-dn.index') }}"><i class="fa fa-circle-o"></i> Kategori Kerjasama Dalam Negeri</a></li>
 
