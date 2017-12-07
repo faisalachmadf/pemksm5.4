@@ -70,7 +70,7 @@ class GaleriLppdController extends Controller
             'breadcrumb' => 'Tambah'
         ];
         $view = [
-            'tags' => Tag::pluck('name')
+            'tags' => Tag::pluck('name')->toArray()
         ];
 
         return view('layouts.lppd.galeri.create', $view)->withPage($page);

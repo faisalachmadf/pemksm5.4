@@ -53,7 +53,7 @@
               <div class="col-sm-4">
                 <select class="form-control select2" id="tags" name="tags[]" multiple="multiple" required>
                   @foreach(old('tags', $tags) as $tag)
-                    <option {{ in_array($tag, old('tags')) ? 'selected' : '' }}>{{ $tag }}</option>
+                    <option {{ old('tags') && in_array($tag, old('tags')) ? 'selected' : '' }}>{{ $tag }}</option>
                   @endforeach
                 </select>
 
