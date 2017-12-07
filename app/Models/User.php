@@ -68,6 +68,16 @@ class User extends SentinelUser
         return $this->hasMany('App\Models\DataKerjasama\KerjasamaLn', 'id_user');
     }
 
+    public function mitradns()
+    {
+        return $this->hasMany('App\Models\Mitra\Mitradn', 'id_user');
+    }
+
+     public function mitralns()
+    {
+        return $this->hasMany('App\Models\Mitra\Mitraln', 'id_user');
+    }
+
     public function scopeExclude($query)
     {
         $select = array_merge(['id'], array_diff($this->fillable, $this->hidden));

@@ -4,7 +4,7 @@ namespace App\Models\Kategori;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Katmitra extends Model
+class Katmitraln extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -21,10 +21,8 @@ class Katmitra extends Model
         return $this->where('slug', $slug)->first();
     }
 
-    public function mitradns()
+    public function mitralns()
     {
-        return $this->hasMany('App\Models\Mitra\Mitradn', 'id_katmitra');
+        return $this->hasMany('App\Models\Mitra\Mitraln', 'id_katmitraln');
     }
-
-   
 }
