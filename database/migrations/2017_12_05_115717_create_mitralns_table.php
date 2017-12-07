@@ -44,7 +44,7 @@ class CreateMitralnsTable extends Migration
     public function down()
     {
         Schema::table('mitralns', function (Blueprint $table) {
-            $table->dropForeign(['id_katmitralnln']);
+            $table->dropForeign(['id_katmitraln']);
             $table->dropForeign(['id_user']);
         });
 
