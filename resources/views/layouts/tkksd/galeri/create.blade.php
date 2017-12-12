@@ -15,8 +15,8 @@
   
       <ol class="breadcrumb">
         <li><a href="{{ route('admin.dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><i class="fa fa-file-archive-o"></i> LPPD</li>
-        <li><a href="{{ route('galeri-lppd.index') }}">Galeri</a></li>
+        <li><i class="fa fa-file-archive-o"></i> TKKSD</li>
+        <li><a href="{{ route('galeri-tkksd.index') }}">Galeri</a></li>
         <li class="active">{{ $page['breadcrumb'] }}</li>
       </ol>
     </section>
@@ -26,23 +26,20 @@
 
       <div class="box">
         <div class="box-header">
-          <a href="{{ route('galeri-lppd.index') }}" class="btn btn-default">
+          <a href="{{ route('galeri-tkksd.index') }}" class="btn btn-default">
             <i class="fa fa-arrow-left"></i>
             <span>Kembali</span>
           </a>
         </div>
         <!-- /.box-header -->
-        <form class="form-horizontal" method="POST" action="{{ route('galeri-lppd.update', @$galeri->slug) }}" enctype="multipart/form-data">
+        <form class="form-horizontal" method="POST" action="{{ route('galeri-tkksd.store') }}" enctype="multipart/form-data">
           {{ csrf_field() }}
-          {{ method_field('PUT') }}
-          <input type="hidden" name="id" value="{{ @$galeri->id }}">
           <div class="box-body">
-          @if($galeri)
             <div class="form-group{{ $errors->has('judul') ? ' has-error' : '' }}">
               <label for="judul" class="col-sm-4 control-label">Judul<span class="required">*</span> :</label>
 
               <div class="col-sm-4">
-                <input type="text" class="form-control" id="judul" name="judul" value="{{ old('judul', $galeri->judul) }}" placeholder="Judul" required>
+                <input type="text" class="form-control" id="judul" name="judul" value="{{ old('judul') }}" placeholder="Judul" required>
                 <small>Judul tidak boleh sama</small>
 
                 @if ($errors->has('judul'))
@@ -50,26 +47,25 @@
                 @endif
               </div>
             </div>
-            <div class="form-group{{ $errors->has('tags') ? ' has-error' : '' }}">
-              <label for="tags" class="col-sm-4 control-label">Tag<span class="required">*</span> :</label>
+            <div class="form-group{{ $errors->has('tagtkksds') ? ' has-error' : '' }}">
+              <label for="tagtkksds" class="col-sm-4 control-label">Tag<span class="required">*</span> :</label>
 
               <div class="col-sm-4">
-                <select class="form-control select2" id="tags" name="tags[]" multiple="multiple" required>
-                  @foreach(old('tags', generateTagToArray($galeri)) as $tag)
-                    <option {{ in_array($tag, old('tags', generateTagToArray($galeri))) ? 'selected' : '' }}>{{ $tag }}</option>
+                <select class="form-control select2" id="tagtkksds" name="tagtkksds[]" multiple="multiple" required>
+                  @foreach(old('tagtkksds', $tagtkksds) as $tag)
+                    <option {{ old('tagtkksds') && in_array($tag, old('tagtkksds')) ? 'selected' : '' }}>{{ $tag }}</option>
                   @endforeach
                 </select>
 
-                @if ($errors->has('tags'))
-                  <span class="help-block">{{ $errors->first('tags') }}</span>
+                @if ($errors->has('tagtkksds'))
+                  <span class="help-block">{{ $errors->first('tagtkksds') }}</span>
                 @endif
               </div>
             </div>
             <div class="form-group{{ $errors->has('gambar') ? ' has-error' : '' }}">
-              <label for="gambar" class="col-sm-4 control-label">Gambar :</label>
+              <label for="gambar" class="col-sm-4 control-label">Gambar<span class="required">*</span> :</label>
 
               <div class="col-sm-4">
-                {!! generateImagePath('galeri-lppd', $galeri->gambar, $galeri->judul) !!}
                 <input type="file" class="form-control-static" id="gambar" name="gambar">
                 <small>(jpeg, png, bmp, gif, or svg)</small>
 
@@ -78,31 +74,20 @@
                 @endif
               </div>
             </div>
-            <div class="form-group{{ $errors->has('gambartkksds') ? ' has-error' : '' }}">
-              <label for="gambartkksds" class="col-sm-4 control-label">Multi Gambar :</label>
+            <div class="form-group{{ $errors->has('gambars') ? ' has-error' : '' }}">
+              <label for="gambars" class="col-sm-4 control-label">Multi Gambar<span class="required">*</span> :</label>
 
               <div class="col-sm-4">
-                <input type="file" class="form-control-static" id="gambartkksds" name="gambartkksds[]" multiple>
+                <input type="file" class="form-control-static" id="gambars" name="gambars[]" multiple>
                 <small>(jpeg, png, bmp, gif, or svg)</small>
 
-                @if ($errors->has('gambartkksds'))
-                  <span class="help-block">{{ $errors->first('gambartkksds') }}</span>
+                @if ($errors->has('gambars'))
+                  <span class="help-block">{{ $errors->first('gambars') }}</span>
                 @endif
               </div>
             </div>
-            <div class="form-group">
-              @foreach($galeri->gambartkksds as $multi)
-              <div class="col-sm-3">
-                {!! generateImagePath('galeri-lppd', $multi->gambar, $galeri->judul) !!}
-              </div>
-              @endforeach
-            </div>
-          @else
-            <h1 class="text-center">Data Tidak Ditemukan</h1>
-          @endif
           </div>
           <!-- /.box-body -->
-          @if($galeri)
           <div class="box-footer">
             <div class="col-sm-12">
               <button type="submit" class="btn btn-success pull-right">Submit</button>
@@ -110,7 +95,6 @@
             </div>
           </div>
           <!-- /.box-footer -->
-          @endif
         </form>
       </div>
   

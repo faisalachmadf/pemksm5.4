@@ -15,8 +15,7 @@
   
       <ol class="breadcrumb">
         <li><a href="{{ route('admin.dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><i class="fa fa-file-archive-o"></i> LPPD</li>
-        <li><a href="{{ route('galeri-lppd.index') }}">Galeri</a></li>
+        <li><a href="{{ route('tkksd.index') }}">TKKSD</a></li>
         <li class="active">{{ $page['breadcrumb'] }}</li>
       </ol>
     </section>
@@ -26,7 +25,7 @@
 
       <div class="box">
         <div class="box-header">
-          <a href="{{ route('galeri-lppd.index') }}" class="btn btn-default">
+          <a href="{{ route('tkksd.index') }}" class="btn btn-default">
             <i class="fa fa-arrow-left"></i>
             <span>Kembali</span>
           </a>
@@ -34,43 +33,49 @@
         <!-- /.box-header -->
         <form class="form-horizontal">
           <div class="box-body">
-          @if($galeri)
+          @if($tkksd)
             <div class="form-group">
               <label for="judul" class="col-sm-4 control-label">Judul :</label>
 
               <div class="col-sm-4">
-                <p class="form-control-static">{{ $galeri->judul }}</p>
+                <p class="form-control-static">{{ $tkksd->judul }}</p>
+              </div>
+            </div>
+           
+            <div class="form-group">
+              <label for="tanggal" class="col-sm-4 control-label">Tanggal :</label>
+
+              <div class="col-sm-8">
+                <p class="form-control-static">{{ dateFormatIndo($tkksd->tanggal) }}</p>
               </div>
             </div>
             <div class="form-group">
-              <label for="tag" class="col-sm-4 control-label">Tag :</label>
+              <label for="user" class="col-sm-4 control-label">Upload By :</label>
 
               <div class="col-sm-4">
-                <p class="form-control-static">{{ generateTag($galeri->tags) }}</p>
+                <p class="form-control-static">{{ generateUser($tkksd->user) }}</p>
               </div>
             </div>
             <div class="form-group">
-              <label for="user" class="col-sm-4 control-label">User :</label>
+              <label for="file" class="col-sm-4 control-label">File :</label>
+
+              <div class="col-sm-4 form-control-static">
+                {!! generateFileDownload(route('tkksd.download', $tkksd->slug), $tkksd->file, $tkksd->nama) !!}
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="diunduh" class="col-sm-4 control-label">Diunduh :</label>
 
               <div class="col-sm-4">
-                <p class="form-control-static">{{ generateUser($galeri->user) }}</p>
+                <p class="form-control-static">{{ $tkksd->diunduh }} kali</p>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-4 control-label">Gambar :</label>
+              <label for="isi" class="col-sm-12">Isi Keterangan</label>
 
-              <div class="col-sm-4">
-                {!! generateImagePath('galeri-lppd', $galeri->gambar, $galeri->judul) !!}
+              <div class="col-sm-12">
+                {!! $tkksd->isi !!}
               </div>
-            </div>
-            <div class="form-group">
-              <label class="col-sm-12">Multi Gambar</label>
-
-              @foreach($galeri->gambartkksds as $multi)
-              <div class="col-sm-3">
-                {!! generateImagePath('galeri-lppd', $multi->gambar, $galeri->judul) !!}
-              </div>
-              @endforeach
             </div>
           @else
             <h1 class="text-center">Data Tidak Ditemukan</h1>

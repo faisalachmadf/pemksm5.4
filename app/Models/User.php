@@ -48,6 +48,21 @@ class User extends SentinelUser
         return $this->hasMany('App\Models\Lppd\GaleriLppd', 'id_user');
     }
 
+     public function lppds()
+    {
+        return $this->hasMany('App\Models\Lppd\Lppd', 'id_user');
+    }
+
+     public function tkksds()
+    {
+        return $this->hasMany('App\Models\Tkksd\Tkksd', 'id_user');
+    }
+
+     public function galeriTkksds()
+    {
+        return $this->hasMany('App\Models\Tkksd\GaleriTkksd', 'id_user');
+    }
+
     public function publikasis()
     {
         return $this->hasMany('App\Models\Publikasi', 'id_user');
@@ -77,6 +92,7 @@ class User extends SentinelUser
     {
         return $this->hasMany('App\Models\Mitra\Mitraln', 'id_user');
     }
+
 
     public function scopeExclude($query)
     {

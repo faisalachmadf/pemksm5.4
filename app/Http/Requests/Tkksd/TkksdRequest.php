@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Tkksd;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class LaporanRequest extends FormRequest
+class TkksdRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -32,7 +32,6 @@ class LaporanRequest extends FormRequest
         }
 
         return [
-            'id_katlaporan' => 'required',
             'judul' => 'required|unique:laporans,judul,'.$id,
             'isi' => 'required',
             'tanggal' => 'required|date_format:d/m/Y',

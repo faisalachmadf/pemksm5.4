@@ -35,7 +35,7 @@ class PublikasiRequest extends FormRequest
             'id_katfile' => 'required',
             'judul' => 'required|unique:publikasis,judul,'.$id,
             'tanggal' => 'required|date_format:d/m/Y',
-            'file' => 'mimes:pdf,doc,docx,xls,xlsx,ppt,pptx,jpeg,png,bmp,gif,svg'.$file
+            'file' => 'mimes:pdf,doc,docx,xls,xlsx,ppt,pptx,jpeg,png,bmp,gif,svg,rar,zip'.$file
         ];
     }
 }

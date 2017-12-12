@@ -15,8 +15,8 @@
   
       <ol class="breadcrumb">
         <li><a href="{{ route('admin.dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><i class="fa fa-file-archive-o"></i> LPPD</li>
-        <li><a href="{{ route('galeri-lppd.index') }}">Galeri</a></li>
+        <li><i class="fa fa-file-archive-o"></i> TKKSD</li>
+        <li><a href="{{ route('galeri-tkksd.index') }}">Galeri</a></li>
         <li class="active">{{ $page['breadcrumb'] }}</li>
       </ol>
     </section>
@@ -26,7 +26,7 @@
 
       <div class="box">
         <div class="box-header">
-          <a href="{{ route('galeri-lppd.index') }}" class="btn btn-default">
+          <a href="{{ route('galeri-tkksd.index') }}" class="btn btn-default">
             <i class="fa fa-arrow-left"></i>
             <span>Kembali</span>
           </a>
@@ -46,7 +46,7 @@
               <label for="tag" class="col-sm-4 control-label">Tag :</label>
 
               <div class="col-sm-4">
-                <p class="form-control-static">{{ generateTag($galeri->tags) }}</p>
+                <p class="form-control-static">{{ generateTag($galeri->tagtkksds) }}</p>
               </div>
             </div>
             <div class="form-group">
@@ -60,15 +60,15 @@
               <label class="col-sm-4 control-label">Gambar :</label>
 
               <div class="col-sm-4">
-                {!! generateImagePath('galeri-lppd', $galeri->gambar, $galeri->judul) !!}
+                {!! generateImagePath('galeri-tkksd', $galeri->gambar, $galeri->judul) !!}
               </div>
             </div>
             <div class="form-group">
               <label class="col-sm-12">Multi Gambar</label>
 
-              @foreach($galeri->gambartkksds as $multi)
+              @foreach($galeri->gambars as $multi)
               <div class="col-sm-3">
-                {!! generateImagePath('galeri-lppd', $multi->gambar, $galeri->judul) !!}
+                {!! generateImagePath('galeri-tkksd', $multi->gambar, $galeri->judul) !!}
               </div>
               @endforeach
             </div>

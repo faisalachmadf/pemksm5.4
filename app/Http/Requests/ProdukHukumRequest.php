@@ -34,7 +34,7 @@ class ProdukHukumRequest extends FormRequest
         return [
             'id_kathukum' => 'required',
             'nama' => 'required|unique:produk_hukums,nama,'.$id,
-            'file' => 'mimes:pdf,doc,docx,xls,xlsx,ppt,pptx,jpeg,png,bmp,gif,svg'.$file
+            'file' => 'mimes:pdf,doc,docx,xls,xlsx,ppt,pptx,jpeg,png,bmp,gif,svg,rar,zip'.$file
         ];
     }
 }

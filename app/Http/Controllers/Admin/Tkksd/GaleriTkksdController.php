@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Lppd;
+namespace App\Http\Controllers\Admin\Tkksd;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Lppd\GaleriLppdRequest;
+use App\Http\Requests\Tkksd\GaleriTkksdRequest;
 
-use App\Models\Lppd\GaleriLppd;
-use App\Models\Tag;
+use App\Models\Tkksd\GaleriTkksd;
+use App\Models\Tagtkksd;
 use Datatables;
 
-class GaleriLppdController extends Controller
+class GaleriTkksdController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,11 +20,11 @@ class GaleriLppdController extends Controller
     public function index()
     {
         $page = [
-            'title' => 'Galeri Lppd',
+            'title' => 'Galeri TKKSD',
             'breadcrumb' => 'Galeri'
         ];
 
-        return view('layouts.lppd.galeri.index')->withPage($page);
+        return view('layouts.tkksd.galeri.index')->withPage($page);
     }
 
     /**
@@ -35,12 +35,12 @@ class GaleriLppdController extends Controller
     public function datatables()
     {
         $param = [
-            'url' => 'galeri-lppd',
+            'url' => 'galeri-tkksd',
             'action' => ['show', 'edit', 'destroy'],
-            'gambar' => 'galeri-lppd'
+            'gambar' => 'galeri-tkksd'
         ];
 
-        return Datatables::of(GaleriLppd::with(['tags', 'user']))
+        return Datatables::of(GaleriTkksd::with(['tagtkksds', 'user']))
             ->addColumn('action', function($data) use ($param) {
                 return generateAction($param, $data->slug);
             })
@@ -48,7 +48,7 @@ class GaleriLppdController extends Controller
                 return generateImagePath($param['gambar'], $data->gambar, $data->judul);
             })
             ->addColumn('tag', function($data) {
-                return generateTag($data->tags);
+                return generateTag($data->tagtkksds);
             })
             ->addColumn('user', function($data) {
                 return generateUser($data->user);
@@ -66,14 +66,14 @@ class GaleriLppdController extends Controller
     public function create()
     {
         $page = [
-            'title' => 'Tambah Galeri Lppd',
+            'title' => 'Tambah Galeri Tkksd',
             'breadcrumb' => 'Tambah'
         ];
         $view = [
-            'tags' => Tag::pluck('name')->toArray()
+            'tagtkksds' => Tagtkksd::pluck('name')->toArray()
         ];
 
-        return view('layouts.lppd.galeri.create', $view)->withPage($page);
+        return view('layouts.tkksd.galeri.create', $view)->withPage($page);
     }
 
     /**
@@ -82,15 +82,15 @@ class GaleriLppdController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(GaleriLppdRequest $request)
+    public function store(GaleriTkksdRequest $request)
     {
-        $galeri = new GaleriLppd;
+        $galeri = new GaleriTkksd;
         $galeri->judul = $request->input('judul');
         $galeri->slug = str_slug($galeri->judul);
-        $tags = $request->input('tags');
+        $tagtkksds = $request->input('tagtkksds');
         $gambar = $request->file('gambar');
         $gambars = $request->file('gambars');
-        $path = 'image/galeri-lppd';
+        $path = 'image/galeri-tkksd';
         $time = time();
 
         if (!$gambar->isValid()) {
@@ -111,9 +111,9 @@ class GaleriLppdController extends Controller
         //create thumbnail
         //generateThumbnail($path, $galeri->gambar);
 
-        // Save Tags
-        $tagIds = Tag::getIdByName($tags);
-        $galeri->tags()->sync($tagIds);
+        // Save tagtkksds
+        $tagIds = Tagtkksd::getIdName($tagtkksds);
+        $galeri->tagtkksds()->sync($tagIds);
 
         // Save Multi Gambar
         foreach ($gambars as $image) {
@@ -127,7 +127,7 @@ class GaleriLppdController extends Controller
             //generateThumbnail($path, $multiGambar->gambar);
         }
         
-        return redirect()->route('galeri-lppd.index')->with('success', 'Data telah tersimpan');
+        return redirect()->route('galeri-tkksd.index')->with('success', 'Data telah tersimpan');
     }
 
     /**
@@ -139,13 +139,13 @@ class GaleriLppdController extends Controller
     public function show($slug)
     {
         $page = [
-            'title' => 'Detail Galeri Lppd',
+            'title' => 'Detail Galeri Tkksd',
             'breadcrumb' => 'Detail'
         ];
-        $model = new GaleriLppd;
+        $model = new GaleriTkksd;
         $galeri = $model->getDataBySlug($slug);
 
-        return view('layouts.lppd.galeri.show', compact('galeri'))->withPage($page);
+        return view('layouts.tkksd.galeri.show', compact('galeri'))->withPage($page);
     }
 
     /**
@@ -157,15 +157,15 @@ class GaleriLppdController extends Controller
     public function edit($slug)
     {
         $page = [
-            'title' => 'Edit Galeri Lppd',
+            'title' => 'Edit Galeri Tkksd',
             'breadcrumb' => 'Edit'
         ];
-        $model = new GaleriLppd;
+        $model = new GaleriTkksd;
         $view = [
             'galeri' => $model->getDataBySlug($slug)
         ];
 
-        return view('layouts.lppd.galeri.edit', $view)->withPage($page);
+        return view('layouts.tkksd.galeri.edit', $view)->withPage($page);
     }
 
     /**
@@ -175,14 +175,14 @@ class GaleriLppdController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(GaleriLppdRequest $request, $slug)
+    public function update(GaleriTkksdRequest $request, $slug)
     {
-        $model = new GaleriLppd;
-        $data = $request->except('id', 'tags', 'gambar', 'gambars');
+        $model = new GaleriTkksd;
+        $data = $request->except('id', 'tagtkksds', 'gambar', 'gambars');
         $galeri = $model->getDataBySlug($slug);
         $data['slug'] = str_slug($data['judul']);
-        $tags = $request->input('tags');
-        $path = 'image/galeri-lppd';
+        $tagtkksds = $request->input('tagtkksds');
+        $path = 'image/galeri-tkksd';
         $time = time();
 
         if ($request->hasFile('gambar')) {
@@ -235,11 +235,11 @@ class GaleriLppdController extends Controller
             }
         }
 
-        $tagIds = Tag::getIdByName($tags);
-        $galeri->tags()->sync($tagIds);
+        $tagIds = Tag::getIdName($tagtkksds);
+        $galeri->tagtkksds()->sync($tagIds);
         $galeri->update($data);
 
-        return redirect()->route('galeri-lppd.index')->with('success', 'Data telah diubah');
+        return redirect()->route('galeri-tkksd.index')->with('success', 'Data telah diubah');
     }
 
     /**
@@ -250,9 +250,9 @@ class GaleriLppdController extends Controller
      */
     public function destroy($slug)
     {
-        $model = new GaleriLppd;
+        $model = new GaleriTkksd;
         $galeri = $model->getDataBySlug($slug);
-        $path = 'image/galeri-lppd';
+        $path = 'image/galeri-tkksd';
 
         if ($galeri) {
             // delete image & thumbnail
@@ -269,6 +269,6 @@ class GaleriLppdController extends Controller
             $message = 'Data tidak ditemukan';
         }
 
-        return redirect()->route('galeri-lppd.index')->with('success', $message);
+        return redirect()->route('galeri-tkksd.index')->with('success', $message);
     }
 }

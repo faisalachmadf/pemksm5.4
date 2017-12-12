@@ -106,7 +106,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/UI/general.html"><i class="fa fa-file"></i> File LPPD</a></li>
+           <li class="{{ request()->segment(3) == 'lppd' ? 'active' : '' }}"><a href="{{ route('lppd.index') }}"><i class="fa fa-file"></i> File LPPD</a></li>
+            
+
             <li class="{{ request()->segment(3) == 'galeri-lppd' ? 'active' : '' }}"><a href="{{ route('galeri-lppd.index') }}"><i class="fa fa-book"></i> Galeri LPPD</a></li>
           </ul>
         </li>
@@ -114,7 +116,7 @@
 
         <!-- Ini Masuk di User -->
         <li class="header">MENU UNTUK KERJASAMA</li>
-        <li class="treeview">
+        <li class="treeview {{ request()->segment(2) == 'tkksd' ? 'active' : '' }}">
           <a href="#">
             <i class="fa fa-file-archive-o"></i>
             <span>TKKSD</span>
@@ -123,8 +125,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/UI/general.html"><i class="fa fa-file"></i> File TKKSD</a></li>
-            <li><a href="pages/UI/icons.html"><i class="fa fa-book"></i> Galeri TKKSD</a></li>
+             <li class="{{ request()->segment(3) == 'tkksd' ? 'active' : '' }}"><a href="{{ route('tkksd.index') }}"><i class="fa fa-file"></i></i> File TKKSD</a></li>
+           <li class="{{ request()->segment(3) == 'galeri-tkksd' ? 'active' : '' }}"><a href="{{ route('galeri-tkksd.index') }}"><i class="fa fa-book"></i> Galeri TKKSD</a></li>
             
           </ul>
         </li>

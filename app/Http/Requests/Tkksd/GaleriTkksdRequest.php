@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Tkksd;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class LaporanRequest extends FormRequest
+class GaleriTkksdRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,18 +25,17 @@ class LaporanRequest extends FormRequest
     {
         if ($this->has('id')) {
             $id = $this->input('id');
-            $file = '';
+            $gambar = '';
         } else {
             $id = 0;
-            $file = '|required';
+            $gambar = '|required';
         }
 
         return [
-            'id_katlaporan' => 'required',
-            'judul' => 'required|unique:laporans,judul,'.$id,
-            'isi' => 'required',
-            'tanggal' => 'required|date_format:d/m/Y',
-            'file' => 'mimes:pdf,doc,docx,xls,xlsx,ppt,pptx,jpeg,png,bmp,gif,svg,rar,zip'.$file
+            'judul' => 'required|unique:galeri_tkksds,judul,'.$id,
+            'tagtkksds.*' => 'required',
+            'gambar' => 'image|mimes:jpeg,png,bmp,gif,svg'.$gambar,
+            'gambars.*' => 'image|mimes:jpeg,png,bmp,gif,svg'.$gambar
         ];
     }
 }

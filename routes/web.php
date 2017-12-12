@@ -287,9 +287,27 @@ Route::group(['prefix' => 'adminpanel'], function() {
 
         // LPPD
         Route::group(['namespace' => 'Lppd', 'prefix' => 'lppd'], function() {
+           // LPPD
+              Route::get('lppd/datatables','LppdController@datatables')->name('lppd.datatables');
+        Route::get('lppd/{slug}/download','LppdController@download')->name('lppd.download');
+        Route::resource('lppd','lppdController');
+
             // Galeri LPPD
             Route::get('galeri-lppd/datatables','GaleriLppdController@datatables')->name('galeri-lppd.datatables');
             Route::resource('galeri-lppd','GaleriLppdController');
+
+        });
+
+          // TKKSD
+        Route::group(['namespace' => 'Tkksd', 'prefix' => 'tkksd'], function() {
+            // TKKSD
+              Route::get('tkksd/datatables','TkksdController@datatables')->name('tkksd.datatables');
+        Route::get('tkksd/{slug}/download','TkksdController@download')->name('tkksd.download');
+        Route::resource('tkksd','TkksdController');
+
+            // Galeri tkksd
+            Route::get('galeri-tkksd/datatables','GaleriTkksdController@datatables')->name('galeri-tkksd.datatables');
+            Route::resource('galeri-tkksd','GaleriTkksdController');
 
 
         });
