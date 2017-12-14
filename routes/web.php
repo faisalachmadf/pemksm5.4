@@ -22,7 +22,7 @@ Route::get('selayang-pandang', function () {
 });
 
 Route::get('Visi-dan-Misi', function () {
-    return view('profile.visimisi');
+    return view('page.profile.visimisi');
 });
 
 Route::get('Tugas-Pokok-dan-Fungsi', function () {

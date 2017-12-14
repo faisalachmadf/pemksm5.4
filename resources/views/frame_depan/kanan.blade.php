@@ -7,9 +7,9 @@
                         <li class="c5-element-twitter"><a href="#"><span class="icon1"></span><h5>201</h5><span class="text">Followers</span></a></li>
 						 <li class="c5-element-gg"><a href="#"><span class="icon2"></span><h5>111</h5><span class="text">Followers</span></a></li>
 						<li class="c5-element-dribble"><a href="#"><span class="icon3"></span><h5>99</h5><span class="text">Followers</span></a></li>
-						
 					  </ul>
-			      </div><BR/><BR/>
+			      </div><BR/>
+
 				  <div class="connect">
 				    <h4 class="side" >Berita terpopuler</h4>
 					  <ul class="stay">
@@ -17,9 +17,9 @@
                         <li class="c5-element-twitter"><a href="#"><span class="icon1"></span><h5>201</h5><span class="text">Followers</span></a></li>
 						 <li class="c5-element-gg"><a href="#"><span class="icon2"></span><h5>111</h5><span class="text">Followers</span></a></li>
 						<li class="c5-element-dribble"><a href="#"><span class="icon3"></span><h5>99</h5><span class="text">Followers</span></a></li>
-						
 					  </ul>
 			      </div>
+
 				    <div class="modern">
 				      <h4 class="side">Event</h4>
 					  <div id="example1">
@@ -39,27 +39,27 @@
 						<div class="item">
 					
 							<img class="img-responsive lot" src="images/p1.jpg" alt=""/>
-					</div>
-					<div class="item">
-					
-							<img class="img-responsive lot" src="images/p1.jpg" alt=""/>
-					</div>
+						</div>
 						<div class="item">
-					
-							<img class="img-responsive lot" src="images/p2.jpg" alt=""/>
+						
+								<img class="img-responsive lot" src="images/p1.jpg" alt=""/>
+						</div>
+							<div class="item">
+						
+								<img class="img-responsive lot" src="images/p2.jpg" alt=""/>
+						</div>
+							<div class="item">
+						
+								<img class="img-responsive lot" src="images/p33.jpg" alt=""/>
+						</div>
+							<div class="item">
+						
+								<img class="img-responsive lot" src="images/p1.jpg" alt=""/>
+						</div>
+						</div>
 					</div>
-						<div class="item">
-					
-							<img class="img-responsive lot" src="images/p33.jpg" alt=""/>
-					</div>
-						<div class="item">
-					
-							<img class="img-responsive lot" src="images/p1.jpg" alt=""/>
-					</div>
-				</div>
-				</div>
 				<!-- requried-jsfiles-for owl -->
-										<script src="js/owl.carousel.js"></script>
+				<script src="{{ asset('/js/owl.carousel.js') }}"> </script>
 										  <script>
 										  $(document).ready(function() {
 											   $("#owl-demo").owlCarousel({
@@ -188,5 +188,4 @@
 
 						</div>
 						<div class="clearfix"></div>
-					</div>
-			     <!--//end-mag-inner-->
+						</div>

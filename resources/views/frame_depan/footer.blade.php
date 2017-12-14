@@ -1,10 +1,7 @@
-
- <!--/start-footer-section-->
-			<div class="footer-section">
-			   <div class="container">
+<div class="container">
 					<div class="footer-grids">
 						<div class="col-md-4 footer-grid">
-						<h4>Kontak Kami</h4>
+						<h4>EDITOR PICKS</h4>
 						  <div class="editor-pics">
 							 <div class="col-md-3 item-pic">
 							   <img src="images/f1.jpg" class="img-responsive" alt=""/>
@@ -93,38 +90,3 @@
 						<div class="clearfix"></div>
 					</div>
 				</div>
-			</div>
-
-	<!--//end-footer-section-->
-			<!--/start-copyright-section-->
-				<div class="copyright">
-					<p>&copy; 2015 Motive Mag. All Rights Reserved.</p>
-				</div>
-				<!--start-smoth-scrolling-->
-						<script type="text/javascript">
-									$(document).ready(function() {
-										/*
-										var defaults = {
-								  			containerID: 'toTop', // fading element id
-											containerHoverID: 'toTopHover', // fading element hover id
-											scrollSpeed: 1200,
-											easingType: 'linear' 
-								 		};
-										*/
-										
-										$().UItoTop({ easingType: 'easeOutQuart' });
-										
-									});
-								</script>
-		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-
-
-
-
-<!--JS-->
-  <script type="text/javascript" src="/temafrontend/js/bootstrap-3.1.1.min.js"></script>
-
-<!--//JS-->
-
-</body>
-</html>
