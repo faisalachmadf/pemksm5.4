@@ -73,7 +73,7 @@
 				      <hr/>
 					  <!--//end-Technology-->
 					   <div class="technology">
-			              <h2 class="tittle"><i class="glyphicon glyphicon-certificate"> </i>Urusan Pemerintahan Daerah</h2>
+			              <h2 class="tittle"><i class="glyphicon glyphicon-certificate"> </i>Tata Pemerintahan</h2>
 							
 							 
 					            <div class="editor-pics">
@@ -116,7 +116,7 @@
 				      <hr/>
 
 				       <div class="technology">
-			              <h2 class="tittle"><i class="glyphicon glyphicon-certificate"> </i>Urusan Pemerintahan Daerah</h2>
+			              <h2 class="tittle"><i class="glyphicon glyphicon-certificate"> </i>Kerja Sama</h2>
 							
 							 
 					            <div class="editor-pics">
@@ -158,106 +158,7 @@
 				      </div>
 				      <hr/>
 
-					  <div class="gallery">
-							<div class="main-title-head">
-							  <h3 class="tittle"><i class="glyphicon glyphicon-picture"></i>Gallery</h3>
-							</div>
-							<div class="gallery-images">
-								<div class="course_demo1">
-								  <ul id="flexiselDemo1">	
-									 <li>
-										<a href="single.html"><img src="images/mg1.jpg" alt="" /></a>						
-									 </li>
-									 <li>
-										<a href="single.html"><img src="images/mg2.jpg" alt="" /></a>
-									  </li>	
-									 <li>
-										<a href="single.html"><img src="images/mg3.jpg" alt="" /></a>
-									 </li>	
-									 <li>
-										<a href="single.html"><img src="images/mg4.jpg" alt="" /></a>
-									 </li>	
-								 </ul>
-							 </div>
-								<script type="text/javascript">
-							 $(window).load(function() {
-								$("#flexiselDemo1").flexisel({
-									visibleItems: 3,
-									animationSpeed: 1000,
-									autoPlay: true,
-									autoPlaySpeed: 3000,    		
-									pauseOnHover: true,
-									enableResponsiveBreakpoints: true,
-									responsiveBreakpoints: { 
-										portrait: { 
-											changePoint:480,
-											visibleItems: 2
-										}, 
-										landscape: { 
-											changePoint:640,
-											visibleItems: 2
-										},
-										tablet: { 
-											changePoint:768,
-											visibleItems: 3
-										}
-									}
-								});
-								
-							 });
-							  </script>
-							 <script type="text/javascript" src="/temafrontend/js/jquery.flexisel.js"></script>
-						 </div>
-						  <div class="course_demo1">
-								  <ul id="flexiselDemo">	
-									 <li>
-										<a href="single.html"><img src="images/mg7.jpg" alt="" /></a>							
-									 </li>
-									 <li>
-										<a href="single.html"><img src="images/mg3.jpg" alt="" /></a>	
-									  </li>	
-									 <li>
-										<a href="single.html"><img src="images/mg6.jpg" alt="" /></a>	
-									 </li>	
-									 <li>
-										<a href="single.html"><img src="images/mg2.jpg" alt="" /></a>	
-									 </li>	
-									 <li>
-										<a href="single.html"><img src="images/mg6.jpg" alt="" /></a>	
-									 </li>	
-								 </ul>
-							 </div>
-							 <a class="more" href="single.html">More  +</a>
-								<script type="text/javascript">
-							 $(window).load(function() {
-								$("#flexiselDemo").flexisel({
-									visibleItems: 3,
-									animationSpeed: 1000,
-									autoPlay: true,
-									autoPlaySpeed: 3000,    		
-									pauseOnHover: true,
-									enableResponsiveBreakpoints: true,
-									responsiveBreakpoints: { 
-										portrait: { 
-											changePoint:480,
-											visibleItems: 2
-										}, 
-										landscape: { 
-											changePoint:640,
-											visibleItems: 2
-										},
-										tablet: { 
-											changePoint:768,
-											visibleItems: 3
-										}
-									}
-								});
-								
-							 });
-							  </script>
-							 <script type="text/javascript" src="/temafrontend/js/jquery.flexisel.js"></script>
-
-					</div>
+					  
 				<!--business-->
 					
 				   <!--//business-->
