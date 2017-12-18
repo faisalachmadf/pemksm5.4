@@ -35,6 +35,10 @@ $(function() {
             format: 'DD/MM/YYYY'
         }
     });
+
+    $('button[type="submit"]').on('click', function(e) {
+        return confirm('Apakah data ini benar?');
+    });
 });
 
 function dataTablesResponsive() {

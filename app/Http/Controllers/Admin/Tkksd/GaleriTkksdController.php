@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Tkksd\GaleriTkksdRequest;
 
 use App\Models\Tkksd\GaleriTkksd;
-use App\Models\Tagtkksd;
+use App\Models\Tag;
 use Datatables;
 
 class GaleriTkksdController extends Controller
@@ -40,7 +40,7 @@ class GaleriTkksdController extends Controller
             'gambar' => 'galeri-tkksd'
         ];
 
-        return Datatables::of(GaleriTkksd::with(['tagtkksds', 'user']))
+        return Datatables::of(GaleriTkksd::with(['tags', 'user']))
             ->addColumn('action', function($data) use ($param) {
                 return generateAction($param, $data->slug);
             })
@@ -48,7 +48,7 @@ class GaleriTkksdController extends Controller
                 return generateImagePath($param['gambar'], $data->gambar, $data->judul);
             })
             ->addColumn('tag', function($data) {
-                return generateTag($data->tagtkksds);
+                return generateTag($data->tags);
             })
             ->addColumn('user', function($data) {
                 return generateUser($data->user);
@@ -70,7 +70,7 @@ class GaleriTkksdController extends Controller
             'breadcrumb' => 'Tambah'
         ];
         $view = [
-            'tagtkksds' => Tagtkksd::pluck('name')->toArray()
+            'tags' => Tag::pluck('name')->toArray()
         ];
 
         return view('layouts.tkksd.galeri.create', $view)->withPage($page);
@@ -87,7 +87,7 @@ class GaleriTkksdController extends Controller
         $galeri = new GaleriTkksd;
         $galeri->judul = $request->input('judul');
         $galeri->slug = str_slug($galeri->judul);
-        $tagtkksds = $request->input('tagtkksds');
+        $tags = $request->input('tags');
         $gambar = $request->file('gambar');
         $gambars = $request->file('gambars');
         $path = 'image/galeri-tkksd';
@@ -109,11 +109,11 @@ class GaleriTkksdController extends Controller
         $gambar->move($path, $galeri->gambar);
 
         //create thumbnail
-        //generateThumbnail($path, $galeri->gambar);
+        generateThumbnail($path, $galeri->gambar);
 
-        // Save tagtkksds
-        $tagIds = Tagtkksd::getIdName($tagtkksds);
-        $galeri->tagtkksds()->sync($tagIds);
+        // Save tags
+        $tagIds = Tag::getIdByName($tags);
+        $galeri->tags()->sync($tagIds);
 
         // Save Multi Gambar
         foreach ($gambars as $image) {
@@ -124,7 +124,7 @@ class GaleriTkksdController extends Controller
             $image->move($path, $multiGambar->gambar);
 
             //create thumbnail multiple
-            //generateThumbnail($path, $multiGambar->gambar);
+            generateThumbnail($path, $multiGambar->gambar);
         }
         
         return redirect()->route('galeri-tkksd.index')->with('success', 'Data telah tersimpan');
@@ -178,10 +178,10 @@ class GaleriTkksdController extends Controller
     public function update(GaleriTkksdRequest $request, $slug)
     {
         $model = new GaleriTkksd;
-        $data = $request->except('id', 'tagtkksds', 'gambar', 'gambars');
+        $data = $request->except('id', 'tags', 'gambar', 'gambars');
         $galeri = $model->getDataBySlug($slug);
         $data['slug'] = str_slug($data['judul']);
-        $tagtkksds = $request->input('tagtkksds');
+        $tags = $request->input('tags');
         $path = 'image/galeri-tkksd';
         $time = time();
 
@@ -212,7 +212,7 @@ class GaleriTkksdController extends Controller
             deleteImageThumbnail($path, $galeri->gambar);
 
             // create thumbnail
-            //generateThumbnail($path, $data['gambar']);
+            generateThumbnail($path, $data['gambar']);
         }
 
         if ($request->hasFile('gambars')) {
@@ -231,12 +231,12 @@ class GaleriTkksdController extends Controller
                 $image->move($path, $multiGambar->gambar);
 
                 //create thumbnail multiple
-                //generateThumbnail($path, $multiGambar->gambar);
+                generateThumbnail($path, $multiGambar->gambar);
             }
         }
 
-        $tagIds = Tag::getIdName($tagtkksds);
-        $galeri->tagtkksds()->sync($tagIds);
+        $tagIds = Tag::getIdByName($tags);
+        $galeri->tags()->sync($tagIds);
         $galeri->update($data);
 
         return redirect()->route('galeri-tkksd.index')->with('success', 'Data telah diubah');

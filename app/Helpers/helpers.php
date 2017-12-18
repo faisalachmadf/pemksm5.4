@@ -38,7 +38,7 @@ if (! function_exists('generateImagePath')) {
 if (! function_exists('generateThumbnail')) {
    function generateThumbnail($path, $filename)
    {
-        $img = \Image::make(asset($path.'/'.$filename))->widen(300)->stream();
+        $img = \Image::make(file_get_contents($path.'/'.$filename))->widen(300)->stream();
         \Storage::put($path.'/thumbnail/'.$filename, $img);
    }
 }

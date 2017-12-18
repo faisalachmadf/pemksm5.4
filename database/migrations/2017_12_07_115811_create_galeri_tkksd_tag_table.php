@@ -26,7 +26,7 @@ class CreateGaleriTkksdTagTable extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->foreign('id_tag')
-                ->references('id')->on('tagtkksds')
+                ->references('id')->on('tags')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
         });

@@ -36,7 +36,7 @@ class GaleriTkksd extends Model
 
     public function getDataBySlug($slug)
     {
-        return $this->where('slug', $slug)->with(['gambars', 'tagtkksds', 'user'])->first();
+        return $this->where('slug', $slug)->with(['gambars', 'tags', 'user'])->first();
     }
 
     public function gambars()
@@ -44,9 +44,9 @@ class GaleriTkksd extends Model
         return $this->hasMany('App\Models\Tkksd\GaleriTkksdGambar', 'id_galeri_tkksd');
     }
 
-    public function tagtkksds()
+    public function tags()
     {
-        return $this->belongsToMany('App\Models\Tagtkksd', 'galeri_tkksd_tag', 'id_galeri_tkksd', 'id_tag')->withTimestamps();
+        return $this->belongsToMany('App\Models\Tag', 'galeri_tkksd_tag', 'id_galeri_tkksd', 'id_tag')->withTimestamps();
     }
 
     public function user()

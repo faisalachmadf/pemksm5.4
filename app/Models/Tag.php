@@ -25,6 +25,11 @@ class Tag extends Model
         return $this->belongsToMany('App\Models\Lppd\GaleriLppd', 'galeri_lppd_tag', 'id_tag', 'id_galeri_lppd')->withTimestamps();
     }
 
+    public function galeriTkksds()
+    {
+        return $this->belongsToMany('App\Models\Tkksd\GaleriTkksd', 'galeri_tkksd_tag', 'id_tag', 'id_galeri_tkksd')->withTimestamps();
+    }
+
     public static function getIdByName($tags)
     {
         $id = [];

@@ -50,18 +50,18 @@
                 @endif
               </div>
             </div>
-            <div class="form-group{{ $errors->has('tkksds') ? ' has-error' : '' }}">
-              <label for="tkksds" class="col-sm-4 control-label">Tag<span class="required">*</span> :</label>
+            <div class="form-group{{ $errors->has('tags') ? ' has-error' : '' }}">
+              <label for="tags" class="col-sm-4 control-label">Tag<span class="required">*</span> :</label>
 
               <div class="col-sm-4">
-                <select class="form-control select2" id="tkksds" name="tkksds[]" multiple="multiple" required>
-                  @foreach(old('tkksds', generateTagToArray($galeri)) as $tag)
-                    <option {{ in_array($tag, old('tkksds', generateTagToArray($galeri))) ? 'selected' : '' }}>{{ $tag }}</option>
+                <select class="form-control select2" id="tags" name="tags[]" multiple="multiple" required>
+                  @foreach(old('tags', generateTagToArray($galeri)) as $tag)
+                    <option {{ in_array($tag, old('tags', generateTagToArray($galeri))) ? 'selected' : '' }}>{{ $tag }}</option>
                   @endforeach
                 </select>
 
-                @if ($errors->has('tkksds'))
-                  <span class="help-block">{{ $errors->first('tkksds') }}</span>
+                @if ($errors->has('tags'))
+                  <span class="help-block">{{ $errors->first('tags') }}</span>
                 @endif
               </div>
             </div>

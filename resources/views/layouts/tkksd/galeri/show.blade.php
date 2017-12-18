@@ -46,7 +46,7 @@
               <label for="tag" class="col-sm-4 control-label">Tag :</label>
 
               <div class="col-sm-4">
-                <p class="form-control-static">{{ generateTag($galeri->tagtkksds) }}</p>
+                <p class="form-control-static">{{ generateTag($galeri->tags) }}</p>
               </div>
             </div>
             <div class="form-group">

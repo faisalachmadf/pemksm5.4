@@ -109,7 +109,7 @@ class GaleriLppdController extends Controller
         $gambar->move($path, $galeri->gambar);
 
         //create thumbnail
-        //generateThumbnail($path, $galeri->gambar);
+        generateThumbnail($path, $galeri->gambar);
 
         // Save Tags
         $tagIds = Tag::getIdByName($tags);
@@ -124,7 +124,7 @@ class GaleriLppdController extends Controller
             $image->move($path, $multiGambar->gambar);
 
             //create thumbnail multiple
-            //generateThumbnail($path, $multiGambar->gambar);
+            generateThumbnail($path, $multiGambar->gambar);
         }
         
         return redirect()->route('galeri-lppd.index')->with('success', 'Data telah tersimpan');
@@ -212,7 +212,7 @@ class GaleriLppdController extends Controller
             deleteImageThumbnail($path, $galeri->gambar);
 
             // create thumbnail
-            //generateThumbnail($path, $data['gambar']);
+            generateThumbnail($path, $data['gambar']);
         }
 
         if ($request->hasFile('gambars')) {
@@ -231,7 +231,7 @@ class GaleriLppdController extends Controller
                 $image->move($path, $multiGambar->gambar);
 
                 //create thumbnail multiple
-                //generateThumbnail($path, $multiGambar->gambar);
+                generateThumbnail($path, $multiGambar->gambar);
             }
         }
 

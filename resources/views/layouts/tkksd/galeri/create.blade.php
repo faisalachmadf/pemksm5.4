@@ -47,18 +47,18 @@
                 @endif
               </div>
             </div>
-            <div class="form-group{{ $errors->has('tagtkksds') ? ' has-error' : '' }}">
-              <label for="tagtkksds" class="col-sm-4 control-label">Tag<span class="required">*</span> :</label>
+            <div class="form-group{{ $errors->has('tags') ? ' has-error' : '' }}">
+              <label for="tags" class="col-sm-4 control-label">Tag<span class="required">*</span> :</label>
 
               <div class="col-sm-4">
-                <select class="form-control select2" id="tagtkksds" name="tagtkksds[]" multiple="multiple" required>
-                  @foreach(old('tagtkksds', $tagtkksds) as $tag)
-                    <option {{ old('tagtkksds') && in_array($tag, old('tagtkksds')) ? 'selected' : '' }}>{{ $tag }}</option>
+                <select class="form-control select2" id="tags" name="tags[]" multiple="multiple" required>
+                  @foreach(old('tags', $tags) as $tag)
+                    <option {{ old('tags') && in_array($tag, old('tags')) ? 'selected' : '' }}>{{ $tag }}</option>
                   @endforeach
                 </select>
 
-                @if ($errors->has('tagtkksds'))
-                  <span class="help-block">{{ $errors->first('tagtkksds') }}</span>
+                @if ($errors->has('tags'))
+                  <span class="help-block">{{ $errors->first('tags') }}</span>
                 @endif
               </div>
             </div>

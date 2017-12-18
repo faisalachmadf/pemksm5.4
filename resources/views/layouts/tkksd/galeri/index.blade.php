@@ -72,7 +72,7 @@
       var columns = [
         { data: 'DT_Row_Index', name: 'DT_Row_Index', orderable: false, searchable: false, width: '5%' },
         { data: 'judul', name: 'judul' },
-        { data: 'tag', name: 'tagtkksds.name' },
+        { data: 'tag', name: 'tags.name' },
         { data: 'gambar', name: 'gambar', orderable: false, searchable: false, width: '20%' },
         { data: 'user', name: 'user.username' },
         { data: 'action', name: 'action', orderable: false, searchable: false, width: '15%' }

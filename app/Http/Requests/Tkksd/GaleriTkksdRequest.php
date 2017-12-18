@@ -33,7 +33,7 @@ class GaleriTkksdRequest extends FormRequest
 
         return [
             'judul' => 'required|unique:galeri_tkksds,judul,'.$id,
-            'tagtkksds.*' => 'required',
+            'tags.*' => 'required',
             'gambar' => 'image|mimes:jpeg,png,bmp,gif,svg'.$gambar,
             'gambars.*' => 'image|mimes:jpeg,png,bmp,gif,svg'.$gambar
         ];
