@@ -136,6 +136,10 @@ Route::get('/TKKSD', function () {
 });
 
 
+/*FRONT END*/
+
+ // Berita
+        Route::resource('halamandepan','HalamanDepanController');
 
 
 
@@ -360,6 +364,7 @@ Route::group(['prefix' => 'adminpanel'], function() {
         Route::resource('kategori/katbagian','KatbagianController');
     });
 });
+
 
 
 

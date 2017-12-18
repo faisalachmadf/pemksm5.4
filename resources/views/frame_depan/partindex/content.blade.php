@@ -6,19 +6,19 @@
 									<img src="/temafrontend/images/a1.jpg" alt="" />
 									<a href="single.html" class="wd">Lorem ipsum dolor sit amet, ullamcorper consectetur </a>
 									<p>Nulla quis lorem neque, mattis venenatis lectus. In interdum ullamcorper dolor eu mattis.</p>
-									<a class="read" href="single.html">Read More</a>
+									
 								</div>
 								<div class="world-news-grid">
 									<img src="/temafrontend/images/a3.jpg" alt="" />
 									<a href="single.html" class="wd">PM Modi to inaugurate Rs 9,700 crore road projects in Bihar</a>
 									<p>Nulla quis lorem neque, mattis venenatis lectus. In interdum ullamcorper dolor eu mattis.</p>
-									<a class="read" href="single.html">Read More</a>
+									
 								</div>
 								<div class="world-news-grid lost">
 									<img src="/temafrontend/images/a1.jpg" alt="" />
 									<a href="single.html" class="wd">Sports in Lorem ipsum dolor sit amet ullamcorper consectetur </a>
 									<p>Nulla quis lorem neque, mattis venenatis lectus. In interdum ullamcorper dolor eu mattis.</p>
-									<a class="read" href="single.html">Read More</a>
+									
 								</div>
 								<br/><hr/>
 								
@@ -27,6 +27,7 @@
 							</div>
 					</div>
 					<BR/>
+
 			    <div class="col-md-8 mag-innert-left">
 						<!--/start-Technology-->
 						 <div class="technology">
@@ -40,7 +41,7 @@
 										   </div>
 											<div class="col-md-8 item-details">
 												<h5 class="inner two"><a href="single.html">New iPad App to stimulate your Guitar asd asd asd asd asd asd asdasdasd asdasdasd asdasdasd asdasdasd asd asd</a></h5>
-												 <h6><i class="glyphicon glyphicon-time"></i>Jun 25, 2015 <a href="#"><i class="glyphicon glyphicon-user"></i>Admin</a>-<i class="glyphicon glyphicon-picture"></i>2</h6> 
+												 <h6><i class="glyphicon glyphicon-time"></i>Jun 25, 2015 <a href="#"><i class="glyphicon glyphicon-user"></i>Admin</a>-<i class="glyphicon glyphicon-eye-open"></i> 2</h6> 
 											 </div>
 											<div class="clearfix"></div>
 										</div>
@@ -51,7 +52,7 @@
 										   </div>
 											<div class="col-md-8 item-details">
 												<h5 class="inner two"><a href="single.html">New iPad App to stimulate your Guitar asd asd asd asd asd asd asdasdasd asdasdasd asdasdasd asdasdasd asd asd</a></h5>
-												 <h6><i class="glyphicon glyphicon-time"></i>Jun 25, 2015 <a href="#"><i class="glyphicon glyphicon-user"></i>Admin</a>-<i class="glyphicon glyphicon-picture"></i>2</h6> 
+												 <h6><i class="glyphicon glyphicon-time"></i>Jun 25, 2015 <a href="#"><i class="glyphicon glyphicon-user"></i>Admin</a>-<i class="glyphicon glyphicon-eye-open"></i>2</h6> 
 											 </div>
 											<div class="clearfix"></div>
 										</div>
@@ -62,7 +63,7 @@
 										   </div>
 											<div class="col-md-8 item-details">
 												<h5 class="inner two"><a href="single.html">New iPad App to stimulate your Guitar asd asd asd asd asd asd asdasdasd asdasdasd asdasdasd asdasdasd asd asd</a></h5>
-												 <h6><i class="glyphicon glyphicon-time"></i>Jun 25, 2015 <a href="#"><i class="glyphicon glyphicon-user"></i>Admin</a>-<i class="glyphicon glyphicon-picture"></i>2</h6> 
+												 <h6><i class="glyphicon glyphicon-time"></i>Jun 25, 2015 <a href="#"><i class="glyphicon glyphicon-user"></i>Admin</a>-<i class="glyphicon glyphicon-eye-open"></i>2</h6> 
 											 </div>
 											<div class="clearfix"></div>
 										</div>
@@ -83,7 +84,7 @@
 										   </div>
 											<div class="col-md-8 item-details">
 												<h5 class="inner two"><a href="single.html">New iPad App to stimulate your Guitar asd asd asd asd asd asd asdasdasd asdasdasd asdasdasd asdasdasd asd asd</a></h5>
-												 <h6><i class="glyphicon glyphicon-time"></i>Jun 25, 2015 <a href="#"><i class="glyphicon glyphicon-user"></i>Admin</a>-<i class="glyphicon glyphicon-picture"></i>2</h6> 
+												 <h6><i class="glyphicon glyphicon-time"></i>Jun 25, 2015 <a href="#"><i class="glyphicon glyphicon-user"></i>Admin</a>-<i class="glyphicon glyphicon-eye-open"></i>2</h6> 
 											 </div>
 											<div class="clearfix"></div>
 										</div>
@@ -94,7 +95,7 @@
 										   </div>
 											<div class="col-md-8 item-details">
 												<h5 class="inner two"><a href="single.html">New iPad App to stimulate your Guitar asd asd asd asd asd asd asdasdasd asdasdasd asdasdasd asdasdasd asd asd</a></h5>
-												 <h6><i class="glyphicon glyphicon-time"></i>Jun 25, 2015 <a href="#"><i class="glyphicon glyphicon-user"></i>Admin</a>-<i class="glyphicon glyphicon-picture"></i>2</h6> 
+												 <h6><i class="glyphicon glyphicon-time"></i>Jun 25, 2015 <a href="#"><i class="glyphicon glyphicon-user"></i>Admin</a>-<i class="glyphicon glyphicon-eye-open"></i>2</h6> 
 											 </div>
 											<div class="clearfix"></div>
 										</div>
@@ -105,7 +106,7 @@
 										   </div>
 											<div class="col-md-8 item-details">
 												<h5 class="inner two"><a href="single.html">New iPad App to stimulate your Guitar asd asd asd asd asd asd asdasdasd asdasdasd asdasdasd asdasdasd asd asd</a></h5>
-												 <h6><i class="glyphicon glyphicon-time"></i>Jun 25, 2015 <a href="#"><i class="glyphicon glyphicon-user"></i>Admin</a>-<i class="glyphicon glyphicon-picture"></i>2</h6> 
+												 <h6><i class="glyphicon glyphicon-time"></i>Jun 25, 2015 <a href="#"><i class="glyphicon glyphicon-user"></i>Admin</a>-<i class="glyphicon glyphicon-eye-open"></i>2</h6> 
 											 </div>
 											<div class="clearfix"></div>
 										</div>
@@ -126,7 +127,7 @@
 										   </div>
 											<div class="col-md-8 item-details">
 												<h5 class="inner two"><a href="single.html">New iPad App to stimulate your Guitar asd asd asd asd asd asd asdasdasd asdasdasd asdasdasd asdasdasd asd asd</a></h5>
-												 <h6><i class="glyphicon glyphicon-time"></i>Jun 25, 2015 <a href="#"><i class="glyphicon glyphicon-user"></i>Admin</a>-<i class="glyphicon glyphicon-picture"></i>2</h6> 
+												 <h6><i class="glyphicon glyphicon-time"></i>Jun 25, 2015 <a href="#"><i class="glyphicon glyphicon-user"></i>Admin</a>-<i class="glyphicon glyphicon-eye-open"></i>2</h6> 
 											 </div>
 											<div class="clearfix"></div>
 										</div>
@@ -137,7 +138,7 @@
 										   </div>
 											<div class="col-md-8 item-details">
 												<h5 class="inner two"><a href="single.html">New iPad App to stimulate your Guitar asd asd asd asd asd asd asdasdasd asdasdasd asdasdasd asdasdasd asd asd</a></h5>
-												 <h6><i class="glyphicon glyphicon-time"></i>Jun 25, 2015 <a href="#"><i class="glyphicon glyphicon-user"></i>Admin</a>-<i class="glyphicon glyphicon-picture"></i>2</h6> 
+												 <h6><i class="glyphicon glyphicon-time"></i>Jun 25, 2015 <a href="#"><i class="glyphicon glyphicon-user"></i>Admin</a>-<i class="glyphicon glyphicon-eye-open"></i>2</h6> 
 											 </div>
 											<div class="clearfix"></div>
 										</div>
@@ -148,7 +149,7 @@
 										   </div>
 											<div class="col-md-8 item-details">
 												<h5 class="inner two"><a href="single.html">New iPad App to stimulate your Guitar asd asd asd asd asd asd asdasdasd asdasdasd asdasdasd asdasdasd asd asd</a></h5>
-												 <h6><i class="glyphicon glyphicon-time"></i>Jun 25, 2015 <a href="#"><i class="glyphicon glyphicon-user"></i>Admin</a>-<i class="glyphicon glyphicon-picture"></i>2</h6> 
+												 <h6><i class="glyphicon glyphicon-time"></i>Jun 25, 2015 <a href="#"><i class="glyphicon glyphicon-user"></i>Admin</a>-<i class="glyphicon glyphicon-eye-open"></i>2</h6> 
 											 </div>
 											<div class="clearfix"></div>
 										</div>
@@ -158,16 +159,12 @@
 				      </div>
 				      <hr/>
 
-					  
-				<!--business-->
-					
-				   <!--//business-->
 				    <!--//latest-articles-->
 					  <div class="latest-articles">
 					    <h3 class="tittle"><i class="glyphicon glyphicon-file"></i>Artikel</h3>
 				        <div class="world-news-grids">
 								<div class="world-news-grid">
-									<img src="images/a1.jpg" alt="" />
+									<img src="/temafrontend/images/a1.jpg" alt="" />
 									<a href="single.html" class="wd">Lorem ipsum dolor sit amet, ullamcorper consectetur </a>
 									<p>Nulla quis lorem neque, mattis venenatis lectus. In interdum ullamcorper dolor eu mattis.</p>
 									<a class="read" href="single.html">Read More</a>
@@ -192,6 +189,8 @@
 					</div>
 							 <!--//articles-->
 				</div>
+
+
 				 <div class="col-md-4 mag-inner-right">
 				
  					<div class="connect">

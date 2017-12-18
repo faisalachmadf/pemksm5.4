@@ -14,6 +14,8 @@
 <script src="{{ asset('/temafrontend/js/move-top.js') }}" type="text/javascript" ></script>
 <script src="{{ asset('/temafrontend/js/easing.js') }}" type="text/javascript" ></script>
 <link href="{{ asset('/temafrontend/css/flexslider.css') }}" rel="stylesheet"  type="text/css" media="screen" />
+<!-- Ionicons -->
+  <link href="{{ asset('/adminkelola/bower_components/Ionicons/css/ionicons.min.css') }}" rel="stylesheet" type="text/css">
 <!--/script-->
 <script type="text/javascript">
 			jQuery(document).ready(function($) {
