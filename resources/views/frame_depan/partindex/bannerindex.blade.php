@@ -3,7 +3,7 @@
 	       <div class="banner-inner">
 
 	<div class="box-header with-border">
-              <h3 class="box-title">DISIMPEN DENGAN PIALA DAN TROPI</h3>
+              <h3 class="box-title"></h3>
     </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -15,22 +15,24 @@
                 </ol>
                 <div class="carousel-inner">
                   <div class="item active">
-                   <img src="http://placehold.it/1200x600/3c8dbc/ffffff&text=I+Love+Bootstrap"  alt="First slide">
-
+                   <img src="http://placehold.it/1200x580/3c8dbc/ffffff&text=I+Love+Bootstrap"  alt="First slide">
+                    <div class="carousel-caption">
+                     di isi dengan table headers
+                    </div>
                  
                   </div>
                   <div class="item">
-                    <img src="http://placehold.it/1200x600/3c8dbc/ffffff&text=I+Love+Bootstrap" alt="Second slide">
+                    <img src="http://placehold.it/1200x580/3c8dbc/ffffff&text=I+Love+Bootstrap" alt="Second slide">
                     <div class="carousel-caption">
-                      Second Slide
+                      di isi dengan table headers
                     </div>
                   </div>
 
                   <div class="item">
-                    <img src="http://placehold.it/1200x600/f39c12/ffffff&text=I+Love+Bootstrap" alt="Third slide">
+                    <img src="http://placehold.it/1200x580/f39c12/ffffff&text=I+Love+Bootstrap" alt="Third slide">
 
                     <div class="carousel-caption">
-                      Third Slide
+                      di isi dengan table headers
                     </div>
                   </div>
                 </div>

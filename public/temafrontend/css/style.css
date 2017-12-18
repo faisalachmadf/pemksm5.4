@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 html, body{
   font-family: 'Roboto-Regular';
   font-size: 100%;
-  background:#F1EFEF;
+  background:#ffffff;
 }
 body a {
 	transition:0.5s all;
@@ -1449,13 +1449,29 @@ p.text {
 /*--//single-page--*/
 /*--footer--*/
 .footer-section {
-  padding:1em 0;
+  padding:0em 0;
   background:#282828;
 }
 .editor-pics {
        margin-bottom: 0.7em;
 }
 .footer-grid h4 {
+    font-size: 1.1em;
+    text-transform: uppercase;
+    color: #fff;
+    border-left: 4px solid #ee5656;
+    padding: 0;
+    padding-left: 0.5em;
+    margin-bottom: 1.5em;
+    font-weight: bold;
+}
+.footerlagi-section {
+  padding:0em 0;
+  background: url(../images/banner2.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%; 
+}
+.footerlagi-grid h4 {
     font-size: 1.1em;
     text-transform: uppercase;
     color: #fff;
@@ -1475,6 +1491,13 @@ p.text {
    text-align: left;
 }
 .footer-grid {
+    padding-left: 0;
+}
+.footerlagi-grids{
+   padding: 2em 0 1em 0;
+   text-align: left;
+}
+.footerlagi-grid {
     padding-left: 0;
 }
 .item-pic {
@@ -2268,6 +2291,9 @@ border: 1px solid #EAE5E5;
 	.footer-section {
     padding: 1em 0 0 0;
 	}
+  .footerlagi-section {
+    padding: 1em 0 0 0;
+  }
 	.contact-in h5 {
 		font-size: 1.3em;
 		margin: 0;
@@ -2591,4 +2617,14 @@ border: 1px solid #EAE5E5;
 		border: 1px solid #ddd;
 		padding: 0 5px!important;
 	}
+  #owl-demo .item{
+  background: #3fbf79;
+  padding: 30px 0px;
+  margin: 10px;
+  color: #FFF;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  text-align: center;
+  }
 }

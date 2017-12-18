@@ -35,7 +35,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   
   <!--/header navigation-->
   
-  @include('layout.navheader')
+  @include('frame_depan.navheader')
 
   <!--/akhir navigation-->
 
@@ -147,7 +147,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  <!--//end-main-->
  <!-- right side index-->
                  
-				 	@include('layout.kanan')
+				 	@include('frame_depan.kanan')
 
                  <!-- akhir kanan index -->
 
@@ -157,5 +157,5 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
  <!--/start-footer-section-->
 	
-	@include('layout.footer')		
+	@include('frame_depan.footer')		
 <!--/Footer berakhir-->			

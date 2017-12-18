@@ -26,113 +26,113 @@ Route::get('Visi-dan-Misi', function () {
 });
 
 Route::get('Tugas-Pokok-dan-Fungsi', function () {
-    return view('profile.tupoksi');
+    return view('page.profile.tupoksi');
 });
 
 Route::get('Struktur-Organisasi', function () {
-    return view('profile.struktur');
+    return view('page.profile.struktur');
 });
 
 Route::get('prestasi', function () {
-    return view('profile.prestasi');
+    return view('page.profile.prestasi');
 });
 
 /* Bagian */
 
 Route::get('Urusan-Pemerintahan-Daerah', function () {
-    return view('bagian.urpemda');
+    return view('page.bagian.urpemda');
 });
 
 Route::get('Tata-Pemerintahan', function () {
-    return view('bagian.tapem');
+    return view('page.bagian.tapem');
 });
 
 Route::get('Kerjasama', function () {
-    return view('bagian.kerjasama');
+    return view('page.bagian.kerjasama');
 });
 
 /* Produk Hukum */
 
 Route::get('/Produk-Hukum', function () {
-    return view('produkhukum.produkhukum');
+    return view('page.produkhukum.produkhukum');
 });    
 
 /* Berita */
 
 Route::get('/Berita/Berita-Umum', function () {
-    return view('berita.beritaumum');
+    return view('page.berita.beritaumum');
 });
 
 Route::get('/Berita/Berita-Urusan-Pemerintahan-Daerah', function () {
-    return view('berita.beritaurpemda');
+    return view('page.berita.beritaurpemda');
 });
 
 Route::get('/Berita/Berita-Tata-Pemerintahan', function () {
-    return view('berita.beritatapem');
+    return view('page.berita.beritatapem');
 });
 
 Route::get('/Berita/Berita-Kerjasama-Dalam-Negeri', function () {
-    return view('berita.beritadalamnegeri');
+    return view('page.berita.beritadalamnegeri');
 });
 
 Route::get('/Berita/Berita-Kerjasama-Luar-Negeri', function () {
-    return view('berita.beritaluarnegeri');
+    return view('page.berita.beritaluarnegeri');
 });
 
 Route::get('/Berita/Artikel-Lainnya', function () {
-    return view('berita.artikel');
+    return view('page.berita.artikel');
 });
 
 Route::get('/Berita/F.A.Q', function () {
-    return view('berita.faq');
+    return view('page.berita.faq');
 });
 
 /* Publikasi */
 
 Route::get('/Publikasi/Materi-Materi', function () {
-    return view('publikasi.materi');
+    return view('page.publikasi.materi');
 });
 
 Route::get('/Publikasi/e-Book', function () {
-    return view('publikasi.ebook');
+    return view('page.publikasi.ebook');
 });
 
 Route::get('/Publikasi/Brosur-event', function () {
-    return view('publikasi.brosur');
+    return view('page.publikasi.brosur');
 });
 
 Route::get('/Publikasi/Agenda', function () {
-    return view('publikasi.agenda');
+    return view('page.publikasi.agenda');
 });
 
 Route::get('/Publikasi/SK-Admin', function () {
-    return view('publikasi.skadmin');
+    return view('page.publikasi.skadmin');
 });
 
 Route::get('/Publikasi/PPID', function () {
-    return view('publikasi.ppid');
+    return view('page.publikasi.ppid');
 });
 
 /* LPPD */
 
 Route::get('/LPPD', function () {
-    return view('lppd.lppd');
+    return view('page.lppd.lppd');
 });
 
 /* kemitraan */
 
 Route::get('/tkksd/Mitra-Kerjasama-Dalam-Negeri', function () {
-    return view('tkksd.mitradalamnegeri');
+    return view('page.tkksd.mitradalamnegeri');
 });
 
 Route::get('/tkksd/Mitra-Kerjasama-Luar-Negeri', function () {
-    return view('tkksd.mitraluarnegeri');
+    return view('page.tkksd.mitraluarnegeri');
 });
 
 /* tkksd */
 
 Route::get('/TKKSD', function () {
-    return view('tkksd.tkksd');
+    return view('page.tkksd.tkksd');
 });
 
 
@@ -284,6 +284,11 @@ Route::group(['prefix' => 'adminpanel'], function() {
         Route::get('publikasi/datatables','PublikasiController@datatables')->name('publikasi.datatables');
         Route::get('publikasi/{slug}/download','PublikasiController@download')->name('publikasi.download');
         Route::resource('publikasi','PublikasiController');
+
+        // Layanan Publikasi
+        Route::get('layanan/datatables','LayananController@datatables')->name('layanan.datatables');
+        Route::get('layanan/{slug}/download','LayananController@download')->name('layanan.download');
+        Route::resource('layanan','LayananController');
 
         // Agenda
         Route::get('agenda/datatables','AgendaController@datatables')->name('agenda.datatables');

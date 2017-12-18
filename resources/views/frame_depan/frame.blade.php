@@ -13,13 +13,13 @@
 
 	@include('frame_depan.kanan')
 		
+			
+			  
+	@include('frame_depan.footer')
+		
 	
-			<div class="footer-section">
-			   @include('frame_depan.footer')
-			</div>
-	
-			<!--/start-copyright-section-->
-			 @include('frame_depan.script')
+	<!--/start-copyright-section-->
+	@include('frame_depan.script')
 
 </body>
 </html>

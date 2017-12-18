@@ -42,6 +42,11 @@ class User extends SentinelUser
     {
         return $this->hasMany('App\Models\Laporan', 'id_user');
     }
+
+    public function layanans()
+    {
+        return $this->hasMany('App\Models\Layanan', 'id_user');
+    }
     
     public function galeriLppds()
     {

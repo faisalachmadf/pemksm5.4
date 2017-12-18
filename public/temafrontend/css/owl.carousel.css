@@ -37,6 +37,8 @@
 	-o-transition: height 500ms ease-in-out;
 	transition: height 500ms ease-in-out;
 }
+
+
 	
 .owl-carousel .owl-item{
 	float: left;
@@ -79,7 +81,7 @@
   	position:relative;
 }
 .owl-theme .owl-buttons{
-position: absolute;
+position: center;
        top: 15.3em;
     right: 0em;
 }

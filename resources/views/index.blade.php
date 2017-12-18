@@ -20,9 +20,9 @@
     </div>
  <!--//end-main-->
  <!--/start-footer-section-->
-			<div class="footer-section">
+	
 			   @include('frame_depan.footer')  
-			</div>
+	
 	<!--//end-footer-section-->
 			<!--/start-copyright-section-->
 				@include('frame_depan.script')

@@ -77,6 +77,14 @@
 
         <!-- Ini Masuk di User -->
         <li class="header">MENU UNTUK FILE DAN AGENDA</li>
+
+         <li class="{{ request()->segment(2) == 'layanan' ? 'active' : '' }}">
+          <a href="{{ route('layanan.index') }}">
+            <i class="fa fa-file-code-o"></i> <span>Layanan Publik</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
       <li class="{{ request()->segment(2) == 'publikasi' ? 'active' : '' }}">
           <a href="{{ route('publikasi.index') }}">
             <i class="fa fa-file-code-o"></i> <span>FILE PUBLIKASI</span>
