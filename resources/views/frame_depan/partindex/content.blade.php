@@ -4,19 +4,19 @@
 					    <h3 class="tittle"><i class="glyphicon glyphicon-file"></i>Berita Umum</h3>
 				        <div class="world-news-grids">
 								<div class="world-news-grid">
-									<img src="/temafrontend/images/a1.jpg" alt="" />
+									<img src="/temafrontend/images/a1.jpg" alt="" class="img-responsive img-thumbnail wp-post-image"/>
 									<a href="single.html" class="wd">Lorem ipsum dolor sit amet, ullamcorper consectetur </a>
 									<p>Nulla quis lorem neque, mattis venenatis lectus. In interdum ullamcorper dolor eu mattis.</p>
 									
 								</div>
 								<div class="world-news-grid">
-									<img src="/temafrontend/images/a3.jpg" alt="" />
+									<img src="/temafrontend/images/a3.jpg" alt="" class="img-responsive img-thumbnail wp-post-image"/>
 									<a href="single.html" class="wd">PM Modi to inaugurate Rs 9,700 crore road projects in Bihar</a>
 									<p>Nulla quis lorem neque, mattis venenatis lectus. In interdum ullamcorper dolor eu mattis.</p>
 									
 								</div>
 								<div class="world-news-grid lost">
-									<img src="/temafrontend/images/a1.jpg" alt="" />
+									<img src="/temafrontend/images/a1.jpg" alt="" class="img-responsive img-thumbnail wp-post-image" />
 									<a href="single.html" class="wd">Sports in Lorem ipsum dolor sit amet ullamcorper consectetur </a>
 									<p>Nulla quis lorem neque, mattis venenatis lectus. In interdum ullamcorper dolor eu mattis.</p>
 									
@@ -36,7 +36,7 @@
 							Di isi dengan tabel beritas kategori urusan pemerintahan daerah
 					            <div class="editor-pics">
 										 <div class="col-md-3 item-pic">
-										   <img src="/temafrontend/images/f1.jpg" class="img-responsive" alt=""/>
+										   <img src="/temafrontend/images/f1.jpg" class="img-responsive img-thumbnail wp-post-image" alt=""/>
 
 										   </div>
 											<div class="col-md-8 item-details">
@@ -47,7 +47,7 @@
 										</div>
 										 <div class="editor-pics">
 										 <div class="col-md-3 item-pic">
-										   <img src="/temafrontend/images/f1.jpg" class="img-responsive" alt=""/>
+										   <img src="/temafrontend/images/f1.jpg" class="img-responsive img-thumbnail wp-post-image" alt=""/>
 
 										   </div>
 											<div class="col-md-8 item-details">
@@ -58,7 +58,7 @@
 										</div>
 										 <div class="editor-pics">
 										 <div class="col-md-3 item-pic">
-										   <img src="/temafrontend/images/f1.jpg" class="img-responsive" alt=""/>
+										   <img src="/temafrontend/images/f1.jpg" class="img-responsive img-thumbnail wp-post-image" alt=""/>
 
 										   </div>
 											<div class="col-md-8 item-details">
@@ -79,7 +79,7 @@
 							 
 					            <div class="editor-pics">
 										 <div class="col-md-3 item-pic">
-										   <img src="/temafrontend/images/f1.jpg" class="img-responsive" alt=""/>
+										   <img src="/temafrontend/images/f1.jpg" class="img-responsive img-thumbnail wp-post-image" alt=""/>
 
 										   </div>
 											<div class="col-md-8 item-details">
@@ -90,7 +90,7 @@
 										</div>
 										 <div class="editor-pics">
 										 <div class="col-md-3 item-pic">
-										   <img src="/temafrontend/images/f1.jpg" class="img-responsive" alt=""/>
+										   <img src="/temafrontend/images/f1.jpg" class="img-responsive img-thumbnail wp-post-image" alt=""/>
 
 										   </div>
 											<div class="col-md-8 item-details">
@@ -101,7 +101,7 @@
 										</div>
 										 <div class="editor-pics">
 										 <div class="col-md-3 item-pic">
-										   <img src="/temafrontend/images/f1.jpg" class="img-responsive" alt=""/>
+										   <img src="/temafrontend/images/f1.jpg" class="img-responsive img-thumbnail wp-post-image" alt=""/>
 
 										   </div>
 											<div class="col-md-8 item-details">
@@ -122,7 +122,7 @@
 							 
 					            <div class="editor-pics">
 										 <div class="col-md-3 item-pic">
-										   <img src="/temafrontend/images/f1.jpg" class="img-responsive" alt=""/>
+										   <img src="/temafrontend/images/f1.jpg" class="img-responsive img-thumbnail wp-post-image" alt=""/>
 
 										   </div>
 											<div class="col-md-8 item-details">
@@ -133,7 +133,7 @@
 										</div>
 										 <div class="editor-pics">
 										 <div class="col-md-3 item-pic">
-										   <img src="/temafrontend/images/f1.jpg" class="img-responsive" alt=""/>
+										   <img src="/temafrontend/images/f1.jpg" class="img-responsive img-thumbnail wp-post-image" alt=""/>
 
 										   </div>
 											<div class="col-md-8 item-details">
@@ -144,7 +144,7 @@
 										</div>
 										 <div class="editor-pics">
 										 <div class="col-md-3 item-pic">
-										   <img src="/temafrontend/images/f1.jpg" class="img-responsive" alt=""/>
+										   <img src="/temafrontend/images/f1.jpg" class="img-responsive img-thumbnail wp-post-image" alt=""/>
 
 										   </div>
 											<div class="col-md-8 item-details">
@@ -165,19 +165,19 @@
 					    Di isi dengan tabel beritas kategori artikel
 				        <div class="world-news-grids">
 								<div class="world-news-grid">
-									<img src="/temafrontend/images/a1.jpg" alt="" />
+									<img src="/temafrontend/images/a1.jpg" alt="" class="img-responsive img-thumbnail wp-post-image"/>
 									<a href="single.html" class="wd">Lorem ipsum dolor sit amet, ullamcorper consectetur </a>
 									<p>Nulla quis lorem neque, mattis venenatis lectus. In interdum ullamcorper dolor eu mattis.</p>
 									<a class="read" href="single.html">Read More</a>
 								</div>
 								<div class="world-news-grid">
-									<img src="images/a3.jpg" alt="" />
+									<img src="images/a3.jpg" alt="" class="img-responsive img-thumbnail wp-post-image"/>
 									<a href="single.html" class="wd">PM Modi to inaugurate Rs 9,700 crore road projects in Bihar</a>
 									<p>Nulla quis lorem neque, mattis venenatis lectus. In interdum ullamcorper dolor eu mattis.</p>
 									<a class="read" href="single.html">Read More</a>
 								</div>
 								<div class="world-news-grid lost">
-									<img src="images/a1.jpg" alt="" />
+									<img src="images/a1.jpg" alt="" class="img-responsive img-thumbnail wp-post-image"/>
 									<a href="single.html" class="wd">Sports in Lorem ipsum dolor sit amet ullamcorper consectetur </a>
 									<p>Nulla quis lorem neque, mattis venenatis lectus. In interdum ullamcorper dolor eu mattis.</p>
 									<a class="read" href="single.html">Read More</a>
@@ -195,10 +195,26 @@
 
 <!-- KANAN INDEX -->
 				 <div class="col-md-4 mag-inner-right">
+
+				 	 <div class="connect">
+					<h4 class="side" >Bahasa</h4>
+					<ul class="stay">
+							    
+					<div id="google_translate_element" style="float:center; width: 100%; "></div>
+					<script type="text/javascript">
+					function googleTranslateElementInit() {
+					  new google.translate.TranslateElement({pageLanguage: 'id', includedLanguages: 'ar,en,fr,hu,ja,ko,ru,su,zh-CN', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+					}
+					</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+					</script>
+								
+					</ul>
+				</div>
+				<br/>
 	 					<div class="connect">
 					    <h4 class="side" >KEPALA DINAS</h4>
 						  <ul class="stay">
-						   <center><img src="/temafrontend/images/f4.jpg" class="img-responsive" alt="" width="200px" /></center>
+						   <center><img src="/temafrontend/images/f4.jpg" class="img-responsive" width="200px" /></center>
 
 							<br/>
 							  <P> di isi dengan Tabel Sambutans</P>
@@ -221,7 +237,7 @@
 								      <div class="editor-pics">
 
 										 <div class="col-md-3 item-pic">
-										   <img src="images/f4.jpg" class="img-responsive" alt=""/>
+										   <img src="images/f4.jpg" class="img-responsive img-thumbnail wp-post-image" alt=""/>
 
 										   </div>
 											<div class="col-md-9 item-details">
@@ -242,7 +258,7 @@
 								<div class="editor-pics">
 
 									<div class="col-md-3 item-pic">
-										<img src="images/f4.jpg" class="img-responsive" alt=""/>
+										<img src="images/f4.jpg" class="img-responsive img-thumbnail wp-post-image" alt=""/>
 
 									</div>
 									<div class="col-md-9 item-details">
@@ -255,7 +271,7 @@
 
 										<div class="editor-pics">
 										 <div class="col-md-3 item-pic">
-										   <img src="images/f1.jpg" class="img-responsive" alt=""/>
+										   <img src="images/f1.jpg" class="img-responsive img-thumbnail wp-post-image" alt=""/>
 
 										   </div>
 											<div class="col-md-9 item-details">
@@ -267,7 +283,7 @@
 										
 										<div class="editor-pics">
 										 <div class="col-md-3 item-pic">
-										   <img src="images/f1.jpg" class="img-responsive" alt=""/>
+										   <img src="images/f1.jpg" class="img-responsive img-thumbnail wp-post-image" alt=""/>
 
 										   </div>
 											<div class="col-md-9 item-details">
@@ -279,7 +295,7 @@
 										
 										<div class="editor-pics">
 										 <div class="col-md-3 item-pic">
-										   <img src="images/f4.jpg" class="img-responsive" alt=""/>
+										   <img src="images/f4.jpg" class="img-responsive img-thumbnail wp-post-image" alt=""/>
 
 										   </div>
 											<div class="col-md-9 item-details">
@@ -309,7 +325,7 @@
 								<div class="editor-pics">
 
 									<div class="col-md-3 item-pic">
-										<img src="images/f4.jpg" class="img-responsive" alt=""/>
+										<img src="images/f4.jpg" class="img-responsive img-thumbnail wp-post-image" alt=""/>
 
 									</div>
 									<div class="col-md-9 item-details">
@@ -322,7 +338,7 @@
 
 										<div class="editor-pics">
 										 <div class="col-md-3 item-pic">
-										   <img src="images/f1.jpg" class="img-responsive" alt=""/>
+										   <img src="images/f1.jpg" class="img-responsive img-thumbnail wp-post-image" alt=""/>
 
 										   </div>
 											<div class="col-md-9 item-details">
@@ -334,7 +350,7 @@
 										
 										<div class="editor-pics">
 										 <div class="col-md-3 item-pic">
-										   <img src="images/f1.jpg" class="img-responsive" alt=""/>
+										   <img src="images/f1.jpg" class="img-responsive img-thumbnail wp-post-image" alt=""/>
 
 										   </div>
 											<div class="col-md-9 item-details">
@@ -346,7 +362,7 @@
 										
 										<div class="editor-pics">
 										 <div class="col-md-3 item-pic">
-										   <img src="images/f4.jpg" class="img-responsive" alt=""/>
+										   <img src="images/f4.jpg" class="img-responsive img-thumbnail wp-post-image" alt=""/>
 
 										   </div>
 											<div class="col-md-9 item-details">
@@ -376,7 +392,10 @@
 
 			     <!--//end-mag-inner-->
                      <!--/mag-bottom-->
-                     
+                  <div class="mag-bottom">
+                     <h3 class="tittle bottom"><i class="glyphicon glyphicon-globe"></i>Link terkait</h3>
+                     di isi dengan data-data layanan
+                  </div>
 
 				 <div class="mag-bottom">
                      <h3 class="tittle bottom"><i class="glyphicon glyphicon-globe"></i>Link terkait</h3>
@@ -448,5 +467,10 @@
 										</script>
 						<!-- //requried-jsfiles-for owl -->
 					
+
+
+
+
 				 </div>
+
 				 <!--//mag-bottom-->

@@ -255,7 +255,7 @@ label{
     -o-background-size:cover;
     -moz-background-size:cover;
     -ms-background-size:cover;
-    min-height:630px;
+    min-height:100%;
 }
 .mag-innert-left {
     background-color: #fff;
@@ -509,7 +509,7 @@ h4.side {
 }
 ul.stay {
 background-color: #fff;
-    padding:2em 2em;
+    padding:1em 1em;
        border: 1px solid rgba(231,231,231,1.00);
 	}
 .c5ab_social_counter ul li a {
@@ -1281,7 +1281,7 @@ h2.second-tittle {
   margin-bottom: 0;
 }
 .grid_5 h1, h2, h3, h4, h5, h6 {
-  padding: 10px 0;
+  padding: 0px 0;
 }
 .grid_5 {
   margin: 31px 0;
@@ -1325,8 +1325,8 @@ li.list-group-item1,li.list-group-item {
     line-height: 1.6em;
     font-weight: bold;
     text-transform: none;
-    font-size: 1.05em;
-    color: #282828;
+    font-size: 1.5em;
+    color: #000000;
 	text-transform:uppercase;
 }
 .single-left-grid p{
@@ -1441,10 +1441,10 @@ p.comments a {
     background: #282828;
 }
 p.text {
-    font-size: 0.9em;
-    color: #737171;
-    line-height: 1.8em;
-    margin: 0.6em 0;
+    font-size: 1em;
+    color: #333;
+    line-height: 2em;
+    margin: 1em 0;
 }
 /*--//single-page--*/
 /*--footer--*/
@@ -1846,7 +1846,7 @@ border: 1px solid #EAE5E5;
 		-o-background-size: cover;
 		-moz-background-size: cover;
 		-ms-background-size: cover;
-		min-height: 566px;
+		min-height: 100%;
 	}
 	.banner-info {
 		margin-top: 10em;
@@ -1861,7 +1861,7 @@ border: 1px solid #EAE5E5;
 		-o-background-size: cover;
 		-moz-background-size: cover;
 		-ms-background-size: cover;
-		min-height: 523px;
+		min-height: 100%;
 	}
 	.banner.two {
 		background: url(../images/banner.jpg)no-repeat 0px 0px;
@@ -1908,7 +1908,7 @@ border: 1px solid #EAE5E5;
     padding-top: 11%;
 	}
 	ul.stay {
-    padding: 1em 1em;
+    padding: 0em 1em;
 	}
 	.edit-pics {
       padding: 1em 1em;
@@ -1929,7 +1929,7 @@ border: 1px solid #EAE5E5;
 		-o-background-size: cover;
 		-moz-background-size: cover;
 		-ms-background-size: cover;
-		min-height: 473px;
+		min-height: 100%;
 	}
 	.callbacks_tabs {
 		bottom: -9%;
@@ -2009,7 +2009,7 @@ border: 1px solid #EAE5E5;
 		-o-background-size: cover;
 		-moz-background-size: cover;
 		-ms-background-size: cover;
-		min-height: 398px;
+		min-height: 100%;
 	}
 	.banner-info {
 		text-align: center;
@@ -2151,7 +2151,7 @@ border: 1px solid #EAE5E5;
 		-o-background-size: cover;
 		-moz-background-size: cover;
 		-ms-background-size: cover;
-		min-height: 388px;
+		min-height: 100%;
 	}
 	.nav>li>a {
 		position: relative;
@@ -2403,7 +2403,7 @@ border: 1px solid #EAE5E5;
 		-o-background-size: cover;
 		-moz-background-size: cover;
 		-ms-background-size: cover;
-		min-height: 288px;
+		min-height: 100%;
 	}
 	.banner-info {
 		text-align: center;
@@ -2468,7 +2468,7 @@ border: 1px solid #EAE5E5;
 		-o-background-size: cover;
 		-moz-background-size: cover;
 		-ms-background-size: cover;
-		min-height: 209px;
+		min-height: 100%;
 	}
 	.banner-info p {
 		margin: 0;

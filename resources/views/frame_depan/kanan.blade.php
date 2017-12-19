@@ -1,5 +1,20 @@
 <div class="col-md-4 mag-inner-right">
                  
+                 <div class="connect">
+					<h4 class="side" >Bahasa</h4>
+					<ul class="stay">
+							    
+					<div id="google_translate_element" style="float:center; width: 100%; "></div>
+					<script type="text/javascript">
+					function googleTranslateElementInit() {
+					  new google.translate.TranslateElement({pageLanguage: 'id', includedLanguages: 'ar,en,fr,hu,ja,ko,ru,su,zh-CN', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+					}
+					</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+					</script>
+								
+					</ul>
+				</div>
+				<br/>
                 <div class="connect">
 					<h4 class="side" >FILE DAN PENGUMUMAN</h4>
 					<ul class="stay">
