@@ -11,136 +11,119 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('index');
-
-/* Profile */
-
-Route::get('selayang-pandang', function () {
-    return view('page.profile.selayangpandang');
-});
-
-Route::get('Visi-dan-Misi', function () {
-    return view('page.profile.visimisi');
-});
-
-Route::get('Tugas-Pokok-dan-Fungsi', function () {
-    return view('page.profile.tupoksi');
-});
-
-Route::get('Struktur-Organisasi', function () {
-    return view('page.profile.struktur');
-});
-
-Route::get('prestasi', function () {
-    return view('page.profile.prestasi');
-});
-
-/* Bagian */
-
-Route::get('Urusan-Pemerintahan-Daerah', function () {
-    return view('page.bagian.urpemda');
-});
-
-Route::get('Tata-Pemerintahan', function () {
-    return view('page.bagian.tapem');
-});
-
-Route::get('Kerjasama', function () {
-    return view('page.bagian.kerjasama');
-});
-
-/* Produk Hukum */
-
-Route::get('/Produk-Hukum', function () {
-    return view('page.produkhukum.produkhukum');
-});    
-
-/* Berita */
-
-Route::get('/Berita/Berita-Umum', function () {
-    return view('page.berita.beritaumum');
-});
-
-Route::get('/Berita/Berita-Urusan-Pemerintahan-Daerah', function () {
-    return view('page.berita.beritaurpemda');
-});
-
-Route::get('/Berita/Berita-Tata-Pemerintahan', function () {
-    return view('page.berita.beritatapem');
-});
-
-Route::get('/Berita/Berita-Kerjasama-Dalam-Negeri', function () {
-    return view('page.berita.beritadalamnegeri');
-});
-
-Route::get('/Berita/Berita-Kerjasama-Luar-Negeri', function () {
-    return view('page.berita.beritaluarnegeri');
-});
-
-Route::get('/Berita/Artikel-Lainnya', function () {
-    return view('page.berita.artikel');
-});
-
-Route::get('/Berita/F.A.Q', function () {
-    return view('page.berita.faq');
-});
-
-/* Publikasi */
-
-Route::get('/Publikasi/Materi-Materi', function () {
-    return view('page.publikasi.materi');
-});
-
-Route::get('/Publikasi/e-Book', function () {
-    return view('page.publikasi.ebook');
-});
-
-Route::get('/Publikasi/Brosur-event', function () {
-    return view('page.publikasi.brosur');
-});
-
-Route::get('/Publikasi/Agenda', function () {
-    return view('page.publikasi.agenda');
-});
-
-Route::get('/Publikasi/SK-Admin', function () {
-    return view('page.publikasi.skadmin');
-});
-
-Route::get('/Publikasi/PPID', function () {
-    return view('page.publikasi.ppid');
-});
-
-/* LPPD */
-
-Route::get('/LPPD', function () {
-    return view('page.lppd.lppd');
-});
-
-/* kemitraan */
-
-Route::get('/tkksd/Mitra-Kerjasama-Dalam-Negeri', function () {
-    return view('page.tkksd.mitradalamnegeri');
-});
-
-Route::get('/tkksd/Mitra-Kerjasama-Luar-Negeri', function () {
-    return view('page.tkksd.mitraluarnegeri');
-});
-
-/* tkksd */
-
-Route::get('/TKKSD', function () {
-    return view('page.tkksd.tkksd');
-});
-
-
 /*FRONT END*/
 
- // Berita
-        Route::resource('halamandepan','HalamanDepanController');
+Route::group(['namespace' => 'Frontend'], function() {
+    /* Index */
+    Route::resource('/', 'HalamanDepanController');
 
+    /* Profile */
+
+    Route::get('selayang-pandang', function () {
+        return view('page.profile.selayangpandang');
+    });
+
+    Route::get('Visi-dan-Misi', function () {
+        return view('page.profile.visimisi');
+    });
+
+    Route::get('Tugas-Pokok-dan-Fungsi', function () {
+        return view('page.profile.tupoksi');
+    });
+
+    Route::get('Struktur-Organisasi', function () {
+        return view('page.profile.struktur');
+    });
+
+    Route::get('prestasi', function () {
+        return view('page.profile.prestasi');
+    });
+
+    /* Bagian */
+
+    Route::get('Urusan-Pemerintahan-Daerah', function () {
+        return view('page.bagian.urpemda');
+    });
+
+    Route::get('Tata-Pemerintahan', function () {
+        return view('page.bagian.tapem');
+    });
+
+    Route::get('Kerjasama', function () {
+        return view('page.bagian.kerjasama');
+    });
+
+    /* Produk Hukum */
+
+    Route::get('/Produk-Hukum', function () {
+        return view('page.produkhukum.produkhukum');
+    });    
+
+    /* Berita */
+
+    Route::group(['prefix' => 'Berita'], function () {
+        Route::get('Berita-Umum', 'HalamanDepanController@index')->name('Berita-Umum');
+        Route::get('Berita-Umum/{slug}', 'HalamanDepanController@index')->name('Berita-Umum.show');
+        Route::get('Berita-Urusan-Pemerintahan-Daerah', 'HalamanDepanController@index')->name('Berita-Urusan-Pemerintahan-Daerah');
+        Route::get('Berita-Urusan-Pemerintahan-Daerah/{slug}', 'HalamanDepanController@index')->name('Berita-Urusan-Pemerintahan-Daerah.show');
+        Route::get('Berita-Tata-Pemerintahan', 'HalamanDepanController@index')->name('Berita-Tata-Pemerintahan');
+        Route::get('Berita-Tata-Pemerintahan/{slug}', 'HalamanDepanController@index')->name('Berita-Tata-Pemerintahan.show');
+        Route::get('Berita-Kerja-Sama', 'HalamanDepanController@index')->name('Berita-Kerja-Sama');
+        Route::get('Berita-Kerja-Sama/{slug}', 'HalamanDepanController@index')->name('Berita-Kerja-Sama.show');
+        Route::get('Artikel-Lainnya', 'HalamanDepanController@index')->name('Artikel-Lainnya');
+        Route::get('Artikel-Lainnya/{slug}', 'HalamanDepanController@index')->name('Artikel-Lainnya.show');
+        Route::get('F.A.Q', 'HalamanDepanController@index')->name('F.A.Q');
+        Route::get('F.A.Q/{slug}', 'HalamanDepanController@index')->name('F.A.Q.show');
+    });
+
+    /* Publikasi */
+
+    Route::get('/Publikasi/Materi-Materi', function () {
+        return view('page.publikasi.materi');
+    });
+
+    Route::get('/Publikasi/e-Book', function () {
+        return view('page.publikasi.ebook');
+    });
+
+    Route::get('/Publikasi/Brosur-event', function () {
+        return view('page.publikasi.brosur');
+    });
+
+    Route::get('/Publikasi/Agenda', function () {
+        return view('page.publikasi.agenda');
+    });
+
+    Route::get('/Publikasi/SK-Admin', function () {
+        return view('page.publikasi.skadmin');
+    });
+
+    Route::get('/Publikasi/PPID', function () {
+        return view('page.publikasi.ppid');
+    });
+
+    /* LPPD */
+
+    Route::get('/LPPD', function () {
+        return view('page.lppd.lppd');
+    });
+
+    /* kemitraan */
+
+    Route::get('/tkksd/Mitra-Kerjasama-Dalam-Negeri', function () {
+        return view('page.tkksd.mitradalamnegeri');
+    });
+
+    Route::get('/tkksd/Mitra-Kerjasama-Luar-Negeri', function () {
+        return view('page.tkksd.mitraluarnegeri');
+    });
+
+    /* tkksd */
+
+    Route::get('/TKKSD', function () {
+        return view('page.tkksd.tkksd');
+    });
+});
 
 
 

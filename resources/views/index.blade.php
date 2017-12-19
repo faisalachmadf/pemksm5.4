@@ -9,13 +9,13 @@
 
 @include('frame_depan.navheader')
 
-   <!--/start-banner-->
-@include('frame_depan.partindex.bannerindex')
-    <!--//end-banner-->
+ <!--/start-banner-->
+   @yield('banner')
+ <!--//end-banner-->
  <!--/start-main-->
    <div class="main-content">
 	   <div class="container">
-	     @include('frame_depan.partindex.content')  
+         @yield('content')
 	    </div>
     </div>
  <!--//end-main-->

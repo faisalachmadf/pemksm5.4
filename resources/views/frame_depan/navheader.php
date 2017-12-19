@@ -47,7 +47,7 @@
 
 					 <li><a href="/Produk-Hukum">PRODUK HUKUM</a></li>
 				    <li class="dropdown">
-						<a href="business.html" class="dropdown-toggle" data-toggle="dropdown">BERITA<b class="caret"></b></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">BERITA<b class="caret"></b></a>
 						<ul class="dropdown-menu multi-column columns-2">
 							<div class="row">
 								<div class="col-sm-6">
@@ -125,15 +125,15 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">LAPORAN<b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="entertainment.html">LKIP</a></li>
+							<li><a href="#">LKIP</a></li>
 							
 
 							<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Transparansi Anggaran<b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="entertainment.html">Transparansi Anggaran</a></li>
+							<li><a href="#">Transparansi Anggaran</a></li>
 							<li class="divider"></li>
-							<li><a href="entertainment.html">Transparansi Anggaran</a></li>
+							<li><a href="#">Transparansi Anggaran</a></li>
 						</ul>
 					</li>
 
@@ -142,9 +142,9 @@
 							<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Transparansi Kinerja<b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="entertainment.html">Transparansi Kinerja</a></li>
+							<li><a href="#">Transparansi Kinerja</a></li>
 							<li class="divider"></li>
-							<li><a href="entertainment.html">Transparansi Kinerja</a></li>
+							<li><a href="#">Transparansi Kinerja</a></li>
 						</ul>
 					</li>
 
@@ -153,9 +153,9 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">KONTAK<b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="entertainment.html">Buku Tamu</a></li>
+							<li><a href="#">Buku Tamu</a></li>
 							<li class="divider"></li>
-							<li><a href="entertainment.html">Form Konsultasi</a></li>
+							<li><a href="#">Form Konsultasi</a></li>
 							
 							
 						</ul>

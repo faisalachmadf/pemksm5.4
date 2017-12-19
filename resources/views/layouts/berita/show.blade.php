@@ -63,6 +63,13 @@
               </div>
             </div>
             <div class="form-group">
+              <label for="dibaca" class="col-sm-4 control-label">Dibaca :</label>
+
+              <div class="col-sm-4">
+                <p class="form-control-static">{{ $berita->dibaca }}</p>
+              </div>
+            </div>
+            <div class="form-group">
               <label class="col-sm-4 control-label">Gambar :</label>
 
               <div class="col-sm-4">
