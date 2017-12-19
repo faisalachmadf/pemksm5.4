@@ -2,10 +2,11 @@
 	
 	<div class="container">
 		<br/>
-		<center><h1> Media Sosial</h1></center>
+		<center><h1> Media <span>Sosial</span></h1></center>
+					<br/>
 					<br/>
 						<div class="col-md-4 footerlagi-grid">
-						<h4>Facebook</h4>
+						<h4><font color="#000">Facebook</h4></font>
 						  <div class="editor-pics">
 							  <div id="fb-root"></div>
 								<script>(function(d, s, id) {
@@ -25,7 +26,7 @@
 						
 						
 						<div class="col-md-4 footerlagi-grid">
-							<h4>Twitter</h4>
+							<h4><font color="#000">Twitter</font></h4>
 								<div class="editor-pics">
 										 <a class="twitter-timeline" href="https://twitter.com/birootdaksm" data-widget-id="564996746669879297">Tweets by @birootdaksm</a>
 								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
@@ -35,7 +36,7 @@
 							
 						</div>
 						<div class="col-md-4 footerlagi-grid">
-								<h4>Instagram</h4>
+								<h4><font color="#000">Instagram</font></h4>
 								<!-- LightWidget WIDGET --><script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/aae4ca0758a5504abf98bd98d55306fd.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
 								<div class="clearfix"></div>
 						</div>
