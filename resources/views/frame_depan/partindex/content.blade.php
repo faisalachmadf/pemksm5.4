@@ -9,7 +9,7 @@
 <div class="mag-inner">
     <div class="latest-articles">
         <!-- Di isi dengan tabel beritas kategori berita umum -->
-                        <h3 class="tittle"><i class="glyphicon glyphicon-file"></i>Berita Umum</h3>
+                        <h3 class="tittle"><i class="glyphicon glyphicon-file"></i>Berita Umum (maksimal 4 dan berita terbaru adalah berita terakhir update)</h3>
                         <div class="world-news-grids">
                             @foreach($beritas->where('katberita.slug', 'Berita-Umum')->all() as $umum)
                             <div class="world-news-grid">
@@ -36,7 +36,7 @@
                     <div class="col-md-8 mag-innert-left">
                         <!--/start-Technology-->
                         <div class="technology">
-                          <h2 class="tittle"><i class="glyphicon glyphicon-certificate"> </i>Urusan Pemerintahan Daerah</h2>
+                          <h2 class="tittle"><i class="glyphicon glyphicon-certificate"> </i>Urusan Pemerintahan Daerah (maksimal 3 dan berita terbaru adalah berita terakhir update)</h2>
                             <!-- Di isi dengan tabel beritas kategori urusan pemerintahan daerah -->
                             @foreach($beritas->where('katberita.slug', 'Berita-Urusan-Pemerintahan-Daerah')->all() as $daerah)
                             <div class="editor-pics">
@@ -59,7 +59,7 @@
                        
                         <!--//end-Technology-->
                         <div class="technology">
-                          <h2 class="tittle"><i class="glyphicon glyphicon-certificate"> </i>Tata Pemerintahan</h2>
+                          <h2 class="tittle"><i class="glyphicon glyphicon-certificate"> </i>Tata Pemerintahan (maksimal 3 dan berita terbaru adalah berita terakhir update)</h2>
                             <!-- Di isi dengan tabel beritas kategori tata pemerintahan -->
                             @foreach($beritas->where('katberita.slug', 'Berita-Tata-Pemerintahan')->all() as $tata)
                             <div class="editor-pics">
@@ -81,7 +81,7 @@
                         </div>
                      
                         <div class="technology">
-                          <h2 class="tittle"><i class="glyphicon glyphicon-certificate"> </i>Kerja Sama</h2>
+                          <h2 class="tittle"><i class="glyphicon glyphicon-certificate"> </i>Kerja Sama (maksimal 3 dan berita terbaru adalah berita terakhir update)</h2>
                             <!-- Di isi dengan tabel beritas kategori kerjasama -->
                             @foreach($beritas->where('katberita.slug', 'Berita-Kerja-Sama')->all() as $kerjasama)
                             <div class="editor-pics">
@@ -105,7 +105,7 @@
 
                     <!--//latest-articles-->
                       <div class="latest-articles">
-                        <h3 class="tittle"><i class="glyphicon glyphicon-file"></i>Artikel</h3>
+                        <h3 class="tittle"><i class="glyphicon glyphicon-file"></i>Artikel (maksimal 4 dan berita terbaru adalah berita terakhir update)</h3>
                         Di isi dengan tabel beritas kategori artikel
                         <div class="world-news-grids">
                                 <div class="world-news-grid">
