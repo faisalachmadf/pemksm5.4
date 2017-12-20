@@ -18,7 +18,7 @@
 								}(document, 'script', 'facebook-jssdk'));</script>
 
 
-								<div class="fb-page" data-href="https://www.facebook.com/Biro-Otonomi-Daerah-dan-Kerjasama-393299957534362/" data-tabs="timeline" data-height="400" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div>   
+								<div class="fb-page" data-href="https://www.facebook.com/Biro-Otonomi-Daerah-dan-Kerjasama-393299957534362/" data-tabs="timeline" data-width="300" data-height="400" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div>   
 								          </div>
 								<div class="clearfix"></div>
 							</div>
@@ -54,30 +54,21 @@
 						<h4>Kontak Kami</h4>
 						  <div class="editor-pics">
 							 <div class="col-md-3 item-pic">
-							  <img src="/temafrontend/images/jabar.png" class="img-responsive" alt=""/>
+							  <img src="/temafrontend/images/jabar.png" width="80px" height="90px" alt="" style="float:center;"/>
 
 							   </div>
 					   	        <div class="col-md-9 item-details">
-							    	<font face="kaushan" color="#fff"><h3>Biro Pemerintahan dan Kerja Sama </h3><h5> Sekretariat Daerah Provinsi Jawa Barat</h5></font><hr/>
+							    	<font face="kaushan" color="#fff"><h3>Biro Pemerintahan dan Kerja Sama </h3><h5> Sekretariat Daerah Provinsi Jawa Barat</h5><hr/><h5> Jl. Diponegoro No. 22 Bandung</h5></font>
 								      
 							     </div>
 								<div class="clearfix"></div>
 							</div>
 
-							 <div class="editor-pics">
-							 <div class="col-md-3 item-pic">
-							  <img src="/temafrontend/images/point.png" class="img-responsive" alt="" width="20px" style="float:right;" />
-							   </div>
-					   	        <div class="col-md-9 item-details">
-							    	<font face="kaushan" color="#fff"><h5>Jl. Diponegoro No. 22 Bandung</h5></font>
-								    
-							     </div>
-								<div class="clearfix"></div>
-							</div>
+							
 
 							<div class="editor-pics">
 							 <div class="col-md-3 item-pic">
-							    <center><img src="/temafrontend/images/telp.png" class="img-responsive" alt="" width="30px" style="float:right;"/></center>
+							    <center><img src="/temafrontend/images/telp.png" class="img-responsive" alt="" width="30px" style="float:center;"/></center>
 							   </div>
 					   	        <div class="col-md-9 item-details">
 							    	<font face="kaushan" color="#fff"><h5>(022) 4231611</h5></font>
@@ -88,7 +79,7 @@
 
 							 <div class="editor-pics">
 							 <div class="col-md-3 item-pic">
-							  <center><img src="/temafrontend/images/email.png" class="img-responsive" alt="" width="30px" style="float:right;"/></center>
+							  <center><img src="/temafrontend/images/email.png" class="img-responsive" alt="" width="30px" style="float:center;"/></center>
 
 							   </div>
 					   	        <div class="col-md-9 item-details">

@@ -46,37 +46,8 @@
 					</li>
 
 					 <li><a href="/Produk-Hukum">PRODUK HUKUM</a></li>
-				    <li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">BERITA<b class="caret"></b></a>
-						<ul class="dropdown-menu multi-column columns-2">
-							<div class="row">
-								<div class="col-sm-6">
-									<ul class="multi-column-dropdown">
-										<li><a href="/Berita/Berita-Umum">Berita Umum</a></li>
-										<li class="divider"></li>
-										<li><a href="/Berita/Berita-Urusan-Pemerintahan-Daerah">Berita Urusan Pemerintahan Daerah</a></li>
-									    <li class="divider"></li>
-										<li><a href="/Berita/Berita-Tata-Pemerintahan">Berita Tata Pemerintahan</a></li>
-										<li class="divider"></li>
-										
-										<li class="divider"></li>
-										<li><a href="#">.</a></li>
-									</ul>
-								</div>
-								<div class="col-sm-6">
-									<ul class="multi-column-dropdown">
-									   <li><a href="/Berita/Berita-Kerjasama-Dalam-Negeri">Berita Kerjasama Dalam Negeri</a></li>	
-										<li class="divider"></li>
-										<li><a href="/Berita/Berita-Kerjasama-Luar-Negeri">Berita Kerjasama Luar Negeri</a></li>
-									    <li class="divider"></li>
-										<li><a href="/Berita/Artikel-Lainnya">Artikel</a></li>
-										<li class="divider"></li>
-										<li><a href="/Berita/F.A.Q">F.A.Q</a></li>
-										
-									</ul>
-								</div>
-							</div>
-						</ul>
+				    <li>
+					<a href="/berita" >BERITA</b></a>
 					</li>
 
 

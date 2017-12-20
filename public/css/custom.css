@@ -1,10 +1,14 @@
 .img-banner {
+	display: block;
     margin: auto;
-    height: 600px !important;
+    width: 100% !important;
+
+
 }
 
 .thumbnail>img {
     margin: auto;
     width: auto !important;
-    height: 300px;
+    height: 200px;
 }
+
