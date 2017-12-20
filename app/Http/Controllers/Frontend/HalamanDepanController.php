@@ -5,6 +5,10 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Berita;
 use App\Models\header;
+use App\Models\sambutan;
+use App\Models\Publikasi;
+use App\Models\Layanan;
+use App\Models\aplikasi;
 
 class HalamanDepanController extends Controller
 {
@@ -12,9 +16,27 @@ class HalamanDepanController extends Controller
     {
         $data = [
             'banners' => header::all(),
-            'beritas' => Berita::with(['katberita', 'user'])->get()
+            'umums' => Berita::getDataByKat('Berita-Umum', 4)->get(),
+            'daerahs' => Berita::getDataByKat('Berita-Urusan-Pemerintahan-Daerah', 3)->get(),
+            'tatas' => Berita::getDataByKat('Berita-Tata-Pemerintahan', 3)->get(),
+            'kerjasamas' => Berita::getDataByKat('Berita-Kerja-Sama', 3)->get(),
+            'artikels' => Berita::getDataByKat('Artikel', 4)->get(),
+            'sambutans' => sambutan::all(),
+            'publikasis' => Publikasi::getDataByKat(['Agenda', 'PPID'], 5, true)->get(),
+            'agendas' => Publikasi::getDataByKat(['Agenda'], 5)->get(),
+            'ppids' => Publikasi::getDataByKat(['PPID'], 5)->get(),
+            'populars' => Berita::getPopular(5)->get(),
+            'layanans' => Layanan::with(['katbagian', 'user'])->take(5)->get(),
+            'aplikasis' => aplikasi::all()
         ];
 
         return view('frame_depan.partindex.content', $data);
+    }
+
+    public function test($kategori, $slug)
+    {
+        echo $kategori;
+        echo "<br>";
+        echo $slug;
     }
 }

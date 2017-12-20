@@ -48,4 +48,22 @@ class Berita extends Model
     {
         return $this->belongsTo('App\Models\User', 'id_user');
     }
+
+    public function scopeGetDataByKat($query, $katSlug, $limit = null)
+    {
+        return $query->whereHas('katberita', function($query) use ($katSlug) {
+                $query->where('slug', $katSlug);
+            })
+            ->with(['katberita', 'user'])
+            ->orderBy('tanggal', 'desc')
+            ->take($limit);
+    }
+
+    public function scopeGetPopular($query, $limit = null)
+    {
+        return $query->with('katberita')
+            ->orderBy('dibaca', 'desc')
+            ->orderBy('tanggal', 'desc')
+            ->take($limit);
+    }
 }

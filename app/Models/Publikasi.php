@@ -48,4 +48,18 @@ class Publikasi extends Model
     {
         return $this->belongsTo('App\Models\User', 'id_user');
     }
+
+    public function scopeGetDataByKat($query, $katSlug, $limit = null, $exclude = false)
+    {
+        return $query->whereHas('katfile', function($query) use ($katSlug, $exclude) {
+                if ($exclude) {
+                    $query->whereNotIn('slug', $katSlug);
+                } else {
+                    $query->whereIn('slug', $katSlug);
+                }
+            })
+            ->with(['katfile', 'user'])
+            ->orderBy('tanggal', 'desc')
+            ->take($limit);
+    }
 }

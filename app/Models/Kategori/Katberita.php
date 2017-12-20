@@ -15,9 +15,6 @@ class Katberita extends Model
         'name','slug'
     ];
 
-  
-
-   
     public function getDataBySlug($slug)
     {
         return $this->where('slug', $slug)->first();

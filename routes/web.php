@@ -61,46 +61,15 @@ Route::group(['namespace' => 'Frontend'], function() {
 
     /* Berita */
 
-    Route::group(['prefix' => 'Berita'], function () {
-        Route::get('Berita-Umum', 'HalamanDepanController@index')->name('Berita-Umum');
-        Route::get('Berita-Umum/{slug}', 'HalamanDepanController@index')->name('Berita-Umum.show');
-        Route::get('Berita-Urusan-Pemerintahan-Daerah', 'HalamanDepanController@index')->name('Berita-Urusan-Pemerintahan-Daerah');
-        Route::get('Berita-Urusan-Pemerintahan-Daerah/{slug}', 'HalamanDepanController@index')->name('Berita-Urusan-Pemerintahan-Daerah.show');
-        Route::get('Berita-Tata-Pemerintahan', 'HalamanDepanController@index')->name('Berita-Tata-Pemerintahan');
-        Route::get('Berita-Tata-Pemerintahan/{slug}', 'HalamanDepanController@index')->name('Berita-Tata-Pemerintahan.show');
-        Route::get('Berita-Kerja-Sama', 'HalamanDepanController@index')->name('Berita-Kerja-Sama');
-        Route::get('Berita-Kerja-Sama/{slug}', 'HalamanDepanController@index')->name('Berita-Kerja-Sama.show');
-        Route::get('Artikel-Lainnya', 'HalamanDepanController@index')->name('Artikel-Lainnya');
-        Route::get('Artikel-Lainnya/{slug}', 'HalamanDepanController@index')->name('Artikel-Lainnya.show');
-        Route::get('F.A.Q', 'HalamanDepanController@index')->name('F.A.Q');
-        Route::get('F.A.Q/{slug}', 'HalamanDepanController@index')->name('F.A.Q.show');
-    });
+    Route::get('Berita/{kategori?}/{slug?}', 'HalamanDepanController@test')->name('Berita');
 
     /* Publikasi */
 
-    Route::get('/Publikasi/Materi-Materi', function () {
-        return view('page.publikasi.materi');
-    });
+    Route::get('Publikasi/{kategori?}/{slug?}', 'HalamanDepanController@test')->name('Publikasi');
 
-    Route::get('/Publikasi/e-Book', function () {
-        return view('page.publikasi.ebook');
-    });
+    /* Layanan */
 
-    Route::get('/Publikasi/Brosur-event', function () {
-        return view('page.publikasi.brosur');
-    });
-
-    Route::get('/Publikasi/Agenda', function () {
-        return view('page.publikasi.agenda');
-    });
-
-    Route::get('/Publikasi/SK-Admin', function () {
-        return view('page.publikasi.skadmin');
-    });
-
-    Route::get('/Publikasi/PPID', function () {
-        return view('page.publikasi.ppid');
-    });
+    Route::get('Layanan/{kategori?}/{slug?}', 'HalamanDepanController@test')->name('Layanan');
 
     /* LPPD */
 
