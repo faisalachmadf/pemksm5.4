@@ -24,8 +24,8 @@
                             </div>
                             @endforeach
                             <div class="clearfix"></div>
-                            <a href="{{ route('Berita', [$umum->katberita->slug]) }}" class="btn btn-danger">
-                                <h6>{{ $umum->katberita->name }} Lainnya &gt;&gt;</h6>
+                            <a href="{{ route('Berita', [@$umum->katberita->slug]) }}" class="btn btn-danger">
+                                <h6>{{ @$umum->katberita->name }} Lainnya &gt;&gt;</h6>
                             </a>
                         </div>
                         <br/>
@@ -53,8 +53,8 @@
                             <hr/>
                             @endforeach
                             <div class="clearfix"></div>
-                            <a href="{{ route('Berita', [$daerah->katberita->slug]) }}" class="btn btn-warning">
-                                <h6>{{ $daerah->katberita->name }} Lainnya &gt;&gt;</h6>
+                            <a href="{{ route('Berita', [@$daerah->katberita->slug]) }}" class="btn btn-warning">
+                                <h6>{{ @$daerah->katberita->name }} Lainnya &gt;&gt;</h6>
                             </a>
                             <br/><br/>
                         </div>
@@ -78,8 +78,8 @@
                             <hr/>
                             @endforeach
                             <div class="clearfix"></div>
-                            <a href="{{ route('Berita', [$tata->katberita->slug]) }}" class="btn btn-success">
-                                <h6>{{ $tata->katberita->name }} Lainnya &gt;&gt;</h6>
+                            <a href="{{ route('Berita', [@$tata->katberita->slug]) }}" class="btn btn-success">
+                                <h6>{{ @$tata->katberita->name }} Lainnya &gt;&gt;</h6>
                             </a>
                             <br/><br/>
                         </div>
@@ -102,8 +102,8 @@
                             <hr/>
                             @endforeach
                             <div class="clearfix"></div>
-                            <a href="{{ route('Berita', [$kerjasama->katberita->slug]) }}" class="btn btn-info">
-                                <h6>{{ $kerjasama->katberita->name }} Lainnya &gt;&gt;</h6>
+                            <a href="{{ route('Berita', [@$kerjasama->katberita->slug]) }}" class="btn btn-info">
+                                <h6>{{ @$kerjasama->katberita->name }} Lainnya &gt;&gt;</h6>
                             </a>
                         </div>
                        
@@ -123,8 +123,8 @@
                             </div>
                             @endforeach
                             <div class="clearfix"></div>
-                            <a href="{{ route('Berita', [$artikel->katberita->slug]) }}" class="btn btn-primary">
-                                <h6>{{ $artikel->katberita->name }} Lainnya &gt;&gt;</h6>
+                            <a href="{{ route('Berita', [@$artikel->katberita->slug]) }}" class="btn btn-primary">
+                                <h6>{{ @$artikel->katberita->name }} Lainnya &gt;&gt;</h6>
                             </a>
                         </div>
                     </div>
