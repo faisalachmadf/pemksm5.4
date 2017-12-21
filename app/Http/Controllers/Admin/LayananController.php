@@ -22,6 +22,7 @@ class LayananController extends Controller
         $page = [
             'title' => 'Layanan Publik',
             'breadcrumb' => 'Layanan Publik'
+
         ];
 
         return view('layouts.layanan.index')->withPage($page);
@@ -37,15 +38,15 @@ class LayananController extends Controller
         $param = [
             'url' => 'layanan',
             'action' => ['show', 'edit', 'destroy'],
-            'file' => 'layanan.download'
+            'file' => 'layanan'
         ];
 
         return Datatables::of(Layanan::with(['katbagian', 'user']))
             ->addColumn('action', function($data) use ($param) {
                 return generateAction($param, $data->slug);
             })
-            ->editColumn('file', function($data) use ($param) {
-                return generateFileDownload(route($param['file'], $data->slug), $data->file, $data->nama);
+             ->editColumn('file', function($data) use ($param) {
+                return generateImagePath($param['file'], $data->file, $data->judul);
             })
             ->editColumn('isi', function($data) {
                 return str_limit($data->isi, 100);
@@ -91,15 +92,18 @@ class LayananController extends Controller
         $layanan->tanggal = dateFormatGeneral($request->input('tanggal'));
         $layanan->slug = str_slug($layanan->judul);
         $file = $request->file('file');
-        $path = 'file/layanan';
+        $path = 'image/layanan';
 
         if (!$file->isValid()) {
-            return redirect()->back()->withInput()->withErrors('file', 'File tidak valid');
+            return redirect()->back()->withInput()->withErrors('file', 'file tidak valid');
         }
 
         $layanan->file = time().'-'.$layanan->slug.'.'.$file->getClientOriginalExtension();
         $layanan->save();
         $file->move($path, $layanan->file);
+
+        //create thumbnail
+        generateThumbnail($path, $layanan->file);
 
         return redirect()->route('layanan.index')->with('success', 'Data telah tersimpan');
     }
@@ -158,12 +162,12 @@ class LayananController extends Controller
         $data['slug'] = str_slug($data['judul']);
         $data['tanggal'] = dateFormatGeneral($data['tanggal']);
 
-        if ($request->hasFile('file')) {
+       if ($request->hasFile('file')) {
             $file = $request->file('file');
-            $path = 'file/layanan';
+            $path = 'image/layanan';
 
             if (!$file->isValid()) {
-                return redirect()->back()->withInput()->withErrors('file', 'File tidak valid');
+                return redirect()->back()->withInput()->withErrors('file', 'gambar tidak valid');
             }
 
             $data['file'] = time().'-'.$data['slug'].'.'.$file->getClientOriginalExtension();
@@ -171,8 +175,10 @@ class LayananController extends Controller
 
             // delete image & thumbnail
             deleteImageThumbnail($path, $layanan->file);
+
+            // create thumbnail
+            generateThumbnail($path, $data['file']);
         }
-        
         $layanan->update($data);
 
         return redirect()->route('layanan.index')->with('success', 'Data telah diubah');
@@ -191,7 +197,7 @@ class LayananController extends Controller
 
         if ($layanan) {
             // delete image & thumbnail
-            deleteImageThumbnail('file/layanan', $layanan->file);
+            deleteImageThumbnail('image/layanan', $layanan->file);
 
             $layanan->delete();
             $message = 'Data telah dihapus';
@@ -202,22 +208,5 @@ class LayananController extends Controller
         return redirect()->route('layanan.index')->with('success', $message);
     }
 
-    /**
-     * Download the specified file from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function download($slug)
-    {
-        $model = new layanan;
-        $layanan = $model->getDataBySlug($slug);
-        $path = 'file/layanan';
-
-        if ($layanan && \Storage::exists($path.'/'.$layanan->file)) {
-            return response()->download($path.'/'.$layanan->file);
-        }
-
-        return response()->view('errors.404');
-    }
+   
 }

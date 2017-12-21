@@ -58,14 +58,24 @@ Route::group(['namespace' => 'Frontend'], function() {
     Route::get('/Produk-Hukum', function () {
         return view('page.produkhukum.produkhukum');
     });    
+    
+     
 
     /* Berita */
+
+    Route::get('/Rangkuman-Berita', function () {
+        return view('page.berita.index');
+    });  
 
     Route::get('Berita/{kategori?}/{slug?}', 'HalamanDepanController@test')->name('Berita');
 
     /* Publikasi */
 
     Route::get('Publikasi/{kategori?}/{slug?}', 'HalamanDepanController@test')->name('Publikasi');
+
+     /* Agenda */
+
+    Route::get('Agenda/{kategori?}/{slug?}', 'HalamanDepanController@test')->name('Agenda');
 
     /* Layanan */
 
@@ -92,6 +102,17 @@ Route::group(['namespace' => 'Frontend'], function() {
     Route::get('/TKKSD', function () {
         return view('page.tkksd.tkksd');
     });
+
+
+
+     /*PROFIL */
+
+    Route::resource('selayang-pandang','SelayangController');
+
+        Route::group(['namespace' => 'Profil'], function() {
+            Route::resource('Tugas-Pokok-dan-Fungsi','TupoksiController');
+            Route::resource('Visi-dan-Misi','VisiMisiController');
+            });   
 });
 
 

@@ -48,4 +48,11 @@ class Agenda extends Model
     {
         return $this->belongsTo('App\Models\User', 'id_user');
     }
+
+     public function scopeGetNow($query, $limit = null)
+    {
+        return $query->with('katbagian')
+            ->orderBy('tanggal', 'desc')
+            ->take($limit);
+    }
 }

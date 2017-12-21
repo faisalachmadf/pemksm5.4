@@ -6,6 +6,7 @@
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="{{ asset('/temafrontend/css/bootstrap-3.1.1.min.css') }}" rel="stylesheet" type="text/css">
+
 <!-- Custom Theme files -->
 <link href="{{ asset('/temafrontend/css/owl.carousel.css') }}" rel="stylesheet" type="text/css" media="all" />
 <link href="{{ asset('/temafrontend/css/style.css') }}" rel='stylesheet' type='text/css'>

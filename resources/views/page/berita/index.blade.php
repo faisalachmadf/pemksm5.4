@@ -37,22 +37,32 @@
 					              <hr/>
 
 
-									<div class="single-left-grid">
-										<img src="/temafrontend/images/single.jpg" alt="">
-											<h4>Aliquam dapibus tincidunt metus. Praesent justo dolor, lobortis quis, lobortis dignissim, pulvinar ac, lorem.</h4>
-												<p class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna. Donec accumsan malesuada orci. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus.</p>
-												<h4>Vestibulum urna nulla, ultrices ut suscipit vel, suscipit vitae nunc. Quisque nec velit et nibh ultrices molestie.</h4>
-												<p class="text">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sem neque.Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sem neque</p>
-											
-											<div class="single-bottom">
-													<ul>
-														<li><a href="#">Designer inspiration</a></li>
-														<li>August 30 2015</li>
-														<li><a href="#">Admin</a></li>
-														<li><a href="#">5 Comments</a></li>
-													</ul>
-												</div>
-											</div>
+									 <!--/start-Technology-->
+                        <div class="technology">
+                         
+                            <!-- Di isi dengan tabel beritas kategori urusan pemerintahan daerah -->
+                            
+                            <div class="editor-pics">
+                                <div class="col-md-5 item-pic">
+
+                                   di isi dengan gambar
+
+                                </div>
+                                <div class="col-md-7 item-details">
+                                   <h3 class="inner two">di isi dengan judul</h3>
+                                    <p><h6>
+                                    di isi dengan tanggal, pengupload dan di baca</h6></p>
+                                    <hr/>
+                                    di isi dengan isi
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <hr/>
+                          
+                            <div class="clearfix"></div>
+                            
+                            <br/><br/>
+                        </div>
 								</div>
 
 									<div class="post">

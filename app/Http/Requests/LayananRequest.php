@@ -36,7 +36,7 @@ class LayananRequest extends FormRequest
             'judul' => 'required|unique:layanans,judul,'.$id,
             'isi' => 'required',
             'tanggal' => 'required|date_format:d/m/Y',
-            'file' => 'mimes:pdf,doc,docx,xls,xlsx,ppt,pptx,jpeg,png,bmp,gif,svg,rar,zip'.$file
+            'file' => 'image|mimes:jpeg,png,bmp,gif,svg'.$file
         ];
     }
 }

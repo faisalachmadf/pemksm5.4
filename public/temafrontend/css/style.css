@@ -600,7 +600,7 @@ span.icon3 {
 .gallery {
     margin-top: 2em;
 }
-div#example1 {
+div #example1 {
     background-color: #fff;
        padding: 1.5em 1.5em 4em;
     border: 1px solid rgba(231,231,231,1.00);
@@ -992,8 +992,9 @@ h5.top a {
 a.wd {
     color: #282828;
     font-size: 1em;
-    line-height: 1.5em;
+    line-height: 1.3em;
     font-weight: bold;
+    text-transform: uppercase;
 }
 a.wd:hover{
     color: #ee5656;
@@ -2618,7 +2619,7 @@ border: 1px solid #EAE5E5;
 		padding: 0 5px!important;
 	}
   #owl-demo .item{
-  background: #3fbf79;
+  background: #ffffff;
   padding: 30px 0px;
   margin: 10px;
   color: #FFF;

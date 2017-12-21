@@ -47,7 +47,7 @@
 
 					 <li><a href="/Produk-Hukum">PRODUK HUKUM</a></li>
 				    <li>
-					<a href="/berita" >BERITA</b></a>
+					<a href="/Rangkuman-Berita" >BERITA</b></a>
 					</li>
 
 

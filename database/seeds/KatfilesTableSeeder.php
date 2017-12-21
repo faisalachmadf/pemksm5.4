@@ -34,13 +34,6 @@ class KatfilesTableSeeder extends Seeder
 		],
 
 		[
-		'name'=>'Agenda',
-		'slug'=>'Agenda', 
-		'created_at'=>'2017-12-19 10:00:00',
-		'updated_at'=>'2017-12-19 10:00:00'
-		],
-
-		[
 		'name'=>'SK Admin',
 		'slug'=>'SK-Admin', 
 		'created_at'=>'2017-12-19 10:00:00',

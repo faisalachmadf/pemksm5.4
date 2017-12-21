@@ -9,6 +9,7 @@ use App\Models\sambutan;
 use App\Models\Publikasi;
 use App\Models\Layanan;
 use App\Models\aplikasi;
+use App\Models\Agenda;
 
 class HalamanDepanController extends Controller
 {
@@ -22,11 +23,11 @@ class HalamanDepanController extends Controller
             'kerjasamas' => Berita::getDataByKat('Berita-Kerja-Sama', 3)->get(),
             'artikels' => Berita::getDataByKat('Artikel', 4)->get(),
             'sambutans' => sambutan::all(),
-            'publikasis' => Publikasi::getDataByKat(['Agenda', 'PPID'], 5, true)->get(),
-            'agendas' => Publikasi::getDataByKat(['Agenda'], 5)->get(),
+            'publikasis' => Publikasi::getDataByKat(['PPID'], 5, true)->get(),
             'ppids' => Publikasi::getDataByKat(['PPID'], 5)->get(),
+            'agendas' => Agenda::getNow()->get(),
             'populars' => Berita::getPopular(5)->get(),
-            'layanans' => Layanan::with(['katbagian', 'user'])->take(5)->get(),
+            'layanans' => Layanan::with(['katbagian', 'user'])->take(3)->get(),
             'aplikasis' => aplikasi::all()
         ];
 
