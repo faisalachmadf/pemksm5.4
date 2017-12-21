@@ -4,8 +4,8 @@
 @section('content')
  <div class="banner two">
     <div class="container"> 
-    	@foreach($Selayangs as $Selayang)
-	    <h2 class="inner-tittle">{{ $Selayang->judul }}</h2>  
+    	@foreach($selayangs as $selayang)
+	    <h2 class="inner-tittle">{{ $selayang->judul }}</h2>  
     </div>
  </div>
     
@@ -19,7 +19,7 @@
 	                            <div class="banner-bottom-left-grids">
 									<div class="single-left-grid">
 
-												<p>{!! $Selayang->isi !!}</p>
+												<p>{!! $selayang->isi !!}</p>
 												
 											
 
@@ -60,4 +60,6 @@
 											</div>
 									</div>
 			  </div>    
+	  	</div>    
+ </div>    
 @endsection

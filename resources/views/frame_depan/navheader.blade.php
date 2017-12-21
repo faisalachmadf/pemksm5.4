@@ -18,17 +18,17 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">PROFIL<b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="/selayang-pandang">Selayang Pandang</a></li>
+							<li><a href="{{ route('Selayang-Pandang.index') }}">Selayang Pandang</a></li>
 							<li class="divider"></li>
-							<li><a href="/Visi-dan-Misi">Visi dan Misi</a></li>
+							<li><a href="{{ route('Visi-dan-Misi.index') }}">Visi dan Misi</a></li>
 							<li class="divider"></li>
-							<li><a href="/Tugas-Pokok-dan-Fungsi">Tugas Pokok dan Fungsi</a></li>
+							<li><a href="{{ route('Tugas-Pokok-dan-Fungsi.index') }}">Tugas Pokok dan Fungsi</a></li>
 							<li class="divider"></li>
-							<li><a href="/Struktur-Organisasi">Struktur Organisasi</a></li>
+							<li><a href="{{ route('Struktur-Organisasi.index') }}">Struktur Organisasi</a></li>
 							<li class="divider"></li>
-							<li><a href="#">Sumber Daya Manusia</a></li>
+							<li><a href="{{ route('Sumber-Daya-Manusia.index') }}">Sumber Daya Manusia</a></li>
 							<li class="divider"></li>
-							<li><a href="/prestasi">Prestasi</a></li>
+							<li><a href="{{ route('Prestasi.index') }}">Prestasi</a></li>
 						</ul>
 					  </li>
 

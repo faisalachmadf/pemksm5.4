@@ -52,7 +52,7 @@ class Agenda extends Model
      public function scopeGetNow($query, $limit = null)
     {
         return $query->with('katbagian')
-            ->orderBy('tanggal', 'desc')
+            ->whereDate('tanggal', date('Y-m-d'))
             ->take($limit);
     }
 }

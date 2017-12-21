@@ -19,24 +19,14 @@ Route::group(['namespace' => 'Frontend'], function() {
 
     /* Profile */
 
-    Route::get('selayang-pandang', function () {
-        return view('page.profile.selayangpandang');
-    });
 
-    Route::get('Visi-dan-Misi', function () {
-        return view('page.profile.visimisi');
-    });
-
-    Route::get('Tugas-Pokok-dan-Fungsi', function () {
-        return view('page.profile.tupoksi');
-    });
-
-    Route::get('Struktur-Organisasi', function () {
-        return view('page.profile.struktur');
-    });
-
-    Route::get('prestasi', function () {
-        return view('page.profile.prestasi');
+    Route::group(['namespace' => 'Profil', 'prefix' => 'profil'], function() {
+        Route::resource('Selayang-Pandang','SelayangController');
+        Route::resource('Visi-dan-Misi','VisiMisiController');
+        Route::resource('Tugas-Pokok-dan-Fungsi','TupoksiController');
+        Route::resource('Struktur-Organisasi','TupoksiController');
+        Route::resource('Sumber-Daya-Manusia','TupoksiController');
+        Route::resource('Prestasi','TupoksiController');
     });
 
     /* Bagian */
@@ -102,17 +92,6 @@ Route::group(['namespace' => 'Frontend'], function() {
     Route::get('/TKKSD', function () {
         return view('page.tkksd.tkksd');
     });
-
-
-
-     /*PROFIL */
-
-    Route::resource('selayang-pandang','SelayangController');
-
-        Route::group(['namespace' => 'Profil'], function() {
-            Route::resource('Tugas-Pokok-dan-Fungsi','TupoksiController');
-            Route::resource('Visi-dan-Misi','VisiMisiController');
-            });   
 });
 
 
