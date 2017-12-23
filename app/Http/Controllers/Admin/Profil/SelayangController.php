@@ -41,7 +41,7 @@ class SelayangController extends Controller
         return Datatables::of(Selayang::query())
             ->addColumn('action', function($data) use ($param) {
                 if ($data->aktif) {
-                    unset($param['action'][array_search('destroy', $param['action'])]);
+                    // unset($param['action'][array_search('destroy', $param['action'])]);
                 }
 
                 return generateAction($param, $data->slug);

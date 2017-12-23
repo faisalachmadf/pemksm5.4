@@ -39,7 +39,6 @@
 
               <div class="col-sm-4">
                 <select class="form-control" id="id_katbagian" name="id_katbagian" required>
-                  <option value="">Agenda Bagian </option>
                   @foreach($katbagian as $agenda)
                     <option value="{{ $agenda->id }}" {{ old('id_katbagian') == $agenda->id ? 'selected' : '' }}>{{ $agenda->name }}</option>
                   @endforeach

@@ -89,5 +89,8 @@
 											   </form>
 											</div>
 									</div>
-			  </div>    
+			  </div>
+              @include('frame_depan.kanan', @$kanan ? $kanan : [])
+        </div>
+    </div>   
 @endsection

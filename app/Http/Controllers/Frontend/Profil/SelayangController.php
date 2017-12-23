@@ -10,8 +10,11 @@ class SelayangController extends Controller
 {
     public function index()
     {
-        $selayangs = Selayang::all();
+        $data = [
+            'selayang' => Selayang::getAktif()->first(),
+            'kanan' => getDataKanan()
+        ];
         
-        return view('page.profile.selayangpandang', compact('selayangs'));
+        return view('page.profile.selayangpandang', $data);
     }
 }

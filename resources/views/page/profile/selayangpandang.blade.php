@@ -3,9 +3,8 @@
 
 @section('content')
  <div class="banner two">
-    <div class="container"> 
-    	@foreach($selayangs as $selayang)
-	    <h2 class="inner-tittle">{{ $selayang->judul }}</h2>  
+    <div class="container">
+	    <h2 class="inner-tittle">{{ @$selayang->judul }}</h2>
     </div>
  </div>
     
@@ -18,11 +17,7 @@
 
 	                            <div class="banner-bottom-left-grids">
 									<div class="single-left-grid">
-
-												<p>{!! $selayang->isi !!}</p>
-												
-											
-
+											<p>{!! @$selayang->isi !!}</p>
 											<div class="single-bottom">
 													<ul>
 														<li><a href="#">Designer inspiration</a></li>
@@ -34,7 +29,6 @@
 
 									 </div>
 								</div>
-								@endforeach
 									<div class="post">
 											<!--Komentar-->
 										<div class="leave">
@@ -59,7 +53,8 @@
 											   </form>
 											</div>
 									</div>
-			  </div>    
+			  </div>
+			  @include('frame_depan.kanan', @$kanan ? $kanan : [])
 	  	</div>    
  </div>    
 @endsection

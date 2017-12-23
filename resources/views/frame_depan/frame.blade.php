@@ -9,14 +9,8 @@
 
  <!-- Isi Konten -->
   	@yield('content')
-    
-
-	@include('frame_depan.kanan')
-		
-			
-			  
-	@include('frame_depan.footer')
-		
+    		  
+	@include('frame_depan.footer')	
 	
 	<!--/start-copyright-section-->
 	@include('frame_depan.script')

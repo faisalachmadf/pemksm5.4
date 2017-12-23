@@ -156,4 +156,18 @@ if (! function_exists('generateRemainingDays')) {
    }
 }
 
+if (! function_exists('getDataKanan')) {
+   function getDataKanan()
+   {
+        $kanan = [
+            'files' => '',
+            'populers' => '',
+            'ppids' => '',
+            'layanans' => \App\Models\Layanan::with(['katbagian', 'user'])->take(3)->get()
+        ];
+
+        return $kanan;
+   }
+}
+
 ?>

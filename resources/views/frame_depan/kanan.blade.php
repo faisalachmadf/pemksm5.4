@@ -97,54 +97,30 @@
 						      <br/>
 							<!--//edit-pics-->
 							
-							<h4 class="side">Video</h4>
-								<div class="edit-pics">
-							      <div class="editor-pics">
-										 <div class="col-md-3 item-pic">
-										   <img src="images/f4.jpg" class="img-responsive" alt=""/>
+							<div class="connect">
+	                            <h4 class="side">Layanan Publik</h4>
+	                            <ul class="stay">
+	                                <!-- DI isi dengan Tabel layanans -->
+	                            @foreach(@$layanans ? $layanans : [] as $layanan)
+	                                <div class="editor-pics">
+	                                    <div class="col-md-3 item-pic">
+	                                        <img src="{{ asset('image/layanan/thumbnail/'.$layanan->file) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $layanan->judul }}" class="img-responsive "  />
 
-										   </div>
-											<div class="col-md-9 item-details">
-												<h5 class="inner two"><a href="single.html">New iPad App to stimulate your Guitar</a></h5>
-												 <div class="td-post-date two"><i class="glyphicon glyphicon-time"></i>Feb 22, 2015 <a href="#"><i class="glyphicon glyphicon-comment"></i>0 </a></div>
-											 </div>
-											<div class="clearfix"></div>
-										</div>
-										<div class="editor-pics">
-										 <div class="col-md-3 item-pic">
-										   <img src="images/f1.jpg" class="img-responsive" alt=""/>
+	                                    </div>
+	                                    <div class="col-md-9 item-details">
+	                                       <a href="{{ route('Layanan', [$layanan->katbagian->slug, $layanan->slug]) }}">{{ $layanan->judul }}</a>
 
-										   </div>
-											<div class="col-md-9 item-details">
-												<h5 class="inner two"><a href="single.html">New iPad App to stimulate your Guitar</a></h5>
-												 <div class="td-post-date two"><i class="glyphicon glyphicon-time"></i>Feb 22, 2015 <a href="#"><i class="glyphicon glyphicon-comment"></i>0 </a></div>
-											 </div>
-											<div class="clearfix"></div>
-										</div>
-										<div class="editor-pics">
-										 <div class="col-md-3 item-pic">
-										   <img src="images/f1.jpg" class="img-responsive" alt=""/>
-
-										   </div>
-											<div class="col-md-9 item-details">
-												<h5 class="inner two"><a href="single.html">New iPad App to stimulate your Guitar</a></h5>
-												 <div class="td-post-date two"><i class="glyphicon glyphicon-time"></i>Feb 22, 2015 <a href="#"><i class="glyphicon glyphicon-comment"></i>0 </a></div>
-											 </div>
-											<div class="clearfix"></div>
-										</div>
-										<div class="editor-pics">
-										 <div class="col-md-3 item-pic">
-										   <img src="images/f4.jpg" class="img-responsive" alt=""/>
-
-										   </div>
-											<div class="col-md-9 item-details">
-												<h5 class="inner two"><a href="single.html">New iPad App to stimulate your Guitar</a></h5>
-												 <div class="td-post-date two"><i class="glyphicon glyphicon-time"></i>Feb 22, 2015 <a href="#"><i class="glyphicon glyphicon-comment"></i>0 </a></div>
-											 </div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-
-						</div>
+	                                      <div class="td-post-date two">
+	                                            <i class="glyphicon glyphicon-time"></i>Tanggal Update:{{ date('d M Y', strtotime($layanan->tanggal)) }} 
+	                                        </div>
+	                                    </div>
+	                                    <div class="clearfix"></div>
+	                                </div>
+	                            @endforeach
+	                                <a href="{{ route('Publikasi') }}">
+	                                    <h6>Layanan Publik Lainnya &gt;&gt;</h6>
+	                                </a>
+	                            </ul>
+	                        </div>
 						<div class="clearfix"></div>
 						</div>
