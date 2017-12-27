@@ -170,4 +170,20 @@ if (! function_exists('getDataKanan')) {
    }
 }
 
+if (! function_exists('generateBtnClass')) {
+   function generateBtnClass($key)
+   {
+        $class = [
+            'btn-warning',
+            'btn-success',
+            'btn-info',
+            'btn-primary',
+            'btn-default',
+            'btn-danger',
+        ];
+
+        return $class[$key % 6];
+   }
+}
+
 ?>

@@ -1,0 +1,35 @@
+@media (max-width:736px){
+
+}
+@media (max-width:640px){
+    .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+        margin-left: 15px!important;
+    }
+    .layanan {
+        width: 5%;
+        height: 10%;
+        float: left;
+        margin-right:1%;
+        margin-bottom:5%;
+    }
+    .layanan.lost{
+        float:none;
+        margin: 0 auto 1em;
+    }
+}
+@media (max-width:480px){
+    .post-right h4 a {
+        text-transform: uppercase;
+        font-size: 0.8em;
+    }
+    .layanan {
+        width: 100%;
+        float: left;
+        margin-right: 0%;
+        margin-bottom: 5%;
+    }
+    .layanan.lost {
+        float: left;
+        margin: 0 auto 1em;
+    }
+}

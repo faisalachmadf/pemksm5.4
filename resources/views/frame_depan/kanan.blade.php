@@ -52,13 +52,13 @@
                                     <div class="col-md-9 item-details">
                                         <h5 class="inner two"><a href="{{ route('Berita', [$popular->katberita->slug, $popular->slug]) }}">{{ $popular->judul }}</a></h5>
                                         <div class="td-post-date two">
-                                            <i class="glyphicon glyphicon-time"></i>{{ date('d M Y', strtotime($popular->tanggal)) }} <a href="#"><i class="glyphicon glyphicon-eye-open"></i>0 </a>
+                                            <i class="glyphicon glyphicon-time"></i>{{ date('d M Y', strtotime($popular->tanggal)) }} <a href="#"><i class="glyphicon glyphicon-eye-open"></i>{{ $popular->dibaca }}</a>
                                         </div>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
                             @endforeach
-                            <a href="{{ route('Berita') }}">
+                            <a href="{{ route('Berita', ['popular']) }}">
                                 <h6>Berita Popular Lainnya &gt;&gt;</h6>
                             </a>
                         </div>

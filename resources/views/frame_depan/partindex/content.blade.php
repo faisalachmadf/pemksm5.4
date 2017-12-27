@@ -46,7 +46,7 @@
                                     <h5 class="inner two"><a href="{{ route('Berita', [$daerah->katberita->slug, $daerah->slug]) }}">{{ $daerah->judul }}</a></h5>
                                     <p><h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($daerah->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($daerah->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $daerah->dibaca }}</h6></p>
                                     <hr/>
-                                    <h5 class="inner two">{!!substr($daerah->isi,0,300)!!} ...</h5>
+                                    <h5 class="inner two">{!! substr($daerah->isi, 0, 300) !!} ...</h5>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>

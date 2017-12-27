@@ -53,11 +53,7 @@ Route::group(['namespace' => 'Frontend'], function() {
 
     /* Berita */
 
-    Route::get('/Rangkuman-Berita', function () {
-        return view('page.berita.index');
-    });  
-
-    Route::get('Berita/{kategori?}/{slug?}', 'HalamanDepanController@test')->name('Berita');
+    Route::get('Berita/{kategori?}/{slug?}', 'BeritaController@index')->name('Berita');
 
     /* Publikasi */
 
