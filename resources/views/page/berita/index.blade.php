@@ -31,27 +31,34 @@
                     <div class="technology">
                         @foreach($beritas as $berita)
                         <div class="editor-pics">
-                            <div class="col-md-5 item-pic">
-                                @if($dibaca)
-                                    <img src="{{ asset('image/berita/'.$berita->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $berita->judul }}"/>
-                                @else
-                                    <img src="{{ asset('image/berita/thumbnail/'.$berita->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $berita->judul }}"/>
-                                @endif
-                            </div>
-                            <div class="col-md-7 item-details">
-                                <h3 class="inner two">
-                                    <a href="{{ route('Berita', [$berita->katberita->slug, $berita->slug]) }}">{{ $berita->judul }}</a>
-                                </h3>
-                                <p><h6>
-                                    <i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($berita->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($berita->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $berita->dibaca }}
-                                </h6></p>
-                                <hr/>
-                                @if($dibaca)
+                            @if($dibaca)
+                                <div class="col-md-12 item-pic text-justify">
+                                    <img src="{{ asset('image/berita/'.$berita->gambar) }}" class="img-responsive img-banner" alt="{{ $berita->judul }}"/>
+                                    <br/><br/>
+                                    <h3 class="inner two">
+                                        <a href="{{ route('Berita', [$berita->katberita->slug, $berita->slug]) }}">{{ $berita->judul }}</a>
+                                    </h3>
+                                    <p><h6>
+                                        <i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($berita->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($berita->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $berita->dibaca }}
+                                    </h6></p>
+                                    <hr/>
                                     {!! $berita->isi !!}
-                                @else
+                                </div>
+                            @else
+                                <div class="col-md-5 item-pic">
+                                    <img src="{{ asset('image/berita/thumbnail/'.$berita->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $berita->judul }}"/>
+                                </div>
+                                <div class="col-md-7 item-details">
+                                    <h3 class="inner two">
+                                        <a href="{{ route('Berita', [$berita->katberita->slug, $berita->slug]) }}">{{ $berita->judul }}</a>
+                                    </h3>
+                                    <p><h6>
+                                        <i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($berita->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($berita->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $berita->dibaca }}
+                                    </h6></p>
+                                    <hr/>
                                     {!! str_limit($berita->isi, 300) !!} <a href="{{ route('Berita', [$berita->katberita->slug, $berita->slug]) }}">Baca Selengkapnya &gt;&gt;</a>
-                                @endif
-                            </div>
+                                </div>
+                            @endif
                             <div class="clearfix"></div>
                         </div>
                         <hr/>
