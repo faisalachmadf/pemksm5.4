@@ -9,9 +9,13 @@ class VisiMisiController extends Controller
 {
       public function index()
     {
+      $data = [
+      	'visimisi' => VisiMisi::getAktif()->first(),
+      	'kanan' => getDataKanan()
 
-      $visimisis=visimisi::all();
-        return view('page.profile.visimisi',compact('visimisis'));
+      ];
+
+     
+        return view('page.profile.visimisi', $data);
     }
-
 }

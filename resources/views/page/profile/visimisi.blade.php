@@ -3,9 +3,8 @@
 
 @section('content')
  <div class="banner two">
-    <div class="container"> 
-    	@foreach($visimisis as $visimisi)
-	    <h2 class="inner-tittle">{{ $visimisi->judul }}</h2>  
+    <div class="container">
+	    <h2 class="inner-tittle">{{ @$visimisi->judul }}</h2>
     </div>
  </div>
     
@@ -18,11 +17,7 @@
 
 	                            <div class="banner-bottom-left-grids">
 									<div class="single-left-grid">
-
-												<p>{!! $visimisi->isi !!}</p>
-												
-											
-
+											<p>{!! @$visimisi->isi !!}</p>
 											<div class="single-bottom">
 													<ul>
 														<li><a href="#">Designer inspiration</a></li>
@@ -34,30 +29,9 @@
 
 									 </div>
 								</div>
-								@endforeach
-									<div class="post">
-											<!--Komentar-->
-										<div class="leave">
-											<h4>Leave a comment</h4>
-											<form id="commentform">
-												 <p class="comment-form-author-name"><label for="author">Name</label>
-													<input id="author" type="text" value="" size="30" aria-required="true">
-												 </p>
-												 <p class="comment-form-email">
-													<label class="email">Email</label>
-													<input id="email" type="text" value="" size="30" aria-required="true">
-												 </p>
-												 <p class="comment-form-comment">
-													<label class="comment">Comment</label>
-													<textarea></textarea>
-												 </p>
-												 <div class="clearfix"></div>
-												<p class="form-submit">
-												   <input type="submit" id="submit" value="Send">
-												</p>
-												<div class="clearfix"></div>
-											   </form>
-											</div>
-									</div>
-			  </div>    
+									
+			  </div>
+			  @include('frame_depan.kanan', @$kanan ? $kanan : [])
+	  	</div>    
+ </div>    
 @endsection

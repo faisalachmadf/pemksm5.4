@@ -25,8 +25,7 @@
 							<li><a href="{{ route('Tugas-Pokok-dan-Fungsi.index') }}">Tugas Pokok dan Fungsi</a></li>
 							<li class="divider"></li>
 							<li><a href="{{ route('Struktur-Organisasi.index') }}">Struktur Organisasi</a></li>
-							<li class="divider"></li>
-							<li><a href="{{ route('Sumber-Daya-Manusia.index') }}">Sumber Daya Manusia</a></li>
+							
 							<li class="divider"></li>
 							<li><a href="{{ route('Prestasi.index') }}">Prestasi</a></li>
 						</ul>

@@ -35,4 +35,9 @@ class VisiMisi extends Model
     {
         return $this->where('slug', $slug)->first();
     }
+
+     public function scopeGetAktif()
+    {
+        return $this->where('aktif', true);
+    }
 }

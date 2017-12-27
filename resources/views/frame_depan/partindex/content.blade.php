@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="col-md-7 item-details">
                                     <h5 class="inner two"><a href="{{ route('Berita', [$daerah->katberita->slug, $daerah->slug]) }}">{{ $daerah->judul }}</a></h5>
-                                    <p><h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($daerah->tanggal)) }} <a href="#"><i class="glyphicon glyphicon-user"></i> {{ generateUser($daerah->user) }}</a> <i class="glyphicon glyphicon-eye-open"></i> {{ $daerah->dibaca }}</h6></p>
+                                    <p><h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($daerah->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($daerah->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $daerah->dibaca }}</h6></p>
                                     <hr/>
                                     <h5 class="inner two">{!!substr($daerah->isi,0,300)!!} ...</h5>
                                 </div>
@@ -70,7 +70,7 @@
                                 </div>
                                 <div class="col-md-7 item-details">
                                     <h5 class="inner two"><a href="{{ route('Berita', [$tata->katberita->slug, $tata->slug]) }}">{{ $tata->judul }}</a></h5>
-                                    <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($tata->tanggal)) }} <a href="#"><i class="glyphicon glyphicon-user"></i> {{ generateUser($tata->user) }}</a> <i class="glyphicon glyphicon-eye-open"></i> {{ $tata->dibaca }}</h6><hr/>
+                                    <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($tata->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($tata->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $tata->dibaca }}</h6><hr/>
                                     <h5 class="inner two">{!!substr($tata->isi,0,300)!!} ...</h5>
                                  </div>
                                 <div class="clearfix"></div>
@@ -94,7 +94,7 @@
                                 </div>
                                 <div class="col-md-7 item-details">
                                     <h5 class="inner two"><a href="{{ route('Berita', [$kerjasama->katberita->slug, $kerjasama->slug]) }}">{{ $kerjasama->judul }}</a></h5>
-                                    <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($kerjasama->tanggal)) }} <a href="#"><i class="glyphicon glyphicon-user"></i> {{ generateUser($kerjasama->user) }}</a> <i class="glyphicon glyphicon-eye-open"></i> {{ $kerjasama->dibaca }}</h6><hr/>
+                                    <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($kerjasama->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($kerjasama->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $kerjasama->dibaca }}</h6><hr/>
                                     <h5 class="inner two">{!!substr($kerjasama->isi,0,300)!!} ...</h5>
                                  </div>
                                 <div class="clearfix"></div>

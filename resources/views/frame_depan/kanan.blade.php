@@ -16,87 +16,54 @@
 				</div>
 				<br/>
                 <div class="connect">
-					<h4 class="side" >FILE DAN PENGUMUMAN</h4>
-					<ul class="stay">
-							    
-					di isi dengan tabel Publikasis
-								
-					</ul>
-				</div>
+                            <h4 class="side" >FILE DAN PENGUMUMAN</h4>
+                            <ul class="stay">
+                                <!-- di isi dengan tabel Publikasis -->
+                                @foreach($publikasis ? $publikasis :[] as $publikasi)
+                                <div class="editor-pics">
+                                    <div class="item-details">
+                                        <h5 class="inner two"><a href="{{ route('Publikasi', [$publikasi->katfile->slug, $publikasi->slug]) }}"><i class="glyphicon glyphicon-download"></i> &nbsp&nbsp {{ $publikasi->judul }}</a></h5>
+                                        <div class="td-post-date two">
+                                            <i class="glyphicon glyphicon-time"></i>{{ date('d M Y', strtotime($publikasi->tanggal)) }} <i class="glyphicon glyphicon-download"></i>{{ $publikasi->diunduh }}
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                @endforeach
+                                <a href="{{ route('Publikasi') }}">
+                                    <h6>File dan Pengumuman Lainnya &gt;&gt;</h6>
+                                </a>
+                            </ul>
+                        </div>
 
 
 				
 	                <br/>
 
-				    <h4 class="side">Berita Terpopuler</h4>
-						<div class="edit-pics"> 
+				    <h4 class="side">Popular Posts</h4>
+                        <div class="edit-pics"> 
+                            <!-- DI isi dengan Tabel Beritas yang terbanyak jumlah Kliknya (Dibacanya) -->
+                            @foreach(@$populars ? $populars : [] as $popular)
+                                <div class="editor-pics">
+                                    <div class="col-md-3 item-pic">
+                                        <img src="{{ asset('image/berita/thumbnail/'.$popular->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $popular->judul }}"/>
 
-							 DI isi dengan Tabel Beritas yang terbanyak jumlah Kliknya (Dibacanya)
-							 
-								<div class="editor-pics">
-
-									<div class="col-md-3 item-pic">
-										<img src="images/f4.jpg" class="img-responsive" alt=""/>
-
-									</div>
-									<div class="col-md-9 item-details">
-										<h5 class="inner two"><a href="single.html">New iPad App to stimulate your Guitar</a></h5>
-										 <div class="td-post-date two"><i class="glyphicon glyphicon-time"></i>Feb 22, 2015 <a href="#"><i class="glyphicon glyphicon-comment"></i>0 </a>
-										 </div>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-
-										<div class="editor-pics">
-										 <div class="col-md-3 item-pic">
-										   <img src="images/f1.jpg" class="img-responsive" alt=""/>
-
-										   </div>
-											<div class="col-md-9 item-details">
-												<h5 class="inner two"><a href="single.html">New iPad App to stimulate your Guitar</a></h5>
-												 <div class="td-post-date two"><i class="glyphicon glyphicon-time"></i>Feb 22, 2015 <a href="#"><i class="glyphicon glyphicon-comment"></i>0 </a></div>
-											 </div>
-											<div class="clearfix"></div>
-										</div>
-										
-										<div class="editor-pics">
-										 <div class="col-md-3 item-pic">
-										   <img src="images/f1.jpg" class="img-responsive" alt=""/>
-
-										   </div>
-											<div class="col-md-9 item-details">
-												<h5 class="inner two"><a href="single.html">New iPad App to stimulate your Guitar</a></h5>
-												 <div class="td-post-date two"><i class="glyphicon glyphicon-time"></i>Feb 22, 2015 <a href="#"><i class="glyphicon glyphicon-comment"></i>0 </a></div>
-											 </div>
-											<div class="clearfix"></div>
-										</div>
-										
-										<div class="editor-pics">
-										 <div class="col-md-3 item-pic">
-										   <img src="images/f4.jpg" class="img-responsive" alt=""/>
-
-										   </div>
-											<div class="col-md-9 item-details">
-												<h5 class="inner two"><a href="single.html">New iPad App to stimulate your Guitar</a></h5>
-												 <div class="td-post-date two"><i class="glyphicon glyphicon-time"></i>Feb 22, 2015 <a href="#"><i class="glyphicon glyphicon-comment"></i>0 </a></div>
-											 </div>
-											<div class="clearfix"></div>
-										</div>
-								</div>
-						   
-							 <br/>
-
-
-							 <div class="connect">
-							    <h4 class="side" >Ruang PPID</h4>
-								  <ul class="stay">
-								    di isi dengan tabel Publikasis kategori PPID
-									
-								  </ul>
-						      </div>
-						      <br/>
+                                    </div>
+                                    <div class="col-md-9 item-details">
+                                        <h5 class="inner two"><a href="{{ route('Berita', [$popular->katberita->slug, $popular->slug]) }}">{{ $popular->judul }}</a></h5>
+                                        <div class="td-post-date two">
+                                            <i class="glyphicon glyphicon-time"></i>{{ date('d M Y', strtotime($popular->tanggal)) }} <a href="#"><i class="glyphicon glyphicon-eye-open"></i>0 </a>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            @endforeach
+                            <a href="{{ route('Berita') }}">
+                                <h6>Berita Popular Lainnya &gt;&gt;</h6>
+                            </a>
+                        </div>
 							<!--//edit-pics-->
-							
+							<br/>
 							<div class="connect">
 	                            <h4 class="side">Layanan Publik</h4>
 	                            <ul class="stay">

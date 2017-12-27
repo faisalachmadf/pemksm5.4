@@ -4,20 +4,20 @@
 @section('content')
  <div class="banner two">
     <div class="container">
-	    <h2 class="inner-tittle">{{ @$tupoksi->judul }}</h2>
+	    <h2 class="inner-tittle">{{ @$selayang->judul }}</h2>
     </div>
  </div>
     
  <div class="main-content">
 	    <div class="container">
 
-              <div class="col-md-8 mag-innert-left">
+              <div class="col-md-12 ">
 
  						
 
 	                            <div class="banner-bottom-left-grids">
 									<div class="single-left-grid">
-											<p>{!! @$tupoksi->isi !!}</p>
+											<p>{!! @$selayang->isi !!}</p>
 											<div class="single-bottom">
 													<ul>
 														<li><a href="#">Designer inspiration</a></li>
@@ -31,7 +31,7 @@
 								</div>
 									
 			  </div>
-			  @include('frame_depan.kanan', @$kanan ? $kanan : [])
+			 
 	  	</div>    
  </div>    
 @endsection

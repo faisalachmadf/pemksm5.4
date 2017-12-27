@@ -3,8 +3,8 @@
 
 @section('content')
  <div class="banner two">
-    <div class="container"> 
-	    <h2 class="inner-tittle">Produk Hukum</h2>  
+    <div class="container">
+	    <h2 class="inner-tittle">{{ @$selayang->judul }}</h2>
     </div>
  </div>
     
@@ -13,14 +13,11 @@
 
               <div class="col-md-8 mag-innert-left">
 
+ 						
+
 	                            <div class="banner-bottom-left-grids">
 									<div class="single-left-grid">
-										<img src="/temafrontend/images/single.jpg" alt="">
-											<h4>di isi dengan Judul</h4>
-												<p class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna. Donec accumsan malesuada orci. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus.</p>
-												<h4>Vestibulum urna nulla, ultrices ut suscipit vel, suscipit vitae nunc. Quisque nec velit et nibh ultrices molestie.</h4>
-												<p class="text">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sem neque.Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sem neque</p>
-											
+											<p>{!! @$selayang->isi !!}</p>
 											<div class="single-bottom">
 													<ul>
 														<li><a href="#">Designer inspiration</a></li>
@@ -28,10 +25,10 @@
 														<li><a href="#">Admin</a></li>
 														<li><a href="#">5 Comments</a></li>
 													</ul>
-												</div>
 											</div>
-								</div>
 
+									 </div>
+								</div>
 									<div class="post">
 											<!--Komentar-->
 										<div class="leave">
@@ -56,5 +53,8 @@
 											   </form>
 											</div>
 									</div>
-			  </div>    
+			  </div>
+			  @include('frame_depan.kanan', @$kanan ? $kanan : [])
+	  	</div>    
+ </div>    
 @endsection

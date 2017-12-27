@@ -9,8 +9,13 @@ class TupoksiController extends Controller
 {
      public function index()
     {
+    	$data = [
+    		'tupoksi' =>Tupoksi::getAktif()->first(),
+    		'kanan' => getDataKanan()
 
-      $Tupoksis=Tupoksi::all();
-        return view('page.profile.tupoksi',compact('Tupoksis'));
+    	];
+
+        return view('page.profile.tupoksi', $data);
     }
+
 }

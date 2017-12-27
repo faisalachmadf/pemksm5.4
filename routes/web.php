@@ -25,7 +25,7 @@ Route::group(['namespace' => 'Frontend'], function() {
         Route::resource('Visi-dan-Misi','VisiMisiController');
         Route::resource('Tugas-Pokok-dan-Fungsi','TupoksiController');
         Route::resource('Struktur-Organisasi','TupoksiController');
-        Route::resource('Sumber-Daya-Manusia','TupoksiController');
+        Route::resource('Sumber-Daya-Manusia','SdmController');
         Route::resource('Prestasi','TupoksiController');
     });
 
