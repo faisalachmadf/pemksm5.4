@@ -19,7 +19,7 @@
                             <h4 class="side" >FILE DAN PENGUMUMAN</h4>
                             <ul class="stay">
                                 <!-- di isi dengan tabel Publikasis -->
-                                @foreach($publikasis ? $publikasis :[] as $publikasi)
+                                @foreach(@$publikasis ? $publikasis :[] as $publikasi)
                                 <div class="editor-pics">
                                     <div class="item-details">
                                         <h5 class="inner two"><a href="{{ route('Publikasi', [$publikasi->katfile->slug, $publikasi->slug]) }}"><i class="glyphicon glyphicon-download"></i> &nbsp&nbsp {{ $publikasi->judul }}</a></h5>
