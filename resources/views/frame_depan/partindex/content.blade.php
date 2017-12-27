@@ -46,7 +46,7 @@
                                     <h5 class="inner two"><a href="{{ route('Berita', [$daerah->katberita->slug, $daerah->slug]) }}">{{ $daerah->judul }}</a></h5>
                                     <p><h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($daerah->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($daerah->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $daerah->dibaca }}</h6></p>
                                     <hr/>
-                                    <h5 class="inner two">{!! substr($daerah->isi, 0, 300) !!} ...</h5>
+                                    <h5 class="inner two">{!! str_limit($daerah->isi, 300) !!} <a href="{{ route('Berita', [$daerah->katberita->slug, $daerah->slug]) }}">Baca Selengkapnya &gt;&gt;</a></h5>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
@@ -71,7 +71,7 @@
                                 <div class="col-md-7 item-details">
                                     <h5 class="inner two"><a href="{{ route('Berita', [$tata->katberita->slug, $tata->slug]) }}">{{ $tata->judul }}</a></h5>
                                     <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($tata->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($tata->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $tata->dibaca }}</h6><hr/>
-                                    <h5 class="inner two">{!!substr($tata->isi,0,300)!!} ...</h5>
+                                    <h5 class="inner two">{!! str_limit($tata->isi, 300) !!} <a href="{{ route('Berita', [$tata->katberita->slug, $tata->slug]) }}">Baca Selengkapnya &gt;&gt;</a></h5>
                                  </div>
                                 <div class="clearfix"></div>
                             </div>
@@ -95,7 +95,7 @@
                                 <div class="col-md-7 item-details">
                                     <h5 class="inner two"><a href="{{ route('Berita', [$kerjasama->katberita->slug, $kerjasama->slug]) }}">{{ $kerjasama->judul }}</a></h5>
                                     <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($kerjasama->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($kerjasama->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $kerjasama->dibaca }}</h6><hr/>
-                                    <h5 class="inner two">{!!substr($kerjasama->isi,0,300)!!} ...</h5>
+                                    <h5 class="inner two">{!! str_limit($kerjasama->isi, 300) !!} <a href="{{ route('Berita', [$kerjasama->katberita->slug, $kerjasama->slug]) }}">Baca Selengkapnya &gt;&gt;</a></h5>
                                  </div>
                                 <div class="clearfix"></div>
                             </div>
@@ -231,7 +231,7 @@
                                     <div class="col-md-9 item-details">
                                         <h5 class="inner two"><a href="{{ route('Berita', [$popular->katberita->slug, $popular->slug]) }}">{{ $popular->judul }}</a></h5>
                                         <div class="td-post-date two">
-                                            <i class="glyphicon glyphicon-time"></i>{{ date('d M Y', strtotime($popular->tanggal)) }} <a href="#"><i class="glyphicon glyphicon-eye-open"></i>0 </a>
+                                            <i class="glyphicon glyphicon-time"></i>{{ date('d M Y', strtotime($popular->tanggal)) }} <a href="#"><i class="glyphicon glyphicon-eye-open"></i>{{ $popular->dibaca }} </a>
                                         </div>
                                     </div>
                                     <div class="clearfix"></div>
