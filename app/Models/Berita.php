@@ -91,4 +91,14 @@ class Berita extends Model
     {
         return $query->where('slug', $slug)->increment('dibaca');
     }
+
+    public function scopeGetSearch($query, $katSlug = '')
+    {
+        return $query->where(function($query) use ($katSlug) {
+                $query->where('judul', 'like', '%'.$katSlug.'%')
+                    ->orWhere('isi', 'like', '%'.$katSlug.'%');
+            })
+            ->with(['katberita', 'user'])
+            ->orderBy('tanggal', 'desc');
+    }
 }

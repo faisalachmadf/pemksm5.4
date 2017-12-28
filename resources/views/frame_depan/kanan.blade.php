@@ -31,7 +31,7 @@
                                 </div>
                                 @endforeach
                                 <a href="{{ route('Publikasi') }}">
-                                    <h6>File dan Pengumuman Lainnya &gt;&gt;</h6>
+                                    <h6>File dan Pengumuman Lainnya &raquo;</h6>
                                 </a>
                             </ul>
                         </div>
@@ -59,7 +59,7 @@
                                 </div>
                             @endforeach
                             <a href="{{ route('Berita', ['popular']) }}">
-                                <h6>Berita Popular Lainnya &gt;&gt;</h6>
+                                <h6>Berita Popular Lainnya &raquo;</h6>
                             </a>
                         </div>
 							<!--//edit-pics-->
@@ -85,7 +85,7 @@
 	                                </div>
 	                            @endforeach
 	                                <a href="{{ route('Publikasi') }}">
-	                                    <h6>Layanan Publik Lainnya &gt;&gt;</h6>
+	                                    <h6>Layanan Publik Lainnya &raquo;</h6>
 	                                </a>
 	                            </ul>
 	                        </div>

@@ -12,23 +12,42 @@
         <div class="container">
             <div class="col-md-8 mag-innert-left">
                 <div class="banner-bottom-left-grids">
-                    Kategori Berita:
-                    <div class="clearfix"></div>
-                    <a href="{{ route('Berita') }}" class="btn btn-default btn-katberita">
-                        <h6>Semua Berita</h6>
-                    </a>
-                    <a href="{{ route('Berita', ['popular']) }}" class="btn btn-danger btn-katberita">
-                        <h6>Berita Popular</h6>
-                    </a>
-                    @foreach($katberitas as $key => $katberita)
-                    <a href="{{ route('Berita', [$katberita->slug]) }}" class="btn btn-katberita {{ generateBtnClass($key) }}">
-                        <h6>{{ $katberita->name }}</h6>
-                    </a>
-                    @endforeach
+                    <label for="kategori-berita">Kategori Berita:</label>
+                    <div id="kategori-berita">
+                        <div class="clearfix"></div>
+                        <a href="{{ route('Berita') }}" class="btn btn-default btn-katberita">
+                            <h6>Semua Berita</h6>
+                        </a>
+                        <a href="{{ route('Berita', ['popular']) }}" class="btn btn-danger btn-katberita">
+                            <h6>Berita Popular</h6>
+                        </a>
+                        @foreach($katberitas as $key => $katberita)
+                        <a href="{{ route('Berita', [$katberita->slug]) }}" class="btn btn-katberita {{ generateBtnClass($key) }}">
+                            <h6>{{ $katberita->name }}</h6>
+                        </a>
+                        @endforeach
+                    </div>
+                    <br>
+                    <form class="form" action="{{ route('Berita', ['pencarian']) }}" method="POST">
+                        {{ csrf_field() }}
+                        <div class="form-group">
+                            <label for="pencarian">Pencarian Berita:</label>
+                            <div class="input-group btn-katberita">
+                                <input type="text" name="pencarian" id="pencarian" class="form-control" placeholder="Masukan kata kunci..." value="{{ @$data['pencarian'] }}">
+                                <div class="input-group-btn">
+                                    <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                     <hr/>
 
                     <!--/start-Technology-->
                     <div class="technology">
+                        @if($pencarian)
+                            <h3>Hasil Pencarian {{ $beritas->count() > 0 ? '' : 'Tidak Ditemukan' }}</h3>
+                            <br/>
+                        @endif
                         @foreach($beritas as $berita)
                         <div class="editor-pics">
                             @if($dibaca)
@@ -56,14 +75,18 @@
                                         <i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($berita->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($berita->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $berita->dibaca }}
                                     </h6></p>
                                     <hr/>
-                                    {!! str_limit($berita->isi, 300) !!} <a href="{{ route('Berita', [$berita->katberita->slug, $berita->slug]) }}">Baca Selengkapnya &gt;&gt;</a>
+                                    {!! str_limit($berita->isi, 300) !!} <a href="{{ route('Berita', [$berita->katberita->slug, $berita->slug]) }}">Baca Selengkapnya &raquo;</a>
                                 </div>
                             @endif
                             <div class="clearfix"></div>
                         </div>
                         <hr/>
                         @endforeach
-                        {{ $beritas->links() }}
+                        @if($pencarian)
+                            {{ $beritas->appends(['pencarian' => $data['pencarian']])->links() }}
+                        @else
+                            {{ $beritas->links() }}
+                        @endif
                         <div class="clearfix"></div>
                     </div>
                 </div>

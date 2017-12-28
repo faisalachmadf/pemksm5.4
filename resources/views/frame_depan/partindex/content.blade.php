@@ -25,7 +25,7 @@
                             @endforeach
                             <div class="clearfix"></div>
                             <a href="{{ route('Berita', [@$umum->katberita->slug]) }}" class="btn btn-danger">
-                                <h6>{{ @$umum->katberita->name }} Lainnya &gt;&gt;</h6>
+                                <h6>{{ @$umum->katberita->name }} Lainnya &raquo;</h6>
                             </a>
                         </div>
                         <br/>
@@ -46,7 +46,7 @@
                                     <h5 class="inner two"><a href="{{ route('Berita', [$daerah->katberita->slug, $daerah->slug]) }}">{{ $daerah->judul }}</a></h5>
                                     <p><h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($daerah->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($daerah->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $daerah->dibaca }}</h6></p>
                                     <hr/>
-                                    <h5 class="inner two">{!! str_limit($daerah->isi, 300) !!} <a href="{{ route('Berita', [$daerah->katberita->slug, $daerah->slug]) }}">Baca Selengkapnya &gt;&gt;</a></h5>
+                                    <h5 class="inner two">{!! str_limit($daerah->isi, 300) !!} <a href="{{ route('Berita', [$daerah->katberita->slug, $daerah->slug]) }}">Baca Selengkapnya &raquo;</a></h5>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
@@ -54,7 +54,7 @@
                             @endforeach
                             <div class="clearfix"></div>
                             <a href="{{ route('Berita', [@$daerah->katberita->slug]) }}" class="btn btn-warning">
-                                <h6>{{ @$daerah->katberita->name }} Lainnya &gt;&gt;</h6>
+                                <h6>{{ @$daerah->katberita->name }} Lainnya &raquo;</h6>
                             </a>
                             <br/><br/>
                         </div>
@@ -71,7 +71,7 @@
                                 <div class="col-md-7 item-details">
                                     <h5 class="inner two"><a href="{{ route('Berita', [$tata->katberita->slug, $tata->slug]) }}">{{ $tata->judul }}</a></h5>
                                     <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($tata->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($tata->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $tata->dibaca }}</h6><hr/>
-                                    <h5 class="inner two">{!! str_limit($tata->isi, 300) !!} <a href="{{ route('Berita', [$tata->katberita->slug, $tata->slug]) }}">Baca Selengkapnya &gt;&gt;</a></h5>
+                                    <h5 class="inner two">{!! str_limit($tata->isi, 300) !!} <a href="{{ route('Berita', [$tata->katberita->slug, $tata->slug]) }}">Baca Selengkapnya &raquo;</a></h5>
                                  </div>
                                 <div class="clearfix"></div>
                             </div>
@@ -79,7 +79,7 @@
                             @endforeach
                             <div class="clearfix"></div>
                             <a href="{{ route('Berita', [@$tata->katberita->slug]) }}" class="btn btn-success">
-                                <h6>{{ @$tata->katberita->name }} Lainnya &gt;&gt;</h6>
+                                <h6>{{ @$tata->katberita->name }} Lainnya &raquo;</h6>
                             </a>
                             <br/><br/>
                         </div>
@@ -95,7 +95,7 @@
                                 <div class="col-md-7 item-details">
                                     <h5 class="inner two"><a href="{{ route('Berita', [$kerjasama->katberita->slug, $kerjasama->slug]) }}">{{ $kerjasama->judul }}</a></h5>
                                     <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($kerjasama->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($kerjasama->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $kerjasama->dibaca }}</h6><hr/>
-                                    <h5 class="inner two">{!! str_limit($kerjasama->isi, 300) !!} <a href="{{ route('Berita', [$kerjasama->katberita->slug, $kerjasama->slug]) }}">Baca Selengkapnya &gt;&gt;</a></h5>
+                                    <h5 class="inner two">{!! str_limit($kerjasama->isi, 300) !!} <a href="{{ route('Berita', [$kerjasama->katberita->slug, $kerjasama->slug]) }}">Baca Selengkapnya &raquo;</a></h5>
                                  </div>
                                 <div class="clearfix"></div>
                             </div>
@@ -103,7 +103,7 @@
                             @endforeach
                             <div class="clearfix"></div>
                             <a href="{{ route('Berita', [@$kerjasama->katberita->slug]) }}" class="btn btn-info">
-                                <h6>{{ @$kerjasama->katberita->name }} Lainnya &gt;&gt;</h6>
+                                <h6>{{ @$kerjasama->katberita->name }} Lainnya &raquo;</h6>
                             </a>
                         </div>
                        
@@ -124,7 +124,7 @@
                             @endforeach
                             <div class="clearfix"></div>
                             <a href="{{ route('Berita', [@$artikel->katberita->slug]) }}" class="btn btn-primary">
-                                <h6>{{ @$artikel->katberita->name }} Lainnya &gt;&gt;</h6>
+                                <h6>{{ @$artikel->katberita->name }} Lainnya &raquo;</h6>
                             </a>
                         </div>
                     </div>
@@ -191,7 +191,7 @@
                                 </div>
                                 @endforeach
                                 <a href="{{ route('Publikasi') }}">
-                                    <h6>File dan Pengumuman Lainnya &gt;&gt;</h6>
+                                    <h6>File dan Pengumuman Lainnya &raquo;</h6>
                                 </a>
                             </ul>
                         </div>
@@ -213,7 +213,7 @@
                                 </div>
                                 @endforeach
                                 <a href="{{ route('Agenda')}}">
-                                    <h6>Agenda Lainnya &gt;&gt;</h6>
+                                    <h6>Agenda Lainnya &raquo;</h6>
                                 </a>
                             </ul>
                         </div>
@@ -238,7 +238,7 @@
                                 </div>
                             @endforeach
                             <a href="{{ route('Berita') }}">
-                                <h6>Berita Popular Lainnya &gt;&gt;</h6>
+                                <h6>Berita Popular Lainnya &raquo;</h6>
                             </a>
                         </div>
                             
@@ -273,7 +273,7 @@
                                 </div>
                             @endforeach
                                 <a href="{{ route('Publikasi') }}">
-                                    <h6>Layanan Publik Lainnya &gt;&gt;</h6>
+                                    <h6>Layanan Publik Lainnya &raquo;</h6>
                                 </a>
                             </ul>
                         </div>

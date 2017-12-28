@@ -53,7 +53,7 @@ Route::group(['namespace' => 'Frontend'], function() {
 
     /* Berita */
 
-    Route::get('Berita/{kategori?}/{slug?}', 'BeritaController@index')->name('Berita');
+    Route::any('Berita/{kategori?}/{slug?}', 'BeritaController@index')->name('Berita');
 
     /* Publikasi */
 
