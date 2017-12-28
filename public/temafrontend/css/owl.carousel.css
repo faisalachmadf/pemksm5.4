@@ -155,11 +155,12 @@ position: center;
 		padding: 0;
 		float: left;
 		width: 19%;
+		margin-right:12px;
 	}
 	.item-pic {
 		padding: 0;
 		float: left;
-		width: 50%;
+		width: 30%;
 	}
 	.m-b {
 		width: 41%;
@@ -189,11 +190,28 @@ position: center;
 		min-height: 157px;
 	}
 }
+
+@media(max-width:800px){
+	.item-pic {
+		padding: 0;
+		
+		width: 40%;
+		margin-right:8px;
+	}
+}
+
+
 @media(max-width:768px){
 	.owl-theme .owl-buttons {
 		position: absolute;
 		top: 11.6em;
 		right: 0em;
+	}
+	.item-pic {
+		padding: 0;
+		float: left;
+		width: 40%;
+		margin-right:12px;
 	}
 }
 @media(max-width:640px){
@@ -209,6 +227,11 @@ position: center;
 		top: 10.1em;
 		right: 0em;
 	}
+	.item-pic {
+		padding: 0;
+		float: left;
+		width: 100%;
+	}
 }
 @media(max-width:320px){
 	
@@ -223,5 +246,10 @@ position: center;
     top: 6.6em;
     right: 0em;
 }
+.item-pic {
+		padding: 0;
+		float: left;
+		width: 100%;
+	}
 	
 }

@@ -6,7 +6,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
 html, body{
   font-family: 'Roboto-Regular';
-  font-size: 100%;
+  font-size: 15px;
   background:#ffffff;
 }
 body a {
@@ -259,8 +259,8 @@ label{
 }
 .mag-innert-left {
     background-color: #fff;
-    padding: 1em 1em;
-	    border: 1px solid rgba(231,231,231,1.00);
+    padding: 0em 0em;
+	    border: 0px solid rgba(231,231,231,1.00);
 }
 /*--banner-inner--*/
 #slider2,
@@ -2044,7 +2044,7 @@ border: 1px solid #EAE5E5;
 	.item-details {
 		padding-right: 0;
 		padding: 0;
-		    float: left;
+		 
 			    margin-left: 0em;
 	}
 	h5.inner.two a {
