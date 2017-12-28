@@ -9,7 +9,7 @@
 <div class="mag-inner">
     <div class="latest-articles">
         <!-- Di isi dengan tabel beritas kategori berita umum -->
-                        <h3 class="tittle"><i class="glyphicon glyphicon-file"></i>Berita Umum (maksimal 4 dan berita terbaru adalah berita terakhir update)</h3>
+                        <h3 class="tittle"><i class="glyphicon glyphicon-file"></i>Berita Umum </h3>
                         <div class="world-news-grids">
                             @foreach($umums as $umum)
                             <div class="world-news-grid">
@@ -18,8 +18,10 @@
                                 </div>
                               
                                 <h4><a href="{{ route('Berita', [$umum->katberita->slug, $umum->slug]) }}" class="wd">{{ $umum->judul }}</a></h4>
-                                
-                                  <p><h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($umum->tanggal)) }}</h6></p>
+
+                                <div class="td-post-date two">
+                                  <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($umum->tanggal)) }}</h6></p>
+                                </div>
                                   <br/>
                             </div>
                             @endforeach
@@ -35,7 +37,7 @@
                     <div class="col-md-8 mag-innert-left">
                         <!--/start-Technology-->
                         <div class="technology">
-                          <h2 class="tittle"><i class="glyphicon glyphicon-certificate"> </i>Urusan Pemerintahan Daerah (maksimal 3 dan berita terbaru adalah berita terakhir update)</h2>
+                          <h2 class="tittle"><i class="glyphicon glyphicon-certificate"> </i>Urusan Pemerintahan Daerah </h2>
                             <!-- Di isi dengan tabel beritas kategori urusan pemerintahan daerah -->
                             @foreach($daerahs as $daerah)
                             <div class="editor-pics">
@@ -43,25 +45,29 @@
                                     <img src="{{ asset('image/berita/thumbnail/'.$daerah->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $daerah->judul }}"/>
                                 </div>
                                 <div class="col-md-7 item-details">
-                                    <h5 class="inner two"><a href="{{ route('Berita', [$daerah->katberita->slug, $daerah->slug]) }}">{{ $daerah->judul }}</a></h5>
-                                    <p><h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($daerah->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($daerah->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $daerah->dibaca }}</h6></p>
+                                    <h4><a href="{{ route('Berita', [$daerah->katberita->slug, $daerah->slug]) }}">{{ strtoupper($daerah->judul) }}</a></h4>
+                                     
+                                     <div class="td-post-date two">
+                                     	<h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($daerah->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($daerah->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $daerah->dibaca }}</h6>
+                                     </div>
+
                                     <hr/>
-                                    <h5 class="inner two">{!! str_limit($daerah->isi, 300) !!} <a href="{{ route('Berita', [$daerah->katberita->slug, $daerah->slug]) }}">Baca Selengkapnya &raquo;</a></h5>
+                                    <h5 class="inner two"></h5>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
-                            <hr/>
+                            <hr/> 
                             @endforeach
-                            <div class="clearfix"></div>
-                            <a href="{{ route('Berita', [@$daerah->katberita->slug]) }}" class="btn btn-warning">
+                            <a href="{{ route('Berita', [@$daerah->katberita->slug]) }}" class="text-right">
                                 <h6>{{ @$daerah->katberita->name }} Lainnya &raquo;</h6>
                             </a>
+                            <div class="clearfix"></div>
                             <br/><br/>
                         </div>
                        
                         <!--//end-Technology-->
                         <div class="technology">
-                          <h2 class="tittle"><i class="glyphicon glyphicon-certificate"> </i>Tata Pemerintahan (maksimal 3 dan berita terbaru adalah berita terakhir update)</h2>
+                          <h2 class="tittle"><i class="glyphicon glyphicon-certificate"> </i>Tata Pemerintahan </h2>
                             <!-- Di isi dengan tabel beritas kategori tata pemerintahan -->
                             @foreach($tatas as $tata)
                             <div class="editor-pics">
@@ -69,23 +75,27 @@
                                     <img src="{{ asset('image/berita/thumbnail/'.$tata->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $tata->judul }}"/>
                                 </div>
                                 <div class="col-md-7 item-details">
-                                    <h5 class="inner two"><a href="{{ route('Berita', [$tata->katberita->slug, $tata->slug]) }}">{{ $tata->judul }}</a></h5>
-                                    <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($tata->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($tata->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $tata->dibaca }}</h6><hr/>
-                                    <h5 class="inner two">{!! str_limit($tata->isi, 300) !!} <a href="{{ route('Berita', [$tata->katberita->slug, $tata->slug]) }}">Baca Selengkapnya &raquo;</a></h5>
+                                    <h4><a href="{{ route('Berita', [$tata->katberita->slug, $tata->slug]) }}">{{ strtoupper($tata->judul) }}</a></h4>
+                                    <div class="td-post-date two">
+                                        <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($tata->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($tata->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $tata->dibaca }}</h6>
+                                    </div>
+                                    <hr/>
+                                    <h5 class="inner two"></h5>
                                  </div>
                                 <div class="clearfix"></div>
                             </div>
                             <hr/>
                             @endforeach
                             <div class="clearfix"></div>
-                            <a href="{{ route('Berita', [@$tata->katberita->slug]) }}" class="btn btn-success">
+                            <a href="{{ route('Berita', [@$tata->katberita->slug]) }}" class="text-right">
                                 <h6>{{ @$tata->katberita->name }} Lainnya &raquo;</h6>
                             </a>
+                            <div class="clearfix"></div>
                             <br/><br/>
                         </div>
                      
                         <div class="technology">
-                          <h2 class="tittle"><i class="glyphicon glyphicon-certificate"> </i>Kerja Sama (maksimal 3 dan berita terbaru adalah berita terakhir update)</h2>
+                          <h2 class="tittle"><i class="glyphicon glyphicon-certificate"> </i>Kerja Sama </h2>
                             <!-- Di isi dengan tabel beritas kategori kerjasama -->
                             @foreach($kerjasamas as $kerjasama)
                             <div class="editor-pics">
@@ -93,45 +103,52 @@
                                     <img src="{{ asset('image/berita/thumbnail/'.$kerjasama->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $kerjasama->judul }}"/>
                                 </div>
                                 <div class="col-md-7 item-details">
-                                    <h5 class="inner two"><a href="{{ route('Berita', [$kerjasama->katberita->slug, $kerjasama->slug]) }}">{{ $kerjasama->judul }}</a></h5>
-                                    <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($kerjasama->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($kerjasama->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $kerjasama->dibaca }}</h6><hr/>
-                                    <h5 class="inner two">{!! str_limit($kerjasama->isi, 300) !!} <a href="{{ route('Berita', [$kerjasama->katberita->slug, $kerjasama->slug]) }}">Baca Selengkapnya &raquo;</a></h5>
+                                    <h4><a href="{{ route('Berita', [$kerjasama->katberita->slug, $kerjasama->slug]) }}">{{ strtoupper($kerjasama->judul) }}</a></h4>
+                                    <div class="td-post-date two">
+                                        <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($kerjasama->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($kerjasama->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $kerjasama->dibaca }}</h6>
+                                    </div>
+                                    <hr/>
+                                    <h5 class="inner two"></h5>
                                  </div>
                                 <div class="clearfix"></div>
                             </div>
                             <hr/>
                             @endforeach
                             <div class="clearfix"></div>
-                            <a href="{{ route('Berita', [@$kerjasama->katberita->slug]) }}" class="btn btn-info">
+                            <a href="{{ route('Berita', [@$kerjasama->katberita->slug]) }}" class="text-right">
                                 <h6>{{ @$kerjasama->katberita->name }} Lainnya &raquo;</h6>
                             </a>
+
+                            <div class="clearfix"></div>
+                            
                         </div>
                        
 
                     <!--//latest-articles-->
                       <div class="latest-articles">
-                        <h3 class="tittle"><i class="glyphicon glyphicon-file"></i>Artikel (maksimal 4 dan berita terbaru adalah berita terakhir update)</h3>
+                        <h3 class="tittle"><i class="glyphicon glyphicon-file"></i>Artikel </h3>
                         <!-- Di isi dengan tabel beritas kategori artikel -->
                         <div class="world-news-grids">
                             @foreach($artikels as $artikel)
                             <div class="world-news-grid">
                                 <img src="{{ asset('image/berita/thumbnail/'.$artikel->gambar) }}" alt="{{ $artikel->judul }}" class="img-responsive img-thumbnail wp-post-image"/>
                                
-                                <a href="{{ route('Berita', [$artikel->katberita->slug, $artikel->slug]) }}" class="wd">{{ $artikel->judul }}</a>
-                                <p> <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($artikel->tanggal)) }}</h6></p>
+                                <h4><a href="{{ route('Berita', [$artikel->katberita->slug, $artikel->slug]) }}" class="wd">{{ strtoupper($artikel->judul) }}</a></h4>
+                                 <div class="td-post-date two">
+                                  <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($artikel->tanggal)) }}</h6>
+                                 </div>
                                 <br/>
                             </div>
                             @endforeach
                             <div class="clearfix"></div>
-                            <a href="{{ route('Berita', [@$artikel->katberita->slug]) }}" class="btn btn-primary">
+                            <a href="{{ route('Berita', [@$artikel->katberita->slug]) }}" class="text-right">
                                 <h6>{{ @$artikel->katberita->name }} Lainnya &raquo;</h6>
                             </a>
+                            <div class="clearfix"></div>
                         </div>
                     </div>
                              <!--//articles-->
-                            
                 </div>
-
 
 
 <!-- KANAN INDEX -->
@@ -182,7 +199,7 @@
                                 @foreach($publikasis as $publikasi)
                                 <div class="editor-pics">
                                     <div class="item-details">
-                                        <h5 class="inner two"><a href="{{ route('Publikasi', [$publikasi->katfile->slug, $publikasi->slug]) }}"><i class="glyphicon glyphicon-download"></i> &nbsp&nbsp {{ $publikasi->judul }}</a></h5>
+                                        <h5 class="inner two"><a href="{{ route('Publikasi', [$publikasi->katfile->slug, $publikasi->slug]) }}"><i class="glyphicon glyphicon-download"></i> &nbsp;&nbsp; {{ $publikasi->judul }}</a></h5>
                                         <div class="td-post-date two">
                                             <i class="glyphicon glyphicon-time"></i>{{ date('d M Y', strtotime($publikasi->tanggal)) }} <i class="glyphicon glyphicon-download"></i>{{ $publikasi->diunduh }}
                                         </div>
@@ -204,7 +221,7 @@
                                 <div class="editor-pics">
                                     <div class="item-details">
                                         <h5 class="inner two"><i class="glyphicon glyphicon-calendar"></i> 
-                                        &nbsp&nbsp<a href="{{ route('Agenda', [$agenda->slug, $agenda->slug]) }}">{{ $agenda->judul }}</a></h5>
+                                        &nbsp;&nbsp;<a href="{{ route('Agenda', [$agenda->slug, $agenda->slug]) }}">{{ $agenda->judul }}</a></h5>
                                         <div class="td-post-date two">
                                             <i class="glyphicon glyphicon-time"></i>{{ date('d M Y', strtotime($agenda->tanggal)) }} 
                                         </div>
@@ -247,7 +264,7 @@
                         <div class="connect">
                             <h4 class="side" >Ruang PPID</h4>
                             <ul class="stay">
-                                <a href="/"><center><img src="/adminkelola/dist/img/logobiro.png"></center></a>
+                                <a href="/"><center><img src="/adminkelola/dist/img/logobiro.png" class="img-responsive"></center></a>
                             </ul> 
                         </div>
                         <br/>
@@ -256,7 +273,7 @@
                             <h4 class="side">Layanan Publik</h4>
                             <ul class="stay">
                                 <!-- DI isi dengan Tabel layanans -->
-                               @foreach($layanans as $layanan)
+                                @foreach($layanans as $layanan)
                                 <div class="editor-pics">
                                     <div class="col-md-3 item-pic">
                                         <img src="{{ asset('image/layanan/thumbnail/'.$layanan->file) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $layanan->judul }}" class="img-responsive "  />
@@ -271,7 +288,7 @@
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
-                            @endforeach
+                                @endforeach
                                 <a href="{{ route('Publikasi') }}">
                                     <h6>Layanan Publik Lainnya &raquo;</h6>
                                 </a>

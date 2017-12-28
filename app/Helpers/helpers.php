@@ -174,12 +174,12 @@ if (! function_exists('generateBtnClass')) {
    function generateBtnClass($key)
    {
         $class = [
+            'btn-danger',
             'btn-warning',
             'btn-success',
-            'btn-info',
             'btn-primary',
+            'btn-info',
             'btn-default',
-            'btn-danger',
         ];
 
         return $class[$key % 6];

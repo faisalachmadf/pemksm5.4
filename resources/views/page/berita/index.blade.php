@@ -19,7 +19,7 @@
                             <h6>Semua Berita</h6>
                         </a>
                         <a href="{{ route('Berita', ['popular']) }}" class="btn btn-danger btn-katberita">
-                            <h6>Berita Popular</h6>
+                            <h6>Berita Populer</h6>
                         </a>
                         @foreach($katberitas as $key => $katberita)
                         <a href="{{ route('Berita', [$katberita->slug]) }}" class="btn btn-katberita {{ generateBtnClass($key) }}">
@@ -42,7 +42,7 @@
                     </form>
                     <hr/>
 
-                    <!--/start-Technology-->
+                    <!--/Show dari Berita-->
                     <div class="technology">
                         @if($pencarian)
                             <h3>Hasil Pencarian {{ $beritas->count() > 0 ? '' : 'Tidak Ditemukan' }}</h3>
@@ -51,15 +51,15 @@
                         @foreach($beritas as $berita)
                         <div class="editor-pics">
                             @if($dibaca)
-                                <div class="col-md-12 item-pic text-justify">
+                                <div class="col-md-12 item-pic2 text-justify">
                                     <img src="{{ asset('image/berita/'.$berita->gambar) }}" class="img-responsive img-banner" alt="{{ $berita->judul }}"/>
                                     <br/><br/>
-                                    <h3 class="inner two">
-                                        <a href="{{ route('Berita', [$berita->katberita->slug, $berita->slug]) }}">{{ $berita->judul }}</a>
-                                    </h3>
-                                    <p><h6>
-                                        <i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($berita->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($berita->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $berita->dibaca }}
-                                    </h6></p>
+                                    <h4 class="inner two">
+                                        <a href="{{ route('Berita', [$berita->katberita->slug, $berita->slug]) }}">{{ strtoupper($berita->judul) }}</a>
+                                    </h4>
+                                    <div class="td-post-date two">
+                                        <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($berita->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($berita->user) }} <i class=""></i><i class="glyphicon glyphicon-eye-open"></i> {{ $berita->dibaca }}<i class=""></i><i class="glyphicon glyphicon-list-alt"></i>{{ $berita->katberita->name }}</h6>
+                                    </div>
                                     <hr/>
                                     {!! $berita->isi !!}
                                 </div>
@@ -68,19 +68,16 @@
                                     <img src="{{ asset('image/berita/thumbnail/'.$berita->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $berita->judul }}"/>
                                 </div>
                                 <div class="col-md-7 item-details">
-                                    <h3 class="inner two">
-                                        <a href="{{ route('Berita', [$berita->katberita->slug, $berita->slug]) }}">{{ $berita->judul }}</a>
-                                    </h3>
-                                    <p><h6>
-                                        <i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($berita->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($berita->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $berita->dibaca }}
-                                    </h6></p>
+                                    <h4><a href="{{ route('Berita', [$berita->katberita->slug, $berita->slug]) }}">{{ strtoupper($berita->judul) }}</a></h4>
+                                    <div class="td-post-date two">
+                                        <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($berita->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($berita->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $berita->dibaca }}  <i class=""></i><i class="glyphicon glyphicon-list-alt"></i>{{ $berita->katberita->name }}</h6>
+                                    </div>
                                     <hr/>
-                                    {!! str_limit($berita->isi, 300) !!} <a href="{{ route('Berita', [$berita->katberita->slug, $berita->slug]) }}">Baca Selengkapnya &raquo;</a>
                                 </div>
                             @endif
                             <div class="clearfix"></div>
                         </div>
-                        <hr/>
+                        
                         @endforeach
                         @if($pencarian)
                             {{ $beritas->appends(['pencarian' => $data['pencarian']])->links() }}
@@ -92,29 +89,7 @@
                 </div>
 
                 <!--Komentar-->
-                <div class="post">
-                    <div class="leave">
-                        <h4>Leave a comment</h4>
-                        <form id="commentform">
-                             <p class="comment-form-author-name"><label for="author">Name</label>
-                                <input id="author" type="text" value="" size="30" aria-required="true">
-                             </p>
-                             <p class="comment-form-email">
-                                <label class="email">Email</label>
-                                <input id="email" type="text" value="" size="30" aria-required="true">
-                             </p>
-                             <p class="comment-form-comment">
-                                <label class="comment">Comment</label>
-                                <textarea></textarea>
-                             </p>
-                             <div class="clearfix"></div>
-                            <p class="form-submit">
-                               <input type="submit" id="submit" value="Send">
-                            </p>
-                            <div class="clearfix"></div>
-                       </form>
-                    </div>
-                </div>
+               
             </div>
             @include('frame_depan.kanan', @$kanan ? $kanan : [])
         </div>

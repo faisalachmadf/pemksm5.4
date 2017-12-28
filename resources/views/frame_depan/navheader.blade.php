@@ -53,13 +53,14 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">PUBLIKASI<b class="caret"></b></a>
                         <ul class="dropdown-menu">
+
+                            <li><a href="/Publikasi/Agenda">Agenda</a></li>
+                            <li class="divider"></li>
                             <li><a href="/Publikasi/Materi-Materi">Materi-Materi</a></li>
                             <li class="divider"></li>
                             <li><a href="/Publikasi/e-Book">e-Book</a></li>
                             <li class="divider"></li>
                             <li><a href="/Publikasi/Brosur-event">Brosur Event</a></li>
-                            <li class="divider"></li>
-                            <li><a href="/Publikasi/Agenda">Agenda</a></li>
                             <li class="divider"></li>
                             <li><a href="/Publikasi/SK-Admin">SK Admin</a></li>
                             <li class="divider"></li>
