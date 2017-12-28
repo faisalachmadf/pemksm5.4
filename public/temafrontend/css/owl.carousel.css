@@ -162,6 +162,11 @@ position: center;
 		float: left;
 		width: 30%;
 	}
+	.item-pic2 {
+		padding: 0;
+		float: left;
+		width: 100%;
+	}
 	.m-b {
 		width: 41%;
 		float: left;

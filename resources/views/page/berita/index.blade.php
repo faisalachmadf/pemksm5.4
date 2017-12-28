@@ -28,12 +28,12 @@
                     @endforeach
                     <hr/>
 
-                    <!--/start-Technology-->
+                    <!--/Show dari Berita-->
                     <div class="technology">
                         @foreach($beritas as $berita)
                         <div class="editor-pics">
                             @if($dibaca)
-                                <div class="col-md-12 item-pic text-justify">
+                                <div class="col-md-12 item-pic2 text-justify">
                                     <img src="{{ asset('image/berita/'.$berita->gambar) }}" class="img-responsive img-banner" alt="{{ $berita->judul }}"/>
                                     <br/><br/>
                                     <h3 class="inner two">
