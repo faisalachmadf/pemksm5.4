@@ -18,5 +18,12 @@ class Prestasi extends Model
     public function getDataBySlug($slug)
     {
         return $this->where('slug', $slug)->first();
+        
+    }
+
+     public function ScopeUrutan($query)
+    {
+        return $query->OrderBy('created_at','desc');
+
     }
 }
