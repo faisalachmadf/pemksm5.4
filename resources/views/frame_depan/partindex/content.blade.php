@@ -200,7 +200,7 @@
                                 @foreach($publikasis as $publikasi)
                                 <div class="editor-pics">
                                     <div class="item-details">
-                                        <h5 class="inner two"><a href="{{ route('Publikasi', [$publikasi->katfile->slug, $publikasi->slug]) }}"><i class="glyphicon glyphicon-download"></i> &nbsp;&nbsp; {{ $publikasi->judul }}</a></h5>
+                                        <h5 class="inner two"><a href="{{ route('Publikasi.unduh', [$publikasi->katfile->slug, $publikasi->slug]) }}"><i class="glyphicon glyphicon-download"></i> &nbsp;&nbsp; {{ $publikasi->judul }}</a></h5>
                                         <div class="td-post-date two">
                                             <i class="glyphicon glyphicon-time"></i>{{ date('d M Y', strtotime($publikasi->tanggal)) }} <i class="glyphicon glyphicon-download"></i>{{ $publikasi->diunduh }}
                                         </div>
@@ -255,7 +255,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                             @endforeach
-                            <a href="{{ route('Berita') }}">
+                            <a href="{{ route('Berita', ['popular']) }}">
                                 <h6>Berita Popular Lainnya &raquo;</h6>
                             </a>
                         </div>
@@ -290,7 +290,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 @endforeach
-                                <a href="{{ route('Publikasi') }}">
+                                <a href="{{ route('Layanan') }}">
                                     <h6>Layanan Publik Lainnya &raquo;</h6>
                                 </a>
                             </ul>

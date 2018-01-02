@@ -53,17 +53,17 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">PUBLIKASI<b class="caret"></b></a>
                         <ul class="dropdown-menu">
 
-                            <li><a href="/Publikasi/Agenda">Agenda</a></li>
+                            <li><a href="{{ route('Publikasi', ['Agenda']) }}">Agenda</a></li>
                             <li class="divider"></li>
-                            <li><a href="/Publikasi/Materi-Materi">Materi-Materi</a></li>
+                            <li><a href="{{ route('Publikasi', ['Materi-Rapat']) }}">Materi-Materi</a></li>
                             <li class="divider"></li>
-                            <li><a href="/Publikasi/e-Book">e-Book</a></li>
+                            <li><a href="{{ route('Publikasi', ['eBook']) }}">e-Book</a></li>
                             <li class="divider"></li>
-                            <li><a href="/Publikasi/Brosur-event">Brosur Event</a></li>
+                            <li><a href="{{ route('Publikasi', ['Event']) }}">Brosur Event</a></li>
                             <li class="divider"></li>
-                            <li><a href="/Publikasi/SK-Admin">SK Admin</a></li>
+                            <li><a href="{{ route('Publikasi', ['SK-Admin']) }}">SK Admin</a></li>
                             <li class="divider"></li>
-                            <li><a href="/Publikasi/PPID">PPID</a></li>
+                            <li><a href="{{ route('Publikasi', ['PPID']) }}">PPID</a></li>
                         </ul>
                       </li>
 

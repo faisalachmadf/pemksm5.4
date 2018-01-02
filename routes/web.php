@@ -45,8 +45,8 @@ Route::group(['namespace' => 'Frontend'], function() {
 
     /* Produk Hukum */
     Route::group(['prefix' => 'Produk-Hukum'], function() {
-        Route::resource('/','ProdukhukumController');
         Route::get('Hasilpencarian', 'ProdukhukumController@search');
+        Route::resource('/','ProdukhukumController');
     });
 
     /* Berita */
@@ -55,7 +55,8 @@ Route::group(['namespace' => 'Frontend'], function() {
 
     /* Publikasi */
 
-    Route::get('Publikasi/{kategori?}/{slug?}', 'HalamanDepanController@test')->name('Publikasi');
+    Route::any('Publikasi/{kategori?}/{slug?}', 'PublikasiController@index')->name('Publikasi');
+    Route::any('Publikasi/{kategori?}/{slug?}/unduh', 'PublikasiController@unduh')->name('Publikasi.unduh');
 
      /* Agenda */
 

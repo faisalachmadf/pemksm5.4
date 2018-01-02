@@ -62,4 +62,53 @@ class Publikasi extends Model
             ->orderBy('tanggal', 'desc')
             ->take($limit);
     }
+
+    public function scopeGetPopular($query, $limit = null)
+    {
+        return $query->with(['katfile', 'user'])
+            ->orderBy('diunduh', 'desc')
+            ->orderBy('tanggal', 'desc')
+            ->take($limit);
+    }
+
+    public function scopeGetData($query, $katSlug = '', $slug = '')
+    {
+        return $query->whereHas('katfile', function($query) use ($katSlug) {
+                if (empty($katSlug)) {
+                    $query->where('slug', '<>', $katSlug);
+                } else {
+                    $query->where('slug', $katSlug);
+                }
+            })
+            ->where(function($query) use ($slug) {
+                if (empty($slug)) {
+                    $query->where('slug', '<>', $slug);
+                } else {
+                    $query->where('slug', $slug);
+                }
+            })
+            ->with(['katfile', 'user'])
+            ->orderBy('tanggal', 'desc');
+    }
+
+    public function scopeDiunduh($query, $slug)
+    {
+        return $query->where('slug', $slug)->increment('diunduh');
+    }
+
+    public function scopeGetSearch($query, $katSlug = '', $slug = '')
+    {
+        return $query->whereHas('katfile', function($query) use ($katSlug) {
+                if (empty($katSlug)) {
+                    $query->where('slug', '<>', $katSlug);
+                } else {
+                    $query->where('slug', $katSlug);
+                }
+            })
+            ->where(function($query) use ($slug) {
+                $query->where('judul', 'like', '%'.$slug.'%');
+            })
+            ->with(['katfile', 'user'])
+            ->orderBy('tanggal', 'desc');
+    }
 }
