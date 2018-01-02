@@ -44,12 +44,10 @@ Route::group(['namespace' => 'Frontend'], function() {
     });
 
     /* Produk Hukum */
-
-    Route::get('/Produk-Hukum', function () {
-        return view('page.produkhukum.produkhukum');
-    });    
-    
-     
+    Route::group(['prefix' => 'Produk-Hukum'], function() {
+        Route::resource('/','ProdukhukumController');
+        Route::get('Hasilpencarian', 'ProdukhukumController@search');
+    });
 
     /* Berita */
 
@@ -74,10 +72,11 @@ Route::group(['namespace' => 'Frontend'], function() {
     });
 
     /* kemitraan */
-
-    Route::get('/tkksd/Mitra-Kerjasama-Dalam-Negeri', function () {
-        return view('page.tkksd.mitradalamnegeri');
+    Route::group(['namespace' => 'Kerjasama','prefix' => 'Kerja-Sama'], function() {
+        Route::resource('Mitra-Dalam-Negeri','MitraDalamNegeriController');
+        Route::resource('Mitra-Luar-Negeri','MitraLuarNegeriController');
     });
+
 
     Route::get('/tkksd/Mitra-Kerjasama-Luar-Negeri', function () {
         return view('page.tkksd.mitraluarnegeri');

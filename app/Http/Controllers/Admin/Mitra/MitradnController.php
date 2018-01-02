@@ -101,7 +101,7 @@ class MitradnController extends Controller
         $gambar->move($path, $mitradn->gambar);
 
         //create thumbnail
-        //generateThumbnail($path, $mitradn->gambar);
+        generateThumbnail($path, $mitradn->gambar);
 
         return redirect()->route('mitra-dalam-negeri.index')->with('success', 'Data telah tersimpan');
     }
@@ -174,7 +174,7 @@ class MitradnController extends Controller
             deleteImageThumbnail($path, $mitradn->gambar);
 
             // create thumbnail
-            //generateThumbnail($path, $data['gambar']);
+            generateThumbnail($path, $data['gambar']);
         }
         
         $mitradn->update($data);

@@ -7,7 +7,8 @@
 
 @section('content')
 <div class="mag-inner">
-    <div class="latest-articles">
+     <div class="col-md-12">
+
         <!-- Di isi dengan tabel beritas kategori berita umum -->
                         <h3 class="tittle"><i class="glyphicon glyphicon-file"></i>Berita Umum </h3>
                         <div class="world-news-grids">
@@ -20,7 +21,7 @@
                                 <h4><a href="{{ route('Berita', [$umum->katberita->slug, $umum->slug]) }}" class="wd">{{ $umum->judul }}</a></h4>
 
                                 <div class="td-post-date two">
-                                  <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($umum->tanggal)) }}</h6></p>
+                                  <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($umum->tanggal)) }}</h6>
                                 </div>
                                   <br/>
                             </div>
@@ -31,7 +32,7 @@
                             </a>
                         </div>
                         <br/>
-                    </div>
+     </div>
                     
 
                     <div class="col-md-8 mag-innert-left">
@@ -300,50 +301,21 @@
                 </div>
 
                 <div class="clearfix"></div>
-            </div>
+</div>
 
 
 
-                     <!--/mag-bottom
+                     <!--/mag-bottom-->
                 <div class="mag-bottom">
-                    <h3 class="tittle bottom"><i class="glyphicon glyphicon-globe"></i>Layanan Biro Pemerintahan dan Kerja Sama</h3>
+                    <h3 class="tittle bottom"><i class="glyphicon glyphicon-globe"></i>bagian tkksd dan Lppd</h3>
                 
-                  untuk di halaman layanan   
-				<table>
-                <thead>
-                <tr>
-                  <th> </th>
-                  <th><font color="white">__</font>  </th>
-                  <th> </th>
-                 </tr>
-                 </thead>
-                 <tbody>
-                 	@foreach($layanans as $layanan)
-                 <tr>
-                 <td>  
-                                	<img src="{{ asset('image/layanan/thumbnail/'.$layanan->file) }}" width="50px" alt="{{ $layanan->judul }}" class="img-responsive "  /></td>
-                  <td></td>            
-                  <td> <a href="{{ route('Layanan', [$layanan->katbagian->slug, $layanan->slug]) }}">{{ $layanan->judul }}</a>
-
-                                        <div class="td-post-date two">
-                                            <i class="glyphicon glyphicon-time"></i>Tanggal Update:{{ date('d M Y', strtotime($layanan->tanggal)) }} 
-                                        </div></td>
-                 </tr>
-                 @endforeach
-                 </tbody>
-                 </table> 
-                     
-                               
-                                       
-                                        
-                                  
-                                 
-                                    
+                  TKKSD dan LPPD   
+   
                                     <div class="clearfix"></div>
                          
                                 
                 	
-                </div>-->
+                </div>
 
                 <div class="mag-bottom">
                     <h3 class="tittle bottom"><i class="glyphicon glyphicon-globe"></i>Link terkait</h3>

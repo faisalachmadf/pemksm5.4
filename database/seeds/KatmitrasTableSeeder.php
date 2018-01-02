@@ -13,11 +13,19 @@ class KatmitrasTableSeeder extends Seeder
     {
         DB::table('katmitras')->insert([
         [
-		'name'=>'Antar Pemerintahan',
-		'slug'=>'Antar-Pemerintahan', 
+		'name'=>'Antar Provinsi',
+		'slug'=>'Antar-Provinsi', 
 		'created_at'=>'2017-12-19 10:00:00',
 		'updated_at'=>'2017-12-19 10:00:00'
 		],
+
+		[
+		'name'=>'Kab-Kota',
+		'slug'=>'Kab-Kota', 
+		'created_at'=>'2017-12-19 10:00:00',
+		'updated_at'=>'2017-12-19 10:00:00'
+		],
+
 
 		[
 		'name'=>'Pihak Ketiga',
@@ -25,6 +33,8 @@ class KatmitrasTableSeeder extends Seeder
 		'created_at'=>'2017-12-19 10:00:00',
 		'updated_at'=>'2017-12-19 10:00:00'
 		],
+
+
 
 
 	]);

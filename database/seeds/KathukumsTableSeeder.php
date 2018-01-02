@@ -14,7 +14,7 @@ class KathukumsTableSeeder extends Seeder
         DB::table('kathukums')->insert([
         [
 		'name'=>'Undang-Undang',
-		'slug'=>'Undag-Undang', 
+		'slug'=>'Undang-Undang', 
 		'created_at'=>'2017-12-19 10:00:00',
 		'updated_at'=>'2017-12-19 10:00:00'
 		],

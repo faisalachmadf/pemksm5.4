@@ -48,4 +48,14 @@ class Mitradn extends Model
     {
         return $this->belongsTo('App\Models\User', 'id_user');
     }
+
+     public function scopeGetDataByKat($query, $katSlug, $limit = null)
+    {
+        return $query->whereHas('katmitra', function($query) use ($katSlug) {
+                $query->where('slug', $katSlug);
+            })
+            ->with(['katmitra', 'user'])
+            ->orderBy('created_at', 'desc')
+            ->take($limit);
+    }
 }

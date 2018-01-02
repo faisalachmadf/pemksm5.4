@@ -28,6 +28,7 @@
                         @endforeach
                     </div>
                     <br>
+                    
                     <form class="form" action="{{ route('Berita', ['pencarian']) }}" method="POST">
                         {{ csrf_field() }}
                         <div class="form-group">

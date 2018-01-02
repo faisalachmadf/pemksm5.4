@@ -11,8 +11,7 @@
  <div class="main-content">
 	    <div class="container">
 	    	
-      <!-- /.row -->
-	    	<form class="form" action="{{ url('Produk-Hukum/Hasilpencarian') }}" method="GET">
+	    <form class="form" action="{{ url('Produk-Hukum/Hasilpencarian') }}" method="GET">
                         
                         <div class="form-group">
                             <label for="pencarian">Pencarian Produk Hukum:</label>
@@ -25,15 +24,44 @@
                         </div>
             </form>
 
-           
+
+                      @if (count($hasil))
+            <div class="box box-danger">Hasil pencarian : <b>{{$query}}</b></div>
+              <br/>
+                <table  class="table table-bordered table-striped">
+                   <tbody>
+                    <?php $no = 0;?>
+                      @foreach($hasil as $data)
+                    <?php $no++ ;?>               
+                    <tr>
+
+                    <td style="width: 10px;">{{ $no }} </td>
+                    <td>{{ strtoupper($data->nama) }} <h6><i>diunduh : 0 kali | tanggal upload :  {{ date('d M Y', strtotime($data->created_at)) }}</i></h6> </td>
+                  <td style="width: 100px;">  <a href="#" class="btn btn-info">
+                         
+                        Download</a> </td>
+       
+                    </tr>
+                 @endforeach
+              </tbody>
+              </table>
+
+            {{ $hasil->render() }}
+              
+            @else
+               <div class="card-panel red darken-3 white-text">Produk Hukum dengan Nama <b>{{$query}}</b> Tidak Ditemukan</div>
+            @endif
+
+            <hr/>
+
+
 
               <div class="col-md-8 mag-innert-left">
-              	
+
 	            <!--/Undang-Undang-->
 	            <h2 class="tittle"> Undang-Undang</h2>
 	            <table  class="table table-bordered table-striped">
                 <tbody>
-                @if (count($uus))
                 <?php $no = 0;?>
                  @foreach($uus as $uu)
                 <?php $no++ ;?>               
@@ -70,9 +98,6 @@
 	               @endforeach
 	            </tbody>
 	            </table>
-	              @else
-	               <div class="card-panel red darken-3 white-text">Belum ada Data</div>
-	            @endif
 
 	             <br/>
 	            <!--/Peraturan Presiden-->
