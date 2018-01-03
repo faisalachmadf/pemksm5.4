@@ -49,7 +49,7 @@
                                     <h4><a href="{{ route('Berita', [$daerah->katberita->slug, $daerah->slug]) }}">{{ strtoupper($daerah->judul) }}</a></h4>
                                      
                                      <div class="td-post-date two">
-                                     	<h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($daerah->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($daerah->user) }} <i class="glyphicon glyphicon-eye-open"></i> di Unduh : <b>{{ $publikasi->diunduh }}</b> kali</h6>
+                                     	<h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($daerah->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($daerah->user) }} <i class="glyphicon glyphicon-eye-open"></i> di Unduh : <b>{{ $daerah->diunduh }}</b> kali</h6>
                                      </div>
 
                                     <hr/>
