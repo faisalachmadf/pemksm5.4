@@ -15,7 +15,7 @@ class CreateGaleriTkksdsTable extends Migration
     {
         Schema::create('galeri_tkksds', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('judul');
+            $table->text('judul');
             $table->string('gambar');
             $table->string('slug');
             $table->integer('id_user')->unsigned();
@@ -44,3 +44,5 @@ class CreateGaleriTkksdsTable extends Migration
         Schema::dropIfExists('galeri_tkksds');
     }
 }
+
+

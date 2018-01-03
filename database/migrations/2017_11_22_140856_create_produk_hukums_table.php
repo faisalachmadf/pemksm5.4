@@ -16,7 +16,7 @@ class CreateProdukHukumsTable extends Migration
         Schema::create('produk_hukums', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_kathukum')->unsigned();
-            $table->string('nama');
+            $table->text('nama');
             $table->string('file');
             $table->integer('diunduh')->default(0);
             $table->string('slug');

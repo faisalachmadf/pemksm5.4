@@ -53,4 +53,18 @@ class ProdukHukumController extends Controller
         ];
         return view('page.produkhukum.hasilpencarian', compact('hasil', 'query'), $data);
     }
+
+    public function unduh($katSlug = '', $slug = '')
+    {
+        $model = new ProdukHukum;
+        $produkhukum = $model->getDataBySlug($slug);
+        $path = 'file/produk-hukum';
+
+        if ($produkhukum && \Storage::exists($path.'/'.$produkhukum->file)) {
+            ProdukHukum::diunduh($slug);
+            return response()->download($path.'/'.$produkhukum->file);
+        }
+
+        return response()->view('errors.404');
+    }
 }

@@ -49,6 +49,31 @@ class ProdukHukum extends Model
         return $this->belongsTo('App\Models\User', 'id_user');
     }
 
+    public function scopeGetData($query, $katSlug = '', $slug = '')
+    {
+        return $query->whereHas('kathukum', function($query) use ($katSlug) {
+                if (empty($katSlug)) {
+                    $query->where('slug', '<>', $katSlug);
+                } else {
+                    $query->where('slug', $katSlug);
+                }
+            })
+            ->where(function($query) use ($slug) {
+                if (empty($slug)) {
+                    $query->where('slug', '<>', $slug);
+                } else {
+                    $query->where('slug', $slug);
+                }
+            })
+            ->with(['kathukum', 'user'])
+            ->orderBy('tanggal', 'desc');
+    }
+
+    public function scopeDiunduh($query, $slug)
+    {
+        return $query->where('slug', $slug)->increment('diunduh');
+    }
+
     public function scopeGetDataByKat($query, $katSlug, $limit = null)
     {
         return $query->whereHas('kathukum', function($query) use ($katSlug) {

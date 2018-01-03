@@ -49,7 +49,7 @@
                                     <h4><a href="{{ route('Berita', [$daerah->katberita->slug, $daerah->slug]) }}">{{ strtoupper($daerah->judul) }}</a></h4>
                                      
                                      <div class="td-post-date two">
-                                     	<h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($daerah->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($daerah->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $daerah->dibaca }}</h6>
+                                     	<h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($daerah->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($daerah->user) }} <i class="glyphicon glyphicon-eye-open"></i> di Unduh : <b>{{ $publikasi->diunduh }}</b> kali</h6>
                                      </div>
 
                                     <hr/>
@@ -196,13 +196,23 @@
                         <div class="connect">
                             <h4 class="side" >FILE DAN PENGUMUMAN</h4>
                             <ul class="stay">
-                                <!-- di isi dengan tabel Publikasis -->
+                            	<!-- Custom Tabs -->
+          <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#tab_1" data-toggle="tab">TERBARU</a></li>
+              <li><a href="#tab_2" data-toggle="tab">TERPOPULER</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="tab_1">
+                <br/>
+
+                 <!-- di isi dengan tabel Publikasis -->
                                 @foreach($publikasis as $publikasi)
                                 <div class="editor-pics">
                                     <div class="item-details">
                                         <h5 class="inner two"><a href="{{ route('Publikasi.unduh', [$publikasi->katfile->slug, $publikasi->slug]) }}"><i class="glyphicon glyphicon-download"></i> &nbsp;&nbsp; {{ $publikasi->judul }}</a></h5>
                                         <div class="td-post-date two">
-                                            <i class="glyphicon glyphicon-time"></i>{{ date('d M Y', strtotime($publikasi->tanggal)) }} <i class="glyphicon glyphicon-download"></i>{{ $publikasi->diunduh }}
+                                            <i class="glyphicon glyphicon-time"></i>{{ date('d M Y', strtotime($publikasi->tanggal)) }} <i class="glyphicon glyphicon-download"></i>di Unduh : <b>{{ $publikasi->diunduh }}</b> kali
                                         </div>
                                     </div>
                                     <div class="clearfix"></div>
@@ -211,6 +221,32 @@
                                 <a href="{{ route('Publikasi') }}">
                                     <h6>File dan Pengumuman Lainnya &raquo;</h6>
                                 </a>
+              </div>
+              <!-- /.tab-pane -->
+              <div class="tab-pane" id="tab_2">
+               <br/>
+
+               @foreach($populars2 as $popular2)
+                                <div class="editor-pics">
+                                    <div class="item-details">
+                                        <h5 class="inner two"><a href="{{ route('Publikasi.unduh', [$popular2->katfile->slug, $popular2->slug]) }}"><i class="glyphicon glyphicon-download"></i> &nbsp;&nbsp; {{ $popular2->judul }}</a></h5>
+                                        <div class="td-post-date two">
+                                            <i class="glyphicon glyphicon-time"></i>{{ date('d M Y', strtotime($popular2->tanggal)) }} <i class="glyphicon glyphicon-download"></i>di Unduh : <b>{{ $popular2->diunduh }}</b> kali
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                @endforeach
+                                <a href="{{ route('Publikasi') }}">
+                                    <h6>File dan Pengumuman Lainnya &raquo;</h6>
+                                </a>
+              </div>
+             
+            </div>
+            <!-- /.tab-content -->
+          </div>
+          <!-- nav-tabs-custom -->
+                               
                             </ul>
                         </div>
                         
@@ -265,7 +301,7 @@
                         <div class="connect">
                             <h4 class="side" >Ruang PPID</h4>
                             <ul class="stay">
-                                <a href="/"><center><img src="/adminkelola/dist/img/logobiro.png" class="img-responsive"></center></a>
+                                <a href="{{ route('Publikasi', ['PPID']) }}"><center><img src="/adminkelola/dist/img/logobiro.png" class="img-responsive"></center></a>
                             </ul> 
                         </div>
                         <br/>

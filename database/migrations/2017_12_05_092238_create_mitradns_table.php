@@ -16,7 +16,7 @@ class CreateMitradnsTable extends Migration
         Schema::create('mitradns', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_katmitra')->unsigned();
-            $table->string('judul');
+            $table->text('judul');
             $table->string('gambar');
             $table->text('isi');
             $table->integer('id_user')->unsigned();

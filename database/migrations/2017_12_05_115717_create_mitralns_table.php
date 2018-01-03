@@ -16,7 +16,7 @@ class CreateMitralnsTable extends Migration
         Schema::create('mitralns', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_katmitraln')->unsigned();
-            $table->string('judul');
+            $table->text('judul');
             $table->string('gambar');
             $table->text('isi');
             $table->integer('id_user')->unsigned();

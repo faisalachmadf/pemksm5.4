@@ -16,7 +16,7 @@ class CreateAgendasTable extends Migration
         Schema::create('agendas', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_katbagian')->unsigned();
-            $table->string('judul');
+            $table->text('judul');
             $table->date('tanggal');
             $table->string('jam');
             $table->text('lokasi');

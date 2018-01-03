@@ -79,11 +79,11 @@
               </div>
             </div>
             <div class="form-group{{ $errors->has('file') ? ' has-error' : '' }}">
-              <label for="file" class="col-sm-4 control-label">File<span class="required">*</span> :</label>
+              <label for="file" class="col-sm-4 control-label">Gambar<span class="required">*</span> :</label>
 
               <div class="col-sm-4">
                 <input type="file" class="form-control-static" id="file" name="file">
-                <small>(pdf, doc, docx, xls, xlsx, ppt, pptx, jpeg, png, bmp, gif, or svg)</small>
+                <small>(jpeg, png, bmp, gif, or svg)</small>
 
                 @if ($errors->has('file'))
                   <span class="help-block">{{ $errors->first('file') }}</span>

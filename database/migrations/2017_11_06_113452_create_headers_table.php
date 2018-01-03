@@ -15,7 +15,7 @@ class CreateHeadersTable extends Migration
     {
         Schema::create('headers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('judul');
+            $table->text('judul');
             $table->string('gambar');
             $table->timestamps();
         });

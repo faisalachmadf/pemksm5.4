@@ -18,13 +18,23 @@
                 <div class="connect">
                             <h4 class="side" >FILE DAN PENGUMUMAN</h4>
                             <ul class="stay">
-                                <!-- di isi dengan tabel Publikasis -->
+                            	<!-- Custom Tabs -->
+          <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#tab_1" data-toggle="tab">TERBARU</a></li>
+              <li><a href="#tab_2" data-toggle="tab">TERPOPULER</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="tab_1">
+                <br/>
+
+                 <!-- di isi dengan tabel Publikasis -->
                                 @foreach(@$publikasis ? $publikasis : [] as $publikasi)
                                 <div class="editor-pics">
                                     <div class="item-details">
                                         <h5 class="inner two"><a href="{{ route('Publikasi.unduh', [$publikasi->katfile->slug, $publikasi->slug]) }}"><i class="glyphicon glyphicon-download"></i> &nbsp;&nbsp; {{ $publikasi->judul }}</a></h5>
                                         <div class="td-post-date two">
-                                            <i class="glyphicon glyphicon-time"></i>{{ date('d M Y', strtotime($publikasi->tanggal)) }} <i class="glyphicon glyphicon-download"></i>{{ $publikasi->diunduh }}
+                                            <i class="glyphicon glyphicon-time"></i>{{ date('d M Y', strtotime($publikasi->tanggal)) }} <i class="glyphicon glyphicon-download"></i>di Unduh : <b>{{ $publikasi->diunduh }}</b> kali
                                         </div>
                                     </div>
                                     <div class="clearfix"></div>
@@ -33,6 +43,32 @@
                                 <a href="{{ route('Publikasi') }}">
                                     <h6>File dan Pengumuman Lainnya &raquo;</h6>
                                 </a>
+              </div>
+              <!-- /.tab-pane -->
+              <div class="tab-pane" id="tab_2">
+               <br/>
+
+               @foreach(@$populars2 ? $populars2 : [] as $popular2)
+                                <div class="editor-pics">
+                                    <div class="item-details">
+                                        <h5 class="inner two"><a href="{{ route('Publikasi.unduh', [$popular2->katfile->slug, $popular2->slug]) }}"><i class="glyphicon glyphicon-download"></i> &nbsp;&nbsp; {{ $popular2->judul }}</a></h5>
+                                        <div class="td-post-date two">
+                                            <i class="glyphicon glyphicon-time"></i>{{ date('d M Y', strtotime($popular2->tanggal)) }} <i class="glyphicon glyphicon-download"></i>di Unduh : <b>{{ $popular2->diunduh }}</b> kali
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                @endforeach
+                                <a href="{{ route('Publikasi') }}">
+                                    <h6>File dan Pengumuman Lainnya &raquo;</h6>
+                                </a>
+              </div>
+             
+            </div>
+            <!-- /.tab-content -->
+          </div>
+          <!-- nav-tabs-custom -->
+                               
                             </ul>
                         </div>
 
@@ -84,7 +120,7 @@
 	                                    <div class="clearfix"></div>
 	                                </div>
 	                            @endforeach
-	                                <a href="{{ route('Publikasi') }}">
+	                             <a href="{{ route('Layanan') }}">
 	                                    <h6>Layanan Publik Lainnya &raquo;</h6>
 	                                </a>
 	                            </ul>

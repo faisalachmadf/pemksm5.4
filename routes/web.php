@@ -18,22 +18,18 @@ Route::group(['namespace' => 'Frontend'], function() {
     Route::resource('/', 'HalamanDepanController');
 
     /* Profile */
-
-
     Route::group(['namespace' => 'Profil', 'prefix' => 'profil'], function() {
         Route::resource('Selayang-Pandang','SelayangController');
         Route::resource('Visi-dan-Misi','VisiMisiController');
         Route::resource('Tugas-Pokok-dan-Fungsi','TupoksiController');
-        Route::resource('Struktur-Organisasi','TupoksiController');
-        Route::resource('Sumber-Daya-Manusia','SdmController');
+        Route::resource('Struktur-Organisasi','SdmController');
         Route::resource('Prestasi','PrestasiController');
     });
 
     /* Bagian */
 
-    Route::get('Urusan-Pemerintahan-Daerah', function () {
-        return view('page.bagian.urpemda');
-    });
+    Route::any('Kelembagaan/{slug?}', 'KelembagaanController@index')->name('Kelembagaan');
+    
 
     Route::get('Tata-Pemerintahan', function () {
         return view('page.bagian.tapem');
@@ -46,7 +42,8 @@ Route::group(['namespace' => 'Frontend'], function() {
     /* Produk Hukum */
     Route::group(['prefix' => 'Produk-Hukum'], function() {
         Route::get('Hasilpencarian', 'ProdukhukumController@search');
-        Route::resource('/','ProdukhukumController');
+        Route::get('/','ProdukhukumController@index')->name('Produkhukum');
+        Route::any('{slug?}/unduh', 'ProdukHukumController@unduh')->name('Produkhukum.unduh');
     });
 
     /* Berita */
@@ -64,7 +61,7 @@ Route::group(['namespace' => 'Frontend'], function() {
 
     /* Layanan */
 
-    Route::get('Layanan/{kategori?}/{slug?}', 'HalamanDepanController@test')->name('Layanan');
+    Route::any('Layanan/{kategori?}/{slug?}', 'LayananController@index')->name('Layanan');
 
     /* LPPD */
 

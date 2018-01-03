@@ -9,9 +9,12 @@ class SdmController extends Controller
 {
      public function index()
     {
-
-      $Pegawais=Pegawai::all();
-        return view('page.profile.sdm',compact('pegawais'));
+    	$data = [
+            'pegawais' => Pegawai::all(),
+        ];
+        
+        return view('page.profile.struktur', $data);
+        
     }
 
 }

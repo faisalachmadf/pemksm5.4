@@ -19,7 +19,7 @@ class CreateKerjasamaLnsTable extends Migration
             $table->integer('id_katjenisln')->unsigned();
             $table->string('tahun');
             $table->text('nomor');
-            $table->string('judul');
+            $table->text('judul');
             $table->text('pihak');
             $table->text('summary');
             $table->date('tanggal_awal');

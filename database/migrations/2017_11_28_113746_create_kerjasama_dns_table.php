@@ -19,7 +19,7 @@ class CreateKerjasamaDnsTable extends Migration
             $table->integer('id_katjenisdn')->unsigned();
             $table->string('tahun');
             $table->text('nomor');
-            $table->string('judul');
+            $table->text('judul');
             $table->text('pihak');
             $table->text('summary');
             $table->date('tanggal_awal');

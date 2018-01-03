@@ -34,17 +34,28 @@
                             <h3>Hasil Pencarian {{ $publikasis->count() > 0 ? '' : 'Tidak Ditemukan' }}</h3>
                             <br/>
                         @endif
-                        @foreach($publikasis as $publikasi)
-                        <div class="editor-pics">
-                            <div class="item-details">
-                                <h5 class="inner two"><a href="{{ route('Publikasi.unduh', [$publikasi->katfile->slug, $publikasi->slug]) }}"><i class="glyphicon glyphicon-download"></i> &nbsp;&nbsp; {{ $publikasi->judul }}</a></h5>
-                                <div class="td-post-date two">
-                                    <i class="glyphicon glyphicon-time"></i>{{ date('d M Y', strtotime($publikasi->tanggal)) }} <i class="glyphicon glyphicon-download"></i>{{ $publikasi->diunduh }}
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        @endforeach
+                        
+                         <table  class="table table-bordered table-striped">
+                            <tbody>
+                            <?php $no = 0;?>
+                             @foreach($publikasis as $publikasi)
+                            <?php $no++ ;?>               
+                            <tr>
+                            
+                              <td style="width: 10px;">{{ $no }} </td>
+                               <td>{{ strtoupper($publikasi->judul) }} 
+                                <div class="clearfix"></div>
+                                <h6><i>diunduh :<b> {{ $publikasi->diunduh }} kali</b> | tanggal upload :  <b>{{ date('d M Y', strtotime($publikasi->tanggal)) }}</b></i></h6> </td>
+                              <td style="width: 100px;">  <a href="{{ route('Publikasi.unduh', [$publikasi->katfile->slug, $publikasi->slug]) }}" class="btn btn-info">
+                                     
+                                    <span>Download</span></a> </td>
+                   
+                            </tr>
+                               @endforeach
+                            </tbody>
+                            </table>
+
+
                         
                         @if($pencarian)
                             {{ $publikasis->appends(['pencarian' => $data['pencarian']])->links() }}

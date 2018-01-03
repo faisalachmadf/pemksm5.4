@@ -15,7 +15,7 @@ class CreateTkksdsTable extends Migration
     {
         Schema::create('tkksds', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('judul');
+            $table->text('judul');
             $table->text('isi');
             $table->date('tanggal');
             $table->string('file');

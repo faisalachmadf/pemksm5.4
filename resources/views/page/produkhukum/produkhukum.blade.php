@@ -30,7 +30,7 @@
               <div class="col-md-8 mag-innert-left">
               	
 	            <!--/Undang-Undang-->
-	            <h2 class="tittle"> Undang-Undang</h2>
+	            <blockquote> Undang-Undang</blockquote>
 	            <table  class="table table-bordered table-striped">
                 <tbody>
                 @if (count($uus))
@@ -40,8 +40,8 @@
                 <tr>
                 
                   <td style="width: 10px;">{{ $no }} </td>
-                   <td>{{ strtoupper($uu->nama) }} <h6><i>diunduh : 0 kali | tanggal upload :  {{ date('d M Y', strtotime($uu->created_at)) }}</i></h6> </td>
-                  <td style="width: 100px;">  <a href="#" class="btn btn-info">
+                   <td>{{ strtoupper($uu->nama) }} <h6><i>diunduh : {{ $uu->diunduh }} kali | tanggal upload :  {{ date('d M Y', strtotime($uu->created_at)) }}</i></h6> </td>
+                  <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$uu->slug]) }}" class="btn btn-info">
                          
                         Download</a> </td>
        
@@ -52,7 +52,7 @@
 
 	            <br/>
 	            <!--/Peraturan Pemerintah-->
-	            <h2 class="tittle"> Peraturan Pemerintah</h2>
+	            <blockquote> Peraturan Pemerintah</blockquote>
 	            <table  class="table table-bordered table-striped">
                 <tbody>
                 <?php $no = 0;?>
@@ -76,7 +76,7 @@
 
 	             <br/>
 	            <!--/Peraturan Presiden-->
-	            <h2 class="tittle"> Peraturan Presiden</h2>
+	            <blockquote> Peraturan Presiden</blockquote>
 	            <table  class="table table-bordered table-striped">
                 <tbody>
                 <?php $no = 0;?>
@@ -97,7 +97,7 @@
 
 	            <br/>
 	            <!--/Keputusan Presiden-->
-	            <h2 class="tittle"> Keputusan Presiden</h2>
+	            <blockquote> Keputusan Presiden</blockquote>
 	            <table  class="table table-bordered table-striped">
                 <tbody>
                 <?php $no = 0;?>
@@ -118,7 +118,7 @@
 
 	             <br/>
 	            <!--/Peraturan Menteri Dalam Negeri-->
-	            <h2 class="tittle"> Peraturan Menteri Dalam Negeri</h2>
+	             <blockquote> Peraturan Menteri Dalam Negeri</blockquote>
 	            <table  class="table table-bordered table-striped">
                 <tbody>
                 <?php $no = 0;?>
@@ -139,7 +139,7 @@
 
 	             <br/>
 	            <!--/Keputusan Menteri Dalam Negeri-->
-	            <h2 class="tittle"> Keputusan Menteri Dalam Negeri</h2>
+	             <blockquote> Keputusan Menteri Dalam Negeri</blockquote>
 	            <table  class="table table-bordered table-striped">
                 <tbody>
                 <?php $no = 0;?>
@@ -160,7 +160,7 @@
 
 	            <br/>
 	            <!--/Peraturan Menteri Luar Negeri-->
-	            <h2 class="tittle"> Peraturan Menteri Luar Negeri</h2>
+	             <blockquote> Peraturan Menteri Luar Negeri</blockquote>
 	            <table  class="table table-bordered table-striped">
                 <tbody>
                 <?php $no = 0;?>
@@ -181,7 +181,7 @@
 
 	             <br/>
 	            <!--/Peraturan Menteri Ketenagakerjaan-->
-	            <h2 class="tittle"> Peraturan Menteri Ketenagakerjaan</h2>
+	             <blockquote> Peraturan Menteri Ketenagakerjaan</blockquote>
 	            <table  class="table table-bordered table-striped">
                 <tbody>
                 <?php $no = 0;?>
@@ -202,7 +202,7 @@
 
 	             <br/>
 	            <!--/Peraturan Daerah Provinsi Jawa Barat-->
-	            <h2 class="tittle"> Peraturan Daerah Provinsi Jawa Barat</h2>
+	             <blockquote> Peraturan Daerah Provinsi Jawa Barat</blockquote>
 	            <table  class="table table-bordered table-striped">
                 <tbody>
                 <?php $no = 0;?>
@@ -223,7 +223,7 @@
 
 	            <br/>
 	            <!--/Peraturan Gubernur Provinsi Jawa Barat-->
-	            <h2 class="tittle"> Peraturan Gubernur Provinsi Jawa Barat</h2>
+	             <blockquote> Peraturan Gubernur Provinsi Jawa Barat</blockquote>
 	            <table  class="table table-bordered table-striped">
                 <tbody>
                 <?php $no = 0;?>
@@ -244,7 +244,7 @@
 
 	            <br/>
 	            <!--/Keputusan Gubernur Provinsi Jawa Barat-->
-	            <h2 class="tittle"> Keputusan Gubernur Provinsi Jawa Barat</h2>
+	             <blockquote>Keputusan Gubernur Provinsi Jawa Barat</blockquote>
 	            <table  class="table table-bordered table-striped">
                 <tbody>
                 <?php $no = 0;?>
@@ -265,7 +265,7 @@
 
 	            <br/>
 	            <!--/Surat Edaran-->
-	            <h2 class="tittle"> Surat Edaran</h2>
+	            <blockquote>Surat Edaran</blockquote>
 	            <table  class="table table-bordered table-striped">
                 <tbody>
                 <?php $no = 0;?>

@@ -11,7 +11,7 @@ class PrestasiController extends Controller
     public function index()
     {
         $data = [
-            'prestasis' => Prestasi::Urutan()->get(),
+            'prestasis' => Prestasi::all(),
             'kanan' => getDataKanan()
         ];
         

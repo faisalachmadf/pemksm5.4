@@ -13,6 +13,13 @@ class KatlaporansTableSeeder extends Seeder
     {
         DB::table('katlaporans')->insert([
         [
+		'name'=>'LKIP',
+		'slug'=>'LKIP', 
+		'created_at'=>'2017-12-19 10:00:00',
+		'updated_at'=>'2017-12-19 10:00:00'
+		],
+
+        [
 		'name'=>'Laporan Keuangan',
 		'slug'=>'Laporan-Keuangan', 
 		'created_at'=>'2017-12-19 10:00:00',

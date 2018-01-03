@@ -102,7 +102,7 @@ class KelembagaanController extends Controller
         $gambar->move($path, $kelembagaan->gambar);
 
         //create thumbnail
-        //generateThumbnail($path, $kelembagaan->gambar);
+        generateThumbnail($path, $kelembagaan->gambar);
 
         return redirect()->route('kelembagaan.index')->with('success', 'Data telah tersimpan');
     }
@@ -175,7 +175,7 @@ class KelembagaanController extends Controller
             deleteImageThumbnail($path, $kelembagaan->gambar);
 
             // create thumbnail
-            //generateThumbnail($path, $data['gambar']);
+            generateThumbnail($path, $data['gambar']);
         }
         
         $kelembagaan->update($data);

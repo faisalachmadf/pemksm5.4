@@ -24,6 +24,7 @@ class HalamanDepanController extends Controller
             'artikels' => Berita::getDataByKat('Artikel', 4)->get(),
             'sambutans' => sambutan::all(),
             'publikasis' => Publikasi::getDataByKat(['PPID'], 5, true)->get(),
+            'populars2' => Publikasi::getPopular(5)->get(),
             'ppids' => Publikasi::getDataByKat(['PPID'], 5)->get(),
             'agendas' => Agenda::getNow()->get(),
             'populars' => Berita::getPopular(5)->get(),

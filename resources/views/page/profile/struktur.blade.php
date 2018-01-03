@@ -3,38 +3,32 @@
 
 @section('content')
  <div class="banner two">
-    <div class="container"> 
-    	@foreach($Selayangs as $Selayang)
-	    <h2 class="inner-tittle">{{ $Selayang->judul }}</h2>  
+    <div class="container">
+	    <h2 class="inner-tittle">STRUKTUR ORGANISASI</h2>
     </div>
  </div>
     
  <div class="main-content">
 	    <div class="container">
 
-              <div class="col-md-12 ">
+              <div class="col-md-12">
 
  						
 
 	                            <div class="banner-bottom-left-grids">
 									<div class="single-left-grid">
+											<a href="/"><center><img src="/adminkelola/dist/img/struktur.png" class="img-responsive"></center></a>
 
-												<p>{!! $Selayang->isi !!}</p>
-												
-											
 
 											<div class="single-bottom">
-													<ul>
-														<li><a href="#">Designer inspiration</a></li>
-														<li>August 30 2015</li>
-														<li><a href="#">Admin</a></li>
-														<li><a href="#">5 Comments</a></li>
-													</ul>
+													<h2>SUMBER DAYA MANUSIA</h2>
 											</div>
 
 									 </div>
 								</div>
-								@endforeach
 									
-			  </div>    
+			  </div>
+			  
+	  	</div>    
+ </div>    
 @endsection

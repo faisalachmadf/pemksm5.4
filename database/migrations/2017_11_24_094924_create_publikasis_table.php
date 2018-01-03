@@ -16,7 +16,7 @@ class CreatePublikasisTable extends Migration
         Schema::create('publikasis', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_katfile')->unsigned();
-            $table->string('judul');
+            $table->text('judul');
             $table->date('tanggal');
             $table->string('file');
             $table->string('slug');

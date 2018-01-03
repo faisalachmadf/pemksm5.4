@@ -16,7 +16,7 @@ class CreateLayanansTable extends Migration
         Schema::create('layanans', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_katbagian')->unsigned();
-            $table->string('judul');
+            $table->text('judul');
             $table->text('isi');
             $table->date('tanggal');
             $table->string('file');

@@ -34,16 +34,16 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">KELEMBAGAAN<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="Urusan-Pemerintahan-Daerah">Urusan Pemerintahan Daerah</a></li>
+                            <li><a href="{{ route('Kelembagaan', ['1']) }}">Urusan Pemerintahan Daerah</a></li>
                             <li class="divider"></li>
-                            <li><a href="Tata-Pemerintahan">Tata Pemerintahan</a></li>
+                            <li><a href="{{ route('Kelembagaan', ['2']) }}">Tata Pemerintahan</a></li>
                             <li class="divider"></li>
-                            <li><a href="Kerjasama">Kerjasama Daerah</a></li>
+                            <li><a href="{{ route('Kelembagaan', ['3']) }}">Kerjasama Daerah</a></li>
                             
                         </ul>
                     </li>
 
-                     <li><a href="/Produk-Hukum">PRODUK HUKUM</a></li>
+                     <li><a href="{{ route('Produkhukum') }}">PRODUK HUKUM</a></li>
                     <li>
                     <a href="{{ route('Berita') }}">BERITA</b></a>
                     </li>
@@ -51,21 +51,32 @@
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">PUBLIKASI<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
+                       <ul class="dropdown-menu multi-column columns-2">
+                            <div class="row">
+                            	<div class="col-sm-6">
+                                    <ul class="multi-column-dropdown"> 
+			                            <li><a href="{{ route('Publikasi', ['Materi-Rapat']) }}">Materi-Materi</a></li>
+			                            <li class="divider"></li>
+			                            <li><a href="{{ route('Publikasi', ['eBook']) }}">e-Book</a></li>
+			                            <li class="divider"></li>
+			                            <li><a href="{{ route('Publikasi', ['Event']) }}">Brosur Event</a></li>
+			                            <li class="divider"></li>
+			                            <li><a href="{{ route('Publikasi', ['SK-Admin']) }}">SK Admin</a></li>
+			                            <li class="divider"></li>
+			                            <li><a href="{{ route('Publikasi', ['PPID']) }}">PPID</a></li>
+			                        </ul>
+                                </div>
 
-                            <li><a href="{{ route('Publikasi', ['Agenda']) }}">Agenda</a></li>
-                            <li class="divider"></li>
-                            <li><a href="{{ route('Publikasi', ['Materi-Rapat']) }}">Materi-Materi</a></li>
-                            <li class="divider"></li>
-                            <li><a href="{{ route('Publikasi', ['eBook']) }}">e-Book</a></li>
-                            <li class="divider"></li>
-                            <li><a href="{{ route('Publikasi', ['Event']) }}">Brosur Event</a></li>
-                            <li class="divider"></li>
-                            <li><a href="{{ route('Publikasi', ['SK-Admin']) }}">SK Admin</a></li>
-                            <li class="divider"></li>
-                            <li><a href="{{ route('Publikasi', ['PPID']) }}">PPID</a></li>
+                                <div class="col-sm-6">
+                                    <ul class="multi-column-dropdown">
+			                        	<li><a href="{{ route('Layanan') }}">Layanan Publikasi</a></li>
+			                            <li class="divider"></li>
+			                            <li><a href="{{ route('Agenda', ['Agenda']) }}">Agenda</a></li>
+			                        </ul>
+                                </div>
+                       		</div>
                         </ul>
-                      </li>
+                    </li>
 
 
                       <li class="dropdown">

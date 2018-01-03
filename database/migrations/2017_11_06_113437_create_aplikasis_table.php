@@ -15,7 +15,7 @@ class CreateAplikasisTable extends Migration
     {
         Schema::create('aplikasis', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('judul');
+            $table->text('judul');
             $table->string('gambar');
             $table->string('link');
             $table->timestamps();

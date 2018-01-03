@@ -15,7 +15,7 @@ class CreateLppdsTable extends Migration
     {
         Schema::create('lppds', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('judul');
+            $table->text('judul');
             $table->text('isi');
             $table->date('tanggal');
             $table->string('file');

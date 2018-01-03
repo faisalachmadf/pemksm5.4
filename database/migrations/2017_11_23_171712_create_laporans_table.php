@@ -16,7 +16,7 @@ class CreateLaporansTable extends Migration
         Schema::create('laporans', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_katlaporan')->unsigned();
-            $table->string('judul');
+            $table->text('judul');
             $table->text('isi');
             $table->date('tanggal');
             $table->string('file');
