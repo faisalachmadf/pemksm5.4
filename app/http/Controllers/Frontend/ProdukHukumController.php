@@ -51,10 +51,11 @@ class ProdukHukumController extends Controller
              'kanan' => getDataKanan()
        
         ];
+
         return view('page.produkhukum.hasilpencarian', compact('hasil', 'query'), $data);
     }
 
-    public function unduh($katSlug = '', $slug = '')
+    public function unduh($slug = '')
     {
         $model = new ProdukHukum;
         $produkhukum = $model->getDataBySlug($slug);
