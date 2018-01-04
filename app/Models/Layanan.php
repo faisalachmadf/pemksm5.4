@@ -87,7 +87,7 @@ class Layanan extends Model
             ->orderBy('tanggal', 'desc');
     }
 
-    public function scopeDibaca($query, $slug)
+    public function scopeDiunduh($query, $slug)
     {
         return $query->where('slug', $slug)->increment('diunduh');
     }

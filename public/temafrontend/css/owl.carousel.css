@@ -84,6 +84,7 @@
 position: center;
        top: 15.3em;
     right: 0em;
+    margin-top: 2em;
 }
 
 /* Styling Next and Prev buttons */
@@ -143,13 +144,13 @@ position: center;
 @media(max-width:1024px){
 	.owl-theme .owl-buttons {
 		position: absolute;
-		top: 3.9em;
-		right: 0em;
+		top: 7.1em;
+		right: 25em;
 	}
 	.owl-theme .owl-buttons {
 		position: absolute;
-		top: 11.1em;
-		right: 0em;
+		top: 6.1em;
+		right: 20em;
 	}
 	.item-pic {
 		padding: 0;
@@ -209,8 +210,8 @@ position: center;
 @media(max-width:768px){
 	.owl-theme .owl-buttons {
 		position: absolute;
-		top: 11.6em;
-		right: 0em;
+		top: 7.6em;
+		right: 20em;
 	}
 	.item-pic {
 		padding: 0;
@@ -222,8 +223,8 @@ position: center;
 @media(max-width:640px){
 	.owl-theme .owl-buttons {
 		position: absolute;
-		top: 9.6em;
-		right: 0em;
+		top: 6em;
+		right: 13em;
 	}
 }
 @media(max-width:480px){

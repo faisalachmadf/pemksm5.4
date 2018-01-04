@@ -1,5 +1,5 @@
 <div class="banner">
-     <div class="container">
+     
 	       <div class="banner-inner">
 
 	<div class="box-header with-border">
@@ -18,7 +18,7 @@
                   <div class="item {{ $key == 0 ? 'active' : '' }}">
                     <img src="{{ asset('image/beranda/'.$banner->gambar) }}" class="img-responsive img-banner" alt="{{ $banner->judul }}">
                     <div class="carousel-caption">
-                     {{ $banner->judul }}
+                     <h2>{{ $banner->judul }}</h2>
                     </div>
                   </div>
                   @endforeach
@@ -33,5 +33,5 @@
             </div>
            
 				</div>
-       </div>
+      
   </div>

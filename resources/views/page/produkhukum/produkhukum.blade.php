@@ -31,7 +31,14 @@
               	
 	            <!--/Undang-Undang-->
 	            <blockquote> Undang-Undang</blockquote>
-	            <table  class="table table-bordered table-striped">
+	            <table  class="table table-striped">
+	            	<thead>
+                             <tr>
+                             <th>No</th>
+                             <th>Nama File</th>
+                             <th>Download</th>
+                             </tr>   
+                            </thead>
                 <tbody>
                 @if (count($uus))
                 <?php $no = 0;?>

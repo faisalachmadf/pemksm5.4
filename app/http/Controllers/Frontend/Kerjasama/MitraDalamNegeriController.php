@@ -12,7 +12,7 @@ class MitraDalamNegeriController extends Controller
     public function index()
     {
         $data = [
-             'provinsis' => Mitradn::getDataByKat('Provinsi')->get(),
+             'provinsis' => Mitradn::getDataByKat('Antar-Provinsi')->get(),
              'kabkots' => Mitradn::getDataByKat('Kab-Kota')->get(),
              'pihakketigas' => Mitradn::getDataByKat('Pihak-Ketiga')->get()
 

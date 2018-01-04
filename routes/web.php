@@ -57,7 +57,7 @@ Route::group(['namespace' => 'Frontend'], function() {
 
      /* Agenda */
 
-    Route::get('Agenda/{kategori?}/{slug?}', 'HalamanDepanController@test')->name('Agenda');
+    Route::any('Agenda/{kategori?}/{slug?}', 'AgendaController@index')->name('Agenda');
 
     /* Layanan */
 

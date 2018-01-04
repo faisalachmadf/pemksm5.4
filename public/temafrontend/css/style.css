@@ -603,7 +603,7 @@ span.icon3 {
 div #example1 {
     background-color: #fff;
        padding: 1.5em 1.5em 4em;
-    border: 1px solid rgba(231,231,231,1.00);
+    border: 0px solid rgba(231,231,231,1.00);
 }
 .nbs-flexisel-container {
 	position: relative;
@@ -1546,7 +1546,7 @@ h2.inner-tittle {
     text-align: center;
     margin-top: 2.5em;
     text-transform: uppercase;
-    color: #EE5656;
+    color: #ffffff;
     font-size: 2.2em;
 }
 /*-- business --*/

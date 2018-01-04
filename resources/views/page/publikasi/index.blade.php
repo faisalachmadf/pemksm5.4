@@ -35,7 +35,14 @@
                             <br/>
                         @endif
                         
-                         <table  class="table table-bordered table-striped">
+                         <table  class="table  table-striped">
+                            <thead>
+                             <tr>
+                             <th>No</th>
+                             <th>Nama File</th>
+                             <th>Download</th>
+                             </tr>   
+                            </thead>
                             <tbody>
                             <?php $no = 0;?>
                              @foreach($publikasis as $publikasi)

@@ -8,7 +8,7 @@
 @section('content')
 <div class="mag-inner">
      <div class="col-md-12">
-
+     	<br>
         <!-- Di isi dengan tabel beritas kategori berita umum -->
                         <h3 class="tittle"><i class="glyphicon glyphicon-file"></i>Berita Umum </h3>
                         <div class="world-news-grids">
@@ -172,7 +172,7 @@
                 <br/>
                         <div class="connect">
                         <h4 class="side" >KEPALA DINAS</h4>
-                          <ul class="stay">
+                          <div class="edit-pics"> 
                           @foreach($sambutans as $key => $sambutan)
                             <center>
                                 <img src="{{ asset('image/umum/'.$sambutan->gambar) }}" class="img-responsive" width="200px" />
@@ -189,13 +189,13 @@
                             @endif
                         
                           @endforeach
-                          </ul>
+                          </div>
                         </div>
                         <BR/>
 
                         <div class="connect">
                             <h4 class="side" >FILE DAN PENGUMUMAN</h4>
-                            <ul class="stay">
+                             <div class="edit-pics"> 
                             	<!-- Custom Tabs -->
           <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
@@ -247,12 +247,12 @@
           </div>
           <!-- nav-tabs-custom -->
                                
-                            </ul>
+                            </div>
                         </div>
                         
                         <div class="top-news">
                             <h4 class="side">Agenda </h4>
-                            <ul class="stay">
+                             <div class="edit-pics"> 
                                 <!-- di Isi dengan Tabel Agenda Biro -->
                                 @foreach($agendas as $agenda)
                                 <div class="editor-pics">
@@ -269,11 +269,11 @@
                                 <a href="{{ route('Agenda')}}">
                                     <h6>Agenda Lainnya &raquo;</h6>
                                 </a>
-                            </ul>
+                            </div>
                         </div>
                         <br/>
 
-                        <h4 class="side">Popular Posts</h4>
+                        <h4 class="side">BERITA TERPOPULER</h4>
                         <div class="edit-pics"> 
                             <!-- DI isi dengan Tabel Beritas yang terbanyak jumlah Kliknya (Dibacanya) -->
                             @foreach($populars as $popular)
@@ -300,15 +300,16 @@
 
                         <div class="connect">
                             <h4 class="side" >Ruang PPID</h4>
-                            <ul class="stay">
+                             <div class="edit-pics"> 
                                 <a href="{{ route('Publikasi', ['PPID']) }}"><center><img src="/adminkelola/dist/img/logobiro.png" class="img-responsive"></center></a>
-                            </ul> 
+                            </div>
                         </div>
                         <br/>
                         
                         <div class="connect">
+
                             <h4 class="side">Layanan Publik</h4>
-                            <ul class="stay">
+                            <div class="edit-pics"> 
                                 <!-- DI isi dengan Tabel layanans -->
                                 @foreach($layanans as $layanan)
                                 <div class="editor-pics">
@@ -329,7 +330,7 @@
                                 <a href="{{ route('Layanan') }}">
                                     <h6>Layanan Publik Lainnya &raquo;</h6>
                                 </a>
-                            </ul>
+                            </div>
                         </div>
 
                         <br/>
@@ -338,29 +339,51 @@
 
                 <div class="clearfix"></div>
 </div>
-
-
+<br>
+<hr/>
 
                      <!--/mag-bottom-->
-                <div class="mag-bottom">
-                    <h3 class="tittle bottom"><i class="glyphicon glyphicon-globe"></i>bagian tkksd dan Lppd</h3>
+                <div class="tkksddanlppd">
+
                 
-                  TKKSD dan LPPD   
+                       <div class="row">
+			            <div class="col-lg-6 col-xs-6">
+			              <!-- small box -->
+			                <center><img src="/adminkelola/dist/img/logobiro.png" class="img-responsive"></center>
+			                <center><div class="inner">
+			                  <br>
+			                  <H3>TKKSD<H3>
+			                </div> </center>
+         
+			            </div>
+			            <div class="col-lg-6 col-xs-6">
+			              <!-- small box -->
+			                  <center><img src="/adminkelola/dist/img/logobiro.png" class="img-responsive"></center>
+			                 
+
+			                <center><div class="inner">
+			                  <br>
+			                  <h3>LPPD</h3>
+			                </div> </center>
+			           
+			            </div>
+			      
+			          </div>
    
-                                    <div class="clearfix"></div>
+                                 <div class="clearfix"></div>
                          
                                 
                 	
                 </div>
-
+                <hr/>
                 <div class="mag-bottom">
-                    <h3 class="tittle bottom"><i class="glyphicon glyphicon-globe"></i>Link terkait</h3>
+         
                     <!-- di isi dengan Tabel Aplikasis -->
                     <div id="example1">
                         <div id="owl-demo" class="owl-carousel text-center">
                             @foreach($aplikasis as $aplikasi)
-                            <div class="item">
-                                <a href="{{ $aplikasi->link }}" target="_blank"><img class="img-responsive lot" src="{{ asset('image/beranda/'.$aplikasi->gambar) }}" alt="{{ $aplikasi->judul }}"/></a>
+                            <div class="item" style="margin-left: 2em;">
+                                <a href="{{ $aplikasi->link }}" target="_blank"><img class="img-responsive lot img-thumbnail" src="{{ asset('image/beranda/'.$aplikasi->gambar) }}" alt="{{ $aplikasi->judul }}"/></a>
                             </div>
                             @endforeach
                         </div>

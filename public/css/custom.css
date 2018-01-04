@@ -2,6 +2,7 @@
     display: block;
     margin: auto;
     width: 100% !important;
+    height: 100% !important;
 }
 .thumbnail>img {
     margin: auto;
@@ -19,4 +20,11 @@
 }
 .btn-katberita {
     margin-top: 10px;
+}
+
+.tkksddanlppd {
+    margin-top: 4em;
+     margin-bottom: 5em;
+    background: url(../images/banner2.jpg);
+    width: 100% !important;
 }

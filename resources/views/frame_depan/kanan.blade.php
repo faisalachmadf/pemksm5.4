@@ -2,7 +2,7 @@
                  
                  <div class="connect">
 					<h4 class="side" >Bahasa</h4>
-					<ul class="stay">
+					 <div class="edit-pics"> 
 							    
 					<div id="google_translate_element" style="float:center; width: 100%; "></div>
 					<script type="text/javascript">
@@ -12,12 +12,14 @@
 					</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
 					</script>
 								
-					</ul>
+					</div>
 				</div>
 				<br/>
+
+
                 <div class="connect">
                             <h4 class="side" >FILE DAN PENGUMUMAN</h4>
-                            <ul class="stay">
+                            <div class="edit-pics"> 
                             	<!-- Custom Tabs -->
           <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
@@ -76,7 +78,7 @@
 				
 	                <br/>
 
-				    <h4 class="side">Popular Posts</h4>
+				    <h4 class="side">BERITA TERPOPULER</h4>
                         <div class="edit-pics"> 
                             <!-- DI isi dengan Tabel Beritas yang terbanyak jumlah Kliknya (Dibacanya) -->
                             @foreach(@$populars ? $populars : [] as $popular)
@@ -102,7 +104,7 @@
 							<br/>
 							<div class="connect">
 	                            <h4 class="side">Layanan Publik</h4>
-	                            <ul class="stay">
+	                            <div class="edit-pics"> 
 	                                <!-- DI isi dengan Tabel layanans -->
 	                            @foreach(@$layanans ? $layanans : [] as $layanan)
 	                                <div class="editor-pics">
@@ -123,7 +125,8 @@
 	                             <a href="{{ route('Layanan') }}">
 	                                    <h6>Layanan Publik Lainnya &raquo;</h6>
 	                                </a>
-	                            </ul>
+	                            </div>
 	                        </div>
 						<div class="clearfix"></div>
 						</div>
+						<br>

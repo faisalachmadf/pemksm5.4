@@ -17,9 +17,12 @@
 <link href="{{ asset('/temafrontend/css/flexslider.css') }}" rel="stylesheet"  type="text/css" media="screen" />
 <!-- Ionicons -->
 <link href="{{ asset('/adminkelola/bower_components/Ionicons/css/ionicons.min.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('/adminkelola/bower_components/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+
 <!-- Custom CSS -->
 <link href="{{ asset('/css/custom.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ asset('/css/mobile.css') }}" rel="stylesheet" type="text/css">
+
 <!--/script-->
 <script type="text/javascript">
 			jQuery(document).ready(function($) {

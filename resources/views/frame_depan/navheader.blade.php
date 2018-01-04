@@ -1,6 +1,6 @@
   <div class="header" id="home">
      <div class="content white">
-        <nav class="navbar navbar-default" role="navigation">
+        <nav class="navbar navbar-default " role="navigation">
            <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -71,7 +71,7 @@
                                     <ul class="multi-column-dropdown">
 			                        	<li><a href="{{ route('Layanan') }}">Layanan Publikasi</a></li>
 			                            <li class="divider"></li>
-			                            <li><a href="{{ route('Agenda', ['Agenda']) }}">Agenda</a></li>
+			                            <li><a href="{{ route('Agenda') }}">Agenda</a></li>
 			                        </ul>
                                 </div>
                        		</div>
