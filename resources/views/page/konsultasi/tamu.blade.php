@@ -16,12 +16,12 @@
 
             <div class="nav-tabs-custom">
                 <ul class="nav nav-tabs">
-                  <li class="active"><a href="#tab_1" data-toggle="tab"><span class="glyphicon glyphicon-user"></span> &nbsp BUKU TAMU</a></li>
-                  <li><a href="#tab_2" data-toggle="tab"><span class="glyphicon glyphicon-inbox"></span> &nbsp HUBUNGI KAMI</a></li>
+                  <li class="active"><a href="#tab_3" data-toggle="tab"><span class="glyphicon glyphicon-user"></span> &nbsp BUKU TAMU</a></li>
+                  <li><a href="#tab_4" data-toggle="tab"><span class="glyphicon glyphicon-inbox"></span> &nbsp HUBUNGI KAMI</a></li>
                 </ul>
 
                 <div class="tab-content">
-                      <div class="tab-pane active" id="tab_1">
+                      <div class="tab-pane active" id="tab_3">
                         <br/>
 
                          <!-- di isi dengan tabel Publikasis -->
@@ -65,7 +65,7 @@
                         </div>
                       </div>
               <!-- /.tab-pane -->
-                    <div class="tab-pane" id="tab_2">
+                    <div class="tab-pane" id="tab_4">
                        <br/>
 
                       <form class="form-horizontal" method="POST" action="{{ route('Hubungi-Kami.store') }}" enctype="multipart/form-data">
