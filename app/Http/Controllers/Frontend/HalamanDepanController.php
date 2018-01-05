@@ -16,7 +16,7 @@ class HalamanDepanController extends Controller
     public function index()
     {
         $data = [
-            'banners' => header::all()->take(5),
+            'banners' => header::Urutan()->take(3)->get(),
             'umums' => Berita::getDataByKat('Berita-Umum', 4)->get(),
             'daerahs' => Berita::getDataByKat('Berita-Urusan-Pemerintahan-Daerah', 3)->get(),
             'tatas' => Berita::getDataByKat('Berita-Tata-Pemerintahan', 3)->get(),
