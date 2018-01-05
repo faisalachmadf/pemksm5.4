@@ -160,7 +160,7 @@ if (! function_exists('getDataKanan')) {
    function getDataKanan()
    {
         $kanan = [
-            'publikasis' => \App\Models\Publikasi::getDataByKat(['PPID'], 5, true)->get(),
+            'publikasis' => \App\Models\Publikasi::getDataByKat([], 5, true)->get(),
             'populars' => \App\Models\Berita::getPopular(5)->get(),
             'populars2' => \App\Models\Publikasi::getPopular(5)->get(),
             'ppids' => '',

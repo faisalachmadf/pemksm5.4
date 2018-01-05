@@ -106,11 +106,11 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">LAPORAN<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">LKIP</a></li>
+                            <li><a href="{{ route('Laporan', ['LKIP']) }}">LKIP</a></li>
                             <li class="divider"></li>
-                        	<li><a href="#">Transparansi Anggaran</a></li>
+                        	<li><a href="{{ route('Laporan', ['Transparansi-Anggaran']) }}">Transparansi Anggaran</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">Transparansi Kinerja</a></li>
+                            <li><a href="{{ route('Laporan', ['Transparansi-Kinerja']) }}">Transparansi Kinerja</a></li>
                        
 
                         </ul>
@@ -118,9 +118,9 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">KONTAK<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Buku Tamu</a></li>
+                            <li><a href="{{ route('Hubungi-Kami.index') }}">Hubungi Kami</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">Form Konsultasi</a></li>
+                            <li><a href="#">Lokasi Kami</a></li>
                             
                             
                         </ul>

@@ -258,7 +258,7 @@
                                 <div class="editor-pics">
                                     <div class="item-details">
                                         <h5 class="inner two"><i class="glyphicon glyphicon-calendar"></i> 
-                                        &nbsp;&nbsp;<a href="{{ route('Agenda', [$agenda->slug, $agenda->slug]) }}">{{ $agenda->judul }}</a></h5>
+                                        &nbsp;&nbsp;<a href="{{ route('Agenda', [$agenda->katbagian->slug, $agenda->slug]) }}">{{ $agenda->judul }}</a></h5>
                                         <div class="td-post-date two">
                                             <i class="glyphicon glyphicon-time"></i>{{ date('d M Y', strtotime($agenda->tanggal)) }} 
                                         </div>

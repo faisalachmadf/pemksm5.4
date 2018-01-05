@@ -48,4 +48,67 @@ class Laporan extends Model
     {
         return $this->belongsTo('App\Models\User', 'id_user');
     }
+
+    public function scopeGetDataByKat($query, $katSlug, $limit = null, $exclude = false)
+    {
+        return $query->whereHas('katlaporan', function($query) use ($katSlug, $exclude) {
+                if ($exclude) {
+                    $query->whereNotIn('slug', $katSlug);
+                } else {
+                    $query->whereIn('slug', $katSlug);
+                }
+            })
+            ->with(['katlaporan', 'user'])
+            ->orderBy('tanggal', 'desc')
+            ->take($limit);
+    }
+
+    public function scopeGetPopular($query, $limit = null)
+    {
+        return $query->with(['katlaporan', 'user'])
+            ->orderBy('diunduh', 'desc')
+            ->orderBy('tanggal', 'desc')
+            ->take($limit);
+    }
+
+    public function scopeGetData($query, $katSlug = '', $slug = '')
+    {
+        return $query->whereHas('katlaporan', function($query) use ($katSlug) {
+                if (empty($katSlug)) {
+                    $query->where('slug', '<>', $katSlug);
+                } else {
+                    $query->where('slug', $katSlug);
+                }
+            })
+            ->where(function($query) use ($slug) {
+                if (empty($slug)) {
+                    $query->where('slug', '<>', $slug);
+                } else {
+                    $query->where('slug', $slug);
+                }
+            })
+            ->with(['katlaporan', 'user'])
+            ->orderBy('tanggal', 'desc');
+    }
+
+    public function scopeDiunduh($query, $slug)
+    {
+        return $query->where('slug', $slug)->increment('diunduh');
+    }
+
+    public function scopeGetSearch($query, $katSlug = '', $slug = '')
+    {
+        return $query->whereHas('katlaporan', function($query) use ($katSlug) {
+                if (empty($katSlug)) {
+                    $query->where('slug', '<>', $katSlug);
+                } else {
+                    $query->where('slug', $katSlug);
+                }
+            })
+            ->where(function($query) use ($slug) {
+                $query->where('judul', 'like', '%'.$slug.'%');
+            })
+            ->with(['katlaporan', 'user'])
+            ->orderBy('tanggal', 'desc');
+    }
 }

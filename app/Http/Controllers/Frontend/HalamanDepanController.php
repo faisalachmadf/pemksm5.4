@@ -16,14 +16,14 @@ class HalamanDepanController extends Controller
     public function index()
     {
         $data = [
-            'banners' => header::all(),
+            'banners' => header::all()->take(5),
             'umums' => Berita::getDataByKat('Berita-Umum', 4)->get(),
             'daerahs' => Berita::getDataByKat('Berita-Urusan-Pemerintahan-Daerah', 3)->get(),
             'tatas' => Berita::getDataByKat('Berita-Tata-Pemerintahan', 3)->get(),
             'kerjasamas' => Berita::getDataByKat('Berita-Kerja-Sama', 3)->get(),
             'artikels' => Berita::getDataByKat('Artikel', 4)->get(),
             'sambutans' => sambutan::all(),
-            'publikasis' => Publikasi::getDataByKat(['PPID'], 5, true)->get(),
+            'publikasis' => Publikasi::getDataByKat([], 5, true)->get(),
             'populars2' => Publikasi::getPopular(5)->get(),
             'ppids' => Publikasi::getDataByKat(['PPID'], 5)->get(),
             'agendas' => Agenda::getNow()->get(),

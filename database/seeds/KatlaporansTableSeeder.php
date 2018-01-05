@@ -20,15 +20,15 @@ class KatlaporansTableSeeder extends Seeder
 		],
 
         [
-		'name'=>'Laporan Keuangan',
-		'slug'=>'Laporan-Keuangan', 
+		'name'=>'Transparansi Anggaran',
+		'slug'=>'Transparansi-Anggaran', 
 		'created_at'=>'2017-12-19 10:00:00',
 		'updated_at'=>'2017-12-19 10:00:00'
 		],
 
 		[
-		'name'=>'Laporan Kinerja',
-		'slug'=>'Laporan-Kinerja', 
+		'name'=>'Transparansi Kinerja',
+		'slug'=>'Transparansi-Kinerja', 
 		'created_at'=>'2017-12-19 10:00:00',
 		'updated_at'=>'2017-12-19 10:00:00'
 		],

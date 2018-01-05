@@ -177,8 +177,8 @@
 
         <!-- Ini Masuk di User -->
         <li class="header">KONSULTASI</li>
-        <li>
-          <a href="pages/calendar.html">
+      <li class="{{ request()->segment(2) == 'tamu' ? 'active' : '' }}">
+          <a href="{{ route('tamu.index') }}">
             <i class="fa fa-calendar"></i> <span>Buku Tamu</span>
             <span class="pull-right-container">
             </span>

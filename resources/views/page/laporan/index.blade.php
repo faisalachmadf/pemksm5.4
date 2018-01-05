@@ -4,7 +4,7 @@
 @section('content')
     <div class="banner two">
         <div class="container"> 
-            <h2 class="inner-tittle">{{ strtoupper($katfile ? $katfile->name : 'PUBLIKASI') }}</h2>
+            <h2 class="inner-tittle">{{ strtoupper($katlaporan ? $katlaporan->name : 'LAPORAN') }}</h2>
         </div>
     </div>
     
@@ -13,25 +13,30 @@
             <div class="col-md-8 mag-innert-left">
                 <div class="banner-bottom-left-grids">
                     <br/>
-                    <form class="form" action="{{ route('Publikasi', $katfile ? [$katfile->slug, 'pencarian'] : ['pencarian']) }}" method="POST">
+
+                    <form class="form" action="{{ route('Laporan', $katlaporan ? [$katlaporan->slug, 'pencarian'] : ['pencarian']) }}" method="POST">
                         {{ csrf_field() }}
                         <div class="form-group">
-                            <label for="pencarian">Pencarian {{ $katfile ? $katfile->name : 'Publikasi' }}:</label>
+                            <label for="pencarian">Pencarian {{ $katlaporan ? $katlaporan->name : 'Laporan' }}:</label>
                             <div class="input-group btn-katberita">
-                                <input type="hidden" name="katslug" value="{{ $katfile ? $katfile->slug : '' }}">
+                                
+                                <input type="hidden" name="katslug" value="{{ $katlaporan ? $katlaporan->slug : '' }}">
+                                
                                 <input type="text" name="pencarian" id="pencarian" class="form-control" placeholder="Masukan kata kunci..." value="{{ @$data['pencarian'] }}">
+                                
                                 <div class="input-group-btn">
                                     <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i></button>
                                 </div>
+
                             </div>
                         </div>
                     </form>
                     <hr/>
 
-                    <!--/Show dari Publikasi-->
+                    <!--/Show dari Laporan-->
                     <div class="technology">
                         @if($pencarian)
-                            <h3>Hasil Pencarian {{ $publikasis->count() > 0 ? '' : 'Tidak Ditemukan' }}</h3>
+                            <h3>Hasil Pencarian {{ $laporans->count() > 0 ? '' : 'Tidak Ditemukan' }}</h3>
                             <br/>
                         @endif
                         
@@ -44,22 +49,22 @@
                              </tr>   
                             </thead>
                             <tbody>
-                            @if (count($publikasis))
+                            @if (count($laporans))
                             <?php $no = 0;?>
-                             @foreach($publikasis as $publikasi)
+                             @foreach($laporans as $laporan)
                             <?php $no++ ;?>               
                             <tr>
                             
                               <td style="width: 10px;">{{ $no }} </td>
-                               <td>{{ strtoupper($publikasi->judul) }} 
+                               <td>{{ strtoupper($laporan->judul) }} 
                                 <div class="clearfix"></div>
-                                <h6><i>diunduh :<b> {{ $publikasi->diunduh }} kali</b> | tanggal upload :  <b>{{ date('d M Y', strtotime($publikasi->tanggal)) }}</b></i></h6> </td>
-                              <td style="width: 100px;">  <a href="{{ route('Publikasi.unduh', [$publikasi->katfile->slug, $publikasi->slug]) }}" class="btn btn-info">
+                                <h6><i>diunduh :<b> {{ $laporan->diunduh }} kali</b> | tanggal upload :  <b>{{ date('d M Y', strtotime($laporan->tanggal)) }}</b></i></h6> </td>
+                              <td style="width: 100px;">  <a href="{{ route('Laporan.unduh', [$laporan->katlaporan->slug, $laporan->slug]) }}" class="btn btn-info">
                                      
                                     <span>Download</span></a> </td>
                    
                             </tr>
-                                @endforeach
+                               @endforeach
                                    @else
                                      <tr>
                             
@@ -68,16 +73,19 @@
                                 <td></td>
                    
                             </tr>
-                            @endif
+                                @endif
                             </tbody>
                             </table>
-
+                            
+                          
+                          
+                            
 
                         
                         @if($pencarian)
-                            {{ $publikasis->appends(['pencarian' => $data['pencarian']])->links() }}
+                            {{ $laporans->appends(['pencarian' => $data['pencarian']])->links() }}
                         @else
-                            {{ $publikasis->links() }}
+                            {{ $laporans->links() }}
                         @endif
                         <div class="clearfix"></div>
                     </div>

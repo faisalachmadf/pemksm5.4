@@ -85,6 +85,18 @@ Route::group(['namespace' => 'Frontend'], function() {
     Route::get('/TKKSD', function () {
         return view('page.tkksd.tkksd');
     });
+
+    /* Laporan */
+
+    Route::any('Laporan/{kategori?}/{slug?}', 'LaporanController@index')->name('Laporan');
+    Route::any('Laporan/{kategori?}/{slug?}/unduh', 'LaporanController@unduh')->name('Laporan.unduh');
+
+    /* Konsultasi */
+    Route::group(['namespace' => 'Konsultasi', 'prefix' => 'konsultasi'], function() {
+        Route::resource('Hubungi-Kami','Tamu2Controller');
+      
+        
+    });
 });
 
 
@@ -115,14 +127,14 @@ Route::group(['prefix' => 'adminpanel'], function() {
 
     Route::group(['namespace' => 'Admin', 'middleware' => 'admin'], function() {
         // Admin Dashboard
-        Route::get('/', 'DashboardController@index')->name('admin.dashboard');
+            Route::get('/', 'DashboardController@index')->name('admin.dashboard');
 
         // List User
-        Route::get('user/datatables','UserController@datatables')->name('user.datatables');
-        Route::resource('user','UserController');
+            Route::get('user/datatables','UserController@datatables')->name('user.datatables');
+            Route::resource('user','UserController');
 
         // Profil
-        Route::group(['namespace' => 'Profil', 'prefix' => 'profil'], function() {
+            Route::group(['namespace' => 'Profil', 'prefix' => 'profil'], function() {
             // Selayang Pandang
             Route::get('selayang-pandang/datatables','SelayangController@datatables')->name('selayang-pandang.datatables');
             Route::resource('selayang-pandang','SelayangController');
@@ -243,8 +255,8 @@ Route::group(['prefix' => 'adminpanel'], function() {
         Route::group(['namespace' => 'Lppd', 'prefix' => 'lppd'], function() {
            // LPPD
               Route::get('lppd/datatables','LppdController@datatables')->name('lppd.datatables');
-        Route::get('lppd/{slug}/download','LppdController@download')->name('lppd.download');
-        Route::resource('lppd','lppdController');
+                Route::get('lppd/{slug}/download','LppdController@download')->name('lppd.download');
+                Route::resource('lppd','lppdController');
 
             // Galeri LPPD
             Route::get('galeri-lppd/datatables','GaleriLppdController@datatables')->name('galeri-lppd.datatables');
@@ -286,6 +298,14 @@ Route::group(['prefix' => 'adminpanel'], function() {
             // Mitra Luar Negeri
             Route::get('mitra-luar-negeri/datatables','MitralnController@datatables')->name('mitra-luar-negeri.datatables');
             Route::resource('mitra-luar-negeri','MitralnController');
+        });
+
+        // Konsultasi 
+        Route::group(['namespace' => 'Konsultasi', 'prefix' => 'konsultasi'], function() {
+            // Buku Tamu
+            Route::get('tamu/datatables','TamuController@datatables')->name('tamu.datatables');
+            Route::resource('tamu','TamuController');
+
         });
     });
 

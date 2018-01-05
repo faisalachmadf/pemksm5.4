@@ -15,9 +15,11 @@
  
                             <!-- Di isi dengan tabel beritas kategori urusan pemerintahan daerah -->
                              @foreach($prestasis as $prestasi)
+                            <div class="technology">
                             <div class="editor-pics">
+                            	<div class="edit-pics">
                                 <div class="col-md-5 item-pic">
-                                     <img src="{{ asset('image/prestasi/'.$prestasi->gambar) }}" class="img-responsive img-banner" alt="{{ $prestasi->judul }}" width="50px" />
+                                     <img src="{{ asset('image/prestasi/'.$prestasi->gambar) }}" class="img-responsive img-banner" alt="{{ $prestasi->judul }}" width="20px" />
                                 </div>
                                 <div class="col-md-7 item-details">
                                     <h4><p>{{ @$prestasi->judul }}</p></h4>
@@ -31,6 +33,8 @@
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
+                        </div>
+                    </div>
 
 					@endforeach	
 											
