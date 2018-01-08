@@ -4,7 +4,7 @@
 @section('content')
     <div class="banner two">
         <div class="container"> 
-            <h2 class="inner-tittle">Data Kerja sama Dalam Negeri</h2>
+            <h2 class="inner-tittle">Data Kerja sama Luar Negeri</h2>
         </div>
     </div>
     
@@ -14,7 +14,7 @@
             
                     <br>
                     
-                <form class="form" action="{{ route('KerjasamaDn', ['pencarian']) }}" method="POST">
+                <form class="form" action="{{ route('KerjasamaLn', ['pencarian']) }}" method="POST">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="pencarian">Cari Kerja Sama:</label><br/>
@@ -37,12 +37,12 @@
                                   <label for="kategori-berita"></label><hr/>
                                
                                     <div class="clearfix"></div>
-                                    <a href="{{ route('KerjasamaDn') }}">
+                                    <a href="{{ route('KerjasamaLn') }}">
                                     <h5>Semua Kerja Sama</h5>
                                 </a><br>
-                                @foreach($katdns as $key => $katdn)
-                                <a href="{{ route('KerjasamaDn', [$katdn->slug]) }}">
-                                    <h5>{{ $katdn->name }}</h5><br>
+                                @foreach($katlns as $key => $katln)
+                                <a href="{{ route('KerjasamaLn', [$katln->slug]) }}">
+                                    <h5>{{ $katln->name }}</h5><br>
                                 </a>
                                 @endforeach
                                 </div>  
@@ -56,7 +56,7 @@
                                     <div class="editor-pics">
                                          <div class="edit-pics">
                                      @if($pencarian)
-                                    <h3>Hasil Pencarian {{ $kerjasamadns->count() > 0 ? '' : 'Tidak Ditemukan' }}
+                                    <h3>Hasil Pencarian {{ $kerjasamalns->count() > 0 ? '' : 'Tidak Ditemukan' }}
                                         <hr/></h3>
                               
                                     @endif
@@ -73,17 +73,17 @@
                                                      </tr>   
                                                     </thead>
                                         <tbody>
-                                        @if (count($kerjasamadns))
+                                        @if (count($kerjasamalns))
                                         <?php $no = 0;?>
-                                         @foreach($kerjasamadns as $kerjasamadn)
+                                         @foreach($kerjasamalns as $kerjasamaln)
                                         <?php $no++ ;?>               
                                         <tr>
                                            
-                                          <td><p><h6>{{ $kerjasamadn->tahun }} </h6></p></td>
+                                          <td><p><h6>{{ $kerjasamaln->tahun }} </h6></p></td>
                                        
-                                           <td><p><h6>{{ strtoupper($kerjasamadn->judul) }} <br> <font color="red"><h8>{{ $kerjasamadn->katdn->name }}</h8></font>
+                                           <td><p><h6>{{ strtoupper($kerjasamaln->judul) }} <br> <font color="red"><h8>{{ $kerjasamaln->katln->name }}</h8></font>
                                            </h6></p></td>
-                                           <td><p><h6>{{ date('d M Y', strtotime($kerjasamadn->tanggal_awal)) }}
+                                           <td><p><h6>{{ date('d M Y', strtotime($kerjasamaln->tanggal_awal)) }}
                                            </h6></p></td>
                                            <td><p><h6> <a href="#"> <li class="glyphicon glyphicon-new-window"></li> </a></h6></p></td>
                                         
@@ -108,9 +108,9 @@
 
 
                           @if($pencarian)
-                            {{ $kerjasamadns->appends(['pencarian' => $data['pencarian']])->links() }}
+                            {{ $kerjasamalns->appends(['pencarian' => $data['pencarian']])->links() }}
                         @else
-                            {{ $kerjasamadns->links() }}
+                            {{ $kerjasamalns->links() }}
                         @endif
                                     
                                     </div>

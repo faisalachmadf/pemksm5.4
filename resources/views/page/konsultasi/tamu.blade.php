@@ -26,11 +26,11 @@
 
                          <!-- di isi dengan tabel Publikasis -->
                           @if (session()->has('success'))
-                            <div class="alert alert-success alert-dismissible" role="alert">
+                            <div class="alert alert-success alert-dismissible" role="alert" style="background-color: #ffc5002e;">
                               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                               </button>
-                              <strong><span class="glyphicon glyphicon-ok"></span> &nbsp{{ session()->get('success') }}</strong>
+                             <span class="glyphicon glyphicon-ok"></span> <font color="green"> &nbsp{{ session()->get('success') }}</font>
                             </div>
                           @endif
                                        <!--/Show dari Laporan-->

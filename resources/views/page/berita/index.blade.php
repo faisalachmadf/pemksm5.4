@@ -12,8 +12,11 @@
         <div class="container">
             <div class="col-md-8 mag-innert-left">
                 <div class="banner-bottom-left-grids">
-                    <label for="kategori-berita">Kategori Berita:</label>
+                 
                     <div id="kategori-berita">
+                    	<div class="editor-pics">
+                    		<div class="edit-pics">
+                    			   <label for="kategori-berita">Kategori Berita:</label>
                         <div class="clearfix"></div>
                         <a href="{{ route('Berita') }}" class="btn btn-default btn-katberita">
                             <h6>Semua Berita</h6>
@@ -41,6 +44,8 @@
                             </div>
                         </div>
                     </form>
+                </div>
+            </div>
                     <hr/>
 
                     <!--/Show dari Berita-->

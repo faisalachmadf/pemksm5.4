@@ -47,6 +47,7 @@
             <thead>
               <tr>
                 <th>No</th>
+                <th></th>
                 <th>Nama</th>
                 <th>Hukum</th>
                 <th>File</th>
@@ -70,6 +71,7 @@
     $(function() {
       var columns = [
         { data: 'DT_Row_Index', name: 'DT_Row_Index', orderable: false, searchable: false, width: '5%' },
+        { data: 'created_at', name: 'created_at', visible: false, searchable: false},
         { data: 'nama', name: 'nama' },
         { data: 'kathukum.name', name: 'kathukum.name' },
         { data: 'file', name: 'file' },

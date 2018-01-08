@@ -69,11 +69,15 @@ Route::group(['namespace' => 'Frontend'], function() {
         return view('page.lppd.lppd');
     });
 
-    /* kemitraan */
+    /* kemitraan dan Kerja Sama */
     Route::group(['namespace' => 'Kerjasama','prefix' => 'Kerja-Sama'], function() {
         Route::resource('Mitra-Dalam-Negeri','MitraDalamNegeriController');
         Route::resource('Mitra-Luar-Negeri','MitraLuarNegeriController');
+        Route::any('KerjasamaDn/{kategori?}/{slug?}', 'KerjasamaDnController@index')->name('KerjasamaDn');
+        Route::any('KerjasamaLn/{kategori?}/{slug?}', 'KerjasamaLnController@index')->name('KerjasamaLn');
     });
+
+
 
 
     Route::get('/tkksd/Mitra-Kerjasama-Luar-Negeri', function () {

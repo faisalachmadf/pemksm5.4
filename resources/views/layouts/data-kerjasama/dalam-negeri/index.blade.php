@@ -48,6 +48,7 @@
             <thead>
               <tr>
                 <th>No</th>
+                <th></th>
                 <th>Tahun</th>
                 <th>Kategori Kerjasama</th>
                 <th>Kategori Jenis Kerjasama</th>
@@ -74,6 +75,7 @@
     $(function() {
       var columns = [
         { data: 'DT_Row_Index', name: 'DT_Row_Index', orderable: false, searchable: false, width: '5%' },
+        { data: 'created_at', name: 'created_at', visible: false, searchable: false},
         { data: 'tahun', name: 'tahun' },
         { data: 'katdn.name', name: 'katdn.name' },
         { data: 'katjenisdn.name', name: 'katjenisdn.name' },
@@ -84,7 +86,7 @@
         { data: 'action', name: 'action', orderable: false, searchable: false }
       ];
 
-      createDatatables('#kerjasama-dalam-negeris-table', '{!! route('kerjasama-dalam-negeri.datatables') !!}', columns);
+      createDatatables('#kerjasama-dalam-negeris-table', '{!! route('kerjasama-dalam-negeri.datatables') !!}', columns, 'desc');
     });
   </script>
 @endsection

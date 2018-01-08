@@ -48,6 +48,7 @@
             <thead>
               <tr>
                 <th>No</th>
+                <th></th>
                 <th>Judul</th>
                 <th>Isi</th>
                 <th>Gambar</th>
@@ -70,13 +71,14 @@
     $(function() {
       var columns = [
         { data: 'DT_Row_Index', name: 'DT_Row_Index', orderable: false, searchable: false, width: '5%' },
+        { data: 'created_at', name: 'created_at', visible: false, searchable: false},
         { data: 'judul', name: 'judul' },
         { data: 'isi', name: 'isi' },
         { data: 'gambar', name: 'gambar', orderable: false, searchable: false, width: '20%' },
         { data: 'action', name: 'action', orderable: false, searchable: false, width: '15%' }
       ];
 
-      createDatatables('#prestasis-table', '{!! route('prestasi.datatables') !!}', columns);
+      createDatatables('#prestasis-table', '{!! route('prestasi.datatables') !!}', columns, 'desc');
     });
   </script>
 @endsection

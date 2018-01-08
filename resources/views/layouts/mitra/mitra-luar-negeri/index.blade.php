@@ -48,6 +48,7 @@
             <thead>
               <tr>
                 <th>No</th>
+                <th></th>
                 <th>Nama Mitra</th>
                 <th>Kategori Mitra</th>
                 <th>Logo Mitra</th>
@@ -72,13 +73,13 @@
       var columns = [
         { data: 'DT_Row_Index', name: 'DT_Row_Index', orderable: false, searchable: false, width: '5%' },
         { data: 'judul', name: 'judul' },
-        { data: 'katmitraln.name', name: 'katmitraln.name' },
+        { data: 'katmitraln.name', name: 'katmitraln.name',  width: '20%' },
         { data: 'gambar', name: 'gambar', orderable: false, searchable: false, width: '20%' },
         { data: 'user', name: 'user.username' },
         { data: 'action', name: 'action', orderable: false, searchable: false, width: '15%' }
       ];
 
-      createDatatables('#mitra-luar-negeris-table', '{!! route('mitra-luar-negeri.datatables') !!}', columns);
+      createDatatables('#mitra-luar-negeris-table', '{!! route('mitra-luar-negeri.datatables') !!}', columns, 'desc');
     });
   </script>
 @endsection

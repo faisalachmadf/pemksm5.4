@@ -20,6 +20,11 @@ class Pegawai extends Model
         return $this->where('nip', $nip)->with(['katbagian', 'katjabatan', 'katgolongan'])->first();
     }
 
+     public function user()
+    {
+        return $this->belongsTo('App\Models\User', 'id_user');
+    }
+
     public function katbagian()
     {
         return $this->belongsTo('App\Models\Kategori\Katbagian', 'id_katbagian');
@@ -33,5 +38,15 @@ class Pegawai extends Model
     public function katgolongan()
     {
         return $this->belongsTo('App\Models\Kategori\Katgolongan', 'id_katgolongan');
+    }
+
+    public function scopeGetDataByKat($query, $katSlug, $limit = null)
+    {
+        return $query->whereHas('katjabatan', function($query) use ($katSlug) {
+                $query->where('slug', $katSlug);
+            })
+            ->with(['katjabatan', 'user'])
+            ->orderBy('created_at', 'desc')
+            ->take($limit);
     }
 }

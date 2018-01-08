@@ -48,6 +48,7 @@
             <thead>
               <tr>
                 <th>No</th>
+                <th></th>
                 <th>Judul</th>
                 <th>Tag</th>
                 <th>Gambar</th>
@@ -71,6 +72,7 @@
     $(function() {
       var columns = [
         { data: 'DT_Row_Index', name: 'DT_Row_Index', orderable: false, searchable: false, width: '5%' },
+        { data: 'created_at', name: 'created_at', visible: false, searchable: false},
         { data: 'judul', name: 'judul' },
         { data: 'tag', name: 'tags.name' },
         { data: 'gambar', name: 'gambar', orderable: false, searchable: false, width: '20%' },
@@ -78,7 +80,7 @@
         { data: 'action', name: 'action', orderable: false, searchable: false, width: '15%' }
       ];
 
-      createDatatables('#galeri-lppds-table', '{!! route('galeri-lppd.datatables') !!}', columns);
+      createDatatables('#galeri-lppds-table', '{!! route('galeri-lppd.datatables') !!}', columns, 'desc');
     });
   </script>
 @endsection

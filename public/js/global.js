@@ -45,13 +45,17 @@ function dataTablesResponsive() {
     $('.dataTables_filter').addClass('pull-right');
 }
 
-function createDatatables(selector, url, columns) {
+function createDatatables(selector, url, columns, order) {
+    if (order == undefined) {
+        order = 'asc'
+    }
+
     table = $(selector).DataTable({
         processing: true,
         serverSide: true,
         pagingType: 'full_numbers',
         ajax: url,
-        order: [1, 'asc'],
+        order: [1, order],
         columns: columns,
         initComplete: function() {
             dataTablesResponsive();

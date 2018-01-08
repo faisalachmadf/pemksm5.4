@@ -11,7 +11,7 @@ class Tamu2Controller extends Controller
      public function index()
     {
         $data = [
-            'tamus' => Tamu::Urutan()->simplePaginate(10),
+            'tamus' => Tamu::Urutan()->Paginate(10),
             'kanan' => getDataKanan()
         ]; 
         return view('page.konsultasi.tamu', $data);

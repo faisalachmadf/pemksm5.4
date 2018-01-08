@@ -48,6 +48,7 @@
             <thead>
               <tr>
                 <th>No</th>
+                <th></th>
                 <th>Judul</th>
                 <th>Isi</th>
                 <th>Aktif</th>
@@ -70,13 +71,14 @@
     $(function() {
       var columns = [
         { data: 'DT_Row_Index', name: 'DT_Row_Index', orderable: false, searchable: false, width: '5%' },
+        { data: 'created_at', name: 'created_at', visible: false, searchable: false},
         { data: 'judul', name: 'judul' },
         { data: 'isi', name: 'isi' },
         { data: 'aktif', name: 'aktif' },
         { data: 'action', name: 'action', orderable: false, searchable: false, width: '15%' }
       ];
 
-      createDatatables('#visimisis-table', '{!! route('visi-misi.datatables') !!}', columns);
+      createDatatables('#visimisis-table', '{!! route('visi-misi.datatables') !!}', columns, 'desc');
     });
   </script>
 @endsection

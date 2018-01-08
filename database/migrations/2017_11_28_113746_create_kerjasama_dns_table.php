@@ -27,7 +27,7 @@ class CreateKerjasamaDnsTable extends Migration
             $table->integer('id_katopd')->unsigned();
             $table->text('keterangan');
             $table->string('gambar');
-            $table->string('slug');
+            $table->text('slug');
             $table->integer('id_user')->unsigned();
             $table->timestamps();
         });

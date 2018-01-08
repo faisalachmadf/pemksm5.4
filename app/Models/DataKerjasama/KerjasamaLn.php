@@ -58,4 +58,54 @@ class KerjasamaLn extends Model
     {
         return $this->belongsTo('App\Models\User', 'id_user');
     }
+
+     public function scopeGetNow($query, $limit = null)
+    {
+        return $query->with('katln')
+            ->whereDate('tanggal_awal', date('Y-m-d'))
+            ->take($limit);
+    }
+
+     public function scopeGetDataByKat($query, $katSlug, $limit = null)
+    {
+        return $query->whereHas('katln', function($query) use ($katSlug) {
+                $query->where('slug', $katSlug);
+            })
+            ->with(['katln', 'user'])
+            ->orderBy('tanggal_awal', 'desc')
+            ->take($limit);
+    }
+
+
+    public function scopeGetData($query, $katSlug = '', $slug = '')
+    {
+        return $query->whereHas('katln', function($query) use ($katSlug) {
+                if (empty($katSlug)) {
+                    $query->where('slug', '<>', $katSlug);
+                } else {
+                    $query->where('slug', $katSlug);
+                }
+            })
+            ->where(function($query) use ($slug) {
+                if (empty($slug)) {
+                    $query->where('slug', '<>', $slug);
+                } else {
+                    $query->where('slug', $slug);
+                }
+            })
+            ->with(['katln', 'user'])
+            ->orderBy('tanggal_awal', 'desc');
+    }
+
+
+    public function scopeGetSearch($query, $katSlug = '')
+    {
+        return $query->where(function($query) use ($katSlug) {
+                $query->where('judul', 'like', '%'.$katSlug.'%')
+                    ->orWhere('nomor', 'like', '%'.$katSlug.'%')
+                    ->orWhere('summary', 'like', '%'.$katSlug.'%');
+            })
+            ->with(['katln', 'user'])
+            ->orderBy('tanggal_awal', 'desc');
+    }
 }

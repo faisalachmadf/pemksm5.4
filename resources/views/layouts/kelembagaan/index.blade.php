@@ -71,6 +71,7 @@
     $(function() {
       var columns = [
         { data: 'DT_Row_Index', name: 'DT_Row_Index', orderable: false, searchable: false, width: '5%' },
+        { data: 'created_at', name: 'created_at', visible: false, searchable: false},
         { data: 'judul', name: 'judul' },
         { data: 'isi', name: 'isi' },
         { data: 'gambar', name: 'gambar', orderable: false, searchable: false, width: '15%' },
@@ -78,7 +79,7 @@
         { data: 'action', name: 'action', orderable: false, searchable: false, width: '15%' }
       ];
 
-      createDatatables('#kelembagaans-table', '{!! route('kelembagaan.datatables') !!}', columns);
+      createDatatables('#kelembagaans-table', '{!! route('kelembagaan.datatables') !!}', columns, 'desc');
     });
   </script>
 @endsection

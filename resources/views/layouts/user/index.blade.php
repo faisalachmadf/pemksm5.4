@@ -47,6 +47,7 @@
             <thead>
               <tr>
                 <th>No</th>
+                <th></th>
                 <th>Username</th>
                 <th>Email</th>
                 <th>Nama Depan</th>
@@ -71,6 +72,7 @@
     $(function() {
       var columns = [
         { data: 'DT_Row_Index', name: 'DT_Row_Index', orderable: false, searchable: false, width: '5%' },
+        { data: 'created_at', name: 'created_at', visible: false, searchable: false},
         { data: 'username', name: 'username' },
         { data: 'email', name: 'email' },
         { data: 'first_name', name: 'first_name' },
@@ -79,7 +81,7 @@
         { data: 'action', name: 'action', orderable: false, searchable: false }
       ];
 
-      createDatatables('#users-table', '{!! route('user.datatables') !!}', columns);
+      createDatatables('#users-table', '{!! route('user.datatables') !!}', columns, 'desc');
     });
   </script>
 @endsection

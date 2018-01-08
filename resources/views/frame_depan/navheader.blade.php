@@ -92,9 +92,9 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <ul class="multi-column-dropdown">
-                                       <li><a href="/tkksd/Data-Kerjasama-Dalam-Negeri">Data Kerjasama Dalam Negeri</a></li>    
+                                       <li><a href="/Kerja-Sama/KerjasamaDn">Data Kerjasama Dalam Negeri</a></li>    
                                         <li class="divider"></li>
-                                        <li><a href="/tkksd/Data-Kerjasama-Luar-Negeri">Data Kerjasama Luar Negeri</a></li>
+                                        <li><a href="/Kerja-Sama/KerjasamaLn">Data Kerjasama Luar Negeri</a></li>
                                        
                                     </ul>
                                 </div>

@@ -51,6 +51,7 @@
             <thead>
               <tr>
                 <th>No</th>
+                <th></th>
                 <th>tanggal</th>
                 <th>Nama</th>
                 <th>dari</th>
@@ -74,6 +75,7 @@
     $(function() {
       var columns = [
         { data: 'DT_Row_Index', name: 'DT_Row_Index', orderable: false, searchable: false, width: '5%' },
+        { data: 'created_at', name: 'created_at', visible: false, searchable: false},
         { data: 'created_at', name: 'created_at' },
         { data: 'nama', name: 'nama' },
         { data: 'dari', name: 'dari' },
@@ -81,7 +83,7 @@
          { data: 'action', name: 'action', orderable: false, searchable: false, width: '15%' }
       ];
 
-      createDatatables('#tamus-table', '{!! route('tamu.datatables') !!}', columns);
+      createDatatables('#tamus-table', '{!! route('tamu.datatables') !!}', columns, 'desc');
     });
   </script>
 @endsection

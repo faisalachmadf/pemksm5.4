@@ -40,20 +40,18 @@ class MitralnController extends Controller
             'gambar' => 'mitraln'
         ];
 
-        return Datatables::of(Mitraln::with(['Katmitraln', 'user']))
+        return Datatables::of(Mitraln::with(['katmitraln', 'user']))
             ->addColumn('action', function($data) use ($param) {
                 return generateAction($param, $data->slug);
             })
             ->editColumn('gambar', function($data) use ($param) {
                 return generateImagePath($param['gambar'], $data->gambar, $data->judul);
             })
-            ->editColumn('judul', function($data) {
-                return str_limit($data->judul, 100);
-            })
+           
             ->addColumn('user', function($data) {
                 return generateUser($data->user);
             })
-            ->rawColumns(['judul', 'gambar', 'action'])
+            ->rawColumns([ 'gambar', 'action'])
             ->addIndexColumn()
             ->make(true);
     }

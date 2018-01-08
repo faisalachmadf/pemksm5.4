@@ -23,17 +23,39 @@
 
                   <center><img src="{{ asset('image/mitraln/thumbnail/'.$pemerintahan->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $pemerintahan->judul }}" ></center>
                  
-
-                <center><div class="inner">
+<div class="inner">
                   <br/>
-                  <p>{{ strtoupper($pemerintahan->judul) }}</p>
+                <h5>{{ strtoupper($pemerintahan->judul) }}</h5>
                 </div>
-            
-                <a href="#">
-                  Selengkapnya
-                </a></center>
+              <br>
+                  <button type="button" class="btn btn-info">
+               <h6>Selengkapnya</h6>
+              </button>
+             
+              <!-- Modal
+               <div class="modal fade" id="modal-info">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button>
+                       <center> <h4 class="modal-title">{{ strtoupper($pemerintahan->judul) }}</h4>  </center>
+                    </div>
+                    <div class="modal-body">
+                       <center><img src="{{ asset('image/mitradn/thumbnail/'.$pemerintahan->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $pemerintahan->judul }}" ></center><br>
+                      <p>{!! $pemerintahan->isi !!}</p>
+                    </div>
+                    <div class="modal-footer">
+                     <h6>di upload oleh :  <i class="glyphicon glyphicon-user"></i> {{ generateUser($pemerintahan->user) }} </h6> 
+                    </div>
+                  </div>
+                  /.modal-content 
+                </div>
+             /.modal-dialog 
+              </div>
+              -->
 
-              
+              <!-- /.modal -->    
             </div>
           @endforeach
           </div>
@@ -56,22 +78,44 @@
                   <center><img src="{{ asset('image/mitraln/thumbnail/'.$lembaga->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $lembaga->judul }}" ></center>
                  
 
-                <center><div class="inner">
+                <div class="inner">
                   <br/>
-                  <p>{{ strtoupper($lembaga->judul) }}</p>
+                <h5>{{ strtoupper($lembaga->judul) }}</h5>
                 </div>
-            
-                <a href="#">
-                  Selengkapnya
-                </a></center>
+              <br>
+                  <button type="button" class="btn btn-info">
+               <h6>Selengkapnya</h6>
+              </button>
+             
+              <!-- Modal
+               <div class="modal fade" id="modal-info">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button>
+                       <center> <h4 class="modal-title">{{ strtoupper($lembaga->judul) }}</h4>  </center>
+                    </div>
+                    <div class="modal-body">
+                       <center><img src="{{ asset('image/mitradn/thumbnail/'.$lembaga->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $lembaga->judul }}" ></center><br>
+                      <p>{!! $lembaga->isi !!}</p>
+                    </div>
+                    <div class="modal-footer">
+                     <h6>di upload oleh :  <i class="glyphicon glyphicon-user"></i> {{ generateUser($lembaga->user) }} </h6> 
+                    </div>
+                  </div>
+                  /.modal-content 
+                </div>
+             /.modal-dialog 
+              </div>
+              -->
 
-              
+              <!-- /.modal -->    
             </div>
           @endforeach
           </div>
-           <hr/>
+          <hr/>
         </div>
-   
 
           <!-- untuk Pihak Ketiga -->
         <div class="col-md-12">
@@ -86,14 +130,14 @@
                   <center><img src="{{ asset('image/mitraln/thumbnail/'.$swasta->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $swasta->judul }}" ></center>
                  
 
-                <center><div class="inner">
+                <div class="inner">
                   <br/>
-                  <p>{{ strtoupper($swasta->judul) }}</p>
+                <h5>{{ strtoupper($swasta->judul) }}</h5>
                 </div>
-            
-                <a href="#">
-                  Selengkapnya
-                </a></center>
+              <br>
+                  <button type="button" class="btn btn-info">
+               <h6>Selengkapnya</h6>
+              </button>
 
               
             </div>

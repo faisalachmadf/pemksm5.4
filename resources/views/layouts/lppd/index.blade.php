@@ -47,6 +47,7 @@
             <thead>
               <tr>
                 <th>No</th>
+                <th></th>
                 <th>Judul</th>
                 <th>File</th>
                 <th>User</th>
@@ -75,7 +76,7 @@
         { data: 'action', name: 'action', orderable: false, searchable: false, width: '15%' }
       ];
 
-      createDatatables('#lppds-table', '{!! route('lppd.datatables') !!}', columns);
+      createDatatables('#lppds-table', '{!! route('lppd.datatables') !!}', columns, 'desc');
     });
   </script>
 @endsection

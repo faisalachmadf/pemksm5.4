@@ -47,9 +47,10 @@
             <thead>
               <tr>
                 <th>No</th>
+                <th></th>
                 <th>Judul Layanan</th>
                 <th>Bagian</th>
-                <th>File</th>
+                <th>Gambar</th>
                 <th>User</th>
                 <th>Aksi</th>
               </tr>
@@ -70,6 +71,7 @@
     $(function() {
       var columns = [
         { data: 'DT_Row_Index', name: 'DT_Row_Index', orderable: false, searchable: false, width: '5%' },
+        { data: 'created_at', name: 'created_at', visible: false, searchable: false},
         { data: 'judul', name: 'judul' },
         { data: 'katbagian.name', name: 'katbagian.name' },
         { data: 'file', name: 'file' },
@@ -77,7 +79,7 @@
         { data: 'action', name: 'action', orderable: false, searchable: false, width: '15%' }
       ];
 
-      createDatatables('#layanans-table', '{!! route('layanan.datatables') !!}', columns);
+      createDatatables('#layanans-table', '{!! route('layanan.datatables') !!}', columns, 'desc');
     });
   </script>
 @endsection

@@ -47,6 +47,7 @@
             <thead>
               <tr>
                 <th>No</th>
+                <th></th>
                 <th>Judul</th>
                 <th>Kategori</th>
                 <th>File</th>
@@ -70,6 +71,7 @@
     $(function() {
       var columns = [
         { data: 'DT_Row_Index', name: 'DT_Row_Index', orderable: false, searchable: false, width: '5%' },
+        { data: 'created_at', name: 'created_at', visible: false, searchable: false},
         { data: 'judul', name: 'judul' },
         { data: 'katlaporan.name', name: 'katlaporan.name' },
         { data: 'file', name: 'file' },
@@ -77,7 +79,7 @@
         { data: 'action', name: 'action', orderable: false, searchable: false, width: '15%' }
       ];
 
-      createDatatables('#laporans-table', '{!! route('laporan.datatables') !!}', columns);
+      createDatatables('#laporans-table', '{!! route('laporan.datatables') !!}', columns, 'desc');
     });
   </script>
 @endsection

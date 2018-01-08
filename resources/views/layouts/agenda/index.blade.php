@@ -47,6 +47,7 @@
             <thead>
               <tr>
                 <th>No</th>
+                <th>Update Terakhir</th>
                 <th>Tanggal Acara</th>
                 <th>Bagian</th>
                 <th>Judul Acara</th>
@@ -70,6 +71,7 @@
     $(function() {
       var columns = [
         { data: 'DT_Row_Index', name: 'DT_Row_Index', orderable: false, searchable: false, width: '5%' },
+        { data: 'created_at', name: 'created_at', visible: false, searchable: false},
         { data: 'tanggal', name: 'tanggal' },
         { data: 'katbagian.name', name: 'katbagian.name' },
         { data: 'judul', name: 'judul' },
@@ -77,7 +79,7 @@
         { data: 'action', name: 'action', orderable: false, searchable: false, width: '15%' }
       ];
 
-      createDatatables('#agendas-table', '{!! route('agenda.datatables') !!}', columns);
+      createDatatables('#agendas-table', '{!! route('agenda.datatables') !!}', columns, 'desc');
     });
   </script>
 @endsection
