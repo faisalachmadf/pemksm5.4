@@ -18,7 +18,7 @@
                   <div class="item {{ $key == 0 ? 'active' : '' }}">
                     <img src="{{ asset('image/beranda/'.$banner->gambar) }}" class="img-responsive img-banner" alt="{{ $banner->judul }}">
                     <div class="carousel-caption">
-                     <h2>{{ $banner->judul }}</h2>
+                     <h2 style="color: gold">{{ $banner->judul }}</h2>
                     </div>
                   </div>
                   @endforeach

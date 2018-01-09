@@ -78,7 +78,7 @@
                                     <div class="td-post-date two">
                                         <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($berita->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($berita->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $berita->dibaca }}  <i class=""></i><i class="glyphicon glyphicon-list-alt"></i>{{ $berita->katberita->name }}</h6>
                                     </div>
-                                    <hr/>
+                                    
                                 </div>
                             @endif
                             <div class="clearfix"></div>

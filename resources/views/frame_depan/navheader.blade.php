@@ -120,7 +120,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('Hubungi-Kami.index') }}">Hubungi Kami</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">Lokasi Kami</a></li>
+                            <li><a href="{{ route('Lokasi') }}">Lokasi Kami</a></li>
                             
                             
                         </ul>

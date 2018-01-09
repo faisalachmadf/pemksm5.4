@@ -1,49 +1,4 @@
-<div class="footerlagi-section">
-	
-	<div class="container">
-		<br/>
-		<center><h1> Media <span>Sosial</span></h1></center>
-					<br/>
-					<br/>
-						<div class="col-md-4 footerlagi-grid">
-						<h4><font color="#000">Facebook</h4></font>
-						  <div class="editor-pics">
-							  <div id="fb-root"></div>
-								<script>(function(d, s, id) {
-								  var js, fjs = d.getElementsByTagName(s)[0];
-								  if (d.getElementById(id)) return;
-								  js = d.createElement(s); js.id = id;
-								  js.src = "//connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v2.6";
-								  fjs.parentNode.insertBefore(js, fjs);
-								}(document, 'script', 'facebook-jssdk'));</script>
 
-
-								<div class="fb-page" data-href="https://www.facebook.com/Biro-Otonomi-Daerah-dan-Kerjasama-393299957534362/" data-tabs="timeline" data-width="300" data-height="400" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div>   
-								          </div>
-								<div class="clearfix"></div>
-							</div>
-							
-						
-						
-						<div class="col-md-4 footerlagi-grid">
-							<h4><font color="#000">Twitter</font></h4>
-								<div class="editor-pics">
-										 <a class="twitter-timeline" href="https://twitter.com/birootdaksm" data-widget-id="564996746669879297">Tweets by @birootdaksm</a>
-								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-										<div class="clearfix"></div>
-								</div>
-										
-							
-						</div>
-						<div class="col-md-4 footerlagi-grid">
-								<h4><font color="#000">Instagram</font></h4>
-								<!-- LightWidget WIDGET --><script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/aae4ca0758a5504abf98bd98d55306fd.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
-								<div class="clearfix"></div>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-	</div>
-</div>
 
 
 <div class="footer-section">
@@ -90,8 +45,9 @@
 						</div>
 						<div class="col-md-4 footer-grid">
 							<h4></h4>
-								<div class="img-responsive"><center>
-										 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.9004254727215!2d107.61659331407495!3d-6.902510369467091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e64c5e8866e5%3A0x37be7ac9d575f7ed!2sGedung+Sate!5e0!3m2!1sen!2sid!4v1513666251435" width="250" height="300" frameborder="0" style="border:0" responsive></iframe></center>
+								<br>
+									 <div class="peta-responsive">
+										 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.9004254727215!2d107.61659331407495!3d-6.902510369467091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e64c5e8866e5%3A0x37be7ac9d575f7ed!2sGedung+Sate!5e0!3m2!1sen!2sid!4v1513666251435" width="250" height="300" frameborder="0" style="border:0" responsive></iframe>
 											<div class="clearfix"></div>
 										</div>
 										
