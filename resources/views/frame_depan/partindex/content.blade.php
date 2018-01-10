@@ -163,6 +163,7 @@
                         <br/>
                         <br/>
                              <!--//articles-->
+
                 </div>
 
 
@@ -408,9 +409,9 @@
                     <div id="example1">
                     	<div class="container">
                         <div id="owl-demo" class="owl-carousel text-center">
-                            @foreach($aplikasis as $aplikasi)
+                            @foreach($links as $link)
                             <div class="item" style="margin-left: 2em;">
-                                <a href="{{ $aplikasi->link }}" target="_blank"><img class="img-responsive lot img-thumbnail" src="{{ asset('image/beranda/'.$aplikasi->gambar) }}" alt="{{ $aplikasi->judul }}"/></a>
+                                <a href="{{ $link->link }}" target="_blank"><img class="img-responsive lot img-thumbnail" src="{{ asset('image/beranda/'.$link->gambar) }}" alt="{{ $link->judul }}"/></a>
                             </div>
                             @endforeach
                         </div>
@@ -422,7 +423,7 @@
                                           <script>
                                           $(document).ready(function() {
                                                $("#owl-demo").owlCarousel({
-                                                items :5,
+                                                items :6,
                                                 lazyLoad : true,
                                                 autoPlay : true,
                                                 navigation : true,
