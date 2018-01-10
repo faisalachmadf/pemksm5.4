@@ -60,6 +60,7 @@
                    
                             </tr>
                                 @endforeach
+                               
                                    @else
                                      <tr>
                             
@@ -72,7 +73,14 @@
                             </tbody>
                             </table>
 
-
+                            <hr/><h6>Bagikan : </h6>
+                                    <a rel='nofollow' style="margin-right: 5px;" target="_blank" href='https://www.facebook.com/sharer.php?u={{ route('Publikasi', [$publikasi->katfile->slug]) }}'>
+                                    <img src='http://syam.eu.org/icon/fb.jpg' alt='' width='30' height='30'></a>
+                                    <a rel='nofollow' style="margin-right: 5px;" target="_blank" href='https://twitter.com/share?url={{ route('Publikasi', [$publikasi->katfile->slug]) }}'>
+                                    <img src='http://syam.eu.org/icon/tw.jpg' alt='' width='30' height='30'></a>
+                                    <a rel='nofollow' style="margin-right: 5px;" target="_blank" href='https://plus.google.com/share?url={{ route('Publikasi', [$publikasi->katfile->slug]) }}'>
+                                     <img src='http://syam.eu.org/icon/g.jpg' alt='' width='30' height='30'></a>
+                                    | &nbsp<a href="#" onclick="window.print()"><img src="/temafrontend/images/print.png" alt='' width='50' height='50'></a>
                         
                         @if($pencarian)
                             {{ $publikasis->appends(['pencarian' => $data['pencarian']])->links() }}

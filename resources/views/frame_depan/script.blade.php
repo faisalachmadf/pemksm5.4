@@ -1,5 +1,5 @@
 <div class="copyright">
-					<p>&copy; 2015 BIRO PEMERINTAHAN DAN KERJA SAMA | SUBBAG PERENCANAAN DAN KETATAUSAHAAN</p>
+					<p>&copy; 2018 BIRO PEMERINTAHAN DAN KERJA SAMA | SUBBAG PERENCANAAN DAN KETATAUSAHAAN</p>
 				</div>
 				<!--start-smoth-scrolling-->
 						<script type="text/javascript">

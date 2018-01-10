@@ -55,7 +55,7 @@
                             <div class="row">
                             	<div class="col-sm-6">
                                     <ul class="multi-column-dropdown"> 
-			                            <li><a href="{{ route('Publikasi', ['Materi-Rapat']) }}">Materi-Materi</a></li>
+			                            <li><a href="{{ route('Publikasi', ['File']) }}">File</a></li>
 			                            <li class="divider"></li>
 			                            <li><a href="{{ route('Publikasi', ['eBook']) }}">e-Book</a></li>
 			                            <li class="divider"></li>
@@ -121,6 +121,8 @@
                             <li><a href="{{ route('Hubungi-Kami.index') }}">Hubungi Kami</a></li>
                             <li class="divider"></li>
                             <li><a href="{{ route('Lokasi') }}">Lokasi Kami</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{{ route('Site') }}">Peta Situs</a></li>
                             
                             
                         </ul>

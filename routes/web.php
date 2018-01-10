@@ -99,6 +99,7 @@ Route::group(['namespace' => 'Frontend'], function() {
     Route::group(['namespace' => 'Konsultasi', 'prefix' => 'konsultasi'], function() {
         Route::resource('Hubungi-Kami','Tamu2Controller');
         Route::get('Lokasi-Kami','LokasiController@Index')->name('Lokasi');
+        Route::get('Peta-Situs','SiteController@Index')->name('Site');
       
         
     });

@@ -32,8 +32,20 @@
                              <p>Telp : (022) 4231161</p>
                              <p>email : biropemkes@jabarprov.go.id, biropemksm@gmail.com</p>
                              <p>&nbsp</p>
+                             <a href="https://www.facebook.com/pemksm"><img src="/temafrontend/images/fb.png" width="40px" height="40px"/> &nbsp Facebook</a> |
+              <a href="https://twitter.com/pemksm_jabar"><img src="/temafrontend/images/twit.png" width="30px" height="30px"/> &nbsp Twiter </a>|
+              <a href="https://www.instagram.com/biropemksmjabar/"><img src="/temafrontend/images/ig.png" width="30px" height="30px"/> &nbsp Instagram</a>
                              <p>&nbsp</p>
                              <p>&nbsp</p>
+
+                               <hr/><h6>Bagikan : </h6>
+                                    <a rel='nofollow' style="margin-right: 5px;" target="_blank" href='https://www.facebook.com/sharer.php?u={{ route('Lokasi') }}'>
+                                    <img src='http://syam.eu.org/icon/fb.jpg' alt='' width='30' height='30'></a>
+                                    <a rel='nofollow' style="margin-right: 5px;" target="_blank" href='https://twitter.com/share?url={{ route('Lokasi') }}'>
+                                    <img src='http://syam.eu.org/icon/tw.jpg' alt='' width='30' height='30'></a>
+                                    <a rel='nofollow' style="margin-right: 5px;" target="_blank" href='https://plus.google.com/share?url={{ route('Lokasi') }}'>
+                                     <img src='http://syam.eu.org/icon/g.jpg' alt='' width='30' height='30'></a>
+                                    | &nbsp<a href="#" onclick="window.print()"><img src="/temafrontend/images/print.png" alt='' width='50' height='50'></a>
                             </div>
                             <div class="clearfix"></div>
                         </div>

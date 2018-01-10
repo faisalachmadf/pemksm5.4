@@ -68,13 +68,28 @@
                                     </div>
                                     <hr/>
                                     {!! $berita->isi !!}
+                                    <hr/><h6>Bagikan :</h6><br/>
+                                    
+                                    <!-- Share Media Sosial dan Print -->
+
+                                    <a rel='nofollow' style="margin-right: 5px;" target="_blank" href='https://www.facebook.com/sharer.php?u={{ route('Berita', [$berita->katberita->slug, $berita->slug]) }}'>
+									<img src='http://syam.eu.org/icon/fb.jpg' alt='' width='30' height='30'></a>
+									<a rel='nofollow' style="margin-right: 5px;" target="_blank" href='https://twitter.com/share?url={{ route('Berita', [$berita->katberita->slug, $berita->slug]) }}'>
+									<img src='http://syam.eu.org/icon/tw.jpg' alt='' width='30' height='30'></a>
+									<a rel='nofollow' style="margin-right: 5px;" target="_blank" href='https://plus.google.com/share?url={{ route('Berita', [$berita->katberita->slug, $berita->slug]) }}'>
+									 <img src='http://syam.eu.org/icon/g.jpg' alt='' width='30' height='30'></a>
+									| &nbsp<a href="#" onclick="window.print()"><img src="/temafrontend/images/print.png" alt='' width='50' height='50'></a>
+
+
                                 </div>
+                                <br>
+                               
                             @else
-                                <div class="col-md-5 item-pic">
+                                <div class="col-md-3 item-pic">
                                     <img src="{{ asset('image/berita/thumbnail/'.$berita->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $berita->judul }}"/>
                                 </div>
-                                <div class="col-md-7 item-details">
-                                    <h4><a href="{{ route('Berita', [$berita->katberita->slug, $berita->slug]) }}">{{ strtoupper($berita->judul) }}</a></h4>
+                                <div class="col-md-9 item-details">
+                                    <p><a href="{{ route('Berita', [$berita->katberita->slug, $berita->slug]) }}">{{ strtoupper($berita->judul) }}</a></p>
                                     <div class="td-post-date two">
                                         <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($berita->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($berita->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $berita->dibaca }}  <i class=""></i><i class="glyphicon glyphicon-list-alt"></i>{{ $berita->katberita->name }}</h6>
                                     </div>
@@ -82,6 +97,7 @@
                                 </div>
                             @endif
                             <div class="clearfix"></div>
+                            
                         </div>
                         
                         @endforeach

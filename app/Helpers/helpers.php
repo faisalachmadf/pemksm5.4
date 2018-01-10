@@ -161,8 +161,8 @@ if (! function_exists('getDataKanan')) {
    {
         $kanan = [
             'publikasis' => \App\Models\Publikasi::getDataByKat([], 5, true)->get(),
-            'populars' => \App\Models\Berita::getPopular(5)->get(),
-            'populars2' => \App\Models\Publikasi::getPopular(5)->get(),
+            'populars' => \App\Models\Berita::getPopular(4)->get(),
+            'populars2' => \App\Models\Publikasi::getPopular(4)->get(),
             'ppids' => '',
             'layanans' => \App\Models\Layanan::with(['katbagian', 'user'])->take(3)->get()
         ];
