@@ -22,4 +22,9 @@ class Katfile extends Model
     {
         return $this->where('slug', $slug)->first();
     }
+
+    public function publikasis()
+    {
+        return $this->hasMany('App\Models\Publikasi', 'id_katfile');
+    }
 }

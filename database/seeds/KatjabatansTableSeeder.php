@@ -62,6 +62,13 @@ class KatjabatansTableSeeder extends Seeder
 		],
 
 		[
+		'name'=>'Jabatan Fungsional',
+		'slug'=>'Jabatan Fungsional', 
+		'created_at'=>'2017-12-19 10:00:00',
+		'updated_at'=>'2017-12-19 10:00:00'
+		],
+
+		[
 		'name'=>'Analis Urusan Pemerintahan Daerah',
 		'slug'=>'Analis-Urusan-Pemerintahan-Daerah', 
 		'created_at'=>'2017-12-19 10:00:00',

@@ -4,7 +4,7 @@
 @section('content')
     <div class="banner two">
         <div class="container"> 
-            <h2 class="inner-tittle">{{ strtoupper($katlaporan ? $katlaporan->name : 'LAPORAN') }}</h2>
+            <h2 class="inner-tittle">{{ strtoupper($katlaporan ? $katlaporan->name : 'Laporan') }}</h2>
         </div>
     </div>
     
@@ -13,27 +13,22 @@
             <div class="col-md-8 mag-innert-left">
                 <div class="banner-bottom-left-grids">
                     <br/>
-
                     <form class="form" action="{{ route('Laporan', $katlaporan ? [$katlaporan->slug, 'pencarian'] : ['pencarian']) }}" method="POST">
                         {{ csrf_field() }}
                         <div class="form-group">
-                            <label for="pencarian">Pencarian  {{ $katlaporan ? $katlaporan->name : 'Laporan' }}:</label>
+                            <label for="pencarian">Pencarian {{ $katlaporan ? $katlaporan->name : 'Laporan' }}:</label>
                             <div class="input-group btn-katberita">
-                                
                                 <input type="hidden" name="katslug" value="{{ $katlaporan ? $katlaporan->slug : '' }}">
-                                
                                 <input type="text" name="pencarian" id="pencarian" class="form-control" placeholder="Masukan kata kunci..." value="{{ @$data['pencarian'] }}">
-                                
                                 <div class="input-group-btn">
                                     <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i></button>
                                 </div>
-
                             </div>
                         </div>
                     </form>
                     <hr/>
 
-                    <!--/Show dari Laporan-->
+                    <!--/Show dari laporan-->
                     <div class="technology">
                         @if($pencarian)
                             <h3>Hasil Pencarian {{ $laporans->count() > 0 ? '' : 'Tidak Ditemukan' }}</h3>
@@ -64,7 +59,8 @@
                                     <span>Download</span></a> </td>
                    
                             </tr>
-                               @endforeach
+                                @endforeach
+                               
                                    @else
                                      <tr>
                             
@@ -73,22 +69,9 @@
                                 <td></td>
                    
                             </tr>
-                                @endif
+                            @endif
                             </tbody>
                             </table>
-                              <hr/><h6>Bagikan : </h6>
-                                    <a rel='nofollow' style="margin-right: 5px;" target="_blank" href='https://www.facebook.com/sharer.php?u={{ route('Laporan', [$laporan->katlaporan->slug]) }}'>
-                                    <img src='http://syam.eu.org/icon/fb.jpg' alt='' width='30' height='30'></a>
-                                    <a rel='nofollow' style="margin-right: 5px;" target="_blank" href='https://twitter.com/share?url={{ route('Laporan', [$laporan->katlaporan->slug]) }}'>
-                                    <img src='http://syam.eu.org/icon/tw.jpg' alt='' width='30' height='30'></a>
-                                    <a rel='nofollow' style="margin-right: 5px;" target="_blank" href='https://plus.google.com/share?url={{ route('Laporan', [$laporan->katlaporan->slug]) }}'>
-                                     <img src='http://syam.eu.org/icon/g.jpg' alt='' width='30' height='30'></a>
-                                    | &nbsp<a href="#" onclick="window.print()"><img src="/temafrontend/images/print.png" alt='' width='50' height='50'></a>
-                          
-                          
-                            
-
-                        
                         @if($pencarian)
                             {{ $laporans->appends(['pencarian' => $data['pencarian']])->links() }}
                         @else
