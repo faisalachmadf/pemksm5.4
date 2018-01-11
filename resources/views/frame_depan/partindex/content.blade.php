@@ -364,21 +364,23 @@
                        <div class="row">
 			            <div class="col-lg-4 col-xs-4">
 			              <!-- small box -->
+			              <a href="{{ route('Tkksd')}}">
 			                <center><img src="/adminkelola/dist/img/logobiro.png" class="img-responsive"></center>
 			                <center><div class="inner">
 			                  <br>
-			                  <h4>TKKSD</h4>
+			                  <h4>TKKSD</h4></a>
 			                </div> </center>
          
 			            </div>
 			            <div class="col-lg-4 col-xs-4">
 			              <!-- small box -->
+			                <a href="{{ route('Lppd')}}">
 			                  <center><img src="/adminkelola/dist/img/logobiro.png" class="img-responsive"></center>
 			                 
 
 			                <center><div class="inner">
 			                  <br>
-			                  <h4>LPPD</h4>
+			                  <h4>LPPD</h4></a>
 			                </div> </center>
 			           
 			            </div>

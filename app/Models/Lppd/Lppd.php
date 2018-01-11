@@ -28,6 +28,7 @@ class Lppd extends Model
         static::saving(function($model) {
             $user = Sentinel::getUser();
 
+
             if ($user) {
                 $model->id_user = $user->id;
             }
@@ -42,6 +43,17 @@ class Lppd extends Model
     public function user()
     {
         return $this->belongsTo('App\Models\User', 'id_user');
+    }
+
+      public function ScopeUrutan($query)
+    {
+        return $query->OrderBy('created_at','desc');
+
+    }
+
+     public function scopeDiunduh($query, $slug)
+    {
+        return $query->where('slug', $slug)->increment('diunduh');
     }
 }
 

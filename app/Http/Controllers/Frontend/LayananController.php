@@ -32,7 +32,7 @@ class LayananController extends Controller
         $data = [
             'katbagians' => Katbagian::all(),
             'pencarian' => $pencarian,
-            'layanans' => $layanans->simplePaginate(10),
+            'layanans' => $layanans->Paginate(10),
             'diunduh' => $diunduh,
             'kanan' => getDataKanan()
         ];

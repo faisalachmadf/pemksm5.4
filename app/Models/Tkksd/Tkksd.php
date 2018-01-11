@@ -44,5 +44,16 @@ class Tkksd extends Model
     {
         return $this->belongsTo('App\Models\User', 'id_user');
     }
+
+      public function ScopeUrutan($query)
+    {
+        return $query->OrderBy('created_at','desc');
+
+    }
+
+     public function scopeDiunduh($query, $slug)
+    {
+        return $query->where('slug', $slug)->increment('diunduh');
+    }
 }
 
