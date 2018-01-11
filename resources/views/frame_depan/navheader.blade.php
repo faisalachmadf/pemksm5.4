@@ -127,6 +127,18 @@
                             
                         </ul>
                       </li>
+
+                     <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" data-submenu aria-expanded="false"><span class="glyphicon glyphicon-search"></span></a>
+                        <ul class="dropdown-menu">
+                         <form> 
+                            <input type="text" class="form-control" id="nama" name="nama" value="{{ old('nama') }}" placeholder="Masukan Kata Kunci" required>
+                        </form>
+                    
+                            
+                            
+                        </ul>
+                      </li>
                     
                     
                 </ul>

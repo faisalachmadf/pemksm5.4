@@ -47,6 +47,8 @@
                                       <h5>{{ $katln->name }}</h5>
                                   </a><br>
                                   @endforeach
+
+                                    <label for="kategori-kerjasama">Masa Berlaku yang akan Berakhir</label><hr/>
                                   <a href="{{ route('KerjasamaLn', ['waktu-hampir-habis']) }}">
                                       <h5>Kerja Sama Waktu Hampir Habis</h5>
                                   </a><br>
@@ -103,6 +105,7 @@
                                          
                                            <th ><h5><p>Nama Kerja Sama</p></h5></th>
                                            <th style="width: 15%;"><h5><p>Tanggal</p></h5></th>
+                                           <th style="width: 15%;"><h5><p>Berakhir</p></h5></th>
                                            <th class="text-center">Lihat</th>
 
                                            </tr>   
@@ -119,6 +122,8 @@
                                                <td><p><h6>{{ strtoupper($kerjasamaln->judul) }} <br> <font color="red"><h8>{{ $kerjasamaln->katln->name }}</h8></font>
                                                </h6></p></td>
                                                <td><p><h6>{{ date('d M Y', strtotime($kerjasamaln->tanggal_awal)) }}
+                                               </h6></p></td>
+                                               <td><p><h6>{{ date('d M Y', strtotime($kerjasamadn->tanggal_akhir)) }}
                                                </h6></p></td>
                                                <td class="text-center"><p><h6> <a href="{{ route('KerjasamaLn', [$kerjasamaln->katln->slug, $kerjasamaln->slug]) }}"> <li class="glyphicon glyphicon-new-window"></li> </a></h6></p></td>
                                             

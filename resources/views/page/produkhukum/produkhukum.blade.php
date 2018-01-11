@@ -12,7 +12,11 @@
 	    <div class="container">
 	    	
       <!-- /.row -->
-	    	<form class="form" action="{{ url('Produk-Hukum/Hasilpencarian') }}" method="GET">
+
+           
+
+              <div class="col-md-8 mag-innert-left">
+                <form class="form" action="{{ url('Produk-Hukum/Hasilpencarian') }}" method="GET">
                         
                         <div class="form-group">
                             <label for="pencarian">Pencarian Produk Hukum:</label>
@@ -24,10 +28,7 @@
                             </div>
                         </div>
             </form>
-
-           
-
-              <div class="col-md-8 mag-innert-left">
+            <h2 class="tittle"></h2>
               	
 	            <!--/Undang-Undang-->
 	            <blockquote> Undang-Undang</blockquote>

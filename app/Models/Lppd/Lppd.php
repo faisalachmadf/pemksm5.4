@@ -45,7 +45,7 @@ class Lppd extends Model
         return $this->belongsTo('App\Models\User', 'id_user');
     }
 
-      public function ScopeUrutan($query)
+    public function ScopeUrutan($query)
     {
         return $query->OrderBy('created_at','desc');
 

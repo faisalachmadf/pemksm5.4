@@ -47,6 +47,8 @@
                                       <h5>{{ $katdn->name }}</h5>
                                   </a><br>
                                   @endforeach
+
+                                   <label for="kategori-kerjasama">Masa Berlaku yang akan Berakhir</label><hr/>
                                   <a href="{{ route('KerjasamaDn', ['waktu-hampir-habis']) }}">
                                       <h5>Kerja Sama Waktu Hampir Habis</h5>
                                   </a><br>
@@ -72,8 +74,9 @@
                                         @if(count($kerjasamadns))
                                           @foreach($kerjasamadns as $kerjasamadn)
                                             <div class="col-md-12 item-pic2 text-justify">
-                                              <img src="{{ asset('image/kerjasama-dalam-negeri/'.$kerjasamadn->gambar) }}" class="img-responsive img-banner" alt="{{ $kerjasamadn->judul }}"/>
+                                              <img src="{{ asset('image/kerjasama-dalam-negeri/'.$kerjasamadn->gambar) }}" class="img-responsive" alt="{{ $kerjasamadn->judul }}" style="width: 500px;" />
                                               <br/><br/>
+
                                               <legend>
                                                 <h4 class="inner two">
                                                   <a href="{{ route('KerjasamaDn', [$kerjasamadn->katdn->slug, $kerjasamadn->slug]) }}">{{ strtoupper($kerjasamadn->judul) }}</a>
@@ -83,7 +86,12 @@
                                               {!! $kerjasamadn->nomor !!}<br/>
                                               <label>Pihak:</label>
                                               {!! $kerjasamadn->pihak !!}<br/>
-                                              <label>Sumamry:</label>
+                                               <label>Ditandatangani:</label>
+                                             <b> {{ date('d M Y', strtotime($kerjasamadn->tanggal_awal)) }} </b> | 
+                                               <label>Berakhir pada:</label>
+                                             <b> {{ date('d M Y', strtotime($kerjasamadn->tanggal_akhir)) }} </b> <br/>
+
+                                              <label>Summary:</label>
                                               {!! $kerjasamadn->summary !!}<br/>
                                               <label>Keterangan:</label>
                                               {!! $kerjasamadn->keterangan !!}<br/>
@@ -103,6 +111,7 @@
                                          
                                            <th ><h5><p>Nama Kerja Sama</p></h5></th>
                                            <th style="width: 15%;"><h5><p>Tanggal</p></h5></th>
+                                           <th style="width: 15%;"><h5><p>Berakhir</p></h5></th>
                                            <th class="text-center">Lihat</th>
 
                                            </tr>   
@@ -119,6 +128,8 @@
                                                <td><p><h6>{{ strtoupper($kerjasamadn->judul) }} <br> <font color="red"><h8>{{ $kerjasamadn->katdn->name }}</h8></font>
                                                </h6></p></td>
                                                <td><p><h6>{{ date('d M Y', strtotime($kerjasamadn->tanggal_awal)) }}
+                                               </h6></p></td>
+                                                <td><p><h6>{{ date('d M Y', strtotime($kerjasamadn->tanggal_akhir)) }}
                                                </h6></p></td>
                                                <td class="text-center"><p><h6> <a href="{{ route('KerjasamaDn', [$kerjasamadn->katdn->slug, $kerjasamadn->slug]) }}"> <li class="glyphicon glyphicon-new-window"></li> </a></h6></p></td>
                                             

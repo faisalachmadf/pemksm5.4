@@ -74,15 +74,15 @@
                 @endif
               </div>
             </div>
-            <div class="form-group{{ $errors->has('gambartkksds') ? ' has-error' : '' }}">
-              <label for="gambartkksds" class="col-sm-4 control-label">Multi Gambar<span class="required">*</span> :</label>
+            <div class="form-group{{ $errors->has('gambars') ? ' has-error' : '' }}">
+              <label for="gambars" class="col-sm-4 control-label">Multi Gambar<span class="required">*</span> :</label>
 
               <div class="col-sm-4">
-                <input type="file" class="form-control-static" id="gambartkksds" name="gambartkksds[]" multiple>
+                <input type="file" class="form-control-static" id="gambars" name="gambars[]" multiple>
                 <small>(jpeg, png, bmp, gif, or svg)</small>
 
-                @if ($errors->has('gambartkksds'))
-                  <span class="help-block">{{ $errors->first('gambartkksds') }}</span>
+                @if ($errors->has('gambars'))
+                  <span class="help-block">{{ $errors->first('gambars') }}</span>
                 @endif
               </div>
             </div>

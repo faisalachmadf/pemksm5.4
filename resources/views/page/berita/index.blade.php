@@ -58,15 +58,16 @@
                         <div class="editor-pics">
                             @if($dibaca)
                                 <div class="col-md-12 item-pic2 text-justify">
-                                    <img src="{{ asset('image/berita/'.$berita->gambar) }}" class="img-responsive img-banner" alt="{{ $berita->judul }}"/>
-                                    <br/><br/>
-                                    <h4 class="inner two">
+                                	  <h4 class="inner two">
                                         <a href="{{ route('Berita', [$berita->katberita->slug, $berita->slug]) }}">{{ strtoupper($berita->judul) }}</a>
                                     </h4>
                                     <div class="td-post-date two">
                                         <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($berita->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($berita->user) }} <i class=""></i><i class="glyphicon glyphicon-eye-open"></i> {{ $berita->dibaca }}<i class=""></i><i class="glyphicon glyphicon-list-alt"></i>{{ $berita->katberita->name }}</h6>
                                     </div>
                                     <hr/>
+                                    <img src="{{ asset('image/berita/'.$berita->gambar) }}" class="img-responsive img-banner" alt="{{ $berita->judul }}"/>
+                                    <br/>
+                                  
                                     {!! $berita->isi !!}
                                     <hr/><h6>Bagikan :</h6><br/>
                                     

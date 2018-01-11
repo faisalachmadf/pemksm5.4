@@ -111,7 +111,7 @@ class GaleriLppdController extends Controller
         //create thumbnail
         generateThumbnail($path, $galeri->gambar);
 
-        // Save Tags
+        // Save tags
         $tagIds = Tag::getIdByName($tags);
         $galeri->tags()->sync($tagIds);
 

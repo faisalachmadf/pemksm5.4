@@ -65,8 +65,11 @@ Route::group(['namespace' => 'Frontend'], function() {
 
     /* LPPD */
 
-   Route::any('Lppd/{slug?}', 'LppdController@index')->name('Lppd');
-    Route::any('Lppd/{slug?}/unduh', 'LppdController@unduh')->name('Lppd.unduh');
+   Route::group(['prefix' => 'Lppd'], function() {
+        Route::get('Hasilpencarian', 'LppdController@search');
+        Route::get('/','LppdController@index')->name('Lppd');
+        Route::any('{slug?}/unduh', 'LppdController@unduh')->name('Lppd.unduh');
+    });
  
 
     /* kemitraan dan Kerja Sama */
@@ -88,8 +91,11 @@ Route::group(['namespace' => 'Frontend'], function() {
 
     /* tkksd */
 
-     Route::any('Tkksd/{slug?}', 'TkksdController@index')->name('Tkksd');
-    Route::any('Tkksd/{slug?}/unduh', 'TkksdController@unduh')->name('Tkksd.unduh');
+     Route::group(['prefix' => 'Tkksd'], function() {
+        Route::get('Hasilpencarian', 'TkksdController@search');
+        Route::get('/','TkksdController@index')->name('Tkksd');
+        Route::any('{slug?}/unduh', 'TkksdController@unduh')->name('Tkksd.unduh');
+    });
     
     /* Laporan */
 

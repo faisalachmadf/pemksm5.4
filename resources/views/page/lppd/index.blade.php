@@ -11,28 +11,43 @@
  <div class="main-content">
         <div class="container">
 
+               
               <div class="col-md-8 mag-innert-left">
+                <!-- Pencarian -->
+                 <form class="form" action="{{ url('Lppd/Hasilpencarian') }}" method="GET">
+                        
+                        <div class="form-group">
+                            <label for="pencarian">Pencarian File lppd:</label>
+                            <div class="input-group btn-katberita">
+                                <input type="text" name="q" id="pencarian" class="form-control" placeholder="Masukan kata kunci..." required="">
+                                <div class="input-group-btn">
+                                    <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+            </form>
+            <h2 class="tittle"></h2>
  
                             <!-- Di isi dengan tabel beritas kategori urusan pemerintahan daerah -->
                              @foreach($lppds as $lppd)
                             <div class="technology">
                             <div class="editor-pics">
                                 <div class="edit-pics">
-                                <div class="col-md-3 item-pic">
-                                     <img src="{{ asset('image/lppd/'.$lppd->gambar) }}" class="img-responsive img-banner" alt="{{ $lppd->judul }}" width="20px" />
+                                <div class="col-md-4 item-pic">
+                                     <h4><p>{{ @$lppd->judul }}</p></h4>
                                 </div>
-                                <div class="col-md-9 item-details">
-                                    <h4><p>{{ @$lppd->judul }}</p></h4>
+                                <div class="col-md-8 item-details">
+                                   
                                   
-                                     <div class="td-post-date two">
-                                     <p>{!! @$lppd->isi !!}</p>
-                                     </div>
+                                    
+                                     <p><font color="grey"><i>{!! @$lppd->isi !!}</i></font></p>
+                                     
 
-                                  
-                                    <h5 class="inner two">
-                                       <a href="{{ route('lppd.unduh', [$lppd->slug]) }}" class="btn btn-info">
+                                  <br>
+                                    <h5>
+                                       <a href="{{ route('Lppd.unduh', [$lppd->slug]) }}"  class="btn btn-info">
                          
-                        <span>Download</span></a><p>&nbsp</p>
+                     Download</a><p>&nbsp</p>
                          <h6><i>diunduh : <b>{{ $lppd->diunduh }}</b> kali | tanggal upload :  {{ date('d M Y', strtotime($lppd->created_at)) }}</i></h6>
                                     </h5>
                                 </div>
@@ -44,6 +59,62 @@
 
                     @endforeach 
                     {{ $lppds->links() }}
+
+
+                     <!-- di isi dengan Tabel Aplikasis -->
+                            <p> &nbsp</p>
+                            <p> &nbsp</p>
+                            <p> &nbsp</p>
+                     <h2 class="tittle"><li class="glyphicon glyphicon-picture"></li> &nbsp Galeri lppd </h2>
+                            <div >
+                               
+                                <div id="owl-demo" class="owl-carousel text-center">
+                                     
+                                     @foreach($galerilppds as $galerilppd)
+                                    <div class="item" style="margin-left: 2em;">
+
+                                        <a href="#""><img class="img-responsive lot img-thumbnail" src="{{ asset('image/galeri-lppd/'.$galerilppd->gambar) }}" alt="{{ $galerilppd->judul }}" /></a>
+                                      
+                                        <hr/>
+                                        <h6><font color="brown"><i> {{ $galerilppd->judul }} </i></font></h6>
+                                    </div>
+                                    @endforeach
+                               
+                                </div>
+                            </div>
+
+                <!-- requried-jsfiles-for owl -->
+                                        <script src="/temafrontend/js/owl.carousel.js"></script>
+                                          <script>
+                                          $(document).ready(function() {
+                                               $("#owl-demo").owlCarousel({
+                                                items :4,
+                                                lazyLoad : true,
+                                                autoPlay : true,
+                                                navigation : true,
+                                                navigationText :  true,
+                                                pagination : false,
+                                                responsiveBreakpoints: { 
+                                        portrait: { 
+                                            changePoint:480,
+                                            visibleItems: 2
+                                        }, 
+                                        landscape: { 
+                                            changePoint:640,
+                                            visibleItems: 2
+                                        },
+                                        tablet: { 
+                                            changePoint:768,
+                                            visibleItems: 3
+                                        }
+                                    }
+                                                });
+                                          });
+                                        </script>
+                        <!-- //requried-jsfiles-for owl -->
+
+
+                 
                                             
                                             <!-- Komentar -->
                                              <!-- Share Media Sosial dan Print -->
