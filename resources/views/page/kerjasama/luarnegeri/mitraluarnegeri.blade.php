@@ -28,9 +28,9 @@
                 <h5>{{ strtoupper($pemerintahan->judul) }}</h5>
                 </div>
               <br>
-                  <button type="button" class="btn btn-info">
-               <h6>Selengkapnya</h6>
-              </button>
+              <a href="{{ route('MitraLuarNegeri.detail', $pemerintahan->slug) }}" class="btn btn-info">
+               <h6>Selengkapnya &raquo;&raquo;</h6>
+              </a>
              
               <!-- Modal
                <div class="modal fade" id="modal-info">
@@ -83,9 +83,9 @@
                 <h5>{{ strtoupper($lembaga->judul) }}</h5>
                 </div>
               <br>
-                  <button type="button" class="btn btn-info">
-               <h6>Selengkapnya</h6>
-              </button>
+              <a href="{{ route('MitraLuarNegeri.detail', $lembaga->slug) }}" class="btn btn-info">
+               <h6>Selengkapnya &raquo;&raquo;</h6>
+              </a>
              
               <!-- Modal
                <div class="modal fade" id="modal-info">
@@ -135,15 +135,15 @@
                 <h5>{{ strtoupper($swasta->judul) }}</h5>
                 </div>
               <br>
-                  <button type="button" class="btn btn-info">
-               <h6>Selengkapnya</h6>
-              </button>
+              <a href="{{ route('MitraLuarNegeri.detail', $swasta->slug) }}" class="btn btn-info">
+               <h6>Selengkapnya &raquo;&raquo;</h6>
+              </a>
 
               
             </div>
           @endforeach
           </div>
-           
+          <hr/>
         </div>
       </div>
     

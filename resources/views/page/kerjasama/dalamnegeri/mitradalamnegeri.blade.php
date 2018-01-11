@@ -29,9 +29,9 @@
                 <h5>{{ strtoupper($provinsi->judul) }}</h5>
                 </div>
               <br>
-                  <button type="button" class="btn btn-info">
-               <h6>Selengkapnya</h6>
-              </button>
+              <a href="{{ route('MitraDalamNegeri.detail', $provinsi->slug) }}" class="btn btn-info">
+               <h6>Selengkapnya &raquo;&raquo;</h6>
+              </a>
              
               <!-- Modal
                <div class="modal fade" id="modal-info">
@@ -84,9 +84,9 @@
                 <h5>{{ strtoupper($kabkot->judul) }}</h5>
                 </div>
                 <br>
-                  <button type="button" class="btn btn-info" >
-               <h6>Selengkapnya</h6>
-              </button>
+              <a href="{{ route('MitraDalamNegeri.detail', $kabkot->slug) }}" class="btn btn-info">
+               <h6>Selengkapnya &raquo;&raquo;</h6>
+              </a>
             
 
                
@@ -115,9 +115,9 @@
                  <h5>{{ strtoupper($pihakketiga->judul) }}</h5>
                 </div>
                 <br>
-                  <button type="button" class="btn btn-info" ">
-               <h6>Selengkapnya</h6>
-              </button>
+              <a href="{{ route('MitraDalamNegeri.detail', $pihakketiga->slug) }}" class="btn btn-info">
+               <h6>Selengkapnya &raquo;&raquo;</h6>
+              </a>
               
 
                 

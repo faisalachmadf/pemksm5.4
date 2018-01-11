@@ -15,9 +15,18 @@ class MitraLuarNegeriController extends Controller
              'pemerintahans' => Mitraln::getDataByKat('Pemerintahan-di-Luar-Negeri')->get(),
              'lembagas' => Mitraln::getDataByKat('Lembaga')->get(),
              'swastas' => Mitraln::getDataByKat('Swasta')->get()
-
         ];
 
         return view('page.kerjasama.luarnegeri.mitraluarnegeri', $data);
+    }
+
+    public function detail($slug = '')
+    {
+        $model = new Mitraln;
+        $data = [
+            'mitra' => $model->getDataBySlug($slug)
+        ];
+
+        return view('page.kerjasama.luarnegeri.mitraluarnegeridetail', $data);
     }
 }

@@ -73,7 +73,8 @@ Route::group(['namespace' => 'Frontend'], function() {
     Route::group(['namespace' => 'Kerjasama','prefix' => 'Kerja-Sama'], function() {
         Route::get('Mitra-Dalam-Negeri','MitraDalamNegeriController@index')->name('MitraDalamNegeri');
         Route::get('Mitra-Dalam-Negeri/{slug?}','MitraDalamNegeriController@detail')->name('MitraDalamNegeri.detail');
-        Route::get('Mitra-Luar-Negeri/{slug?}','MitraLuarNegeriController@index')->name('MitraLuarNegeri');
+        Route::get('Mitra-Luar-Negeri','MitraLuarNegeriController@index')->name('MitraLuarNegeri');
+        Route::get('Mitra-Luar-Negeri/{slug?}','MitraLuarNegeriController@detail')->name('MitraLuarNegeri.detail');
         Route::any('KerjasamaDn/{kategori?}/{slug?}', 'KerjasamaDnController@index')->name('KerjasamaDn');
         Route::any('KerjasamaLn/{kategori?}/{slug?}', 'KerjasamaLnController@index')->name('KerjasamaLn');
     });
