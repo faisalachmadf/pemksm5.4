@@ -98,6 +98,21 @@
                                             <br/>
                                         @endif
                                       @else
+
+                                      <table  class="table ">
+                                          <thead>
+                                            <tr>
+                                              <th style="width:60%;"> <h6>keterangan :</h6></th>
+                                              <th style="background-color: #ffef9b;"> </th>
+                                              <th> <h6>: Akan berakhir dalam 60 Hari </h6></th>
+                                              <th   style="background-color: pink;"></th>
+                                               <th><h6> :  Sudah Berakhir </h6></th>
+                                            
+                                            </tr>
+                                          </thead>
+                                        </table>
+
+
                                         <table  class="table table-striped">
                                           <thead style="background-color: blue; color: white;">
                                            <tr>
@@ -123,9 +138,9 @@
                                                </h6></p></td>
                                                <td><p><h6>{{ date('d M Y', strtotime($kerjasamaln->tanggal_awal)) }}
                                                </h6></p></td>
-                                               <td><p><h6>{{ date('d M Y', strtotime($kerjasamadn->tanggal_akhir)) }}
+                                               <td><p><h6>{{ date('d M Y', strtotime($kerjasamaln->tanggal_akhir)) }}
                                                </h6></p></td>
-                                               <td class="text-center"><p><h6> <a href="{{ route('KerjasamaLn', [$kerjasamaln->katln->slug, $kerjasamaln->slug]) }}"> <li class="glyphicon glyphicon-new-window"></li> </a></h6></p></td>
+                                               <td class="text-center"><p><h6> <a href="{{ route('KerjasamaLn', [$kerjasamaln->katln->slug, $kerjasamaln->slug]) }}" target="_blank"> <li class="glyphicon glyphicon-new-window"></li> </a></h6></p></td>
                                             
                                             </tr>
                                             @endforeach

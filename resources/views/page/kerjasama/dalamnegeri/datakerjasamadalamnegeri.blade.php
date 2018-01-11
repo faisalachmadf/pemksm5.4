@@ -104,14 +104,30 @@
                                             <br/>
                                         @endif
                                       @else
+                                        
+                                         
+                                        <table  class="table ">
+                                          <thead>
+                                            <tr>
+                                              <th style="width:60%;"> <h6>keterangan :</h6></th>
+                                              <th style="background-color: #ffef9b;"> </th>
+                                              <th> <h6>: Akan berakhir dalam 60 Hari </h6></th>
+                                              <th   style="background-color: pink;"></th>
+                                               <th><h6> :  Sudah Berakhir </h6></th>
+                                            
+                                            </tr>
+                                          </thead>
+                                        </table>
+                                          
+
                                         <table  class="table table-striped">
                                           <thead style="background-color: blue; color: white;">
                                            <tr>
-                                           <th><h5><p>Tahun</p></h5></th>
+                                           <th style="width: 5%;"><h5><p>Tahun</p></h5></th>
                                          
                                            <th ><h5><p>Nama Kerja Sama</p></h5></th>
-                                           <th style="width: 15%;"><h5><p>Tanggal</p></h5></th>
-                                           <th style="width: 15%;"><h5><p>Berakhir</p></h5></th>
+                                           <th style="width: 13%;"><h5><p>Tanggal</p></h5></th>
+                                           <th style="width: 13%;"><h5><p>Berakhir</p></h5></th>
                                            <th class="text-center">Lihat</th>
 
                                            </tr>   
@@ -131,7 +147,7 @@
                                                </h6></p></td>
                                                 <td><p><h6>{{ date('d M Y', strtotime($kerjasamadn->tanggal_akhir)) }}
                                                </h6></p></td>
-                                               <td class="text-center"><p><h6> <a href="{{ route('KerjasamaDn', [$kerjasamadn->katdn->slug, $kerjasamadn->slug]) }}"> <li class="glyphicon glyphicon-new-window"></li> </a></h6></p></td>
+                                               <td class="text-center"><p><h6> <a href="{{ route('KerjasamaDn', [$kerjasamadn->katdn->slug, $kerjasamadn->slug]) }}" target="_blank"> <li class="glyphicon glyphicon-new-window"></li> </a></h6></p></td>
                                             
                                             </tr>
                                             @endforeach
