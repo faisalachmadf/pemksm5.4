@@ -71,8 +71,9 @@ Route::group(['namespace' => 'Frontend'], function() {
 
     /* kemitraan dan Kerja Sama */
     Route::group(['namespace' => 'Kerjasama','prefix' => 'Kerja-Sama'], function() {
-        Route::resource('Mitra-Dalam-Negeri','MitraDalamNegeriController');
-        Route::resource('Mitra-Luar-Negeri','MitraLuarNegeriController');
+        Route::get('Mitra-Dalam-Negeri','MitraDalamNegeriController@index')->name('MitraDalamNegeri');
+        Route::get('Mitra-Dalam-Negeri/{slug?}','MitraDalamNegeriController@detail')->name('MitraDalamNegeri.detail');
+        Route::get('Mitra-Luar-Negeri/{slug?}','MitraLuarNegeriController@index')->name('MitraLuarNegeri');
         Route::any('KerjasamaDn/{kategori?}/{slug?}', 'KerjasamaDnController@index')->name('KerjasamaDn');
         Route::any('KerjasamaLn/{kategori?}/{slug?}', 'KerjasamaLnController@index')->name('KerjasamaLn');
     });
