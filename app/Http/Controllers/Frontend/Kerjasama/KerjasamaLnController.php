@@ -18,11 +18,22 @@ class KerjasamaLnController extends Controller
         if ($katSlug == 'pencarian') {
             $pencarian = true;
             $kerjasamalns = KerjasamaLn::getSearch($request->input('pencarian'));
+        } else if ($katSlug == 'waktu-hampir-habis') {
+            $kerjasamalns = KerjasamaLn::getData($katSlug, $slug, 'hampir', 60);
+        } else if ($katSlug == 'waktu-sudah-habis') {
+            $kerjasamalns = KerjasamaLn::getData($katSlug, $slug, 'sudah');
         } else {
             $kerjasamalns = KerjasamaLn::getData($katSlug, $slug);
         }
 
+        if (empty($slug)) {
+            $detail = false;
+        } else {
+            $detail = true;
+        }
+
         $data = [
+            'detail' => $detail,
             'katlns' => Katln::all(),
             'pencarian' => $pencarian,
             'kerjasamalns' => $kerjasamalns->simplePaginate(10),

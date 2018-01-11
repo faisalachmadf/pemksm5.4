@@ -4,6 +4,7 @@ namespace App\Models\DataKerjasama;
 
 use Illuminate\Database\Eloquent\Model;
 use Sentinel;
+use Carbon\Carbon;
 
 class KerjasamaDn extends Model
 {
@@ -77,20 +78,30 @@ class KerjasamaDn extends Model
     }
 
 
-    public function scopeGetData($query, $katSlug = '', $slug = '')
+    public function scopeGetData($query, $katSlug = '', $slug = '', $timeout = '', $overdue = 0)
     {
-        return $query->whereHas('katdn', function($query) use ($katSlug) {
-                if (empty($katSlug)) {
+        return $query->whereHas('katdn', function($query) use ($katSlug, $timeout) {
+                if (empty($katSlug) || !empty($timeout)) {
                     $query->where('slug', '<>', $katSlug);
                 } else {
                     $query->where('slug', $katSlug);
                 }
             })
-            ->where(function($query) use ($slug) {
+            ->where(function($query) use ($slug, $timeout, $overdue) {
+                $now = Carbon::now();
+                $then = $now->copy()->addDays($overdue)->endOfDay();
+
                 if (empty($slug)) {
                     $query->where('slug', '<>', $slug);
                 } else {
                     $query->where('slug', $slug);
+                }
+
+                if ($timeout == 'hampir') {
+                    $query->where('tanggal_akhir', '>=', $now->endOfDay()->toDateString())
+                        ->where('tanggal_akhir', '<=', $then->toDateString());
+                } else if ($timeout == 'sudah') {
+                    $query->where('tanggal_akhir', '<', $now->toDateString());
                 }
             })
             ->with(['katdn', 'user'])

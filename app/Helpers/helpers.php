@@ -148,7 +148,7 @@ if (! function_exists('generateRemainingDays')) {
         $date = \Carbon\Carbon::parse($date)->endOfDay();
         $remain = \Carbon\Carbon::now()->endOfDay()->diffInDays($date, false);
 
-        if ($remain <= 0) {
+        if ($remain < 0) {
             return 'Waktu Habis';
         }
 
