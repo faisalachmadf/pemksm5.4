@@ -80,10 +80,31 @@
 									 <img src='http://syam.eu.org/icon/g.jpg' alt='' width='30' height='30'></a>
 									| &nbsp<a href="#" onclick="window.print()"><img src="/temafrontend/images/print.png" alt='' width='50' height='50'></a>
 
+									<P>&nbsp</P>
+									<P>&nbsp</P>
+									<div id="disqus_thread"></div>
+										<script>
 
+										/**
+										*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+										*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+										/*
+										var disqus_config = function () {
+										this.page.url = "{{ route('Berita', [$berita->katberita->slug, $berita->slug]) }}";  // Replace PAGE_URL with your page's canonical URL variable
+										this.page.identifier = "Berita/ {{ $berita->katberita->slug, $berita->slug }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+										};
+										*/
+										(function() { // DON'T EDIT BELOW THIS LINE
+										var d = document, s = d.createElement('script');
+										s.src = 'https://pemksmjabar.disqus.com/embed.js';
+										s.setAttribute('data-timestamp', +new Date());
+										(d.head || d.body).appendChild(s);
+										})();
+										</script>
+										<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
                                 </div>
                                 <br>
-                               
+                               	<script id="dsq-count-scr" src="//pemksmjabar.disqus.com/count.js" async></script>
                             @else
                                 <div class="col-md-3 item-pic">
                                     <img src="{{ asset('image/berita/thumbnail/'.$berita->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $berita->judul }}"/>
