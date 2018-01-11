@@ -8,7 +8,7 @@ use App\Models\header;
 use App\Models\sambutan;
 use App\Models\Publikasi;
 use App\Models\Layanan;
-use App\Models\aplikasi;
+use App\Models\link;
 use App\Models\Agenda;
 
 class HalamanDepanController extends Controller
@@ -29,7 +29,7 @@ class HalamanDepanController extends Controller
             'agendas' => Agenda::getNow()->get(),
             'populars' => Berita::getPopular(5)->get(),
             'layanans' => Layanan::with(['katbagian', 'user'])->take(3)->get(),
-            'aplikasis' => aplikasi::all()
+            'links' => link::all()
         ];
 
         return view('frame_depan.partindex.content', $data);

@@ -13,8 +13,8 @@ class KatfilesTableSeeder extends Seeder
     {
         DB::table('katfiles')->insert([
         [
-		'name'=>'Materi Rapat',
-		'slug'=>'Materi-Rapat', 
+		'name'=>'File',
+		'slug'=>'File', 
 		'created_at'=>'2017-12-19 10:00:00',
 		'updated_at'=>'2017-12-19 10:00:00'
 		],

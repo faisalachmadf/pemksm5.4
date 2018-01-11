@@ -32,7 +32,7 @@ class BeritaController extends Controller
         $data = [
             'katberitas' => Katberita::all(),
             'pencarian' => $pencarian,
-            'beritas' => $beritas->simplePaginate(10),
+            'beritas' => $beritas->Paginate(10),
             'dibaca' => $dibaca,
             'kanan' => getDataKanan()
         ];

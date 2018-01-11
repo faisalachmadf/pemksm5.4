@@ -34,9 +34,9 @@
                                 @foreach(@$publikasis ? $publikasis : [] as $publikasi)
                                 <div class="editor-pics">
                                     <div class="item-details">
-                                        <h5 class="inner two"><a href="{{ route('Publikasi.unduh', [$publikasi->katfile->slug, $publikasi->slug]) }}"><i class="glyphicon glyphicon-download"></i> &nbsp;&nbsp; {{ $publikasi->judul }}</a></h5>
+                                        <h5 class="inner two"><a href="{{ route('Publikasi.unduh', [$publikasi->katfile->slug, $publikasi->slug]) }}"><i class="glyphicon glyphicon-download"></i>  {{ $publikasi->judul }}</a></h5>
                                         <div class="td-post-date two">
-                                            <i class="glyphicon glyphicon-time"></i>{{ date('d M Y', strtotime($publikasi->tanggal)) }} <i class="glyphicon glyphicon-download"></i>di Unduh : <b>{{ $publikasi->diunduh }}</b> kali
+                                            <i class="glyphicon glyphicon-time"></i>{{ date('d M Y', strtotime($publikasi->tanggal)) }} <i class="glyphicon glyphicon-download"></i>di Unduh : <b>{{ $publikasi->diunduh }}</b> kali 
                                         </div>
                                     </div>
                                     <div class="clearfix"></div>
@@ -61,9 +61,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 @endforeach
-                                <a href="{{ route('Publikasi') }}">
-                                    <h6>File dan Pengumuman Lainnya &raquo;</h6>
-                                </a>
+                              
               </div>
              
             </div>

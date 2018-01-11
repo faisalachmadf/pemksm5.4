@@ -45,8 +45,8 @@
 											<!-- Kabag -->
 											<div class="row">
 												@foreach($kabagurpemdas as $kabagurpemda)
-											<div class="col-lg-4 col-xs-4">
-												 <center><img src="{{ asset('image/pegawai/thumbnail/'.$kabagurpemda->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $kabagurpemda->nama }}" width="150px" ></center>
+											<div class="col-lg-4 col-xs-12">
+												 <center><img src="{{ asset('image/pegawai/thumbnail/'.$kabagurpemda->gambar) }}" class="img-thumbnail wp-post-image" alt="{{ $kabagurpemda->nama }}" width="150px" ></center>
 											                 
 
 											               <div class="inner">
@@ -58,8 +58,8 @@
 											</div>
 											 @endforeach
 											 @foreach($kabagtapems as $kabagtapem)
-											 <div class="col-lg-4 col-xs-4">
-												 <center><img src="{{ asset('image/pegawai/thumbnail/'.$kabagtapem->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $kabagtapem->nama }}" width="150px" ></center>
+											 <div class="col-lg-4 col-xs-12">
+												 <center><img src="{{ asset('image/pegawai/thumbnail/'.$kabagtapem->gambar) }}" class="img-thumbnail wp-post-image" alt="{{ $kabagtapem->nama }}" width="150px" ></center>
 											                 
 
 											               <div class="inner">
@@ -71,8 +71,8 @@
 											</div>
 											@endforeach
 											 @foreach($kabagkerjasamas as $kabagkerjasama)
-											 <div class="col-lg-4 col-xs-4">
-												 <center><img src="{{ asset('image/pegawai/thumbnail/'.$kabagkerjasama->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $kabagkerjasama->nama }}" width="150px" ></center>
+											 <div class="col-lg-4 col-xs-12">
+												 <center><img src="{{ asset('image/pegawai/thumbnail/'.$kabagkerjasama->gambar) }}" class="img-thumbnail wp-post-image" alt="{{ $kabagkerjasama->nama }}" width="150px" ></center>
 											                 
 
 											               <div class="inner">
@@ -86,10 +86,12 @@
 											</div>
 
 											<!-- Kasubag -->
-											<div class="col-lg-12 col-xs-12">
+											
 											<div class="row">
+												
+											
+											<div class="col-lg-4 col-xs-12">
 												@foreach($kasubagurpemdas as $kasubagurpemda)
-											<div class="col-lg-4 col-xs-4">
 												 <center><img src="{{ asset('image/pegawai/thumbnail/'.$kasubagurpemda->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $kabagurpemda->nama }}" width="150px" ></center>
 											                 
 
@@ -99,10 +101,12 @@
 											                  <h6><font color="red">{{ $kasubagurpemda->jabatan }}</font></h6></center>
 											                </div>
 											                <br>
+											                 @endforeach
 											</div>
-											 @endforeach
-											 @foreach($kasubagtapems as $kasubagtapem)
-											 <div class="col-lg-4 col-xs-4">
+											
+											
+											 <div class="col-lg-4 col-xs-12">
+											 	 @foreach($kasubagtapems as $kasubagtapem)
 												 <center><img src="{{ asset('image/pegawai/thumbnail/'.$kasubagtapem->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $kasubagtapem->nama }}" width="150px" ></center>
 											                 
 
@@ -112,10 +116,12 @@
 											                  <h6><font color="red">{{ $kasubagtapem->jabatan }}</font></h6></center>
 											                </div>
 											                <br>
+											                @endforeach
 											</div>
-											@endforeach
-											 @foreach($kasubagkerjasamas as $kasubagkerjasama)
-											 <div class="col-lg-4 col-xs-4">
+											
+											
+											 <div class="col-lg-4 col-xs-12">
+											 	 @foreach($kasubagkerjasamas as $kasubagkerjasama)
 												 <center><img src="{{ asset('image/pegawai/thumbnail/'.$kasubagkerjasama->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $kasubagkerjasama->nama }}" width="150px" ></center>
 											                 
 
@@ -125,11 +131,12 @@
 											                  <h6><font color="red">{{ $kasubagkerjasama->jabatan }}</font></h6></center>
 											                </div>
 											                <br>
+											                @endforeach
 											</div>
-											@endforeach
+											
 											</div>
 
-										</div>
+										
 
 										<!-- Pelaksana -->
 										<hr/>
@@ -141,7 +148,7 @@
 									<table  class="table table-striped">
                                                     <thead style="background-color: white; color: white;">
                                                      <tr>
-
+                                                     
                                                      <th style="width: 25%;"><h5><p>NIP</p></h5></th>
                                                    
                                                      <th style="width: 50%;"><h5><p>Nama</p></h5></th>
@@ -156,7 +163,7 @@
                                          @foreach($analisisurpemdas as $analisisurpemda)
                                                     
                                         <tr>
-                                           
+                                          
                                           <td><p><h5>{{ $analisisurpemda->nip }} </h5></p></td>
                                        
                                            <td><p><h5>{{ strtoupper($analisisurpemda->nama) }} 
@@ -369,6 +376,15 @@
                                          @endforeach
                                           
                                       </tbody>
+                                       <!-- Share Media Sosial dan Print -->
+                                      <hr/><h6>Bagikan :</h6><br/>
+                                    <a rel='nofollow' style="margin-right: 5px;" target="_blank" href='https://www.facebook.com/sharer.php?u={{ route('Struktur-Organisasi.index') }}'>
+                                    <img src='http://syam.eu.org/icon/fb.jpg' alt='' width='30' height='30'></a>
+                                    <a rel='nofollow' style="margin-right: 5px;" target="_blank" href='https://twitter.com/share?url={{ route('Struktur-Organisasi.index') }}'>
+                                    <img src='http://syam.eu.org/icon/tw.jpg' alt='' width='30' height='30'></a>
+                                    <a rel='nofollow' style="margin-right: 5px;" target="_blank" href='https://plus.google.com/share?url={{ route('Struktur-Organisasi.index') }}'>
+                                     <img src='http://syam.eu.org/icon/g.jpg' alt='' width='30' height='30'></a>
+                                    | &nbsp<a href="#" onclick="window.print()"><img src="/temafrontend/images/print.png" alt='' width='50' height='50'></a>
                                       @else
                                          
                                             --- Belum ada Data ---

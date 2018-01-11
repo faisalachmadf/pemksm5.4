@@ -77,7 +77,16 @@
                                     <h5><i class=""></i><i class="glyphicon glyphicon-list-alt"></i>&nbsp&nbsp Agenda Bagian :<font color="red"><b>{{ $agenda->katbagian->name }}</b></font></h5>
                                    
                                     <hr/>
+                                      
+                                    
+                                   
+
                                     @endforeach
+                                     <!-- Share Media Sosial dan Print -->
+                                      <hr/><h6>Print :</h6><br/>
+                                 
+                                    | &nbsp<a href="#" onclick="window.print()"><img src="/temafrontend/images/print.png" alt='' width='50' height='50'></a>
+
                                      @else   
                          <div class="editor-pics">
                             --- Belum ada Data ---

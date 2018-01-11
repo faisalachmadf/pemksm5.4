@@ -10,7 +10,7 @@
      <div class="col-md-12">
      	<br>
         <!-- Di isi dengan tabel beritas kategori berita umum -->
-                        <h3 class="tittle"><i class="glyphicon glyphicon-file"></i>Berita Umum </h3>
+                        <h3 class="tittle"><i class="glyphicon glyphicon-file"></i><b>Berita Umum </b></h3>
                         <div class="world-news-grids">
                             @foreach($umums as $umum)
                             <div class="world-news-grid">
@@ -28,102 +28,113 @@
                             @endforeach
                             <div class="clearfix"></div>
                             <a href="{{ route('Berita', [@$umum->katberita->slug]) }}" class="btn btn-danger">
-                                <h6>{{ @$umum->katberita->name }} Lainnya &raquo;</h6>
+                                <h6>{{ @$umum->katberita->name }} Lainnya  <li class="glyphicon glyphicon-new-window"></li></h6>
                             </a>
                         </div>
                         <br/>
+                        <br/>
+                        
      </div>
                     
 
                     <div class="col-md-8 mag-innert-left">
                         <!--/start-Technology-->
                         <div class="technology">
-                          <h2 class="tittle"><i class="glyphicon glyphicon-certificate"> </i>Urusan Pemerintahan Daerah </h2>
+                          <h2 class="tittle"><i class="glyphicon glyphicon-certificate"> </i><b>Urusan Pemerintahan Daerah </b></h2><p>&nbsp</p>
                             <!-- Di isi dengan tabel beritas kategori urusan pemerintahan daerah -->
                             @foreach($daerahs as $daerah)
                             <div class="editor-pics">
-                                <div class="col-md-5 item-pic">
+                                <div class="col-md-3 item-pic">
                                     <img src="{{ asset('image/berita/thumbnail/'.$daerah->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $daerah->judul }}"/>
                                 </div>
-                                <div class="col-md-7 item-details">
-                                    <h4><a href="{{ route('Berita', [$daerah->katberita->slug, $daerah->slug]) }}">{{ strtoupper($daerah->judul) }}</a></h4>
+                                <div class="col-md-9 item-details">
+                                    <p><a href="{{ route('Berita', [$daerah->katberita->slug, $daerah->slug]) }}">{{ strtoupper($daerah->judul) }}</a></p>
                                      
                                      <div class="td-post-date two">
-                                     	<h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($daerah->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($daerah->user) }} <i class="glyphicon glyphicon-eye-open"></i> di Unduh : <b>{{ $daerah->diunduh }}</b> kali</h6>
+                                     	<h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($daerah->tanggal)) }} <i class="glyphicon glyphicon-user"></i>diupload :  {{ generateUser($daerah->user) }} <i class="glyphicon glyphicon-eye-open"></i> dilihat : <b>{{ $daerah->dibaca }}</b> kali</h6>
                                      </div>
 
-                                    <hr/>
+                                  
                                     <h5 class="inner two"></h5>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
-                            <hr/> 
+                          
                             @endforeach
+
                             <a href="{{ route('Berita', [@$daerah->katberita->slug]) }}" class="text-right">
-                                <h6>{{ @$daerah->katberita->name }} Lainnya &raquo;</h6>
+                                <h6>{{ @$daerah->katberita->name }} Lainnya  <li class="glyphicon glyphicon-new-window"></li></h6>
                             </a>
                             <div class="clearfix"></div>
                             <br/><br/>
                         </div>
                        
+                          
+                      
+                 
                         <!--//end-Technology-->
                         <div class="technology">
-                          <h2 class="tittle"><i class="glyphicon glyphicon-certificate"> </i>Tata Pemerintahan </h2>
+                          <h2 class="tittle"><i class="glyphicon glyphicon-certificate"> </i><b>Tata Pemerintahan </b></h2><p>&nbsp</p>
                             <!-- Di isi dengan tabel beritas kategori tata pemerintahan -->
                             @foreach($tatas as $tata)
                             <div class="editor-pics">
-                                <div class="col-md-5 item-pic">
+                                <div class="col-md-3 item-pic">
                                     <img src="{{ asset('image/berita/thumbnail/'.$tata->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $tata->judul }}"/>
                                 </div>
-                                <div class="col-md-7 item-details">
-                                    <h4><a href="{{ route('Berita', [$tata->katberita->slug, $tata->slug]) }}">{{ strtoupper($tata->judul) }}</a></h4>
+                                <div class="col-md-9 item-details">
+                                    <p><a href="{{ route('Berita', [$tata->katberita->slug, $tata->slug]) }}">{{ strtoupper($tata->judul) }}</a></p>
                                     <div class="td-post-date two">
-                                        <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($tata->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($tata->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $tata->dibaca }}</h6>
+                                        <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($tata->tanggal)) }} <i class="glyphicon glyphicon-user"></i>diupload :  {{ generateUser($tata->user) }} <i class="glyphicon glyphicon-eye-open"></i> dilihat : <b>{{ $tata->dibaca }}</b> kali</h6>
                                     </div>
-                                    <hr/>
+                                  
                                     <h5 class="inner two"></h5>
                                  </div>
                                 <div class="clearfix"></div>
                             </div>
-                            <hr/>
+                          
                             @endforeach
+
+                          
+                
                             <div class="clearfix"></div>
                             <a href="{{ route('Berita', [@$tata->katberita->slug]) }}" class="text-right">
-                                <h6>{{ @$tata->katberita->name }} Lainnya &raquo;</h6>
+                                <h6>{{ @$tata->katberita->name }} Lainnya  <li class="glyphicon glyphicon-new-window"></li></h6>
                             </a>
                             <div class="clearfix"></div>
                             <br/><br/>
                         </div>
                      
                         <div class="technology">
-                          <h2 class="tittle"><i class="glyphicon glyphicon-certificate"> </i>Kerja Sama </h2>
+                          <h2 class="tittle"><i class="glyphicon glyphicon-certificate"> </i><b>Kerja Sama </b></h2><p>&nbsp</p>
                             <!-- Di isi dengan tabel beritas kategori kerjasama -->
                             @foreach($kerjasamas as $kerjasama)
                             <div class="editor-pics">
-                                <div class="col-md-5 item-pic">
+                                <div class="col-md-3 item-pic">
                                     <img src="{{ asset('image/berita/thumbnail/'.$kerjasama->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $kerjasama->judul }}"/>
                                 </div>
-                                <div class="col-md-7 item-details">
-                                    <h4><a href="{{ route('Berita', [$kerjasama->katberita->slug, $kerjasama->slug]) }}">{{ strtoupper($kerjasama->judul) }}</a></h4>
+                                <div class="col-md-9 item-details">
+                                    <p><a href="{{ route('Berita', [$kerjasama->katberita->slug, $kerjasama->slug]) }}">{{ strtoupper($kerjasama->judul) }}</a></p>
                                     <div class="td-post-date two">
-                                        <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($kerjasama->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($kerjasama->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $kerjasama->dibaca }}</h6>
+                                        <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($kerjasama->tanggal)) }} <i class="glyphicon glyphicon-user"></i>diupload :  {{ generateUser($kerjasama->user) }} <i class="glyphicon glyphicon-eye-open"></i> dilihat : <b>{{ $kerjasama->dibaca }}</b> kali</h6>
                                     </div>
-                                    <hr/>
+                                 
                                     <h5 class="inner two"></h5>
                                  </div>
                                 <div class="clearfix"></div>
                             </div>
-                            <hr/>
+                          
                             @endforeach
                             <div class="clearfix"></div>
                             <a href="{{ route('Berita', [@$kerjasama->katberita->slug]) }}" class="text-right">
-                                <h6>{{ @$kerjasama->katberita->name }} Lainnya &raquo;</h6>
+                                <h6>{{ @$kerjasama->katberita->name }} Lainnya  <li class="glyphicon glyphicon-new-window"></li></h6>
                             </a>
 
                             <div class="clearfix"></div>
                             
                         </div>
-                       
+                       <br/>
+                      
+                  
 
                     <!--//latest-articles-->
                       <div class="latest-articles">
@@ -134,7 +145,7 @@
                             <div class="world-news-grid">
                                 <img src="{{ asset('image/berita/thumbnail/'.$artikel->gambar) }}" alt="{{ $artikel->judul }}" class="img-responsive img-thumbnail wp-post-image"/>
                                
-                                <h4><a href="{{ route('Berita', [$artikel->katberita->slug, $artikel->slug]) }}" class="wd">{{ strtoupper($artikel->judul) }}</a></h4>
+                                <p><a href="{{ route('Berita', [$artikel->katberita->slug, $artikel->slug]) }}" class="wd">{{ strtoupper($artikel->judul) }}</a></p>
                                  <div class="td-post-date two">
                                   <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($artikel->tanggal)) }}</h6>
                                  </div>
@@ -143,12 +154,16 @@
                             @endforeach
                             <div class="clearfix"></div>
                             <a href="{{ route('Berita', [@$artikel->katberita->slug]) }}" class="text-right">
-                                <h6>{{ @$artikel->katberita->name }} Lainnya &raquo;</h6>
+                                <h6>{{ @$artikel->katberita->name }} Lainnya  <li class="glyphicon glyphicon-new-window"></li></h6>
                             </a>
                             <div class="clearfix"></div>
                         </div>
                     </div>
+                    <br/>
+                        <br/>
+                        <br/>
                              <!--//articles-->
+
                 </div>
 
 
@@ -347,23 +362,35 @@
 
                 
                        <div class="row">
-			            <div class="col-lg-6 col-xs-6">
+			            <div class="col-lg-4 col-xs-4">
 			              <!-- small box -->
 			                <center><img src="/adminkelola/dist/img/logobiro.png" class="img-responsive"></center>
 			                <center><div class="inner">
 			                  <br>
-			                  <H3>TKKSD<H3>
+			                  <h4>TKKSD</h4>
 			                </div> </center>
          
 			            </div>
-			            <div class="col-lg-6 col-xs-6">
+			            <div class="col-lg-4 col-xs-4">
 			              <!-- small box -->
 			                  <center><img src="/adminkelola/dist/img/logobiro.png" class="img-responsive"></center>
 			                 
 
 			                <center><div class="inner">
 			                  <br>
-			                  <h3>LPPD</h3>
+			                  <h4>LPPD</h4>
+			                </div> </center>
+			           
+			            </div>
+
+			             <div class="col-lg-4 col-xs-4">
+			              <!-- small box -->
+			                  <center><img src="/adminkelola/dist/img/logobiro.png" class="img-responsive"></center>
+			                 
+
+			                <center><div class="inner">
+			                  <br>
+			                  <h4>SEGMEN BATAS</h4>
 			                </div> </center>
 			           
 			            </div>
@@ -375,25 +402,28 @@
                                 
                 	
                 </div>
-                <hr/>
+                
+            </div>
                 <div class="mag-bottom">
-         
                     <!-- di isi dengan Tabel Aplikasis -->
                     <div id="example1">
+                    	<div class="container">
                         <div id="owl-demo" class="owl-carousel text-center">
-                            @foreach($aplikasis as $aplikasi)
+                            @foreach($links as $link)
                             <div class="item" style="margin-left: 2em;">
-                                <a href="{{ $aplikasi->link }}" target="_blank"><img class="img-responsive lot img-thumbnail" src="{{ asset('image/beranda/'.$aplikasi->gambar) }}" alt="{{ $aplikasi->judul }}"/></a>
+                                <a href="{{ $link->link }}" target="_blank"><img class="img-responsive lot img-thumbnail" src="{{ asset('image/beranda/'.$link->gambar) }}" alt="{{ $link->judul }}"/></a>
                             </div>
                             @endforeach
                         </div>
                     </div>
+                    </div>
+
                 <!-- requried-jsfiles-for owl -->
                                         <script src="/temafrontend/js/owl.carousel.js"></script>
                                           <script>
                                           $(document).ready(function() {
                                                $("#owl-demo").owlCarousel({
-                                                items :5,
+                                                items :6,
                                                 lazyLoad : true,
                                                 autoPlay : true,
                                                 navigation : true,
@@ -425,5 +455,53 @@
                  </div>
 
                  <!--//mag-bottom-->
+                 <div class="footerlagi-section">
+	
+	<div class="container">
+		<br/>
+		<br>
+		<center><h1> Media <span>Sosial</span></h1></center>
+					<br/>
+					<br/>
+						<div class="col-md-4 footerlagi-grid">
+						<h4><font color="#000"><img src="/temafrontend/images/fb.png" width="35px" height="35px"/> Facebook</font></h4>
+						  <div class="editor-pics">
+						  
+							  <div id="fb-root"></div>
+								<script>(function(d, s, id) {
+								  var js, fjs = d.getElementsByTagName(s)[0];
+								  if (d.getElementById(id)) return;
+								  js = d.createElement(s); js.id = id;
+								  js.src = "//connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v2.6";
+								  fjs.parentNode.insertBefore(js, fjs);
+								}(document, 'script', 'facebook-jssdk'));</script>
+
+								
+								<div class="fb-page" data-href="https://www.facebook.com/Biro-Otonomi-Daerah-dan-Kerjasama-393299957534362/" data-tabs="timeline" data-width="300" data-height="400" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div>   
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							
+						
+						
+						<div class="col-md-4 footerlagi-grid">
+							<h4><font color="#000"><img src="/temafrontend/images/twit.png" width="30px" height="30px"/> &nbsp Twitter</font></h4>
+								<div class="editor-pics">
+										 <a class="twitter-timeline" href="https://twitter.com/birootdaksm" data-widget-id="564996746669879297">Tweets by @birootdaksm</a>
+								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+										<div class="clearfix"></div>
+								</div>
+										
+							
+						</div>
+						<div class="col-md-4 footerlagi-grid">
+								<h4><font color="#000"><img src="/temafrontend/images/ig.png" width="30px" height="30px"/> &nbsp Instagram</font></h4>
+								<!-- LightWidget WIDGET --><script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/aae4ca0758a5504abf98bd98d55306fd.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+								<div class="clearfix"></div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+	</div>
+</div>
 
 @endsection

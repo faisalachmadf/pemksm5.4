@@ -18,14 +18,15 @@
 	                            <div class="banner-bottom-left-grids">
 									<div class="single-left-grid">
 											<p>{!! @$selayang->isi !!}</p>
-											<div class="single-bottom">
-													<ul>
-														<li><a href="#">Designer inspiration</a></li>
-														<li>August 30 2015</li>
-														<li><a href="#">Admin</a></li>
-														<li><a href="#">5 Comments</a></li>
-													</ul>
-											</div>
+											 <!-- Share Media Sosial dan Print -->
+                                      <hr/><h6>Bagikan :</h6><br/>
+                                    <a rel='nofollow' style="margin-right: 5px;" target="_blank" href='https://www.facebook.com/sharer.php?u={{ route('Selayang-Pandang.index') }}'>
+                                    <img src='http://syam.eu.org/icon/fb.jpg' alt='' width='30' height='30'></a>
+                                    <a rel='nofollow' style="margin-right: 5px;" target="_blank" href='https://twitter.com/share?url={{ route('Selayang-Pandang.index') }}'>
+                                    <img src='http://syam.eu.org/icon/tw.jpg' alt='' width='30' height='30'></a>
+                                    <a rel='nofollow' style="margin-right: 5px;" target="_blank" href='https://plus.google.com/share?url={{ route('Selayang-Pandang.index') }}'>
+                                     <img src='http://syam.eu.org/icon/g.jpg' alt='' width='30' height='30'></a>
+                                    | &nbsp<a href="#" onclick="window.print()"><img src="/temafrontend/images/print.png" alt='' width='50' height='50'></a>
 
 									 </div>
 								</div>

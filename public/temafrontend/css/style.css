@@ -108,7 +108,7 @@ label{
 	}
 	.content.white {
 		background: #fff;
-		    padding: 0.3em 0;
+		    padding: 1em 0;
 	}
 	.content.black {
 		background: #000;
@@ -261,6 +261,21 @@ label{
     background-color: #fff;
     padding: 0em 0em;
 	    border: 0px solid rgba(231,231,231,1.00);
+}
+
+/*CSS PETA RESPONSIVE */
+.peta-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.peta-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
 }
 /*--banner-inner--*/
 #slider2,
@@ -457,16 +472,17 @@ label{
 }
 /*--main-content--*/
 h3.tittle,h2.tittle {
-    background-color: #224a03;
-    padding:0.8em 1em;
-    color: #fff;
+    background-color: rgba(255,255,255,.15);
+    border-bottom: 2px solid #ff0000;
+    padding: 0.8em 1em;
+    color: #000;
     text-transform: uppercase;
-    font-size: 1.1em;
-	    margin-bottom: 1em;
-		    text-align: left;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    text-align: left;
 }
 h3.tittle i,h2.tittle i {
-    color: #fff;
+    color: #a04040;
     font-size: 1em;
     margin-right: 0.5em;
     vertical-align: baseline;
@@ -502,6 +518,7 @@ h5.inner.two a:hover{
 }
 h4.side {
     background-color: #e8e8e8;
+    border-bottom:5px solid #b5a21a;
     padding: 0.8em 1em;
     color:#000000;
     text-transform: uppercase;
@@ -601,9 +618,10 @@ span.icon3 {
     margin-top: 2em;
 }
 div #example1 {
-    background-color: #fff;
+    background: url(../images/em.jpg) no-repeat 2px 2px;
+    background-size: 100%;
        padding: 1.5em 1.5em 4em;
-    border: 0px solid rgba(231,231,231,1.00);
+    border: 1px solid rgba(231,231,231,1.00);
 }
 .nbs-flexisel-container {
 	position: relative;
@@ -1222,7 +1240,7 @@ figure.effect-layla:hover img {
     padding: 0;
 }
 .mag-bottom {
-    margin-top: 4em;
+    margin-top: 2em;
 }
 h3.tittle.bottom {
     width: 98.5%;
@@ -2343,6 +2361,7 @@ border: 1px solid #EAE5E5;
 		float: left;
 		margin-left: 1em;
 		width: 70%;
+    margin-top:10px;
 	}
 	.world-news-grid {
 		width: 84%;
