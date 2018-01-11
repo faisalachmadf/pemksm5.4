@@ -47,7 +47,7 @@ function dataTablesResponsive() {
 
 function createDatatables(selector, url, columns, order) {
     if (order == undefined) {
-        order = 'asc'
+        order = 'asc';
     }
 
     table = $(selector).DataTable({

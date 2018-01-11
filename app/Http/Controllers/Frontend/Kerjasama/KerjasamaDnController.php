@@ -18,11 +18,22 @@ class KerjasamaDnController extends Controller
         if ($katSlug == 'pencarian') {
             $pencarian = true;
             $kerjasamadns = KerjasamaDn::getSearch($request->input('pencarian'));
+        } else if ($katSlug == 'waktu-hampir-habis') {
+            $kerjasamadns = KerjasamaDn::getData($katSlug, $slug, 'hampir', 60);
+        } else if ($katSlug == 'waktu-sudah-habis') {
+            $kerjasamadns = KerjasamaDn::getData($katSlug, $slug, 'sudah');
         } else {
             $kerjasamadns = KerjasamaDn::getData($katSlug, $slug);
         }
 
+        if (empty($slug)) {
+            $detail = false;
+        } else {
+            $detail = true;
+        }
+
         $data = [
+            'detail' => $detail,
             'katdns' => Katdn::all(),
             'pencarian' => $pencarian,
             'kerjasamadns' => $kerjasamadns->simplePaginate(10),
