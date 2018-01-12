@@ -362,47 +362,49 @@
 
                 
                        <div class="row">
+
 			            <div class="col-lg-4 col-xs-4">
 			              <!-- small box -->
-			              <a href="{{ route('Tkksd')}}">
-			                <center><img src="/adminkelola/dist/img/logobiro.png" class="img-responsive"></center>
-			                <center><div class="inner">
+			           
+			                <center>
+			                	   <a href="{{ route('Tkksd')}}"><img src="/temafrontend/images/tkksdlogo.png" class="img-responsive" ></a></center>
+			                <div class="inner">
 			                  <br>
-			                  <h4>TKKSD</h4></a>
-			                </div> </center>
+			                 <h6> <center>Tim Koordinasi Kerja Sama Daerah</center></h6>
+			              </div> 
          
 			            </div>
+
 			            <div class="col-lg-4 col-xs-4">
 			              <!-- small box -->
-			                <a href="{{ route('Lppd')}}">
-			                  <center><img src="/adminkelola/dist/img/logobiro.png" class="img-responsive"></center>
+			              
+			                  <center>  <a href="{{ route('Lppd')}}"><img src="/temafrontend/images/logolppd.png" class="img-responsive"></a></center>
 			                 
 
-			                <center><div class="inner">
+			               <div class="inner">
 			                  <br>
-			                  <h4>LPPD</h4></a>
-			                </div> </center>
+			                  <h6> <center>Laporan Penyelenggaraan<br/> Pemerintah Daerah</center></h6>
+			                </div> 
 			           
 			            </div>
 
 			             <div class="col-lg-4 col-xs-4">
 			              <!-- small box -->
-			                  <center><img src="/adminkelola/dist/img/logobiro.png" class="img-responsive"></center>
+			                  <center><img src="/temafrontend/images/logosegmen.png" class="img-responsive"></center>
 			                 
 
-			                <center><div class="inner">
+			              
+			                	<div class="inner">
 			                  <br>
-			                  <h4>SEGMEN BATAS</h4>
-			                </div> </center>
+			                    <center><h6>SEGMEN BATAS</h6></center>
+			                </div> 
 			           
 			            </div>
 			      
 			          </div>
    
                                  <div class="clearfix"></div>
-                         
-                                
-                	
+ 	
                 </div>
                 
             </div>

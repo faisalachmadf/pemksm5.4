@@ -19,14 +19,14 @@
                     			   <label for="kategori-berita">Kategori Berita:</label>
                         <div class="clearfix"></div>
                         <a href="{{ route('Berita') }}" class="btn btn-default btn-katberita">
-                            <h6>Semua Berita</h6>
+                            <h6><u>Semua Berita</u></h6>
                         </a>
                         <a href="{{ route('Berita', ['popular']) }}" class="btn btn-danger btn-katberita">
-                            <h6>Berita Populer</h6>
+                            <h6><u>Berita Populer</u></h6>
                         </a>
                         @foreach($katberitas as $key => $katberita)
                         <a href="{{ route('Berita', [$katberita->slug]) }}" class="btn btn-katberita {{ generateBtnClass($key) }}">
-                            <h6>{{ $katberita->name }}</h6>
+                            <h6><u>{{ $katberita->name }}</u></h6>
                         </a>
                         @endforeach
                     </div>
@@ -58,6 +58,7 @@
                         <div class="editor-pics">
                             @if($dibaca)
                                 <div class="col-md-12 item-pic2 text-justify">
+
                                 	  <h4 class="inner two">
                                         <a href="{{ route('Berita', [$berita->katberita->slug, $berita->slug]) }}">{{ strtoupper($berita->judul) }}</a>
                                     </h4>
@@ -107,13 +108,15 @@
                                 <br>
                                	<script id="dsq-count-scr" src="//pemksmjabar.disqus.com/count.js" async></script>
                             @else
+
                                 <div class="col-md-3 item-pic">
                                     <img src="{{ asset('image/berita/thumbnail/'.$berita->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $berita->judul }}"/>
                                 </div>
                                 <div class="col-md-9 item-details">
+
                                     <p><a href="{{ route('Berita', [$berita->katberita->slug, $berita->slug]) }}">{{ strtoupper($berita->judul) }}</a></p>
                                     <div class="td-post-date two">
-                                        <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($berita->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($berita->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $berita->dibaca }}  <i class=""></i><i class="glyphicon glyphicon-list-alt"></i>{{ $berita->katberita->name }}</h6>
+                                        <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($berita->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($berita->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $berita->dibaca }}  <i class=""></i><font color="red"><i class="glyphicon glyphicon-list-alt"></i> {{ $berita->katberita->name }}</font></h6>
                                     </div>
                                     
                                 </div>

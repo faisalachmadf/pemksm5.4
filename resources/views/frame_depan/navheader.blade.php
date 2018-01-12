@@ -85,9 +85,9 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <ul class="multi-column-dropdown">
-                                        <li><a href="/Kerja-Sama/Mitra-Dalam-Negeri">Mitra Kerjasama Dalam Negeri</a></li>
+                                        <li><a href="{{ route('MitraDalamNegeri') }}">Mitra Kerjasama Dalam Negeri</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="/Kerja-Sama/Mitra-Luar-Negeri">Mitra Kerjasama Luar Negeri</a></li>
+                                        <li><a href="{{ route('MitraLuarNegeri') }}">Mitra Kerjasama Luar Negeri</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-sm-6">

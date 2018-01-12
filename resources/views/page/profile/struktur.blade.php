@@ -148,7 +148,7 @@
 									<table  class="table table-striped">
                                                     <thead style="background-color: white; color: white;">
                                                      <tr>
-                                                     
+                                                     <th><h5><p> No </p></h5></th>
                                                      <th style="width: 25%;"><h5><p>NIP</p></h5></th>
                                                    
                                                      <th style="width: 50%;"><h5><p>Nama</p></h5></th>
@@ -160,10 +160,14 @@
                                         <tbody>
                                         @if (count($analisisurpemdas))
                                       
-                                         @foreach($analisisurpemdas as $analisisurpemda)
+                                       
                                                     
                                         <tr>
-                                          
+                                          <td>
+                                     <?php $no = 0;?>
+						                  @foreach($analisisurpemdas as $analisisurpemda)
+						                <?php $no++ ;?>
+						            </td>
                                           <td><p><h5>{{ $analisisurpemda->nip }} </h5></p></td>
                                        
                                            <td><p><h5>{{ strtoupper($analisisurpemda->nama) }} 
@@ -184,6 +188,7 @@
                                       <table  class="table table-striped">
                                                     <thead">
                                                      <tr>
+                                                     	 <th><h5><p> No </p></h5></th>
                                                      <th style="width: 25%;"></th>
                                                      <th style="width: 50%;"></th>
                                                      <th ></th>
@@ -193,10 +198,14 @@
                                         <tbody>
                                      
                                       
-                                         @foreach($administrasiurpemdas as $administrasiurpemda)
+                                       
                                                     
                                         <tr>
-                                           
+                                           <td>
+                                     <?php $no = 0;?>
+						                    @foreach($administrasiurpemdas as $administrasiurpemda)
+						                <?php $no++ ;?>
+						            </td>
                                           <td><p><h5>{{ $administrasiurpemda->nip }} </h5></p></td>
                                        
                                            <td><p><h5>{{ strtoupper($administrasiurpemda->nama) }} 
@@ -215,7 +224,7 @@
 									<table  class="table table-striped">
                                                     <thead style="background-color: white; color: white;">
                                                      <tr>
-
+                                                     	 <th><h5><p> No </p></h5></th>
                                                      <th style="width: 25%;"><h5><p>NIP</p></h5></th>
                                                    
                                                      <th style="width: 50%;"><h5><p>Nama</p></h5></th>
@@ -227,10 +236,14 @@
                                         <tbody>
                                         @if (count($analisistapems))
                                       
-                                         @foreach($analisistapems as $analisistapem)
+                                   
                                                     
                                         <tr>
-                                           
+                                           <td>
+                                     <?php $no = 0;?>
+						                      @foreach($analisistapems as $analisistapem)
+						                <?php $no++ ;?>
+						            </td>
                                           <td><p><h5>{{ $analisistapem->nip }} </h5></p></td>
                                        
                                            <td><p><h5>{{ strtoupper($analisistapem->nama) }} 
@@ -251,6 +264,7 @@
                                       <table  class="table table-striped">
                                                     <thead">
                                                      <tr>
+                                                     	 <th><h5><p> No </p></h5></th>
                                                      <th style="width: 25%;"></th>
                                                      <th style="width: 50%;"></th>
                                                      <th ></th>
@@ -260,10 +274,14 @@
                                         <tbody>
                                      
                                       
-                                         @foreach($administrasitapems as $administrasitapem)
+                                     
                                                     
                                         <tr>
-                                           
+                                           <td>
+                                     <?php $no = 0;?>
+						                        @foreach($administrasitapems as $administrasitapem)
+						                <?php $no++ ;?>
+						            </td> 
                                           <td><p><h5>{{ $administrasitapem->nip }} </h5></p></td>
                                        
                                            <td><p><h5>{{ strtoupper($administrasitapem->nama) }} 
@@ -282,7 +300,7 @@
 									<table  class="table table-striped">
                                                     <thead style="background-color: white; color: white;">
                                                      <tr>
-
+                                                     	 <th><h5><p> No </p></h5></th>
                                                      <th style="width: 25%;"><h5><p>NIP</p></h5></th>
                                                    
                                                      <th style="width: 50%;"><h5><p>Nama</p></h5></th>
@@ -294,10 +312,14 @@
                                         <tbody>
                                         @if (count($analisiskerjasamas))
                                       
-                                         @foreach($analisiskerjasamas as $analisiskerjasama)
+                                       
                                                     
                                         <tr>
-                                           
+                                            <td>
+                                     <?php $no = 0;?>
+						                   @foreach($analisiskerjasamas as $analisiskerjasama)
+						                <?php $no++ ;?>
+						            </td>
                                           <td><p><h5>{{ $analisiskerjasama->nip }} </h5></p></td>
                                        
                                            <td><p><h5>{{ strtoupper($analisiskerjasama->nama) }} 
@@ -318,6 +340,7 @@
                                       <table  class="table table-striped">
                                                     <thead">
                                                      <tr>
+                                                     	 <th><h5><p> No </p></h5></th>
                                                      <th style="width: 25%;"></th>
                                                      <th style="width: 50%;"></th>
                                                      <th ></th>
@@ -327,10 +350,14 @@
                                         <tbody>
                                      
                                       
-                                         @foreach($administrasikerjasamas as $administrasikerjasama)
+                                       
                                                     
                                         <tr>
-                                           
+                                           <td>
+                                     <?php $no = 0;?>
+						                   @foreach($administrasikerjasamas as $administrasikerjasama)
+						                <?php $no++ ;?>
+						            </td>
                                           <td><p><h5>{{ $administrasikerjasama->nip }} </h5></p></td>
                                        
                                            <td><p><h5>{{ strtoupper($administrasikerjasama->nama) }} 
@@ -349,7 +376,7 @@
 									<table  class="table table-striped">
                                                     <thead style="background-color: white; color: white;">
                                                      <tr>
-
+                                                     	 <th><h5><p> No </p></h5></th>
                                                      <th style="width: 25%;"><h5><p>NIP</p></h5></th>
                                                    
                                                      <th style="width: 50%;"><h5><p>Nama</p></h5></th>
@@ -361,10 +388,14 @@
                                         <tbody>
                                         @if (count($ahlis))
                                       
-                                         @foreach($ahlis as $ahli)
+                                     
                                                     
                                         <tr>
-                                           
+                                           <td>
+                                     <?php $no = 0;?>
+						                     @foreach($ahlis as $ahli)
+						                <?php $no++ ;?>
+						            </td> 
                                           <td><p><h5>{{ $ahli->nip }} </h5></p></td>
                                        
                                            <td><p><h5>{{ strtoupper($ahli->nama) }} 

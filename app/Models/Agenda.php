@@ -91,8 +91,7 @@ class Agenda extends Model
     public function scopeGetSearch($query, $katSlug = '')
     {
         return $query->where(function($query) use ($katSlug) {
-                $query->where('judul', 'like', '%'.$katSlug.'%')
-                    ->orWhere('tanggal', 'like', '%'.$katSlug.'%');
+                $query->Where('tanggal', 'like', '%'.$katSlug.'%');
             })
             ->with(['katbagian', 'user'])
             ->orderBy('tanggal', 'desc');

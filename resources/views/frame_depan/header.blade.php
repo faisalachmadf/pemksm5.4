@@ -1,4 +1,5 @@
 <title>BIRO PEMERINTAHAN DAN KERJASAMA PROVINSI JAWA BARAT</title>
+<link rel="shortcut icon" href="/temafrontend/images/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Motive Mag Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,  Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
@@ -18,7 +19,9 @@
 <!-- Ionicons -->
 <link href="{{ asset('/adminkelola/bower_components/Ionicons/css/ionicons.min.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ asset('/adminkelola/bower_components/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
-
+<!-- Date Picker -->
+<link href="{{ asset('/adminkelola/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
+ 
 
 <!-- Custom CSS -->
 <link href="{{ asset('/css/custom.css') }}" rel="stylesheet" type="text/css">

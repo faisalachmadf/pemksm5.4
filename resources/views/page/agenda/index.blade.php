@@ -14,20 +14,9 @@
                 
 
                    
-                    <br>
+               
                     
-                <form class="form" action="{{ route('Agenda', ['pencarian']) }}" method="POST">
-                    {{ csrf_field() }}
-                    <div class="form-group">
-                        <label for="pencarian">Cari Agenda Berdasarkan Tanggal dan Nama:</label>
-                            <div class="input-group btn-katbagian">
-                                 <input type="text" name="pencarian" id="pencarian" class="form-control" placeholder="Masukan kata kunci..." value="{{ @$data['pencarian'] }}">
-                                     <div class="input-group-btn">
-                                         <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i></button>
-                                    </div>
-                            </div>
-                    </div>
-                </form>
+                
                     
 
                     <!--/Show dari Berita-->
@@ -57,6 +46,25 @@
                                 <div class="technology">
                                     <div class="editor-pics">
                                          <div class="edit-pics">
+
+                <form class="form" action="{{ route('Agenda', ['pencarian']) }}" method="POST">
+                    {{ csrf_field() }}
+                   <div class="input-group date">
+                        <label for="pencarian">Cari Agenda Berdasarkan Tanggal :</label>
+                            <div class="input-group btn-katbagian">
+                                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                                 <input type="text" name="pencarian" id="datepicker" class="form-control" placeholder="Masukan tanggal..." value="{{ @$data['pencarian'] }}" class="required">
+                                     <div class="input-group-btn">
+                                         <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i></button>
+                                    </div>
+                            </div>
+                    </div>
+                </form>
+
+            
+
                                      @if($pencarian)
                                     <h3>Hasil Pencarian {{ $agendas->count() > 0 ? '' : 'Tidak Ditemukan' }}<hr/></h3>
                                     <br/>
@@ -65,16 +73,37 @@
                                     @if (count($agendas))
                                     @foreach($agendas as $agenda)
 
-                                   
+                                   <div class="technology">
+                                        <div class="editor-pics">
+                                            <div class="edit-pics">
+                                            <div class="col-md-4 item-pic">
+                                                 <h3> {{ date('d M Y', strtotime($agenda->tanggal)) }} </h3><br/>
+                                                  <a  class="btn btn-info">  
+                                                    <h5><i class="glyphicon glyphicon-time"></i> &nbsp Jam : {{ $agenda->jam }}</p></h5></a>
+                                            </div>
+                                            <div class="col-md-8 item-details">
+
+                                                 <p><a href="{{ route('Agenda', [$agenda->katbagian->slug, $agenda->slug]) }}">{{ strtoupper($agenda->judul) }}</a></p><br>
+                                                 
+                                            
+                                          
+                                            <h5><i class="glyphicon glyphicon-home"></i> &nbsp&nbsp Lokasi: {{ $agenda->lokasi }}  </h5> 
+                                               <h5><i class=""></i><i class="glyphicon glyphicon-list-alt"></i>&nbsp&nbsp Agenda Bagian :<font color="red"><b>{{ $agenda->katbagian->name }}</b></font></h5>
+                                                           
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                </div>
 
                                 
-                                    <p><a href="{{ route('Agenda', [$agenda->katbagian->slug, $agenda->slug]) }}">{{ strtoupper($agenda->judul) }}</a></p><br>
-                                    
-                                    <h5><p><i class="glyphicon glyphicon-time"></i><b> &nbsp&nbsp Tanggal : {{ date('d M Y', strtotime($agenda->tanggal)) }} </b></p></h5>
-                                    <h5><i class="glyphicon glyphicon-time"></i><b> &nbsp&nbsp Pukul : {{ $agenda->jam }}</b></p></h5>
                                    
-                                    <h5><i class="glyphicon glyphicon-home"></i> &nbsp&nbsp Lokasi: {{ $agenda->lokasi }}  </h5>
-                                    <h5><i class=""></i><i class="glyphicon glyphicon-list-alt"></i>&nbsp&nbsp Agenda Bagian :<font color="red"><b>{{ $agenda->katbagian->name }}</b></font></h5>
+                                    
+                                   
+                                  
+                                   
+                                   
+                                 
                                    
                                     <hr/>
                                       

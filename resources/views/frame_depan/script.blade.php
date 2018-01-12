@@ -1,5 +1,5 @@
 <div class="copyright">
-					<p>&copy; 2018 BIRO PEMERINTAHAN DAN KERJA SAMA | SUBBAG PERENCANAAN DAN KETATAUSAHAAN</p>
+					<p>&copy; 2015 BIRO PEMERINTAHAN DAN KERJA SAMA | SUBBAG PERENCANAAN DAN KETATAUSAHAAN</p>
 				</div>
 				<!--start-smoth-scrolling-->
 						<script type="text/javascript">
@@ -21,4 +21,18 @@
 
 
 <!--JS-->
-  <script type="text/javascript" src="/temafrontend/js/bootstrap-3.1.1.min.js"></script>
+<script type="text/javascript" src="/temafrontend/js/bootstrap-3.1.1.min.js"></script>
+<!-- jQuery -->
+<script src="{{ asset('/adminkelola/bower_components/jquery-ui/jquery-ui.min.js') }}"></script>
+<!--Date Picke -->
+<script src="{{ asset('/adminkelola/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+<script>
+  $(function () {
+    //Date picker
+    $('#datepicker').datepicker({
+    	format: "yyyy-mm-dd",
+      autoclose: true
+    })
+
+  })
+</script>
