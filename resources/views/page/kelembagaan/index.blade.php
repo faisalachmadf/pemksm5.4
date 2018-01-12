@@ -34,7 +34,9 @@
                                     <hr/><h6>Bagikan :</h6><br/>
                                     
                                     <!-- Share Media Sosial dan Print -->
-
+                                     <a href="whatsapp://send?text={{ route('Kelembagaan', [$kelembagaan->id_katbagian]) }}" 
+                                        data-action="share/whatsapp/share">
+                                        <img src='/temafrontend/images/wa.png' alt='' width='40' height='40'></a>
                                     <a rel='nofollow' style="margin-right: 5px;" target="_blank" href='https://www.facebook.com/sharer.php?u={{ route('Kelembagaan', [$kelembagaan->id_katbagian]) }}'>
                                     <img src='http://syam.eu.org/icon/fb.jpg' alt='' width='30' height='30'></a>
                                     <a rel='nofollow' style="margin-right: 5px;" target="_blank" href='https://twitter.com/share?url={{ route('Kelembagaan', [$kelembagaan->id_katbagian]) }}'>
