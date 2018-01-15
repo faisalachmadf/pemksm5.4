@@ -21,7 +21,7 @@
             <div class="col-lg-2 col-xs-4">
               <!-- small box -->
 
-                  <center> <a href="{{ route('MitraDalamNegeri.detail', $provinsi->slug) }}" target="_blank"><img src="{{ asset('image/mitradn/thumbnail/'.$provinsi->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $provinsi->judul }}" style="margin-top: 10px;"></a></center>
+                  <center> <a href="{{ route('MitraDalamNegeri.detail', $provinsi->slug) }}"><img src="{{ asset('image/mitradn/thumbnail/'.$provinsi->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $provinsi->judul }}" style="margin-top: 10px;"></a></center>
                  
                   
               <div class="inner">
@@ -51,7 +51,7 @@
             <div class="col-lg-2 col-xs-4">
               <!-- small box -->
 
-                  <center><a href="{{ route('MitraDalamNegeri.detail', $kabkot->slug) }}" target="_blank"><img src="{{ asset('image/mitradn/thumbnail/'.$kabkot->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $kabkot->judul }}" ></a></center>
+                  <center><a href="{{ route('MitraDalamNegeri.detail', $kabkot->slug) }}"><img src="{{ asset('image/mitradn/thumbnail/'.$kabkot->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $kabkot->judul }}" ></a></center>
                  
 
                <div class="inner">
@@ -81,7 +81,7 @@
             <div class="col-lg-2 col-xs-4">
               <!-- small box -->
 
-                  <center> <a href="{{ route('MitraDalamNegeri.detail', $pihakketiga->slug) }}" target="_blank"><img src="{{ asset('image/mitradn/thumbnail/'.$pihakketiga->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $pihakketiga->judul }}" ></a></center>
+                  <center> <a href="{{ route('MitraDalamNegeri.detail', $pihakketiga->slug) }}"><img src="{{ asset('image/mitradn/thumbnail/'.$pihakketiga->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $pihakketiga->judul }}" ></a></center>
                  
 
                 <div class="inner">

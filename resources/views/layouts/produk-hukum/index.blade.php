@@ -79,7 +79,7 @@
         { data: 'action', name: 'action', orderable: false, searchable: false, width: '15%' }
       ];
 
-      createDatatables('#produk-hukums-table', '{!! route('produk-hukum.datatables') !!}', columns);
+      createDatatables('#produk-hukums-table', '{!! route('produk-hukum.datatables') !!}',  columns, 'desc');
     });
   </script>
 @endsection

@@ -75,7 +75,7 @@
         { data: 'created_at', name: 'created_at', visible: false, searchable: false},
         { data: 'judul', name: 'judul' },
         { data: 'katmitra.name', name: 'katmitra.name', orderable: false,  width: '20%' },
-        { data: 'gambar', name: 'gambar', orderable: false, searchable: false, width: '20%' },
+        { data: 'gambar', name: 'gambar', orderable: false, searchable: false, width: '10%' },
         { data: 'user', name: 'user.username' },
         { data: 'action', name: 'action', orderable: false, searchable: false, width: '15%' }
       ];

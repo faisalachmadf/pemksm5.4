@@ -48,6 +48,7 @@
             <thead>
               <tr>
                 <th>No</th>
+                  <th></th>
                 <th>Bagian</th>
                 <th>Isi</th>
                 <th>Gambar</th>

@@ -72,9 +72,10 @@
     $(function() {
       var columns = [
         { data: 'DT_Row_Index', name: 'DT_Row_Index', orderable: false, searchable: false, width: '5%' },
+        { data: 'created_at', name: 'created_at', visible: false, searchable: false},
         { data: 'judul', name: 'judul' },
         { data: 'katmitraln.name', name: 'katmitraln.name',  width: '20%' },
-        { data: 'gambar', name: 'gambar', orderable: false, searchable: false, width: '20%' },
+        { data: 'gambar', name: 'gambar', orderable: false, searchable: false, width: '10%' },
         { data: 'user', name: 'user.username' },
         { data: 'action', name: 'action', orderable: false, searchable: false, width: '15%' }
       ];

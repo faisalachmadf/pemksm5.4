@@ -190,7 +190,7 @@
                           <div class="edit-pics"> 
                           @foreach($sambutans as $key => $sambutan)
                             <center>
-                                <img src="{{ asset('image/umum/'.$sambutan->gambar) }}" class="img-responsive" width="200px" />
+                                <img src="{{ asset('image/umum/'.$sambutan->gambar) }}" class="img-responsive" width="150px" />
                             </center>
                             <br/>
                             <center><b>{{ $sambutan->nama }}</b></center>

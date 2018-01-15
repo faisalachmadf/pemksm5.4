@@ -70,7 +70,7 @@
               <label for="gambar" class="col-sm-4 control-label">Logo :</label>
 
               <div class="col-sm-4">
-                {!! generateImagePath('mitra-luar-negeri', $mitraln->gambar, $mitraln->judul) !!}
+              {!! generateImagePath('mitraln', $mitraln->gambar, $mitraln->judul) !!}
                 <input type="file" class="form-control-static" id="gambar" name="gambar">
                 <small>(jpeg, png, bmp, gif, or svg)</small>
 

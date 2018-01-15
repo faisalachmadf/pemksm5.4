@@ -23,7 +23,7 @@
                         
                             <h4 class="inner two">
                                     <legend> <a href="{{ route('MitraLuarNegeri.detail', $mitra->slug) }}">{{ strtoupper($mitra->judul) }}</a>   <div class="td-post-date two">
-                                        <h6><i class="glyphicon glyphicon-time"></i> Upload tanggal : &nbsp{{ date('d M Y', strtotime($mitra->tanggal)) }} &nbsp <i class="glyphicon glyphicon-user"></i> diupload oleh : &nbsp{{ generateUser($mitra->user) }}
+                                        <h6><i class="glyphicon glyphicon-time"></i> Upload tanggal : &nbsp{{ date('d M Y', strtotime($mitra->created_at)) }} &nbsp <i class="glyphicon glyphicon-user"></i> diupload oleh : &nbsp{{ generateUser($mitra->user) }}
                                     </div> </legend>
                                      
                             </h4>

@@ -15,7 +15,7 @@ class CreateKatmitrasTable extends Migration
     {
         Schema::create('katmitras', function (Blueprint $table) {
             $table->increments('id');
-             $table->string('name');
+            $table->string('name');
             $table->string('slug');
             $table->timestamps();
         });

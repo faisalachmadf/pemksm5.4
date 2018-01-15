@@ -52,11 +52,11 @@
             <div class="form-group{{ $errors->has('id_katmitra') ? ' has-error' : '' }}">
               <label for="id_katmitra" class="col-sm-4 control-label">Kategori Mitra Kerjasama Dalam Negeri<span class="required">*</span> :</label>
 
-              <div class="col-sm-4">
+               <div class="col-sm-4">
                 <select class="form-control" id="id_katmitra" name="id_katmitra" required>
-                  <option value="">Pilih Kategori mitra Kerjasama</option>
-                  @foreach($katmitra as $kategori)
-                    <option value="{{ $kategori->id }}" {{ old('id_katmitra', $mitradn->id_katmitra) == $kategori->id ? 'selected' : '' }}>{{ $kategori->name }}</option>
+                  <option value="">Pilih Mitra</option>
+                  @foreach($katmitra as $mitra)
+                    <option value="{{ $mitra->id }}" {{ old('id_katmitra', $mitradn->id_katmitra) == $mitra->id ? 'selected' : '' }}> {{ $mitra->name }}</option>
                   @endforeach
                 </select>
 
@@ -64,13 +64,14 @@
                   <span class="help-block">{{ $errors->first('id_katmitra') }}</span>
                 @endif
               </div>
+
             </div>
             
             <div class="form-group{{ $errors->has('gambar') ? ' has-error' : '' }}">
               <label for="gambar" class="col-sm-4 control-label">Logo :</label>
 
               <div class="col-sm-4">
-                {!! generateImagePath('mitra-dalam-negeri', $mitradn->gambar, $mitradn->judul) !!}
+             {!! generateImagePath('mitradn', $mitradn->gambar, $mitradn->judul) !!}
                 <input type="file" class="form-control-static" id="gambar" name="gambar">
                 <small>(jpeg, png, bmp, gif, or svg)</small>
 

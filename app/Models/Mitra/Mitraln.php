@@ -13,7 +13,7 @@ class Mitraln extends Model
      * @var array
      */
     protected $fillable = [
-        'id_katmiraln', 'judul', 'isi', 'gambar', 'id_user', 'slug'
+        'id_katmitraln', 'judul', 'isi', 'gambar', 'id_user', 'slug'
     ];
 
     /**
