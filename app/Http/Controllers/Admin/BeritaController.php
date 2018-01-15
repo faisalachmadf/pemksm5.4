@@ -207,4 +207,5 @@ class BeritaController extends Controller
 
         return redirect()->route('berita.index')->with('success', $message);
     }
+
 }
