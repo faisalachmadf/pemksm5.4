@@ -21,7 +21,7 @@ class CreateBeritasTable extends Migration
             $table->date('tanggal');
             $table->string('gambar');
             $table->integer('id_user')->unsigned();
-            $table->string('slug');
+            $table->text('slug');
             $table->integer('dibaca')->default(0);
             $table->timestamps();
         });

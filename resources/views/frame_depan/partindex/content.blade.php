@@ -18,7 +18,7 @@
                                   <img src="{{ asset('image/berita/thumbnail/'.$umum->gambar) }}" alt="{{ $umum->judul }}" class="img-responsive"/>
                                 </div>
                               
-                                <h4><a href="{{ route('Berita', [$umum->katberita->slug, $umum->slug]) }}" class="wd">{{ $umum->judul }}</a></h4>
+                                <h4><a href="{{ route('Berita', [$umum->katberita->slug, $umum->slug]) }}" class="wd"><font color="brown">{{ $umum->judul }}</font></a></h4>
 
                                 <div class="td-post-date two">
                                   <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($umum->tanggal)) }}</h6>
@@ -28,7 +28,7 @@
                             @endforeach
                             <div class="clearfix"></div>
                             <a href="{{ route('Berita', [@$umum->katberita->slug]) }}" class="btn btn-danger">
-                                <h6>{{ @$umum->katberita->name }} Lainnya  <li class="glyphicon glyphicon-new-window"></li></h6>
+                                <h6>" {{ @$umum->katberita->name }} Lainnya  <li class="glyphicon glyphicon-new-window"></li></h6>
                             </a>
                         </div>
                         <br/>
@@ -44,10 +44,10 @@
                             <!-- Di isi dengan tabel beritas kategori urusan pemerintahan daerah -->
                             @foreach($daerahs as $daerah)
                             <div class="editor-pics">
-                                <div class="col-md-3 item-pic">
+                                <div class="col-md-4 item-pic">
                                     <img src="{{ asset('image/berita/thumbnail/'.$daerah->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $daerah->judul }}"/>
                                 </div>
-                                <div class="col-md-9 item-details">
+                                <div class="col-md-8 item-details">
                                     <p><a href="{{ route('Berita', [$daerah->katberita->slug, $daerah->slug]) }}">{{ strtoupper($daerah->judul) }}</a></p>
                                      
                                      <div class="td-post-date two">
@@ -78,10 +78,10 @@
                             <!-- Di isi dengan tabel beritas kategori tata pemerintahan -->
                             @foreach($tatas as $tata)
                             <div class="editor-pics">
-                                <div class="col-md-3 item-pic">
+                                <div class="col-md-4 item-pic">
                                     <img src="{{ asset('image/berita/thumbnail/'.$tata->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $tata->judul }}"/>
                                 </div>
-                                <div class="col-md-9 item-details">
+                                <div class="col-md-8 item-details">
                                     <p><a href="{{ route('Berita', [$tata->katberita->slug, $tata->slug]) }}">{{ strtoupper($tata->judul) }}</a></p>
                                     <div class="td-post-date two">
                                         <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($tata->tanggal)) }} <i class="glyphicon glyphicon-user"></i>diupload :  {{ generateUser($tata->user) }} <i class="glyphicon glyphicon-eye-open"></i> dilihat : <b>{{ $tata->dibaca }}</b> kali</h6>
@@ -109,10 +109,10 @@
                             <!-- Di isi dengan tabel beritas kategori kerjasama -->
                             @foreach($kerjasamas as $kerjasama)
                             <div class="editor-pics">
-                                <div class="col-md-3 item-pic">
+                                <div class="col-md-4 item-pic">
                                     <img src="{{ asset('image/berita/thumbnail/'.$kerjasama->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $kerjasama->judul }}"/>
                                 </div>
-                                <div class="col-md-9 item-details">
+                                <div class="col-md-8 item-details">
                                     <p><a href="{{ route('Berita', [$kerjasama->katberita->slug, $kerjasama->slug]) }}">{{ strtoupper($kerjasama->judul) }}</a></p>
                                     <div class="td-post-date two">
                                         <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($kerjasama->tanggal)) }} <i class="glyphicon glyphicon-user"></i>diupload :  {{ generateUser($kerjasama->user) }} <i class="glyphicon glyphicon-eye-open"></i> dilihat : <b>{{ $kerjasama->dibaca }}</b> kali</h6>

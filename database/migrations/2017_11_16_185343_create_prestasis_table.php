@@ -17,7 +17,7 @@ class CreatePrestasisTable extends Migration
             $table->increments('id');
             $table->text('judul');
             $table->text('isi');
-            $table->string('slug');
+            $table->text('slug');
             $table->string('gambar');
             $table->timestamps();
         });

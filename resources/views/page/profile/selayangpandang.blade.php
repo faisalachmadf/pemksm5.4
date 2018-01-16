@@ -17,7 +17,7 @@
 
 	                            <div class="banner-bottom-left-grids">
 									<div class="single-left-grid">
-											<p>{!! @$selayang->isi !!}</p>
+											{!! @$selayang->isi !!}
 											 <!-- Share Media Sosial dan Print -->
                                       <hr/><h6>Bagikan :</h6><br/>
                                     <a rel='nofollow' style="margin-right: 5px;" target="_blank" href='https://www.facebook.com/sharer.php?u={{ route('Selayang-Pandang.index') }}'>

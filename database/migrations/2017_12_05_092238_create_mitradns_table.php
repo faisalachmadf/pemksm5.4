@@ -20,7 +20,7 @@ class CreateMitradnsTable extends Migration
             $table->string('gambar');
             $table->text('isi');
             $table->integer('id_user')->unsigned();
-            $table->string('slug');
+            $table->text('slug');
             $table->timestamps();
         });
 

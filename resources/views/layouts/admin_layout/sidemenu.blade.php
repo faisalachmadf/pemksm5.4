@@ -184,27 +184,11 @@
             </span>
           </a>
         </li>
-        <li>
-          <a href="pages/calendar.html">
-            <i class="fa fa-calendar"></i> <span>Konsultasi</span>
-            <span class="pull-right-container">
-             
-              
-            </span>
-          </a>
-        </li>
+       
         
 
         <!-- Ini Masuk di User -->
-        <li class="header">EMAIL</li>
-        <li>
-          <a href="pages/mailbox/mailbox.html">
-            <i class="fa fa-envelope"></i> <span>Mailbox</span>
-            <span class="pull-right-container">
-              
-            </span>
-          </a>
-        </li>
+       
         
 
         @if($userLogin['role'] != 'user')

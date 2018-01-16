@@ -4,6 +4,14 @@
     width: 100% !important;
     height: 100% !important;
 }
+
+.img-kabkot {
+    display: block;
+    margin: auto;
+    width: 70px !important;
+    height:65px !important;
+}
+
 .thumbnail>img {
     margin: auto;
     width: auto !important;
@@ -28,17 +36,21 @@
     background: url(../images/banner2.jpg);
     width: 100% !important;
 }
-/*CSS PETA RESPONSIVE */
-.peta-responsive{
-    overflow:hidden;
-    padding-bottom:56.25%;
-    position:relative;
-    height:0;
+.box-body-mitra ul {
+    position: relative;
+    padding-left: 15px;
 }
-.peta-responsive iframe{
-    left:0;
-    top:0;
-    height:100%;
-    width:100%;
-    position:absolute;
+
+.box-body-mitra ol {
+    position: relative;
+    padding-left: 30px;
+}
+.box-body-mitra ul li {
+    line-height: 25px;
+}
+.box-body-mitra ol li {
+    line-height: 25px;
+}
+p {
+    margin: 0 0 10px;
 }

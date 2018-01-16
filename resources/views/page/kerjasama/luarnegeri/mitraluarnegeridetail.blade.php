@@ -5,7 +5,7 @@
     <div class="banner two">
         <div class="container"> 
             <h2 class="inner-tittle">
-                MITRA KERJA SAMA DALAM NEGERI<br/>
+                MITRA KERJA SAMA LUAR NEGERI<br/>
                 {{ strtoupper(@$mitra->katmitraln->name) }}
             </h2>
         </div>
@@ -19,7 +19,7 @@
                     <div class="editor-pics">
                                 <div class="edit-pics">
                     @if($mitra)
-                        <div class="col-md-12 item-pic2 text-justify">
+                        <div class="box-body-mitra text-justify">
                         
                             <h4 class="inner two">
                                     <legend> <a href="{{ route('MitraLuarNegeri.detail', $mitra->slug) }}">{{ strtoupper($mitra->judul) }}</a>   <div class="td-post-date two">

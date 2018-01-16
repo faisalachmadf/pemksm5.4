@@ -20,7 +20,7 @@ class CreateAgendasTable extends Migration
             $table->date('tanggal');
             $table->string('jam');
             $table->text('lokasi');
-            $table->string('slug');
+            $table->text('slug');
             $table->integer('id_user')->unsigned();
             $table->timestamps();
         });

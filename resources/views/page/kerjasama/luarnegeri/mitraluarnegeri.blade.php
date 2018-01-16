@@ -18,14 +18,14 @@
                 <br/><br/>
           <div class="row">
           @foreach($pemerintahans as $pemerintahan)
-            <div class="col-lg-2 col-xs-4">
+              <div class="col-lg-2 col-xs-4">
               <!-- small box -->
 
-                  <center><a href="{{ route('MitraLuarNegeri.detail', $pemerintahan->slug) }}" target="_blank"><img src="{{ asset('image/mitraln/thumbnail/'.$pemerintahan->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $pemerintahan->judul }}" ></a></center>
+                  <center><a href="{{ route('MitraLuarNegeri.detail', $pemerintahan->slug) }}" target="_blank"><img src="{{ asset('image/mitraln/thumbnail/'.$pemerintahan->gambar) }}" class="img-kabkot img-thumbnail" alt="{{ $pemerintahan->judul }}" ></a></center>
                  
 <div class="inner">
                   <br/>
-                <h6>{{ strtoupper($pemerintahan->judul) }}</h6>
+                <h6><center>{{ strtoupper($pemerintahan->judul) }}</center></h6>
                 </div>
               <br>
              
@@ -50,12 +50,12 @@
             <div class="col-lg-2 col-xs-4">
               <!-- small box -->
 
-                  <center><a href="{{ route('MitraLuarNegeri.detail', $lembaga->slug) }}" target="_blank"><img src="{{ asset('image/mitraln/thumbnail/'.$lembaga->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $lembaga->judul }}" ></a></center>
+                  <center><a href="{{ route('MitraLuarNegeri.detail', $lembaga->slug) }}" target="_blank"><img src="{{ asset('image/mitraln/thumbnail/'.$lembaga->gambar) }}" class="img-kabkot img-thumbnail" alt="{{ $lembaga->judul }}" ></a></center>
                  
 
                 <div class="inner">
                   <br/>
-                <h6>{{ strtoupper($lembaga->judul) }}</h6>
+                <h6><center>{{ strtoupper($lembaga->judul) }}</center></h6>
                 </div>
               <br>
             
@@ -77,12 +77,12 @@
             <div class="col-lg-2 col-xs-4">
               <!-- small box -->
 
-                  <center> <a href="{{ route('MitraLuarNegeri.detail', $swasta->slug) }}" target="_blank"><img src="{{ asset('image/mitraln/thumbnail/'.$swasta->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $swasta->judul }}" ></a></center>
+                  <center> <a href="{{ route('MitraLuarNegeri.detail', $swasta->slug) }}" target="_blank"><img src="{{ asset('image/mitraln/thumbnail/'.$swasta->gambar) }}" class="img-kabkot img-thumbnail" alt="{{ $swasta->judul }}" ></a></center>
                  
 
                 <div class="inner">
                   <br/>
-                <h6>{{ strtoupper($swasta->judul) }}</h6>
+                <h6><center>{{ strtoupper($swasta->judul) }}</center></h6>
                 </div>
               <br>
             

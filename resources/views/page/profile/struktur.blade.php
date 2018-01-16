@@ -17,7 +17,7 @@
 
 	                            <div class="banner-bottom-left-grids">
 									<div class="single-left-grid">
-											<a href="#"><center><img src="/adminkelola/dist/img/struktur.png" class="img-responsive"></center></a>
+											<a href="#"><center> <!-- <img src="/adminkelola/dist/img/struktur.png" class="img-responsive"> --></center></a>
 											<hr/><br/>
 											<center><h2>- - - PEJABAT STRUKTURAL- - -</h2></center><br/><br/>
 											 	<div class="row">

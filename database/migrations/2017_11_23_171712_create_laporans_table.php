@@ -20,7 +20,7 @@ class CreateLaporansTable extends Migration
             $table->text('isi');
             $table->date('tanggal');
             $table->string('file');
-            $table->string('slug');
+            $table->text('slug');
             $table->integer('id_user')->unsigned();
             $table->integer('diunduh')->default(0);
             $table->timestamps();

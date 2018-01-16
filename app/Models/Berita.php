@@ -90,6 +90,7 @@ class Berita extends Model
     public function scopeDibaca($query, $slug)
     {
         return $query->where('slug', $slug)->increment('dibaca');
+        
     }
 
     public function scopeGetSearch($query, $katSlug = '')
