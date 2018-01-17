@@ -26,7 +26,7 @@ class PublikasiController extends Controller
         $data = [
             'katfile' => $katfile->getDataBySlug($katSlug),
             'pencarian' => $pencarian,
-            'publikasis' => $publikasis->simplePaginate(10),
+            'publikasis' => $publikasis->Paginate(25),
             'kanan' => getDataKanan()
         ];
 

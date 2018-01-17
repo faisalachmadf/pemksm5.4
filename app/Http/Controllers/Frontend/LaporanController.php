@@ -26,7 +26,7 @@ class LaporanController extends Controller
         $data = [
             'katlaporan' => $katlaporan->getDataBySlug($katSlug),
             'pencarian' => $pencarian,
-            'laporans' => $laporans->simplePaginate(10),
+            'laporans' => $laporans->Paginate(25),
             'kanan' => getDataKanan()
         ];
 

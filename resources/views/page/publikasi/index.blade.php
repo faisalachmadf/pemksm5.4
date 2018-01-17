@@ -73,6 +73,7 @@
                             </tbody>
                             </table>
                             
+                            
                         @if($pencarian)
                             {{ $publikasis->appends(['pencarian' => $data['pencarian']])->links() }}
                         @else

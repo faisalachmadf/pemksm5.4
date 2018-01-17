@@ -82,7 +82,7 @@
                             @foreach(@$populars ? $populars : [] as $popular)
                                 <div class="editor-pics">
                                     <div class="col-md-3 item-pic">
-                                        <img src="{{ asset('image/berita/thumbnail/'.$popular->gambar) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $popular->judul }}"/>
+                                        <img src="{{ asset('image/berita/thumbnail/'.$popular->gambar) }}" class="img-responsive" alt="{{ $popular->judul }}"/>
 
                                     </div>
                                     <div class="col-md-9 item-details">
@@ -107,7 +107,7 @@
 	                            @foreach(@$layanans ? $layanans : [] as $layanan)
 	                                <div class="editor-pics">
 	                                    <div class="col-md-3 item-pic">
-	                                        <img src="{{ asset('image/layanan/thumbnail/'.$layanan->file) }}" class="img-responsive img-thumbnail wp-post-image" alt="{{ $layanan->judul }}" class="img-responsive "  />
+	                                        <img src="{{ asset('image/layanan/thumbnail/'.$layanan->file) }}" class="img-responsive" alt="{{ $layanan->judul }}" class="img-responsive "  />
 
 	                                    </div>
 	                                    <div class="col-md-9 item-details">

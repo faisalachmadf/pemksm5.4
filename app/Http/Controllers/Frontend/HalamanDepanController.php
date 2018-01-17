@@ -18,9 +18,9 @@ class HalamanDepanController extends Controller
         $data = [
             'banners' => header::Urutan()->take(3)->get(),
             'umums' => Berita::getDataByKat('Berita-Umum', 4)->get(),
-            'daerahs' => Berita::getDataByKat('Berita-Urusan-Pemerintahan-Daerah', 3)->get(),
-            'tatas' => Berita::getDataByKat('Berita-Tata-Pemerintahan', 3)->get(),
-            'kerjasamas' => Berita::getDataByKat('Berita-Kerja-Sama', 3)->get(),
+            'daerahs' => Berita::getDataByKat('Berita-Urusan-Pemerintahan-Daerah', 5)->get(),
+            'tatas' => Berita::getDataByKat('Berita-Tata-Pemerintahan', 5)->get(),
+            'kerjasamas' => Berita::getDataByKat('Berita-Kerja-Sama', 5)->get(),
             'artikels' => Berita::getDataByKat('Artikel', 4)->get(),
             'sambutans' => sambutan::all(),
             'publikasis' => Publikasi::getDataByKat([], 5, true)->get(),

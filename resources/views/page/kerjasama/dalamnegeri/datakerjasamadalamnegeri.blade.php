@@ -121,7 +121,7 @@
                                           
 
                                         <table  class="table table-striped">
-                                          <thead style="background-color: blue; color: white;">
+                                          <thead style="background-color: brown; color: white;">
                                            <tr>
                                            <th style="width: 5%;"><h5><p>Tahun</p></h5></th>
                                          
@@ -141,7 +141,7 @@
                                                
                                               <td><p><h6>{{ $kerjasamadn->tahun }} </h6></p></td>
                                            
-                                               <td><p><h6>{{ strtoupper($kerjasamadn->judul) }} <br> <font color="red"><h8>{{ $kerjasamadn->katdn->name }}</h8></font>
+                                               <td><p><h6>{{ strtoupper($kerjasamadn->judul) }} <br><br/> <font color="red"><h8>{{ $kerjasamadn->katdn->name }}</h8></font>
                                                </h6></p></td>
                                                <td><p><h6>{{ date('d M Y', strtotime($kerjasamadn->tanggal_awal)) }}
                                                </h6></p></td>
@@ -165,6 +165,22 @@
                                         @endif
                                       @endif
                                       </div>
+
+                                      <!-- Share Media Sosial dan Print -->
+
+                                      <hr/><h6> Bagikan :</h6>
+                                     <a href="whatsapp://send?text={{ route('KerjasamaDn') }}" 
+                                        data-action="share/whatsapp/share">
+                                        <img src='/temafrontend/images/wa.png' alt='' width='40' height='40'></a>
+                                    <a rel='nofollow' style="margin-right: 5px;" target="_blank" href='https://www.facebook.com/sharer.php?u={{ route('KerjasamaDn') }}'>
+                                    <img src='/temafrontend/images/logofb.png' alt='' width='50' height='50'></a>
+                                    <a rel='nofollow' style="margin-right: 5px;" target="_blank" href='https://twitter.com/share?url={{ route('KerjasamaDn') }}'>     
+                                    <img src='/temafrontend/images/logotwitter.png' alt='' width='40' height='40'></a>
+                                    <a rel='nofollow' style="margin-right: 5px;" target="_blank" href='https://plus.google.com/share?url={{ route('KerjasamaDn') }}'>
+                                    <img src='/temafrontend/images/logogoogle.png' alt='' width='35' height='35'></a>
+                                    | &nbsp<a href="#" onclick="window.print()"><img src="/temafrontend/images/print.png" alt='' width='50' height='50'></a>
+
+                                  
                                   </div>
                               </div>  
                   <div class="clearfix"></div>

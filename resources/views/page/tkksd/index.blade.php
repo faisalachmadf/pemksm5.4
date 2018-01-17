@@ -34,7 +34,7 @@
                             <div class="editor-pics">
                                 <div class="edit-pics">
                                 <div class="col-md-4 item-pic">
-                                     <h4><p>{{ @$tkksd->judul }}</p></h4>
+                                     <h4><p><font color="brown"> {{ @$tkksd->judul }}</font></p></h4>
                                 </div>
                                 <div class="col-md-8 item-details">
                                    
@@ -48,7 +48,7 @@
                                        <a href="{{ route('Tkksd.unduh', [$tkksd->slug]) }}"  class="btn btn-info">
                          
                      Download</a><p>&nbsp</p>
-                         <h6><i>diunduh : <b>{{ $tkksd->diunduh }}</b> kali | tanggal upload :  {{ date('d M Y', strtotime($tkksd->created_at)) }}</i></h6>
+                         <h6><i>diunduh : <b>{{ $tkksd->diunduh }}</b> kali | tanggal upload :  <font color="red">{{ date('d M Y', strtotime($tkksd->created_at)) }}</font></i></h6>
                                     </h5>
                                 </div>
                                 <div class="clearfix"></div>
@@ -118,13 +118,39 @@
                                             <!-- Komentar -->
                                              <!-- Share Media Sosial dan Print -->
                                       <hr/><h6>Bagikan :</h6><br/>
+                                       <a href="whatsapp://send?text={{ route('Tkksd') }}" 
+                                        data-action="share/whatsapp/share">
+                                        <img src='/temafrontend/images/wa.png' alt='' width='40' height='40'></a>
                                     <a rel='nofollow' style="margin-right: 5px;" target="_blank" href='https://www.facebook.com/sharer.php?u={{ route('Tkksd')}}'>
-                                    <img src='http://syam.eu.org/icon/fb.jpg' alt='' width='30' height='30'></a>
+                                    <img src='/temafrontend/images/logofb.png' alt='' width='50' height='50'></a>
                                     <a rel='nofollow' style="margin-right: 5px;" target="_blank" href='https://twitter.com/share?url={{ route('Tkksd')}}'>
-                                    <img src='http://syam.eu.org/icon/tw.jpg' alt='' width='30' height='30'></a>
+                                    <img src='/temafrontend/images/logotwitter.png' alt='' width='40' height='40'></a>
                                     <a rel='nofollow' style="margin-right: 5px;" target="_blank" href='https://plus.google.com/share?url={{ route('Tkksd')}}'>
-                                     <img src='http://syam.eu.org/icon/g.jpg' alt='' width='30' height='30'></a>
-                                    | &nbsp<a href="#" onclick="window.print()"><img src="/temafrontend/images/print.png" alt='' width='50' height='50'></a>    
+                                      <img src='/temafrontend/images/logogoogle.png' alt='' width='35' height='35'></a>
+                                    | &nbsp<a href="#" onclick="window.print()"><img src="/temafrontend/images/print.png" alt='' width='50' height='50'></a> 
+
+                                    <P>&nbsp</P>
+                  <P>&nbsp</P>
+                  <div id="disqus_thread"></div>
+                    <script>
+
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = "{{ route('Tkksd')}}";  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = "Tkksd/ {{ route('Tkksd')}}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://pemksmjabar.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>   
               </div>
               @include('frame_depan.kanan', @$kanan ? $kanan : [])
         </div>    
