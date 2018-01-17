@@ -100,7 +100,7 @@ class PublikasiController extends Controller
             return redirect()->back()->withInput()->withErrors('file', 'File tidak valid');
         }
 
-        $publikasi->file = time().'-'.$publikasi->slug.'.'.$file->getClientOriginalExtension();
+        $publikasi->file = time().'-'.'.'.$file->getClientOriginalExtension();
         $publikasi->save();
         $file->move($path, $publikasi->file);
 
@@ -169,7 +169,7 @@ class PublikasiController extends Controller
                 return redirect()->back()->withInput()->withErrors('file', 'File tidak valid');
             }
 
-            $data['file'] = time().'-'.$data['slug'].'.'.$file->getClientOriginalExtension();
+            $data['file'] = time().'-'.'.'.$file->getClientOriginalExtension();
             $file->move($path, $data['file']);
 
             // delete image & thumbnail

@@ -97,7 +97,7 @@ class LaporanController extends Controller
             return redirect()->back()->withInput()->withErrors('file', 'File tidak valid');
         }
 
-        $laporan->file = time().'-'.$laporan->slug.'.'.$file->getClientOriginalExtension();
+        $laporan->file = time().'-'.'.'.$file->getClientOriginalExtension();
         $laporan->save();
         $file->move($path, $laporan->file);
 
@@ -166,7 +166,7 @@ class LaporanController extends Controller
                 return redirect()->back()->withInput()->withErrors('file', 'File tidak valid');
             }
 
-            $data['file'] = time().'-'.$data['slug'].'.'.$file->getClientOriginalExtension();
+            $data['file'] = time().'-'.'.'.$file->getClientOriginalExtension();
             $file->move($path, $data['file']);
 
             // delete image & thumbnail

@@ -92,7 +92,7 @@ class ProdukHukumController extends Controller
             return redirect()->back()->withInput()->withErrors('file', 'File tidak valid');
         }
 
-        $produk->file = time().'-'.$produk->slug.'.'.$file->getClientOriginalExtension();
+        $produk->file = time().'-'.'.'.$file->getClientOriginalExtension();
         $produk->save();
         $file->move($path, $produk->file);
 
@@ -160,7 +160,7 @@ class ProdukHukumController extends Controller
                 return redirect()->back()->withInput()->withErrors('file', 'File tidak valid');
             }
 
-            $data['file'] = time().'-'.$data['slug'].'.'.$file->getClientOriginalExtension();
+            $data['file'] = time().'-'.'.'.$file->getClientOriginalExtension();
             $file->move($path, $data['file']);
 
             // delete image & thumbnail
