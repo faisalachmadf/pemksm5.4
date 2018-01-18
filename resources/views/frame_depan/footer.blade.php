@@ -14,7 +14,7 @@
 									<li ><li class="glyphicon glyphicon-map-marker" style="color: white;"></li> <font color="white">&nbsp &nbsp Jl. Diponegoro No. 22 Bandung</font></li>
 									<li ><li class="glyphicon glyphicon-phone-alt" style="color: white;"></li> <font color="white">&nbsp &nbsp (022) 4231161</font></li>
 									<li ><li class="glyphicon glyphicon-envelope" style="color: white;"></li> <font color="white">&nbsp &nbsp biropemksm@gmail.com </font></li>
-									<li ><li class="glyphicon glyphicon-envelope"></li> <font color="white">&nbsp nbsp  biropemkes@jabarprov.go.id</font></li>
+									<li ><li class="glyphicon glyphicon-envelope"></li> <font color="white">&nbsp &nbsp  biropemkes@jabarprov.go.id</font></li>
 									<li ><a href="{{ route('Lokasi') }}"><li class="glyphicon glyphicon-log-ine" style="color: white;"></li> &nbsp &nbsp <h6><font color="yellow">Selengkapnya</font></h6>  </a></li>
 								
 								</ul><br/>
