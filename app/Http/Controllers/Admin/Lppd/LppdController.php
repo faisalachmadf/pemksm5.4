@@ -117,6 +117,7 @@ class LppdController extends Controller
         return view('layouts.lppd.show', compact('lppd'))->withPage($page);
     }
 
+
     /**
      * Show the form for editing the specified resource.
      *

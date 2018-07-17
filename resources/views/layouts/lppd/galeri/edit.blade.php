@@ -91,7 +91,7 @@
               </div>
             </div>
             <div class="form-group">
-              @foreach($galeri->gambartkksds as $multi)
+              @foreach($galeri->gambars as $multi)
               <div class="col-sm-3">
                 {!! generateImagePath('galeri-lppd', $multi->gambar, $galeri->judul) !!}
               </div>

@@ -66,7 +66,7 @@
             <div class="form-group">
               <label class="col-sm-12">Multi Gambar</label>
 
-              @foreach($galeri->gambartkksds as $multi)
+              @foreach($galeri->gambars as $multi)
               <div class="col-sm-3">
                 {!! generateImagePath('galeri-lppd', $multi->gambar, $galeri->judul) !!}
               </div>
