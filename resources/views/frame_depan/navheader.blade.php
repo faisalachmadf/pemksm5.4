@@ -1,6 +1,6 @@
   <div class="header" id="home">
      <div class="content white">
-        <nav class="navbar navbar-default " role="navigation">
+        <nav class="navbar navbar-default sticky animated fadeInDown " role="navigation">
            <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -9,11 +9,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="/"><center><img src="/adminkelola/dist/img/logobiro.png"></center></a>
+                <a href="{{ route('index') }}"><center><img src="/pemksm5.4/public/adminkelola/dist/img/logobiro.png" class="img-responsive"></center></a>
             </div>
             <!--/.navbar-header-->
         
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">PROFIL<b class="caret"></b></a>
@@ -92,9 +92,9 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <ul class="multi-column-dropdown">
-                                       <li><a href="/Kerja-Sama/KerjasamaDn">Data Kerjasama Dalam Negeri</a></li>    
+                                       <li><a href="{{ route('KerjasamaDn') }}">Data Kerjasama Dalam Negeri</a></li>    
                                         <li class="divider"></li>
-                                        <li><a href="/Kerja-Sama/KerjasamaLn">Data Kerjasama Luar Negeri</a></li>
+                                        <li><a href="{{ route('KerjasamaLn') }}">Data Kerjasama Luar Negeri</a></li>
                                        
                                     </ul>
                                 </div>

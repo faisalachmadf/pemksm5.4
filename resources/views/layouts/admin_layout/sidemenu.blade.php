@@ -18,10 +18,10 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/adminpanel/sambutan"><i class="fa fa-circle-o"></i> Sambutan Kepala</a></li>
-            <li><a href="/adminpanel/aplikasi"><i class="fa fa-circle-o"></i> Aplikasi Online</a></li>
-            <li><a href="/adminpanel/link"><i class="fa fa-circle-o"></i> Link terkait</a></li>
-            <li><a href="/adminpanel/header"><i class="fa fa-circle-o"></i> Header</a></li>
+            <li><a href="{{ route('sambutan.index') }}"><i class="fa fa-circle-o"></i> Sambutan Kepala</a></li>
+            <li><a href="{{ route('aplikasi.index') }}"><i class="fa fa-circle-o"></i> Aplikasi Online</a></li>
+            <li><a href="{{ route('link.index') }}"><i class="fa fa-circle-o"></i> Link terkait</a></li>
+            <li><a href="{{ route('header.index') }}"><i class="fa fa-circle-o"></i> Header</a></li>
           </ul>
         </li>
         <li class="treeview {{ request()->segment(2) == 'profil' ? 'active' : '' }}">
