@@ -186,7 +186,7 @@
                 </div>
                 <br/>
                         <div class="connect">
-                        <h4 class="side" >KEPALA DINAS</h4>
+                        <h4 class="side" >KEPALA BIRO PEMERINTAHAN DAN KERJA SAMA</h4>
                           <div class="edit-pics"> 
                           @foreach($sambutans as $key => $sambutan)
                             <center>
@@ -363,7 +363,7 @@
                 
                        <div class="row">
 
-			            <div class="col-lg-4 col-xs-4">
+			            <div class="col-lg-6 col-xs-6">
 			              <!-- small box -->
 			           
 			                <center>
@@ -375,7 +375,7 @@
          
 			            </div>
 
-			            <div class="col-lg-4 col-xs-4">
+			            <div class="col-lg-6 col-xs-6">
 			              <!-- small box -->
 			              
 			                  <center>  <a href="{{ route('Lppd')}}"><img src="/pemksm5.4/public/temafrontend/images/logolppd.png" class="img-responsive"></a></center>
@@ -388,8 +388,9 @@
 			           
 			            </div>
 
+                         <!--
 			             <div class="col-lg-4 col-xs-4">
-			              <!-- small box -->
+			             
 			                  <center><img src="/pemksm5.4/public/temafrontend/images/logosegmen.png" class="img-responsive"></center>
 			                 
 
@@ -400,7 +401,8 @@
 			                </div> 
 			           
 			            </div>
-			      
+                        -->
+    			      
 			          </div>
    
                                  <div class="clearfix"></div>
