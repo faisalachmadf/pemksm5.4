@@ -55,16 +55,16 @@
                        
 
                     <td>
-                        <a href="/adminpanel/aplikasi/{{$aplikasi->id}}" class="btn btn-info">
+                        <a href="/pemksm5.4/public/adminpanel/aplikasi/{{$aplikasi->id}}" class="btn btn-info">
                           <i class="fa fa-book"></i>
                         <span>Detil</span></a>
                         
                       
-                        <a href="/adminpanel/aplikasi/{{$aplikasi->id}}/edit" class="btn btn-warning">
+                        <a href="/pemksm5.4/public/adminpanel/aplikasi/{{$aplikasi->id}}/edit" class="btn btn-warning">
                             <i class="fa fa-edit"></i>
                         <span>Edit</span></a>
 
-                        <form  action="/adminpanel/aplikasi/{{$aplikasi->id}}" method="post">
+                        <form  action="/pemksm5.4/public/adminpanel/aplikasi/{{$aplikasi->id}}" method="post">
                           <input type="hidden" name="_method" value="Delete">
                            <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                           <input type="submit" onclick="return confirm('Yakin akan di hapus?')" class="btn  btn-danger" value="Delete">

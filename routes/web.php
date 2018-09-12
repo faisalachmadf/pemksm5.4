@@ -322,8 +322,6 @@ Route::group(['prefix' => 'adminpanel'], function() {
         });
     });
 
-   
-
 
     // BERANDA
     Route::group(['middleware' => 'admin'], function() {

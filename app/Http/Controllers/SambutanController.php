@@ -58,7 +58,7 @@ class SambutanController extends Controller
     $sambutan->save();
     // sambutan::create($request->all());
   
-    return  redirect()->to('adminpanel/sambutan')->with('message', 'Berhasil ditambahkan!');
+    return  redirect()->to('/adminpanel/sambutan')->with('message', 'Berhasil ditambahkan!');
 
 
    

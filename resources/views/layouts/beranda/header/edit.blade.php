@@ -19,7 +19,7 @@
     <!-- Main content -->
     <section class="content">
  
-<form action="/adminpanel/header/{{$headers->id}}" method="POST" enctype="multipart/form-data">
+<form action="/pemksm5.4/public/adminpanel/header/{{$headers->id}}" method="POST" enctype="multipart/form-data">
   <div class="box box-warning">
             <div class="box-header with-border">
               <h3 class="box-title">Ubah header terkait</h3>

@@ -21,7 +21,7 @@
     <!-- Main content -->
     <section class="content">
   
-    <form action="/adminpanel/sambutan" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('sambutan.store') }}" method="POST" enctype="multipart/form-data">
       <div class="box box-warning">
             <div class="box-header with-border">
               <h3 class="box-title">Masukan Sambutan</h3>
