@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="{{ route('index') }}"><center><img src="/pemksm5.4/public/adminkelola/dist/img/logobiro.png" class="img-responsive"></center></a>
+                <a href="{{ route('index') }}"><center><img src="/pemksm5.4/public/adminkelola/dist/img/footerputih.png" class="img-responsive"></center></a>
             </div>
             <!--/.navbar-header-->
         
@@ -132,7 +132,18 @@
                         <a href="#" data-toggle="dropdown" data-submenu aria-expanded="false"><span class="glyphicon glyphicon-search"></span></a>
                         <ul class="dropdown-menu">
                          <form> 
-                            <input type="text" class="form-control" id="nama" name="nama" value="{{ old('nama') }}" placeholder="Masukan Kata Kunci" required>
+                            <script>
+  (function() {
+    var cx = '006928489770695334984:htnjwhp9xlu';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
                         </form>
                     
                             

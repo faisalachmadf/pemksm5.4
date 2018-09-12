@@ -171,7 +171,7 @@
                  <div class="col-md-4 mag-inner-right">
 
                      <div class="connect">
-                    <h4 class="side" >Bahasa</h4>
+                    <h4 class="side" >Bahasa &nbsp<i class="fa fa-language"></i></h4>
                     <ul class="stay">
                                 
                     <div id="google_translate_element" style="float:center; width: 100%; "></div>
@@ -209,7 +209,7 @@
                         <BR/>
 
                         <div class="connect">
-                            <h4 class="side" >FILE DAN PENGUMUMAN</h4>
+                            <h4 class="side" >FILE DAN PENGUMUMAN  &nbsp<i class="fa fa-bullhorn"></i></h4>
                              <div class="edit-pics"> 
                             	<!-- Custom Tabs -->
           <div class="nav-tabs-custom">
@@ -266,7 +266,7 @@
                         </div>
                         
                         <div class="top-news">
-                            <h4 class="side">Agenda </h4>
+                            <h4 class="side">Agenda  &nbsp<i class="fa fa-calendar"></i></h4>
                              <div class="edit-pics"> 
                                 <!-- di Isi dengan Tabel Agenda Biro -->
                                 @foreach($agendas as $agenda)
@@ -288,7 +288,7 @@
                         </div>
                         <br/>
 
-                        <h4 class="side">BERITA TERPOPULER</h4>
+                        <h4 class="side">BERITA TERPOPULER &nbsp<i class="fa fa-bookmark"></i></h4>
                         <div class="edit-pics"> 
                             <!-- DI isi dengan Tabel Beritas yang terbanyak jumlah Kliknya (Dibacanya) -->
                             @foreach($populars as $popular)
@@ -314,7 +314,7 @@
                         <br/>
 
                         <div class="connect">
-                            <h4 class="side" >Ruang PPID</h4>
+                            <h4 class="side" >Ruang PPID &nbsp<i class="fa fa-users"></i></h4>
                              <div class="edit-pics"> 
                                 <a href="{{ route('Publikasi', ['PPID']) }}"><center><img src="/pemksm5.4/public/adminkelola/dist/img/logobiro.png" class="img-responsive"></center></a>
                             </div>
@@ -323,7 +323,7 @@
                         
                         <div class="connect">
 
-                            <h4 class="side">Layanan Publik</h4>
+                            <h4 class="side">Layanan Publik &nbsp<i class="fa fa-users"></i></h4>
                             <div class="edit-pics"> 
                                 <!-- DI isi dengan Tabel layanans -->
                                 @foreach($layanans as $layanan)
@@ -429,7 +429,7 @@
                                           <script>
                                           $(document).ready(function() {
                                                $("#owl-demo").owlCarousel({
-                                                items :6,
+                                                items :5,
                                                 lazyLoad : true,
                                                 autoPlay : true,
                                                 navigation : true,

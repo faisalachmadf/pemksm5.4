@@ -1,7 +1,7 @@
 <div class="col-md-4 mag-inner-right">
                  
                  <div class="connect">
-					<h4 class="side" >Bahasa</h4>
+					<h4 class="side" >Bahasa  &nbsp<i class="fa fa-language"></i></h4>
 					 <div class="edit-pics"> 
 							    
 					<div id="google_translate_element" style="float:center; width: 100%; "></div>
@@ -18,7 +18,7 @@
 
 
                 <div class="connect">
-                            <h4 class="side" >FILE DAN PENGUMUMAN</h4>
+                            <h4 class="side" >FILE DAN PENGUMUMAN  &nbsp<i class="fa fa-bullhorn"></i></h4>
                             <div class="edit-pics"> 
                             	<!-- Custom Tabs -->
           <div class="nav-tabs-custom">
@@ -76,7 +76,7 @@
 				
 	                <br/>
 
-				    <h4 class="side">BERITA TERPOPULER</h4>
+				    <h4 class="side">BERITA TERPOPULER &nbsp<i class="fa fa-bookmark"></i></h4>
                         <div class="edit-pics"> 
                             <!-- DI isi dengan Tabel Beritas yang terbanyak jumlah Kliknya (Dibacanya) -->
                             @foreach(@$populars ? $populars : [] as $popular)
@@ -101,7 +101,7 @@
 							<!--//edit-pics-->
 							<br/>
 							<div class="connect">
-	                            <h4 class="side">Layanan Publik</h4>
+	                            <h4 class="side">Layanan Publik &nbsp<i class="fa fa-users"></i></h4>
 	                            <div class="edit-pics"> 
 	                                <!-- DI isi dengan Tabel layanans -->
 	                            @foreach(@$layanans ? $layanans : [] as $layanan)
