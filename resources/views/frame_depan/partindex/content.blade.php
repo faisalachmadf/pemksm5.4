@@ -347,7 +347,11 @@
                                 </a>
                             </div>
                         </div>
-
+                        <br/>
+                        <div class="connect">
+                                <script type="text/javascript" src="https://widget.kominfo.go.id/gpr-widget-kominfo.min.js"></script>
+                            <div id="gpr-kominfo-widget-container"></div>
+                        </div>
                         <br/>
                     <!--//top-news-->
                 </div>
