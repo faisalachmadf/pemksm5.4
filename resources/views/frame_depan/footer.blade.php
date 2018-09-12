@@ -9,7 +9,7 @@
 						
 					
 								<ul class="td-pb-padding-side">
-									<li><h3><img src="/pemksm5.4/public/adminkelola/dist/img/footerputih.png" class="img-responsive" width="320px" height="250px"> </li>
+									<li><h3><img src="/pemksm5.4/public/adminkelola/dist/img/footerputih2.png" class="img-responsive" width="320px" height="250px"> </li>
 								<p>&nbsp</p>
 									<li ><li class="glyphicon glyphicon-map-marker" style="color: white;"></li> <font color="white">&nbsp &nbsp Jl. Diponegoro No. 22 Bandung</font></li>
 									<li ><li class="glyphicon glyphicon-phone-alt" style="color: white;"></li> <font color="white">&nbsp &nbsp (022) 4231161</font></li>
