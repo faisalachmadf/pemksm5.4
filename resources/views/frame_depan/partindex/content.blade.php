@@ -10,7 +10,7 @@
      <div class="col-md-12">
      	<br>
         <!-- Di isi dengan tabel beritas kategori berita umum -->
-                        <h3 class="tittle"><i class="glyphicon glyphicon-file"></i><b>Berita Umum </b></h3>
+                        <h3 class="tittle"><i class="glyphicon glyphicon-fire"></i><b>Berita Umum </b></h3>
                         <div class="world-news-grids">
                             @foreach($umums as $umum)
                             <div class="world-news-grid">
@@ -40,7 +40,7 @@
                     <div class="col-md-8 mag-innert-left">
                         <!--/start-Technology-->
                         <div class="technology">
-                          <h2 class="tittle"><i class="glyphicon glyphicon-certificate"> </i><b>Urusan Pemerintahan Daerah </b></h2><p>&nbsp</p>
+                          <h2 class="tittle"><i class="glyphicon glyphicon-tags"> </i><b>Urusan Pemerintahan Daerah </b></h2><p>&nbsp</p>
                             <!-- Di isi dengan tabel beritas kategori urusan pemerintahan daerah -->
                             @foreach($daerahs as $daerah)
                             <div class="editor-pics">
@@ -74,7 +74,7 @@
                  
                         <!--//end-Technology-->
                         <div class="technology">
-                          <h2 class="tittle"><i class="glyphicon glyphicon-certificate"> </i><b>Tata Pemerintahan </b></h2><p>&nbsp</p>
+                          <h2 class="tittle"><i class="glyphicon glyphicon-tags"> </i><b>Tata Pemerintahan </b></h2><p>&nbsp</p>
                             <!-- Di isi dengan tabel beritas kategori tata pemerintahan -->
                             @foreach($tatas as $tata)
                             <div class="editor-pics">
@@ -105,7 +105,7 @@
                         </div>
                      
                         <div class="technology">
-                          <h2 class="tittle"><i class="glyphicon glyphicon-certificate"> </i><b>Kerja Sama </b></h2><p>&nbsp</p>
+                          <h2 class="tittle"><i class="glyphicon glyphicon-tags"> </i><b>Kerja Sama </b></h2><p>&nbsp</p>
                             <!-- Di isi dengan tabel beritas kategori kerjasama -->
                             @foreach($kerjasamas as $kerjasama)
                             <div class="editor-pics">
@@ -138,7 +138,7 @@
 
                     <!--//latest-articles-->
                       <div class="latest-articles">
-                        <h3 class="tittle"><i class="glyphicon glyphicon-file"></i>Artikel </h3>
+                        <h3 class="tittle"><i class="glyphicon glyphicon-tag"></i>Artikel </h3>
                         <!-- Di isi dengan tabel beritas kategori artikel -->
                         <div class="world-news-grids">
                             @foreach($artikels as $artikel)

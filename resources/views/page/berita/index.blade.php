@@ -63,7 +63,7 @@
                                         <a href="{{ route('Berita', [$berita->katberita->slug, $berita->slug]) }}">{{ strtoupper($berita->judul) }}</a>
                                     </h4>
                                     <div class="td-post-date two">
-                                        <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($berita->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($berita->user) }} <i class=""></i><i class="glyphicon glyphicon-eye-open"></i> {{ $berita->dibaca }}<i class=""></i><i class="glyphicon glyphicon-list-alt"></i>{{ $berita->katberita->name }}</h6>
+                                        <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($berita->tanggal)) }} <i class="glyphicon glyphicon-user"></i> {{ generateUser($berita->user) }} <i class=""></i><i class="glyphicon glyphicon-eye-open"></i> {{ $berita->dibaca }}<i class=""></i><i class="glyphicon glyphicon-tags"></i>{{ $berita->katberita->name }}</h6>
                                     </div>
                                     <hr/>
                                     <div class="box-body-mitra">
@@ -122,7 +122,7 @@
 
                                     <p><a href="{{ route('Berita', [$berita->katberita->slug, $berita->slug]) }}">{{ strtoupper($berita->judul) }}</a></p>
                                     <div class="td-post-date two">
-                                        <h6><i class="glyphicon glyphicon-time"></i> <font color="red"> {{ date('d M Y', strtotime($berita->tanggal)) }} </font><i class="glyphicon glyphicon-user"></i> {{ generateUser($berita->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $berita->dibaca }}  <i class=""></i><font color="red"><i class="glyphicon glyphicon-list-alt"></i> {{ $berita->katberita->name }}</font></h6>
+                                        <h6><i class="glyphicon glyphicon-time"></i> <font color="red"> {{ date('d M Y', strtotime($berita->tanggal)) }} </font><i class="glyphicon glyphicon-user"></i> {{ generateUser($berita->user) }} <i class="glyphicon glyphicon-eye-open"></i> {{ $berita->dibaca }}  <i class=""></i><font color="#2fa84f"><i class="glyphicon glyphicon-tags"></i> {{ $berita->katberita->name }}</font></h6>
                                     </div>
                                     
                                 </div>
