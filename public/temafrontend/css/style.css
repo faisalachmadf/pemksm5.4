@@ -127,8 +127,8 @@ label{
     
 	}
 	.navbar-default {
-		background-color: #fff;
-		border-color: #fff;
+		
+		border-color: #065880;
 	}
 	.navbar-brand {
 		float: left;
@@ -143,9 +143,9 @@ label{
 		   font-weight: bold;
 	}
 	.navbar-default .navbar-nav>li>a {
-		color: #282828;
-		font-size: 13px;
-		font-weight: bold;
+		color: white;
+		font-size: 12px;
+		font-weight:;
 		font-family: 'Roboto-Regular';
 	}
 	.navbar-nav>li>a {
@@ -153,10 +153,11 @@ label{
 		padding-bottom: 15px;
 	}
 	.navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav>li>a.active {
-	   color:#3a7d0e;
+	   color:gold;
+     
 	}
 	.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
-		background-color: #3a7d0e;
+		background-color: gold;
 		color: #fff;
 	}
    .navbar-default .navbar-brand span{

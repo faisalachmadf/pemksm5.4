@@ -179,7 +179,7 @@ class StrukturOrganisasiController extends Controller
             deleteImageThumbnail($path, $pegawai->gambar);
 
             // create thumbnail
-            //generateThumbnail($path, $data['gambar']);
+            generateThumbnail($path, $data['gambar']);
         }
         
         $pegawai->update($data);

@@ -58,12 +58,13 @@ p {
     margin-top: 0px;
 }
 .navbar.sticky {
+    background-color: #065880;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 998;
-    border: 2px solid rgba(0, 0, 0, 0.15);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.15);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
     background-clip: padding-box;
 }
