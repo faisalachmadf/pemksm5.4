@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 html, body{
   font-family: 'Roboto-Regular';
   font-size: 15px;
-  background:#ffffff;
+  background:#f8f4c3;
 }
 body a {
 	transition:0.5s all;
@@ -264,7 +264,7 @@ label{
 }
 .mag-innert-left {
     background-color: #fff;
-    padding: 0em 0em;
+    padding: 1em 1em;
 	    border: 0px solid rgba(231,231,231,1.00);
 }
 
@@ -497,12 +497,11 @@ h3.tittle i,h2.tittle i {
 }
 h5.inner.two a {
        color: #282828;
-    font-weight: bold;
     text-transform: none;
-    font-size: 1.1em;
+    font-size: 14px;
 }
 h5.inner.two a:hover{
- color:#ee5656;
+ color:#2fa84f;
 }
 .item-details {
     padding-right: 0;
