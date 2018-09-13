@@ -21,7 +21,7 @@
                                 <h4><a href="{{ route('Berita', [$umum->katberita->slug, $umum->slug]) }}" class="wd"><font color="brown">{{ $umum->judul }}</font></a></h4>
 
                                 <div class="td-post-date two">
-                                  <h6><i class="glyphicon glyphicon-time"></i> {{ date('d M Y', strtotime($umum->tanggal)) }}</h6>
+                                  <h6><i class="glyphicon glyphicon-time"></i> <font color="#065880"> {{ date('d M Y', strtotime($umum->tanggal)) }}</font></h6>
                                 </div>
                                   <br/>
                             </div>
@@ -421,7 +421,9 @@
                         <div id="owl-demo" class="owl-carousel text-center">
                             @foreach($links as $link)
                             <div class="item" style="margin-left: 2em;">
-                                <a href="{{ $link->link }}" target="_blank"><img class="img-responsive lot img-thumbnail" src="{{ asset('image/beranda/'.$link->gambar) }}" alt="{{ $link->judul }}"/></a>
+                                <a href="{{ $link->link }}" target="_blank"><img class="img-responsive lot" src="{{ asset('image/beranda/'.$link->gambar) }}" style="width: 100px; height: 100px;" alt="{{ $link->judul }}"/></a>
+                                
+                               
                             </div>
                             @endforeach
                         </div>
