@@ -111,7 +111,9 @@ class KerjasamaDnController extends Controller
             return redirect()->back()->withInput()->withErrors('gambar', 'Gambar tidak valid');
         }
 
-        $kerjasama->gambar = time().'-'.$kerjasama->slug.'.'.$gambar->getClientOriginalExtension();
+        // asal $kerjasama->gambar = time().'-'.$kerjasama->slug.'.'.$gambar->getClientOriginalExtension();
+        $kerjasama->gambar = time().'-'.$kerjasama->id_katopd.'.'.$gambar->getClientOriginalExtension();
+      
         $kerjasama->save();
         $gambar->move($path, $kerjasama->gambar);
 
@@ -186,7 +188,8 @@ class KerjasamaDnController extends Controller
                 return redirect()->back()->withInput()->withErrors('gambar', 'Gambar tidak valid');
             }
 
-            $data['gambar'] = time().'-'.$data['slug'].'.'.$gambar->getClientOriginalExtension();
+            // asal $data['gambar'] = time().'-'.$data['slug'].'.'.$gambar->getClientOriginalExtension();
+            $data['gambar'] = time().'-'.$data['id_katopd'].'.'.$gambar->getClientOriginalExtension();
             $gambar->move($path, $data['gambar']);
 
             // delete image & thumbnail

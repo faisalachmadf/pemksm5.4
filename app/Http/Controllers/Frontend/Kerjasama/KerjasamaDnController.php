@@ -36,7 +36,7 @@ class KerjasamaDnController extends Controller
             'detail' => $detail,
             'katdns' => Katdn::all(),
             'pencarian' => $pencarian,
-            'kerjasamadns' => $kerjasamadns->simplePaginate(10),
+            'kerjasamadns' => $kerjasamadns->Paginate(20),
         ];
 
         return view('page.kerjasama.dalamnegeri.datakerjasamadalamnegeri', $data)->withData($request->all());
