@@ -107,6 +107,7 @@ Route::group(['namespace' => 'Frontend'], function() {
         Route::resource('Hubungi-Kami','Tamu2Controller');
         Route::get('Lokasi-Kami','LokasiController@Index')->name('Lokasi');
         Route::get('Peta-Situs','SiteController@Index')->name('Site');
+        Route::get('Konsultasi','KonsultasiController@Index')->name('Konsultasi2');
       
         
     });
