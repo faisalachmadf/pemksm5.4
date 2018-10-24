@@ -1,5 +1,5 @@
 <title>BIRO PEMERINTAHAN DAN KERJASAMA PROVINSI JAWA BARAT</title>
-<link rel="shortcut icon" href="/pemksm5.4/public/temafrontend/images/favicon.ico">
+<link rel="shortcut icon" href="temafrontend/images/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Motive Mag Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,  Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />

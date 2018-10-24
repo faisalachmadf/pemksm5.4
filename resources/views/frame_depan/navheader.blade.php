@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="{{ route('index') }}"><center><img src="/pemksm5.4/public/adminkelola/dist/img/footerputih.png" class="img-responsive"></center></a>
+                <a href="{{ route('index') }}"><center><img src="/adminkelola/dist/img/footerputih.png" class="img-responsive"></center></a>
             </div>
             <!--/.navbar-header-->
         

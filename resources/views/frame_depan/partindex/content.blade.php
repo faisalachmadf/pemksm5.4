@@ -316,7 +316,7 @@
                         <div class="connect">
                             <h4 class="side" >Ruang PPID &nbsp<i class="fa fa-users"></i></h4>
                              <div class="edit-pics"> 
-                                <a href="{{ route('Publikasi', ['PPID']) }}"><center><img src="/pemksm5.4/public/adminkelola/dist/img/logobiro.png" class="img-responsive"></center></a>
+                                <a href="{{ route('Publikasi', ['PPID']) }}"><center><img src="adminkelola/dist/img/logobiro.png" class="img-responsive"></center></a>
                             </div>
                         </div>
                         <br/>
@@ -371,7 +371,7 @@
 			              <!-- small box -->
 			           
 			                <center>
-			                	   <a href="{{ route('Tkksd')}}"><img src="/pemksm5.4/public/temafrontend/images/tkksdlogo.png" class="img-responsive" ></a></center>
+			                	   <a href="{{ route('Tkksd')}}"><img src="temafrontend/images/tkksdlogo.png" class="img-responsive" ></a></center>
 			                <div class="inner">
 			                  <br>
 			                 <h6> <center>Tim Koordinasi Kerja Sama Daerah</center></h6>
@@ -382,7 +382,7 @@
 			            <div class="col-lg-6 col-xs-6">
 			              <!-- small box -->
 			              
-			                  <center>  <a href="{{ route('Lppd')}}"><img src="/pemksm5.4/public/temafrontend/images/logolppd.png" class="img-responsive"></a></center>
+			                  <center>  <a href="{{ route('Lppd')}}"><img src="temafrontend/images/logolppd.png" class="img-responsive"></a></center>
 			                 
 
 			               <div class="inner">
@@ -395,7 +395,7 @@
                          <!--
 			             <div class="col-lg-4 col-xs-4">
 			             
-			                  <center><img src="/pemksm5.4/public/temafrontend/images/logosegmen.png" class="img-responsive"></center>
+			                  <center><img src="temafrontend/images/logosegmen.png" class="img-responsive"></center>
 			                 
 
 			              
@@ -431,7 +431,7 @@
                     </div>
 
                 <!-- requried-jsfiles-for owl -->
-                                        <script src="/pemksm5.4/public/temafrontend/js/owl.carousel.js"></script>
+                                        <script src="temafrontend/js/owl.carousel.js"></script>
                                           <script>
                                           $(document).ready(function() {
                                                $("#owl-demo").owlCarousel({
@@ -476,7 +476,7 @@
 					<br/>
 					<br/>
 						<div class="col-md-4 footerlagi-grid">
-						<h4><font color="#000"><img src="/pemksm5.4/public/temafrontend/images/fb.png" width="35px" height="35px"/> Facebook</font></h4>
+						<h4><font color="#000"><img src="temafrontend/images/fb.png" width="35px" height="35px"/> Facebook</font></h4>
 						  <div class="editor-pics">
 						  
 							  <div id="fb-root"></div>
@@ -497,7 +497,7 @@
 						
 						
 						<div class="col-md-4 footerlagi-grid">
-							<h4><font color="#000"><img src="/pemksm5.4/public/temafrontend/images/twit.png" width="30px" height="30px"/> &nbsp Twitter</font></h4>
+							<h4><font color="#000"><img src="temafrontend/images/twit.png" width="30px" height="30px"/> &nbsp Twitter</font></h4>
 								<div class="editor-pics">
 										 <a class="twitter-timeline" href="https://twitter.com/birootdaksm" data-widget-id="564996746669879297">Tweets by @birootdaksm</a>
 								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
@@ -507,7 +507,7 @@
 							
 						</div>
 						<div class="col-md-4 footerlagi-grid">
-								<h4><font color="#000"><img src="/pemksm5.4/public/temafrontend/images/ig.png" width="30px" height="30px"/> &nbsp Instagram</font></h4>
+								<h4><font color="#000"><img src="temafrontend/images/ig.png" width="30px" height="30px"/> &nbsp Instagram</font></h4>
 								<!-- LightWidget WIDGET --><script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/aae4ca0758a5504abf98bd98d55306fd.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
 								<div class="clearfix"></div>
 						</div>

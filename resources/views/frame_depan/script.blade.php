@@ -21,7 +21,7 @@
 
 
 <!--JS-->
-<script type="text/javascript" src="/pemksm5.4/public/temafrontend/js/bootstrap-3.1.1.min.js"></script>
+<script type="text/javascript" src="/temafrontend/js/bootstrap-3.1.1.min.js"></script>
 <!-- jQuery -->
 <script src="{{ asset('/adminkelola/bower_components/jquery-ui/jquery-ui.min.js') }}"></script>
 <!--Date Picke -->

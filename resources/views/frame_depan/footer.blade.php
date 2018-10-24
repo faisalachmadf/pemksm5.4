@@ -9,7 +9,7 @@
 						
 					
 								<ul class="td-pb-padding-side">
-									<li><h3><img src="/pemksm5.4/public/adminkelola/dist/img/footerputih2.png" class="img-responsive" width="320px" height="250px"> </li>
+									<li><h3><img src="/adminkelola/dist/img/footerputih2.png" class="img-responsive" width="320px" height="250px"> </li>
 								<p>&nbsp</p>
 									<li ><li class="glyphicon glyphicon-map-marker" style="color: white;"></li> <font color="white">&nbsp &nbsp Jl. Diponegoro No. 22 Bandung</font></li>
 									<li ><li class="glyphicon glyphicon-phone-alt" style="color: white;"></li> <font color="white">&nbsp &nbsp (022) 4231161</font></li>
@@ -20,9 +20,9 @@
 								</ul><br/>
 									<h4>Ikuti Kami</h4>
 							
-							<a href="https://www.facebook.com/pemksm"><font color="white"><img src="/pemksm5.4/public/temafrontend/images/fb.png" width="40px" height="40px"/> &nbsp Facebook</font></a> |
-							<a href="https://twitter.com/pemksm_jabar"><font color="white"><img src="/pemksm5.4/public/temafrontend/images/twit.png" width="30px" height="30px"/> &nbsp Twiter</font> </a>|
-							<a href="https://www.instagram.com/biropemksmjabar/"><font color="white"><img src="/pemksm5.4/public/temafrontend/images/ig.png" width="30px" height="30px"/> &nbsp Instagram</font></a>
+							<a href="https://www.facebook.com/pemksm"><font color="white"><img src="/temafrontend/images/fb.png" width="40px" height="40px"/> &nbsp Facebook</font></a> |
+							<a href="https://twitter.com/pemksm_jabar"><font color="white"><img src="/temafrontend/images/twit.png" width="30px" height="30px"/> &nbsp Twiter</font> </a>|
+							<a href="https://www.instagram.com/biropemksmjabar/"><font color="white"><img src="/temafrontend/images/ig.png" width="30px" height="30px"/> &nbsp Instagram</font></a>
 										
 							
 						</div>
@@ -53,7 +53,7 @@
 							
 						</div>
 						<div class="col-md-4 footer-grid">
-								<h4><img src="/pemksm5.4/public/adminkelola/dist/img/polling.png" class="img-responsive" width="100px" height="50px"></h4>
+								<h4><img src="/adminkelola/dist/img/polling.png" class="img-responsive" width="100px" height="50px"></h4>
 
 								<a href='https://www.survey-maker.com/' poll='2002493xa1c3a750-51' target="_blank" style='width:100%; display:block; text-align:right;'><font size="-4" color="black"> created here</font></a>
 
