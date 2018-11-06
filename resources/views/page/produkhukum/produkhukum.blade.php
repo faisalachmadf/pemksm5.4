@@ -48,7 +48,7 @@
                 <tr>
                 
                   <td style="width: 10px;">{{ $no }} </td>
-                   <td><h5>{{ ($uu->nama) }} </h5><h6><font color="red"><i>diunduh : {{ $uu->diunduh }} kali | tanggal upload :  {{ date('d M Y', strtotime($uu->created_at)) }}</i></font></h6> </td>
+                   <td><h5>{{ ($uu->nama) }} </h5><h6><font color="grey"><i>diunduh :<b> {{ $uu->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($uu->created_at)) }}</i></font></h6> </td>
                   <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$uu->slug]) }}" class="btn btn-info">
                          
                         Download</a> </td>
@@ -73,7 +73,7 @@
                 <tr>
                 
                   <td style="width: 10px;">{{ $no }} </td>
-                   <td><h5>{{ ($pp->nama) }} </h5><h6><font color="red"><i>diunduh : {{ $pp->diunduh }} kali | tanggal upload :  {{ date('d M Y', strtotime($pp->created_at)) }}</i></font></h6> </td>
+                   <td><h5>{{ ($pp->nama) }} </h5><h6><font color="grey"><i>diunduh :<b> {{ $pp->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($pp->created_at)) }}</i></font></h6> </td>
                   <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$pp->slug]) }}" class="btn btn-info">
                          
                         <span>Download</span></a> </td>
@@ -97,7 +97,7 @@
                 <tr>
                 
                   <td style="width: 10px;">{{ $no }} </td>
-                   <td><h5>{{ ($perpres->nama) }} </h5><h6><font color="red"><i>diunduh : {{ $perpres->diunduh }} kali | tanggal upload :  {{ date('d M Y', strtotime($perpres->created_at)) }}</i></font></h6> </td>
+                   <td><h5>{{ ($perpres->nama) }} </h5><h6><font color="grey"><i>diunduh :<b> {{ $perpres->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($perpres->created_at)) }}</i></font></h6> </td>
                   <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$perpres->slug]) }}" class="btn btn-info">
                          
                         <span>Download</span></a> </td>
@@ -118,7 +118,7 @@
                 <tr>
                 
                   <td style="width: 10px;">{{ $no }} </td>
-                   <td><h5>{{ ($kepres->nama) }} </h5><h6><font color="red"><i>diunduh : {{ $kepres->diunduh }} kali | tanggal upload :  {{ date('d M Y', strtotime($kepres->created_at)) }}</i></font></h6> </td>
+                   <td><h5>{{ ($kepres->nama) }} </h5><h6><font color="grey"><i>diunduh :<b> {{ $kepres->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($kepres->created_at)) }}</i></font></h6> </td>
                   <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$kepres->slug]) }}" class="btn btn-info">
                          
                         <span>Download</span></a> </td>
@@ -139,7 +139,7 @@
                 <tr>
                 
                   <td style="width: 10px;">{{ $no }} </td>
-                   <td><h5>{{ ($permendagri->nama) }} </h5><h6><font color="red"><i>diunduh : {{ $permendagri->diunduh }} kali | tanggal upload :  {{ date('d M Y', strtotime($permendagri->created_at)) }}</i></font></h6> </td>
+                   <td><h5>{{ ($permendagri->nama) }} </h5><h6><font color="grey"><i>diunduh :<b> {{ $permendagri->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($permendagri->created_at)) }}</i></font></h6> </td>
                   <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$permendagri->slug]) }}" class="btn btn-info">
                          
                         <span>Download</span></a> </td>
@@ -160,7 +160,7 @@
                 <tr>
                 
                   <td style="width: 10px;">{{ $no }} </td>
-                   <td><h5>{{ ($kepmendagri->nama) }} </h5><h6><font color="red"><i>diunduh : {{ $kepmendagri->diunduh }} kali | tanggal upload :  {{ date('d M Y', strtotime($kepmendagri->created_at)) }}</i></font></h6> </td>
+                   <td><h5>{{ ($kepmendagri->nama) }} </h5><h6><font color="grey"><i>diunduh :<b> {{ $kepmendagri->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($kepmendagri->created_at)) }}</i></font></h6> </td>
                   <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$kepmendagri->slug]) }}" class="btn btn-info">
                          
                         <span>Download</span></a> </td>
@@ -181,7 +181,7 @@
                 <tr>
                 
                   <td style="width: 10px;">{{ $no }} </td>
-                   <td><h5>{{ ($permenlu->nama) }} </h5><h6><font color="red"><i>diunduh : {{ $permenlu->diunduh }} kali | tanggal upload :  {{ date('d M Y', strtotime($permenlu->created_at)) }}</i></font></h6> </td>
+                   <td><h5>{{ ($permenlu->nama) }} </h5><h6><font color="grey"><i>diunduh :<b> {{ $permenlu->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($permenlu->created_at)) }}</i></font></h6> </td>
                   <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$permenlu->slug]) }}" class="btn btn-info">
                          
                         <span>Download</span></a> </td>
@@ -202,7 +202,7 @@
                 <tr>
                 
                   <td style="width: 10px;">{{ $no }} </td>
-                   <td><h5>{{ ($permennak->nama) }} </h5><h6><font color="red"><i>diunduh : {{ $permennak->diunduh }} kali | tanggal upload :  {{ date('d M Y', strtotime($permennak->created_at)) }}</i></font></h6> </td>
+                   <td><h5>{{ ($permennak->nama) }} </h5><h6><font color="grey"><i>diunduh :<b> {{ $permennak->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($permennak->created_at)) }}</i></font></h6> </td>
                   <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$permennak->slug]) }}" class="btn btn-info">
                          
                         <span>Download</span></a> </td>
@@ -223,7 +223,7 @@
                 <tr>
                 
                   <td style="width: 10px;">{{ $no }} </td>
-                   <td><h5>{{ ($perda->nama) }} </h5><h6><font color="red"><i>diunduh : {{ $perda->diunduh }} kali | tanggal upload :  {{ date('d M Y', strtotime($perda->created_at)) }}</i></font></h6> </td>
+                   <td><h5>{{ ($perda->nama) }} </h5><h6><font color="grey"><i>diunduh :<b> {{ $perda->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($perda->created_at)) }}</i></font></h6> </td>
                   <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$perda->slug]) }}" class="btn btn-info">
                          
                         <span>Download</span></a> </td>
@@ -244,7 +244,7 @@
                 <tr>
                 
                   <td style="width: 10px;">{{ $no }} </td>
-                   <td><h5>{{ ($pergub->nama) }} </h5><h6><font color="red"><i>diunduh : {{ $pergub->diunduh }} kali | tanggal upload :  {{ date('d M Y', strtotime($pergub->created_at)) }}</i></font></h6> </td>
+                   <td><h5>{{ ($pergub->nama) }} </h5><h6><font color="grey"><i>diunduh :<b> {{ $pergub->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($pergub->created_at)) }}</i></font></h6> </td>
                   <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$pergub->slug]) }}" class="btn btn-info">
                          
                         <span>Download</span></a> </td>
@@ -265,7 +265,7 @@
                 <tr>
                 
                   <td style="width: 10px;">{{ $no }} </td>
-                   <td><h5>{{ ($kepgub->nama) }} </h5><h6><font color="red"><i>diunduh : {{ $kepgub->diunduh }} kali | tanggal upload :  {{ date('d M Y', strtotime($kepgub->created_at)) }}</i></font></h6> </td>
+                   <td><h5>{{ ($kepgub->nama) }} </h5><h6><font color="grey"><i>diunduh :<b> {{ $kepgub->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($kepgub->created_at)) }}</i></font></h6> </td>
                   <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$kepgub->slug]) }}" class="btn btn-info">
                          
                         <span>Download</span></a> </td>
@@ -286,7 +286,7 @@
                 <tr>
                 
                   <td style="width: 10px;">{{ $no }} </td>
-                   <td><h5>{{ ($se->nama) }} </h5><h6><font color="red"><i>diunduh : {{ $se->diunduh }} kali | tanggal upload :  {{ date('d M Y', strtotime($se->created_at)) }}</i></font></h6> </td>
+                   <td><h5>{{ ($se->nama) }} </h5><h6><font color="grey"><i>diunduh :<b> {{ $se->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($se->created_at)) }}</i></font></h6> </td>
                   <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$se->slug]) }}" class="btn btn-info">
                          
                         <span>Download</span></a> </td>

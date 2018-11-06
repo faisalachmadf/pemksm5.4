@@ -130,6 +130,10 @@ if (! function_exists('generateExpiredClass')) {
         $then = $now->copy()->addDays($warning)->endOfDay();
         $date = \Carbon\Carbon::parse($date)->endOfDay();
 
+        if (date($now)) {
+            $class = 'info';
+        }
+
         if ($date->lt($now)) {
             $class = 'danger';
         }

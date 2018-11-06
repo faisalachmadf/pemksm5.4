@@ -14,7 +14,7 @@ class AddRoleToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('role')->unique();
+            $table->string('role');
             $table->string('username')->unique();
         });
     }

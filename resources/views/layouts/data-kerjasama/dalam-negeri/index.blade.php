@@ -15,7 +15,6 @@
   
       <ol class="breadcrumb">
         <li><a href="{{ route('admin.dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><i class="fa fa-folder"></i> Data Kerjasama</li>
         <li class="active">{{ $page['breadcrumb'] }}</li>
       </ol>
     </section>
@@ -48,14 +47,12 @@
             <thead>
               <tr>
                 <th>No</th>
-                <th></th>
                 <th>Tahun</th>
-                <th>Kategori Kerjasama</th>
-                <th>Kategori Jenis Kerjasama</th>
+                <th></th>
+                <th>Kat. Jenis Kerjasama</th>
                 <th>Nomor</th>
                 <th>Judul</th>
                 <th>Sisa Waktu</th>
-                <th>User</th>
                 <th>Aksi</th>
               </tr>
             </thead>
@@ -75,18 +72,17 @@
     $(function() {
       var columns = [
         { data: 'DT_Row_Index', name: 'DT_Row_Index', orderable: false, searchable: false, width: '5%' },
-        { data: 'created_at', name: 'created_at', visible: false, searchable: false},
-        { data: 'tahun', name: 'tahun' },
-        { data: 'katdn.name', name: 'katdn.name',orderable: false},
-        { data: 'katjenisdn.name', name: 'katjenisdn.name',orderable: false },
-        { data: 'nomor', name: 'nomor' },
-        { data: 'judul', name: 'judul' },
-        { data: 'sisa', name: 'tanggal_akhir', searchable: false },
-        { data: 'user', name: 'user.username' },
-        { data: 'action', name: 'action', orderable: false, searchable: false }
+         { data: 'created_at', name: 'created_at', visible: false, searchable: false},
+        { data: 'tahun', name: 'tahun', width: '10%'},
+        // { data: 'katdn.name', name: 'katdn.name',orderable: false, width: '10%'},
+        { data: 'katjenisdn.name', name: 'katjenisdn.name',orderable: false, width: '10%' },
+        { data: 'nomor', name: 'nomor' , width: '15%'},
+        { data: 'judul', name: 'judul' , width: '20%'},
+        { data: 'sisa', name: 'tanggal_akhir', searchable: false, width: '10%' },
+        { data: 'action', name: 'action', orderable: false, searchable: false, width: '5%' }
       ];
 
-      createDatatables('#kerjasama-dalam-negeris-table', '{!! route('kerjasama-dalam-negeri.datatables') !!}', columns, 'desc');
+      createDatatables('#kerjasama-dalam-negeris-table', '{!! route('kerjasama_dalam_negeri.datatables') !!}', columns, 'desc');
     });
   </script>
 @endsection

@@ -18,6 +18,8 @@ class KerjasamaLnController extends Controller
         if ($katSlug == 'pencarian') {
             $pencarian = true;
             $kerjasamalns = KerjasamaLn::getSearch($request->input('pencarian'));
+        } else if ($katSlug == 'masih-berlaku') {
+            $kerjasamalns = KerjasamaLn::getData($katSlug, $slug, 'masih');
         } else if ($katSlug == 'waktu-hampir-habis') {
             $kerjasamalns = KerjasamaLn::getData($katSlug, $slug, 'hampir', 60);
         } else if ($katSlug == 'waktu-sudah-habis') {
@@ -36,7 +38,7 @@ class KerjasamaLnController extends Controller
             'detail' => $detail,
             'katlns' => Katln::all(),
             'pencarian' => $pencarian,
-            'kerjasamalns' => $kerjasamalns->simplePaginate(10),
+            'kerjasamalns' => $kerjasamalns->Paginate(20),
         ];
 
         return view('page.kerjasama.luarnegeri.datakerjasamaluarnegeri', $data)->withData($request->all());

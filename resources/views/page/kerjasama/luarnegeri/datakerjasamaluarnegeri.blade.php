@@ -48,7 +48,12 @@
                                   </a><br>
                                   @endforeach
 
-                                    <label for="kategori-kerjasama">Masa Berlaku yang akan Berakhir</label><hr/>
+                                    <label for="kategori-kerjasama">Kategori sesuai masa waktu</label><hr/>
+                                  <a href="{{ route('KerjasamaLn') }}">
+                                      <h5>Semua Masa Waktu</h5>
+                                  </a><br>
+                                   <a href="{{ route('KerjasamaLn', ['masih-berlaku']) }}">
+                                      <h5>Kerja Sama yang masih berlaku</h5><br>
                                   <a href="{{ route('KerjasamaLn', ['waktu-hampir-habis']) }}">
                                       <h5>Kerja Sama Waktu Hampir Habis</h5>
                                   </a><br>
@@ -103,6 +108,8 @@
                                           <thead>
                                             <tr>
                                               <th style="width:60%;"> <h6>keterangan :</h6></th>
+                                              <th style="background-color: #d9edf7;"> </th>
+                                              <th> <h6>: Masih Berlaku </h6></th>
                                               <th style="background-color: #ffef9b;"> </th>
                                               <th> <h6>: Akan berakhir dalam 60 Hari </h6></th>
                                               <th   style="background-color: pink;"></th>

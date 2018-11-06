@@ -47,8 +47,13 @@
                                       <h5>{{ $katdn->name }}</h5>
                                   </a><br>
                                   @endforeach
-
+                                   
                                    <label for="kategori-kerjasama">Masa Berlaku yang akan Berakhir</label><hr/>
+                                  <a href="{{ route('KerjasamaDn') }}">
+                                      <h5>Semua Masa Waktu</h5>
+                                  </a><br>
+                                   <a href="{{ route('KerjasamaDn', ['masih-berlaku']) }}">
+                                      <h5>Kerja Sama yang masih berlaku</h5><br>
                                   <a href="{{ route('KerjasamaDn', ['waktu-hampir-habis']) }}">
                                       <h5>Kerja Sama Waktu Hampir Habis</h5>
                                   </a><br>
@@ -110,6 +115,8 @@
                                           <thead>
                                             <tr>
                                               <th style="width:60%;"> <h6>keterangan :</h6></th>
+                                               <th style="background-color: #d9edf7;"> </th>
+                                              <th> <h6>: Masih Berlaku </h6></th>
                                               <th style="background-color: #ffef9b;"> </th>
                                               <th> <h6>: Akan berakhir dalam 60 Hari </h6></th>
                                               <th   style="background-color: pink;"></th>

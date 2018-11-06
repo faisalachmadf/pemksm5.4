@@ -53,7 +53,7 @@
                               <td style="width: 10px;"> {{ $no }} </td>
                                <td><h5> {{ $publikasi->judul }} </h5> 
                                 <div class="clearfix"></div>
-                                <h6><font color="red"><i>diunduh :<b> {{ $publikasi->diunduh }} kali</b> | tanggal upload :  <b>{{ date('d M Y', strtotime($publikasi->tanggal)) }}</b></i></h6> </font></td>
+                                <h6><font color="grey"><i>diunduh :<b> {{ $publikasi->diunduh }} kali</b> | tanggal upload :  <b>{{ date('d M Y', strtotime($publikasi->tanggal)) }}</b></i></h6> </font></td>
                               <td style="width: 100px;">  <a href="{{ route('Publikasi.unduh', [$publikasi->katfile->slug, $publikasi->slug]) }}" class="btn btn-info">
                                      
                                     <span>Download</span></a> </td>

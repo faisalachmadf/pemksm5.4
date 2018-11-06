@@ -295,7 +295,7 @@ Route::group(['prefix' => 'adminpanel'], function() {
         // Data Kerjasama
         Route::group(['namespace' => 'DataKerjasama', 'prefix' => 'data-kerjasama'], function() {
             // Kerjasama Dalam Negeri
-            Route::get('kerjasama-dalam-negeri/datatables','KerjasamaDnController@datatables')->name('kerjasama-dalam-negeri.datatables');
+            Route::get('kerjasama-dalam-negeri/datatables','KerjasamaDnController@datatables')->name('kerjasama_dalam_negeri.datatables');
             Route::resource('kerjasama-dalam-negeri','KerjasamaDnController');
 
             // Kerjasama Luar Negeri

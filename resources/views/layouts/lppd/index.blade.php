@@ -47,7 +47,7 @@
             <thead>
               <tr>
                 <th>No</th>
-                <th></th>
+                 <th></th>
                 <th>Judul</th>
                 <th>File</th>
                 <th>User</th>
@@ -70,6 +70,7 @@
     $(function() {
       var columns = [
         { data: 'DT_Row_Index', name: 'DT_Row_Index', orderable: false, searchable: false, width: '5%' },
+         { data: 'created_at', name: 'created_at', visible: false, searchable: false},
         { data: 'judul', name: 'judul' },
         { data: 'file', name: 'file' },
         { data: 'user', name: 'user.username' },

@@ -97,7 +97,9 @@ class KerjasamaDn extends Model
                     $query->where('slug', $slug);
                 }
 
-                if ($timeout == 'hampir') {
+                if ($timeout == 'masih') {
+                    $query->where('tanggal_akhir', '>', $now->endOfDay()->toDateString());
+                } else if ($timeout == 'hampir') {
                     $query->where('tanggal_akhir', '>=', $now->endOfDay()->toDateString())
                         ->where('tanggal_akhir', '<=', $then->toDateString());
                 } else if ($timeout == 'sudah') {

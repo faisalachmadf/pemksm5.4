@@ -18,6 +18,8 @@ class KerjasamaDnController extends Controller
         if ($katSlug == 'pencarian') {
             $pencarian = true;
             $kerjasamadns = KerjasamaDn::getSearch($request->input('pencarian'));
+        } else if ($katSlug == 'masih-berlaku') {
+            $kerjasamadns = KerjasamaDn::getData($katSlug, $slug, 'masih');
         } else if ($katSlug == 'waktu-hampir-habis') {
             $kerjasamadns = KerjasamaDn::getData($katSlug, $slug, 'hampir', 60);
         } else if ($katSlug == 'waktu-sudah-habis') {

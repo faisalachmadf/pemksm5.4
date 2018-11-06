@@ -43,11 +43,10 @@
         <h2 class="headline text-yellow no-margin"> 404</h2>
 
         <div class="error-content">
-          <h3><i class="fa fa-warning text-yellow"></i> Oops! Page not found.</h3>
+          <h3><i class="fa fa-warning text-yellow"></i> Oops! Halaman tidak ditemukan.</h3>
 
           <p>
-            We could not find the page you were looking for.
-            Meanwhile, you may <a href="{{ request()->segment(1) == 'adminpanel' ? route('admin.dashboard') : route('index') }}">return to dashboard</a> or try using the search form.
+            <a href="{{ request()->segment(1) == 'adminpanel' ? route('admin.dashboard') : route('index') }}">Kembali ke Halaman Utama</a>.
           </p>
 
         </div>
@@ -62,7 +61,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 1.0.0
     </div>
-    <strong>Copyright &copy; 2017 <a href="{{ route('index') }}">Biro Pemeirintahan dan Kerja Sama</a>.</strong> All rights
+    <strong>Copyright &copy; 2017 <a href="{{ route('index') }}">Biro Pemerintahan dan Kerja Sama</a>.</strong> All rights
     reserved.
   </footer>
 

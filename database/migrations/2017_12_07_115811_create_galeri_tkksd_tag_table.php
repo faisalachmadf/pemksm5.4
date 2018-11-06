@@ -5,7 +5,6 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 class CreateGaleriTkksdTagTable extends Migration
-// galeri_tkksd_tag_table
 {
     /**
      * Run the migrations.

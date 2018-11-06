@@ -50,12 +50,10 @@
                 <th>No</th>
                 <th></th>
                 <th>Tahun</th>
-                <th>Kategori Kerjasama</th>
                 <th>Kategori Jenis Kerjasama</th>
                 <th>Nomor</th>
                 <th>Judul</th>
                 <th>Sisa Waktu</th>
-                <th>User</th>
                 <th>Aksi</th>
               </tr>
             </thead>
@@ -75,14 +73,13 @@
     $(function() {
       var columns = [
         { data: 'DT_Row_Index', name: 'DT_Row_Index', orderable: false, searchable: false, width: '5%' },
-        { data: 'created_at', name: 'created_at', visible: false, searchable: false},
+         { data: 'created_at', name: 'created_at', visible: false, searchable: false},
         { data: 'tahun', name: 'tahun' },
-        { data: 'katln.name', name: 'katln.name',orderable: false },
+       // { data: 'katln.name', name: 'katln.name',orderable: false },
         { data: 'katjenisln.name', name: 'katjenisln.name',orderable: false },
         { data: 'nomor', name: 'nomor' },
         { data: 'judul', name: 'judul' },
         { data: 'sisa', name: 'tanggal_akhir', searchable: false },
-        { data: 'user', name: 'user.username' },
         { data: 'action', name: 'action', orderable: false, searchable: false }
       ];
 

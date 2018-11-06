@@ -111,7 +111,9 @@ class KerjasamaLnController extends Controller
             return redirect()->back()->withInput()->withErrors('gambar', 'Gambar tidak valid');
         }
 
-        $kerjasama->gambar = time().'-'.$kerjasama->slug.'.'.$gambar->getClientOriginalExtension();
+        //$kerjasama->gambar = time().'-'.$kerjasama->slug.'.'.$gambar->getClientOriginalExtension();
+        $kerjasama->gambar = time().'-'.$kerjasama->id_katopd.'.'.$gambar->getClientOriginalExtension();
+        
         $kerjasama->save();
         $gambar->move($path, $kerjasama->gambar);
 
@@ -169,7 +171,7 @@ class KerjasamaLnController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(KerjasamaLnRequest $request, $id)
+    public function update(KerjasamaLnRequest $request, $slug)
     {
         $model = new KerjasamaLn;
         $data = $request->except('id', 'tanggal', 'gambar');
@@ -207,7 +209,7 @@ class KerjasamaLnController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($slug)
     {
         $model = new KerjasamaLn;
         $kerjasama = $model->getDataBySlug($slug);

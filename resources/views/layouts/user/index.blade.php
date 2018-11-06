@@ -51,7 +51,7 @@
                 <th>Username</th>
                 <th>Email</th>
                 <th>Nama Depan</th>
-                <th>Nama Belakang</th>
+             
                 <th>Role</th>
                 <th>Aksi</th>
               </tr>
@@ -72,11 +72,11 @@
     $(function() {
       var columns = [
         { data: 'DT_Row_Index', name: 'DT_Row_Index', orderable: false, searchable: false, width: '5%' },
-        { data: 'created_at', name: 'created_at', visible: false, searchable: false},
+         { data: 'created_at', name: 'created_at', visible: false, searchable: false},
         { data: 'username', name: 'username' },
         { data: 'email', name: 'email' },
         { data: 'first_name', name: 'first_name' },
-        { data: 'last_name', name: 'last_name' },
+      
         { data: 'role', name: 'role' },
         { data: 'action', name: 'action', orderable: false, searchable: false }
       ];

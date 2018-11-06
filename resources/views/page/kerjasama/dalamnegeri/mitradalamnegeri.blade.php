@@ -26,7 +26,7 @@
                   
               <div class="inner">
                   <br/>
-                <h6>{{ strtoupper($provinsi->judul) }}</h6>
+                <font color="brown"><h6><center>{{ strtoupper($provinsi->judul) }}</center></h6></font>
                 </div>
               <br>
             
@@ -88,7 +88,7 @@
 
                 <div class="inner">
                   <br/>
-                 <h6>{{ strtoupper($pihakketiga->judul) }}</h6>
+                 <font color="brown"><h6><center>{{ strtoupper($pihakketiga->judul) }}</center></h6></font>
                 </div>
                 <br>
             
