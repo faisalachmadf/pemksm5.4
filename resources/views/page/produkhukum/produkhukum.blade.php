@@ -48,10 +48,10 @@
                 <tr>
                 
                   <td style="width: 10px;">{{ $no }} </td>
-                   <td><h5>{{ ($uu->nama) }} </h5><h6><font color="grey"><i>diunduh :<b> {{ $uu->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($uu->created_at)) }}</i></font></h6> </td>
-                  <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$uu->slug]) }}" class="btn btn-info">
+                   <td><p>{{ ($uu->nama) }} </p><h6><font color="grey"><i>diunduh :<b> {{ $uu->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($uu->created_at)) }}</i></font></h6> </td>
+                  <td style="width: 50px;">  <a href="{{ route('Produkhukum.unduh', [$uu->slug]) }}">
                          
-                        Download</a> </td>
+                        <center><i class="fa fa-download"></i></center></a> </td>
        
                 </tr>
                  @endforeach
@@ -64,7 +64,7 @@
               <br/>
               <!--/Peraturan Pemerintah-->
               <blockquote> Peraturan Pemerintah</blockquote>
-              <table  class="table table-bordered table-striped">
+              <table  class="table table-striped">
                 <tbody>
                 @if (count($pps))
                 <?php $no = 0;?>
@@ -73,10 +73,8 @@
                 <tr>
                 
                   <td style="width: 10px;">{{ $no }} </td>
-                   <td><h5>{{ ($pp->nama) }} </h5><h6><font color="grey"><i>diunduh :<b> {{ $pp->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($pp->created_at)) }}</i></font></h6> </td>
-                  <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$pp->slug]) }}" class="btn btn-info">
-                         
-                        <span>Download</span></a> </td>
+                   <td><p>{{ ($pp->nama) }} </p><h6><font color="grey"><i>diunduh :<b> {{ $pp->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($pp->created_at)) }}</i></font></h6> </td>
+                  <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$pp->slug]) }}" ><center><i class="fa fa-download"></i></center></a> </td>
        
                 </tr>
                  @endforeach
@@ -89,7 +87,7 @@
 	             <br/>
 	            <!--/Peraturan Presiden-->
 	            <blockquote> Peraturan Presiden</blockquote>
-	            <table  class="table table-bordered table-striped">
+	            <table  class="table table-striped">
                 <tbody>
                 <?php $no = 0;?>
                  @foreach($perpress as $perpres)
@@ -97,10 +95,8 @@
                 <tr>
                 
                   <td style="width: 10px;">{{ $no }} </td>
-                   <td><h5>{{ ($perpres->nama) }} </h5><h6><font color="grey"><i>diunduh :<b> {{ $perpres->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($perpres->created_at)) }}</i></font></h6> </td>
-                  <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$perpres->slug]) }}" class="btn btn-info">
-                         
-                        <span>Download</span></a> </td>
+                   <td><p>{{ ($perpres->nama) }} </p><h6><font color="grey"><i>diunduh :<b> {{ $perpres->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($perpres->created_at)) }}</i></font></h6> </td>
+                  <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$perpres->slug]) }}" ><center><i class="fa fa-download"></i></center></a> </td>
        
                 </tr>
 	               @endforeach
@@ -110,7 +106,7 @@
 	            <br/>
 	            <!--/Keputusan Presiden-->
 	            <blockquote> Keputusan Presiden</blockquote>
-	            <table  class="table table-bordered table-striped">
+	            <table  class="table table-striped">
                 <tbody>
                 <?php $no = 0;?>
                  @foreach($kepress as $kepres)
@@ -118,10 +114,8 @@
                 <tr>
                 
                   <td style="width: 10px;">{{ $no }} </td>
-                   <td><h5>{{ ($kepres->nama) }} </h5><h6><font color="grey"><i>diunduh :<b> {{ $kepres->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($kepres->created_at)) }}</i></font></h6> </td>
-                  <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$kepres->slug]) }}" class="btn btn-info">
-                         
-                        <span>Download</span></a> </td>
+                   <td><p>{{ ($kepres->nama) }} </p><h6><font color="grey"><i>diunduh :<b> {{ $kepres->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($kepres->created_at)) }}</i></font></h6> </td>
+                  <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$kepres->slug]) }}" ><center><i class="fa fa-download"></i></center></a> </td>
        
                 </tr>
 	               @endforeach
@@ -131,7 +125,7 @@
 	             <br/>
 	            <!--/Peraturan Menteri Dalam Negeri-->
 	             <blockquote> Peraturan Menteri Dalam Negeri</blockquote>
-	            <table  class="table table-bordered table-striped">
+	            <table  class="table table-striped">
                 <tbody>
                 <?php $no = 0;?>
                  @foreach($permendagris as $permendagri)
@@ -139,10 +133,8 @@
                 <tr>
                 
                   <td style="width: 10px;">{{ $no }} </td>
-                   <td><h5>{{ ($permendagri->nama) }} </h5><h6><font color="grey"><i>diunduh :<b> {{ $permendagri->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($permendagri->created_at)) }}</i></font></h6> </td>
-                  <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$permendagri->slug]) }}" class="btn btn-info">
-                         
-                        <span>Download</span></a> </td>
+                   <td><p>{{ ($permendagri->nama) }} </p><h6><font color="grey"><i>diunduh :<b> {{ $permendagri->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($permendagri->created_at)) }}</i></font></h6> </td>
+                  <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$permendagri->slug]) }}" ><center><i class="fa fa-download"></i></center></a> </td>
        
                 </tr>
 	               @endforeach
@@ -152,7 +144,7 @@
 	             <br/>
 	            <!--/Keputusan Menteri Dalam Negeri-->
 	             <blockquote> Keputusan Menteri Dalam Negeri</blockquote>
-	            <table  class="table table-bordered table-striped">
+	            <table  class="table table-striped">
                 <tbody>
                 <?php $no = 0;?>
                  @foreach($kepmendagris as $kepmendagri)
@@ -160,10 +152,8 @@
                 <tr>
                 
                   <td style="width: 10px;">{{ $no }} </td>
-                   <td><h5>{{ ($kepmendagri->nama) }} </h5><h6><font color="grey"><i>diunduh :<b> {{ $kepmendagri->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($kepmendagri->created_at)) }}</i></font></h6> </td>
-                  <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$kepmendagri->slug]) }}" class="btn btn-info">
-                         
-                        <span>Download</span></a> </td>
+                   <td><p>{{ ($kepmendagri->nama) }} </p><h6><font color="grey"><i>diunduh :<b> {{ $kepmendagri->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($kepmendagri->created_at)) }}</i></font></h6> </td>
+                  <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$kepmendagri->slug]) }}" ><center><i class="fa fa-download"></i></center></a> </td>
        
                 </tr>
 	               @endforeach
@@ -173,7 +163,7 @@
 	            <br/>
 	            <!--/Peraturan Menteri Luar Negeri-->
 	             <blockquote> Peraturan Menteri Luar Negeri</blockquote>
-	            <table  class="table table-bordered table-striped">
+	            <table  class="table table-striped">
                 <tbody>
                 <?php $no = 0;?>
                  @foreach($permenlus as $permenlu)
@@ -181,10 +171,8 @@
                 <tr>
                 
                   <td style="width: 10px;">{{ $no }} </td>
-                   <td><h5>{{ ($permenlu->nama) }} </h5><h6><font color="grey"><i>diunduh :<b> {{ $permenlu->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($permenlu->created_at)) }}</i></font></h6> </td>
-                  <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$permenlu->slug]) }}" class="btn btn-info">
-                         
-                        <span>Download</span></a> </td>
+                   <td><p>{{ ($permenlu->nama) }} </p><h6><font color="grey"><i>diunduh :<b> {{ $permenlu->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($permenlu->created_at)) }}</i></font></h6> </td>
+                  <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$permenlu->slug]) }}" ><center><i class="fa fa-download"></i></center></a> </td>
        
                 </tr>
 	               @endforeach
@@ -194,7 +182,7 @@
 	             <br/>
 	            <!--/Peraturan Menteri Ketenagakerjaan-->
 	             <blockquote> Peraturan Menteri Ketenagakerjaan</blockquote>
-	            <table  class="table table-bordered table-striped">
+	            <table  class="table table-striped">
                 <tbody>
                 <?php $no = 0;?>
                  @foreach($permennaks as $permennak)
@@ -202,10 +190,8 @@
                 <tr>
                 
                   <td style="width: 10px;">{{ $no }} </td>
-                   <td><h5>{{ ($permennak->nama) }} </h5><h6><font color="grey"><i>diunduh :<b> {{ $permennak->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($permennak->created_at)) }}</i></font></h6> </td>
-                  <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$permennak->slug]) }}" class="btn btn-info">
-                         
-                        <span>Download</span></a> </td>
+                   <td><p>{{ ($permennak->nama) }} </p><h6><font color="grey"><i>diunduh :<b> {{ $permennak->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($permennak->created_at)) }}</i></font></h6> </td>
+                  <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$permennak->slug]) }}" ><center><i class="fa fa-download"></i></center></a> </td>
        
                 </tr>
 	               @endforeach
@@ -215,7 +201,7 @@
 	             <br/>
 	            <!--/Peraturan Daerah Provinsi Jawa Barat-->
 	             <blockquote> Peraturan Daerah Provinsi Jawa Barat</blockquote>
-	            <table  class="table table-bordered table-striped">
+	            <table  class="table table-striped">
                 <tbody>
                 <?php $no = 0;?>
                  @foreach($perdas as $perda)
@@ -223,10 +209,8 @@
                 <tr>
                 
                   <td style="width: 10px;">{{ $no }} </td>
-                   <td><h5>{{ ($perda->nama) }} </h5><h6><font color="grey"><i>diunduh :<b> {{ $perda->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($perda->created_at)) }}</i></font></h6> </td>
-                  <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$perda->slug]) }}" class="btn btn-info">
-                         
-                        <span>Download</span></a> </td>
+                   <td><p>{{ ($perda->nama) }} </p><h6><font color="grey"><i>diunduh :<b> {{ $perda->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($perda->created_at)) }}</i></font></h6> </td>
+                  <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$perda->slug]) }}" ><center><i class="fa fa-download"></i></center></a> </td>
        
                 </tr>
 	               @endforeach
@@ -236,7 +220,7 @@
 	            <br/>
 	            <!--/Peraturan Gubernur Provinsi Jawa Barat-->
 	             <blockquote> Peraturan Gubernur Provinsi Jawa Barat</blockquote>
-	            <table  class="table table-bordered table-striped">
+	            <table  class="table table-striped">
                 <tbody>
                 <?php $no = 0;?>
                  @foreach($pergubs as $pergub)
@@ -244,10 +228,8 @@
                 <tr>
                 
                   <td style="width: 10px;">{{ $no }} </td>
-                   <td><h5>{{ ($pergub->nama) }} </h5><h6><font color="grey"><i>diunduh :<b> {{ $pergub->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($pergub->created_at)) }}</i></font></h6> </td>
-                  <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$pergub->slug]) }}" class="btn btn-info">
-                         
-                        <span>Download</span></a> </td>
+                   <td><p>{{ ($pergub->nama) }} </p><h6><font color="grey"><i>diunduh :<b> {{ $pergub->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($pergub->created_at)) }}</i></font></h6> </td>
+                  <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$pergub->slug]) }}" ><center><i class="fa fa-download"></i></center></a> </td>
        
                 </tr>
 	               @endforeach
@@ -257,7 +239,7 @@
 	            <br/>
 	            <!--/Keputusan Gubernur Provinsi Jawa Barat-->
 	             <blockquote>Keputusan Gubernur Provinsi Jawa Barat</blockquote>
-	            <table  class="table table-bordered table-striped">
+	            <table  class="table table-striped">
                 <tbody>
                 <?php $no = 0;?>
                  @foreach($kepgubs as $kepgub)
@@ -265,10 +247,8 @@
                 <tr>
                 
                   <td style="width: 10px;">{{ $no }} </td>
-                   <td><h5>{{ ($kepgub->nama) }} </h5><h6><font color="grey"><i>diunduh :<b> {{ $kepgub->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($kepgub->created_at)) }}</i></font></h6> </td>
-                  <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$kepgub->slug]) }}" class="btn btn-info">
-                         
-                        <span>Download</span></a> </td>
+                   <td><p>{{ ($kepgub->nama) }} </p><h6><font color="grey"><i>diunduh :<b> {{ $kepgub->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($kepgub->created_at)) }}</i></font></h6> </td>
+                  <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$kepgub->slug]) }}" ><center><i class="fa fa-download"></i></center></a> </td>
        
                 </tr>
 	               @endforeach
@@ -278,7 +258,7 @@
 	            <br/>
 	            <!--/Surat Edaran-->
 	            <blockquote>Surat Edaran</blockquote>
-	            <table  class="table table-bordered table-striped">
+	            <table  class="table table-striped">
                 <tbody>
                 <?php $no = 0;?>
                  @foreach($ses as $se)
@@ -286,10 +266,8 @@
                 <tr>
                 
                   <td style="width: 10px;">{{ $no }} </td>
-                   <td><h5>{{ ($se->nama) }} </h5><h6><font color="grey"><i>diunduh :<b> {{ $se->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($se->created_at)) }}</i></font></h6> </td>
-                  <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$se->slug]) }}" class="btn btn-info">
-                         
-                        <span>Download</span></a> </td>
+                   <td><p>{{ ($se->nama) }} </p><h6><font color="grey"><i>diunduh :<b> {{ $se->diunduh }} kali </b>| tanggal upload :  {{ date('d M Y', strtotime($se->created_at)) }}</i></font></h6> </td>
+                  <td style="width: 100px;">  <a href="{{ route('Produkhukum.unduh', [$se->slug]) }}" ><center><i class="fa fa-download"></i></center></a> </td>
        
                 </tr>
 	               @endforeach

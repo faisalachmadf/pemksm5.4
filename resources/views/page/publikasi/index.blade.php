@@ -51,12 +51,12 @@
                             <tr>
                             
                               <td style="width: 10px;"> {{ $no }} </td>
-                               <td><h5> {{ $publikasi->judul }} </h5> 
+                               <td><p> {{ $publikasi->judul }} </p> 
                                 <div class="clearfix"></div>
                                 <h6><font color="grey"><i>diunduh :<b> {{ $publikasi->diunduh }} kali</b> | tanggal upload :  <b>{{ date('d M Y', strtotime($publikasi->tanggal)) }}</b></i></h6> </font></td>
-                              <td style="width: 100px;">  <a href="{{ route('Publikasi.unduh', [$publikasi->katfile->slug, $publikasi->slug]) }}" class="btn btn-info">
+                              <td style="width: 100px;">  <a href="{{ route('Publikasi.unduh', [$publikasi->katfile->slug, $publikasi->slug]) }}">
                                      
-                                    <span>Download</span></a> </td>
+                                    <center><i class="fa fa-download"></i></center></a> </td>
                    
                             </tr>
                                 @endforeach

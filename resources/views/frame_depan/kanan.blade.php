@@ -34,7 +34,7 @@
                                 @foreach(@$publikasis ? $publikasis : [] as $publikasi)
                                 <div class="editor-pics">
                                     <div class="item-details">
-                                        <h5 class="inner two"><a href="{{ route('Publikasi.unduh', [$publikasi->katfile->slug, $publikasi->slug]) }}"><i class="glyphicon glyphicon-download"></i>  {{ $publikasi->judul }}</a></h5>
+                                        <h5 class="inner two"><a href="{{ route('Publikasi.unduh', [$publikasi->katfile->slug, $publikasi->slug]) }}"><i class="fa fa-download"></i> {{ $publikasi->judul }}</a></h5>
                                         <div class="td-post-date two">
                                             <i class="glyphicon glyphicon-time"></i>{{ date('d M Y', strtotime($publikasi->tanggal)) }} <i class="glyphicon glyphicon-download"></i>di Unduh : <b>{{ $publikasi->diunduh }}</b> kali 
                                         </div>
@@ -126,10 +126,11 @@
 	                            </div>
 	                        </div>
                             <br/>
-                             <div class="connect">
+                             
+                           <!--   <div class="connect">
                                 <script type="text/javascript" src="https://widget.kominfo.go.id/gpr-widget-kominfo.min.js"></script>
                             <div id="gpr-kominfo-widget-container"></div>
-                        </div>
+                            </div> -->
 						<div class="clearfix"></div>
 						</div>
 						<br>

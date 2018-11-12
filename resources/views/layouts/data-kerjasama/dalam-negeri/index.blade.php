@@ -48,8 +48,7 @@
               <tr>
                 <th>No</th>
                 <th>Tahun</th>
-                <th></th>
-                <th>Kat. Jenis Kerjasama</th>
+                <th>kategori kerjasama</th>
                 <th>Nomor</th>
                 <th>Judul</th>
                 <th>Sisa Waktu</th>
@@ -72,10 +71,10 @@
     $(function() {
       var columns = [
         { data: 'DT_Row_Index', name: 'DT_Row_Index', orderable: false, searchable: false, width: '5%' },
-         { data: 'created_at', name: 'created_at', visible: false, searchable: false},
-        { data: 'tahun', name: 'tahun', width: '10%'},
-        // { data: 'katdn.name', name: 'katdn.name',orderable: false, width: '10%'},
-        { data: 'katjenisdn.name', name: 'katjenisdn.name',orderable: false, width: '10%' },
+         // { data: 'created_at', name: 'created_at', visible: false, searchable: false, width: '5%'},
+        { data: 'tahun', name: 'tahun', width: '5%', searchable: true},
+        { data: 'katdn.name', name: 'katdn.name',orderable: false, width: '10%'},
+        // { data: 'katjenisdn.name', name: 'katjenisdn.name',orderable: false, width: '10%' },
         { data: 'nomor', name: 'nomor' , width: '15%'},
         { data: 'judul', name: 'judul' , width: '20%'},
         { data: 'sisa', name: 'tanggal_akhir', searchable: false, width: '10%' },

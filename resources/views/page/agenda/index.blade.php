@@ -74,26 +74,28 @@
                                     @foreach($agendas as $agenda)
 
                                    <div class="technology">
-                                        <div class="editor-pics">
-                                            <div class="edit-pics">
-                                            <div class="col-md-4 item-pic">
+                                       
+                                           
+                                           <div class="timeline">
+                                              <div class="entry">
+                                                <div class="title">
                                                  <h3> {{ date('d M Y', strtotime($agenda->tanggal)) }} </h3><br/>
-                                                  <a  class="btn btn-info">  
-                                                    <h5><i class="glyphicon glyphicon-time"></i> &nbsp Jam : {{ $agenda->jam }}</p></h5></a>
-                                            </div>
-                                            <div class="col-md-8 item-details">
+                                                  
+                                                    <p><i class="glyphicon glyphicon-time"></i> &nbsp {{ $agenda->jam }}</p>
+                                                </div>
+                                            <div class="body">
 
-                                                 <p><a href="{{ route('Agenda', [$agenda->katbagian->slug, $agenda->slug]) }}">{{ strtoupper($agenda->judul) }}</a></p><br>
-                                                 
-                                            
-                                          
+                                                 <p style="color: #065880;">{{ strtoupper($agenda->judul) }}</p><br>
+
                                             <h5><i class="glyphicon glyphicon-home"></i> &nbsp&nbsp Lokasi: {{ $agenda->lokasi }}  </h5> 
                                                <h5><i class=""></i><i class="glyphicon glyphicon-list-alt"></i>&nbsp&nbsp Agenda Bagian :<font color="red"><b>{{ $agenda->katbagian->name }}</b></font></h5>
                                                            
                                             </div>
-                                            <div class="clearfix"></div>
+                                           
                                         </div>
-                                    </div>
+                                      </div>
+                                  
+                                    
                                 </div>
 
                                 
@@ -105,7 +107,7 @@
                                    
                                  
                                    
-                                    <hr/>
+                              
                                       
                                     
                                    

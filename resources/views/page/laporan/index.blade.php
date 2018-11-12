@@ -51,12 +51,12 @@
                             <tr>
                             
                               <td style="width: 10px;">{{ $no }} </td>
-                               <td>{{ strtoupper($laporan->judul) }} 
+                               <td><p>{{ strtoupper($laporan->judul) }}</p> 
                                 <div class="clearfix"></div>
                                 <h6><i>diunduh :<b> {{ $laporan->diunduh }} kali</b> | tanggal upload :  <b>{{ date('d M Y', strtotime($laporan->tanggal)) }}</b></i></h6> </td>
-                              <td style="width: 100px;">  <a href="{{ route('Laporan.unduh', [$laporan->katlaporan->slug, $laporan->slug]) }}" class="btn btn-info">
+                              <td style="width: 100px;">  <a href="{{ route('Laporan.unduh', [$laporan->katlaporan->slug, $laporan->slug]) }}">
                                      
-                                    <span>Download</span></a> </td>
+                                    <center><i class="fa fa-download"></i></center></a> </td>
                    
                             </tr>
                                 @endforeach

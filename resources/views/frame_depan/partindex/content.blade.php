@@ -27,7 +27,7 @@
                             </div>
                             @endforeach
                             <div class="clearfix"></div>
-                            <a href="{{ route('Berita', [@$umum->katberita->slug]) }}" class="btn btn-danger">
+                            <a href="{{ route('Berita', [@$umum->katberita->slug]) }}" class="btn btn-success">
                                 <h6>" {{ @$umum->katberita->name }} Lainnya  <li class="glyphicon glyphicon-new-window"></li></h6>
                             </a>
                         </div>
@@ -225,9 +225,9 @@
                                 @foreach($publikasis as $publikasi)
                                 <div class="editor-pics">
                                     <div class="item-details">
-                                        <h5 class="inner two"><a href="{{ route('Publikasi.unduh', [$publikasi->katfile->slug, $publikasi->slug]) }}"><i class="glyphicon glyphicon-download"></i> &nbsp;&nbsp; {{ $publikasi->judul }}</a></h5>
+                                        <h5 class="inner two"><a href="{{ route('Publikasi.unduh', [$publikasi->katfile->slug, $publikasi->slug]) }}"><i class="fa fa-download"></i> &nbsp;&nbsp; {{ $publikasi->judul }}</a></h5>
                                         <div class="td-post-date two">
-                                            <i class="glyphicon glyphicon-time"></i>{{ date('d M Y', strtotime($publikasi->tanggal)) }} <i class="glyphicon glyphicon-download"></i>di Unduh : <b>{{ $publikasi->diunduh }}</b> kali
+                                            <i class="glyphicon glyphicon-time"></i>{{ date('d M Y', strtotime($publikasi->tanggal)) }} <i class="fa fa-download"></i>di Unduh : <b>{{ $publikasi->diunduh }}</b> kali
                                         </div>
                                     </div>
                                     <div class="clearfix"></div>
@@ -244,9 +244,9 @@
                @foreach($populars2 as $popular2)
                                 <div class="editor-pics">
                                     <div class="item-details">
-                                        <h5 class="inner two"><a href="{{ route('Publikasi.unduh', [$popular2->katfile->slug, $popular2->slug]) }}"><i class="glyphicon glyphicon-download"></i> &nbsp;&nbsp; {{ $popular2->judul }}</a></h5>
+                                        <h5 class="inner two"><a href="{{ route('Publikasi.unduh', [$popular2->katfile->slug, $popular2->slug]) }}"><i class="fa fa-download"></i> &nbsp;&nbsp; {{ $popular2->judul }}</a></h5>
                                         <div class="td-post-date two">
-                                            <i class="glyphicon glyphicon-time"></i>{{ date('d M Y', strtotime($popular2->tanggal)) }} <i class="glyphicon glyphicon-download"></i>di Unduh : <b>{{ $popular2->diunduh }}</b> kali
+                                            <i class="glyphicon glyphicon-time"></i>{{ date('d M Y', strtotime($popular2->tanggal)) }} <i class="fa fa-download"></i>di Unduh : <b>{{ $popular2->diunduh }}</b> kali
                                         </div>
                                     </div>
                                     <div class="clearfix"></div>
@@ -266,18 +266,23 @@
                         </div>
                         
                         <div class="top-news">
-                            <h4 class="side">Agenda  &nbsp<i class="fa fa-calendar"></i></h4>
+                            <h4 class="side">Agenda &nbsp<i class="fa fa-calendar"></i></h4>
                              <div class="edit-pics"> 
                                 <!-- di Isi dengan Tabel Agenda Biro -->
                                 @foreach($agendas as $agenda)
                                 <div class="editor-pics">
-                                    <div class="item-details">
-                                        <h5 class="inner two"><i class="glyphicon glyphicon-calendar"></i> 
-                                        &nbsp;&nbsp;<a href="{{ route('Agenda', [$agenda->katbagian->slug, $agenda->slug]) }}">{{ $agenda->judul }}</a></h5>
-                                        <div class="td-post-date two">
-                                            <i class="glyphicon glyphicon-time"></i>{{ date('d M Y', strtotime($agenda->tanggal)) }} 
+
+                                     <div class="col-md-3 item-pic">
+                                         
+                                       <h3><font color="red"> <b> {{ $agenda->jam }}</b> <br/></font></h3>
+                                        <div class="td-post-date two">{{ date('d M Y', strtotime($agenda->tanggal)) }} 
                                         </div>
                                     </div>
+                                     <div class="col-md-9 item-details">
+                                        <h5 class="inner two"> 
+                                        &nbsp;&nbsp;<a href="{{ route('Agenda', [$agenda->katbagian->slug, $agenda->slug]) }}">{{ $agenda->judul }}</a></h5>
+                                      </div> 
+                                 
                                     <div class="clearfix"></div>
                                 </div>
                                 @endforeach
